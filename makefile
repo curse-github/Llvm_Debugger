@@ -27,15 +27,18 @@ endif
 	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/input_for_passes.ll ./out/libStd.$(staticExt) -o ./out/input.$(executableExt)
 	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/output_from_add_debug_print.ll ./out/libStd.$(staticExt) -o ./out/output.$(executableExt)
 
-	@-echo testing input.$(executableExt)
-	@-./out/input.$(executableExt)
-	@-./out/input.$(executableExt) ""
-	@-./out/input.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
+	@-#echo testing input.$(executableExt)
+	@-#./out/input.$(executableExt)
+	@-#./out/input.$(executableExt) ""
+	@-#./out/input.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
 	
+	@-echo
+	@-echo
 	@-echo testing output.$(executableExt)
 	@-./out/output.$(executableExt)
 	@-./out/output.$(executableExt) ""
 	@-./out/output.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
+	@-echo
 .phony : test
 lib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
 	@-echo building std lib

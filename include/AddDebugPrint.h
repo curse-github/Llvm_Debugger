@@ -15,6 +15,8 @@
 #include "llvm/IR/ValueMap.h"
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/Module.h"
+#include "llvm/IR/Constants.h"
+#include "llvm/IR/GlobalVariable.h"
 #include "llvm/Support/RandomNumberGenerator.h"
 
 #include "llvm/Pass.h"
