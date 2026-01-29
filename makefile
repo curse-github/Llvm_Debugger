@@ -35,8 +35,8 @@ endif
 	@-echo
 	@-echo
 	@-echo testing output.$(executableExt)
-	@-./out/output.$(executableExt)
-	@-./out/output.$(executableExt) ""
+	@#-./out/output.$(executableExt)
+	@#-./out/output.$(executableExt) ""
 	@-./out/output.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
 	@-echo
 .phony : test

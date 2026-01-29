@@ -24,6 +24,9 @@ void print(float f) {
 void print(double f) {
     std::cout << f;
 }
+void print(void* p) {
+    std::cout << p;
+}
 
 void println(char ch) {
     std::cout << ch << '\n';
@@ -48,6 +51,9 @@ void println(float f) {
 }
 void println(double f) {
     std::cout << f << '\n';
+}
+void println(void* p) {
+    std::cout << p << '\n';
 }
 void println() {
     std::cout << '\n';
