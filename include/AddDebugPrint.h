@@ -10,20 +10,7 @@
     #define ADD_DBG_PRNT_API
 #endif
 
-#include "llvm/IR/BasicBlock.h"
-#include "llvm/IR/PassManager.h"
-#include "llvm/IR/ValueMap.h"
-#include "llvm/ADT/Statistic.h"
-#include "llvm/IR/Module.h"
-#include "llvm/IR/Constants.h"
-#include "llvm/IR/GlobalVariable.h"
-#include "llvm/Support/RandomNumberGenerator.h"
-
-#include "llvm/Pass.h"
-#include "llvm/Passes/PassBuilder.h"
-#include "llvm/Passes/PassPlugin.h"
-#include "llvm/Transforms/Utils/BasicBlockUtils.h"
-#include "llvm/Transforms/Utils/Cloning.h"
+#include "./llvmHelpers.h"
 
 #include <memory>
 #include <random>

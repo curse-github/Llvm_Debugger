@@ -3,59 +3,27 @@
 
 //#include <iostream>
 
-llvm::Module* Module = nullptr;
-llvm::LLVMContext* Context = nullptr;
-
-llvm::Type* ptr_t = nullptr;
-llvm::Type* char_t = nullptr;
-
-llvm::CallInst* doCall(llvm::Function* f, std::string str, llvm::BasicBlock::iterator beforeInst) {
-    // create string to be used
-    llvm::GlobalVariable* gStr = new llvm::GlobalVariable(*Module, llvm::ArrayType::get(char_t, static_cast<unsigned int>(str.size())+1u), true, llvm::GlobalValue::PrivateLinkage, 0, "str");
-    gStr->setInitializer(llvm::ConstantDataArray::getString(*Context, str, true));
-    // create print function call
-    llvm::CallInst* printCall = llvm::CallInst::Create(f, { gStr }, "");
-    printCall->setTailCall();
-    printCall->insertBefore(beforeInst);
-    return printCall;
-}
-llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst) {
-    // create string to be used
-    llvm::GlobalVariable* gChr = new llvm::GlobalVariable(*Module, char_t, true, llvm::GlobalValue::PrivateLinkage, 0, "chr");
-    gChr->setInitializer(llvm::ConstantInt::get(char_t, chr, true));
-    // create print function call
-    llvm::Instruction* loadChr = (new llvm::LoadInst(char_t, gChr, "chr", beforeInst));
-    llvm::CallInst* printCall = llvm::CallInst::Create(f, { loadChr }, "");
-    printCall->setTailCall();
-    printCall->insertBefore(beforeInst);
-    return printCall;
-}
-
-llvm::Function* printStr = nullptr;
-llvm::Function* printChar = nullptr;
-llvm::Function* printlnChar = nullptr;
-
 llvm::PreservedAnalyses AddDebugPrint::run(llvm::Function& F, llvm::FunctionAnalysisManager& FAM) {
-    // get function data
-    if (!Module) {
-        Module = F.getParent();
-        Context = &Module->getContext();
-        ptr_t = llvm::PointerType::get(*Context, 0);
-        char_t = llvm::Type::getInt8Ty(*Context);
-
-        printStr = F.getParent()->getFunction("printStr");
-        printChar = F.getParent()->getFunction("printChar");
-        printlnChar = F.getParent()->getFunction("printlnChar");
-    }
-
+    populateGlobals(F);
     llvm::BasicBlock* eBlock = &F.getEntryBlock();
-    //for(auto& arg : F.args())
-        //std::cout << arg.getName().str() << '\n';
     llvm::BasicBlock::iterator beginning = eBlock->begin();
-    doCall(printStr, F.getName().str(), beginning);
+    llvm::GlobalVariable* commaStr = createGlobalString(", ");
+    doCall(printStr, createGlobalString(F.getName().str()), beginning);
     doCall(printChar, '(', beginning);
+    //std::cout << "looking at " << F.getName().str() << '(';
+    const unsigned int arg_size = F.arg_size();
+    for(unsigned int i = 0; i < arg_size; i++) {
+        llvm::Argument* arg = F.getArg(i);
+        //std::cout << getTypeString(((llvm::Value*)arg)->getType()) << ' ' << arg->getName().str();
+        tryPrintValue(arg, beginning);
+        if (i != (arg_size-1)) {
+            //std::cout << ", ";
+            doCall(printStr, commaStr, beginning);
+        }
+        //doCall(printStr, arg, beginning);
+    }
+    //std::cout << ")\n";
     doCall(printlnChar, ')', beginning);
-    // return
     return llvm::PreservedAnalyses::none();
 }
 

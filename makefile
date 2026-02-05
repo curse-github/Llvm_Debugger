@@ -21,8 +21,12 @@ ifeq ($(OS),Windows_NT)
 else
 	@cp ./strLen.ll ./tmp/input_for_passes.ll
 endif
+	@#-echo
 	@-echo running AddDebugPrint.$(dynamicExt) plugin on input_for_passes.ll
+	@#-echo --------------------------------
 	@opt -load-pass-plugin ./out/libAddDebugPrint.$(dynamicExt) -passes add-debug-print ./tmp/input_for_passes.ll -S -o ./tmp/output_from_add_debug_print.ll
+	@#-echo --------------------------------
+	@echo
 
 	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/input_for_passes.ll ./out/libStd.$(staticExt) -o ./out/input.$(executableExt)
 	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/output_from_add_debug_print.ll ./out/libStd.$(staticExt) -o ./out/output.$(executableExt)
@@ -32,12 +36,12 @@ endif
 	@-#./out/input.$(executableExt) ""
 	@-#./out/input.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
 	
-	@-echo
-	@-echo
 	@-echo testing output.$(executableExt)
+	@-echo --------------------------------
 	@#-./out/output.$(executableExt)
 	@#-./out/output.$(executableExt) ""
 	@-./out/output.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
+	@-echo --------------------------------
 	@-echo
 .phony : test
 lib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
@@ -52,9 +56,9 @@ endif
 	@-echo finished building std lib
 .phony : lib
 
-build: mkdir ./src/AddDebugPrint.cpp
+build: mkdir ./src/AddDebugPrint.cpp ./src/llvmHelpers.cpp
 	@-echo building libAddDebugPrint.$(dynamicExt)
-	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) ./src/AddDebugPrint.cpp $(libs) -shared -o ./out/libAddDebugPrint.$(dynamicExt)
+	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) ./src/AddDebugPrint.cpp ./src/llvmHelpers.cpp $(libs) -shared -o ./out/libAddDebugPrint.$(dynamicExt)
 	@-echo finished building libAddDebugPrint.$(dynamicExt)
 .phony : build
 

@@ -44,6 +44,7 @@ declare dso_local void @printUInt(i32 noundef %in0) local_unnamed_addr #0
 declare dso_local void @printUInt64(i64 noundef %in0) local_unnamed_addr #0
 declare dso_local void @printInt(i32 noundef %in0) local_unnamed_addr #0
 declare dso_local void @printFloat(float noundef %in0) local_unnamed_addr #0
+declare dso_local void @printDouble(double noundef %in0) local_unnamed_addr #0
 declare dso_local void @printlnChar(i8 noundef %in0) local_unnamed_addr #0
 declare dso_local void @printlnStr(ptr noundef %in0) local_unnamed_addr #0
 declare dso_local void @printlnUInt(i32 noundef %in0) local_unnamed_addr #0
