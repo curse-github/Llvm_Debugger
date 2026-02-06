@@ -150,7 +150,7 @@ void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst) {
             doCall(printStr, val, beforeInst);
             doCall(printChar, '\"', beforeInst);
         } else
-            doCall(printStr, createGlobalString("[value of type " + typeName + ']'), beforeInst);
+            doCall(printStr, createGlobalString("{value of type " + typeName + '}'), beforeInst);
         return;
     }
     doCall(printStr, unknownStr, beforeInst);

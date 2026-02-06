@@ -21,12 +21,12 @@ ifeq ($(OS),Windows_NT)
 else
 	@cp ./strLen.ll ./tmp/input_for_passes.ll
 endif
-	@-echo
-	@-echo running AddDebugPrint.$(dynamicExt) plugin on input_for_passes.ll
-	@-echo --------------------------------
+	@#-echo
+	@#-echo running AddDebugPrint.$(dynamicExt) plugin on input_for_passes.ll
+	@#-echo --------------------------------
 	@opt -load-pass-plugin ./out/libAddDebugPrint.$(dynamicExt) -passes add-debug-print ./tmp/input_for_passes.ll -S -o ./tmp/output_from_add_debug_print.ll
-	@-echo --------------------------------
-	@echo
+	@#-echo --------------------------------
+	@-echo
 
 	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/input_for_passes.ll ./out/libStd.$(staticExt) -o ./out/input.$(executableExt)
 	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/output_from_add_debug_print.ll ./out/libStd.$(staticExt) -o ./out/output.$(executableExt)
