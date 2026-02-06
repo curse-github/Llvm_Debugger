@@ -1,4 +1,4 @@
-#include "../include/llvmHelpers.h"
+#include "llvmHelpers.h"
 
 llvm::Module* Module = nullptr;
 llvm::LLVMContext* Context = nullptr;
@@ -55,7 +55,8 @@ llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator b
     return printCall;
 }
 
-std::string getTypeString(llvm::Type* ty) {
+std::string getTypeAsString(llvm::Value* val) {
+    llvm::Type* ty = val->getType();
     if (ty->isIntegerTy()) {
         const unsigned int bitWidth = ty->getIntegerBitWidth();
         switch(bitWidth) {
@@ -82,13 +83,42 @@ std::string getTypeString(llvm::Type* ty) {
         else
             return "unknown";
     } else if (ty->isPointerTy())
-        return "void*";
+        return attemptFindPointerType(val);
     else
         return "unknown";
     
 }
+#include <iostream>
+std::string valueToString(llvm::Value* inst) {
+    std::string str;
+    llvm::raw_string_ostream rso(str);
+    inst->print(rso);
+    return str;
+}
+std::string attemptFindPointerType(llvm::Value* val, bool isArray) {
+    for(llvm::User* user : val->users()) {
+        if (llvm::dyn_cast_or_null<llvm::Instruction>(user)) {
+            // if it used in a load instruction, the type is a pointer to the type load instruction
+            if (llvm::dyn_cast_or_null<llvm::LoadInst>(user)) {
+                return getTypeAsString(user) + (isArray?"[]":"*");
+            // if it used in a getelementptr instruction, the type is the same as the getelementptr instruction
+            } else if (llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user)) {
+                return attemptFindPointerType(user, true);
+            // if it used in a call instruction, get the type from how the argument is used in that function
+            } else if (llvm::dyn_cast_or_null<llvm::CallInst>(user)) {
+                llvm::CallInst* call = llvm::dyn_cast<llvm::CallInst>(user);
+                for (unsigned int i = 0; i < user->getNumOperands(); i++)
+                    if (user->getOperand(i) == val)
+                        return attemptFindPointerType(call->getCalledFunction()->getArg(i));
+                return isArray?"void[]":"void*";
+            }
+        }
+    }
+    std::cout << "did not find known pointer use.\n";
+    return isArray?"void[]":"void*";
+}
 llvm::GlobalVariable* unknownStr = nullptr;
-llvm::CallInst* tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInstr) {
+void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst) {
     if (unknownStr == nullptr)
         unknownStr = createGlobalString("unknown");
     llvm::Type* ty = val->getType();
@@ -96,17 +126,32 @@ llvm::CallInst* tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator befor
         const unsigned int bitWidth = ty->getIntegerBitWidth();
         switch(bitWidth) {
             case 8:
-                return doCall(printChar, val, beforeInstr);
+                doCall(printChar, val, beforeInst);
+                return;
             case 32:
-                return doCall(printUInt, val, beforeInstr);
+                doCall(printUInt, val, beforeInst);
+                return;
             case 64:
-                return doCall(printUInt64, val, beforeInstr);
+                doCall(printUInt64, val, beforeInst);
+                return;
         }
     } else if (ty->isFloatingPointTy()) {
-        if (ty->isFloatTy())
-            return doCall(printFloat, val, beforeInstr);
-        else if (ty->isDoubleTy())
-            return doCall(printDouble, val, beforeInstr);
+        if (ty->isFloatTy()) {
+            doCall(printFloat, val, beforeInst);
+            return;
+        } else if (ty->isDoubleTy()) {
+            doCall(printDouble, val, beforeInst);
+            return;
+        }
+    } else if (ty->isPointerTy()) {
+        std::string typeName = attemptFindPointerType(val);
+        if (typeName == "char[]") {
+            doCall(printChar, '\"', beforeInst);
+            doCall(printStr, val, beforeInst);
+            doCall(printChar, '\"', beforeInst);
+        } else
+            doCall(printStr, createGlobalString("[value of type " + typeName + ']'), beforeInst);
+        return;
     }
-    return doCall(printStr, unknownStr, beforeInstr);
+    doCall(printStr, unknownStr, beforeInst);
 }

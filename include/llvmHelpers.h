@@ -37,7 +37,8 @@ llvm::GlobalVariable* createGlobalString(std::string str);
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);
 
-std::string getTypeString(llvm::Type* ty);
-llvm::CallInst* tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInstr);
+std::string getTypeAsString(llvm::Value* val);
+std::string attemptFindPointerType(llvm::Value* val, bool isArray = false);
+void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 
 #endif// __LLVM_HELPERS

@@ -1,28 +1,27 @@
 #define _BUILD_DUP_B
-#include "../include/AddDebugPrint.h"
+#include "AddDebugPrint.h"
 
-//#include <iostream>
+llvm::GlobalVariable* calledStr = nullptr;
+llvm::GlobalVariable* commaStr = nullptr;
 
 llvm::PreservedAnalyses AddDebugPrint::run(llvm::Function& F, llvm::FunctionAnalysisManager& FAM) {
     populateGlobals(F);
+    if (calledStr == nullptr) {
+        calledStr = createGlobalString("called ");
+        commaStr = createGlobalString(", ");
+    }
     llvm::BasicBlock* eBlock = &F.getEntryBlock();
     llvm::BasicBlock::iterator beginning = eBlock->begin();
-    llvm::GlobalVariable* commaStr = createGlobalString(", ");
+    doCall(printStr, calledStr, beginning);
     doCall(printStr, createGlobalString(F.getName().str()), beginning);
     doCall(printChar, '(', beginning);
-    //std::cout << "looking at " << F.getName().str() << '(';
     const unsigned int arg_size = F.arg_size();
     for(unsigned int i = 0; i < arg_size; i++) {
         llvm::Argument* arg = F.getArg(i);
-        //std::cout << getTypeString(((llvm::Value*)arg)->getType()) << ' ' << arg->getName().str();
         tryPrintValue(arg, beginning);
-        if (i != (arg_size-1)) {
-            //std::cout << ", ";
+        if (i != (arg_size-1))
             doCall(printStr, commaStr, beginning);
-        }
-        //doCall(printStr, arg, beginning);
     }
-    //std::cout << ")\n";
     doCall(printlnChar, ')', beginning);
     return llvm::PreservedAnalyses::none();
 }
