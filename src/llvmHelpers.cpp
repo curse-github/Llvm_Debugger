@@ -88,7 +88,7 @@ std::string getTypeAsString(llvm::Value* val) {
         return "unknown";
     
 }
-#include <iostream>
+//#include <iostream>
 std::string valueToString(llvm::Value* inst) {
     std::string str;
     llvm::raw_string_ostream rso(str);
@@ -114,7 +114,7 @@ std::string attemptFindPointerType(llvm::Value* val, bool isArray) {
             }
         }
     }
-    std::cout << "did not find known pointer use.\n";
+    //std::cout << "did not find known pointer use.\n";
     return isArray?"void[]":"void*";
 }
 llvm::GlobalVariable* unknownStr = nullptr;

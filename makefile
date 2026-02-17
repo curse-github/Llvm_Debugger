@@ -14,15 +14,23 @@ endif
 
 includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
-test: mkdir build lib
+.\tmp\input_for_passes.ll:
 	@-echo creating input_for_passes.ll
 ifeq ($(OS),Windows_NT)
 	@type .\strLen.ll >> .\tmp\input_for_passes.ll
 else
 	@cp ./strLen.ll ./tmp/input_for_passes.ll
 endif
+testSeparate: mkdir .\tmp\input_for_passes.ll build lib
+	@-echo
+	@-echo running libSeparate.$(dynamicExt) plugin on input_for_passes.ll
+	@-echo --------------------------------
+	@opt -load-pass-plugin ./out/libSeparate.$(dynamicExt) -passes separate ./tmp/input_for_passes.ll -S -o ./tmp/output_from_add_debug_print.ll
+	@-echo --------------------------------
+
+testAddDebugPrint: mkdir .\tmp\input_for_passes.ll build lib
 	@#-echo
-	@#-echo running AddDebugPrint.$(dynamicExt) plugin on input_for_passes.ll
+	@#-echo running libAddDebugPrint.$(dynamicExt) plugin on input_for_passes.ll
 	@#-echo --------------------------------
 	@opt -load-pass-plugin ./out/libAddDebugPrint.$(dynamicExt) -passes add-debug-print ./tmp/input_for_passes.ll -S -o ./tmp/output_from_add_debug_print.ll
 	@#-echo --------------------------------
@@ -38,8 +46,8 @@ endif
 	
 	@-echo testing output.$(executableExt)
 	@-echo --------------------------------
-	@#-./out/output.$(executableExt)
-	@#-./out/output.$(executableExt) ""
+	@-./out/output.$(executableExt)
+	@-./out/output.$(executableExt) ""
 	@-./out/output.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
 	@-echo --------------------------------
 	@-echo
@@ -56,25 +64,32 @@ endif
 	@-echo finished building std lib
 .phony : lib
 
-build: mkdir ./src/AddDebugPrint.cpp ./src/llvmHelpers.cpp
+build: mkdir ./src/Separate.cpp ./src/AddDebugPrint.cpp ./src/llvmHelpers.cpp
 	@-echo building libAddDebugPrint.$(dynamicExt)
 	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/AddDebugPrint.cpp ./src/llvmHelpers.cpp $(libs) -shared -o ./out/libAddDebugPrint.$(dynamicExt)
 	@-echo finished building libAddDebugPrint.$(dynamicExt)
+	@-echo building libSeparate.$(dynamicExt)
+	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/Separate.cpp ./src/llvmHelpers.cpp $(libs) -shared -o ./out/libSeparate.$(dynamicExt)
+	@-echo finished building libSeparate.$(dynamicExt)
 .phony : build
 
 mkdir:
 ifeq ($(OS),Windows_NT)
 	@-rmdir /s /q out
 	@-rmdir /s /q tmp
+	@-rmdir /s /q separated
 else
 	@-rm -rf out
 	@-rm -rf tmp
+	@-rm -rf separated
 endif
 	@mkdir out
 	@mkdir tmp
+	@mkdir separated
 .phony : mkdir
 
 clean:
-	@-rm -R tmp
 	@-rm -R out
+	@-rm -R tmp
+	@-rm -R separated
 .phony : clean

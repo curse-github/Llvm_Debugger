@@ -14,6 +14,11 @@
 #include "llvm/Passes/PassPlugin.h"
 #include "llvm/Transforms/Utils/BasicBlockUtils.h"
 #include "llvm/Transforms/Utils/Cloning.h"
+#include "llvm/Support/raw_ostream.h"
+#include <llvm/TargetParser/Host.h>
+
+#include <memory>
+#include <vector>
 
 extern llvm::Module* Module;
 extern llvm::LLVMContext* Context;

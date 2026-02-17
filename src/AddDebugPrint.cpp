@@ -1,4 +1,4 @@
-#define _BUILD_DUP_B
+#define _BUILD_ADD_DBG_PRNT
 #include "AddDebugPrint.h"
 
 llvm::GlobalVariable* calledStr = nullptr;
