@@ -27,7 +27,13 @@ public:
     }
 };
 
-#include "testLib.h"
+extern int numFunctions;
+extern const char* functionNames[];
+extern int functionParamCounts[];
+extern const char** functionParamNames[];
+extern const char** functionParamTypes[];
+typedef void(*wrapperFT)(void*);
+//extern wrapperFT functionPointers[];
 
 int main(int argc, char** argv) {
     printf("Pick a function from the following:\n");
@@ -36,17 +42,21 @@ int main(int argc, char** argv) {
     }
     int i = 0;
     scanf("%d", &i);
-    printf("You chose the function \"%s\".\n", functionNames[i]);
+
+    std::string functionName = functionNames[i];
+    printf("You chose the function \"%s\".\n", functionName.c_str());
+    int paramCount = functionParamCounts[i];
+    printf("\"%s\" has %d parameters.\n", functionName.c_str(), paramCount);
     bufferWriter parameters;
-    for(int j = 0; j < functionParamCounts[i]; j++) {
+    for(int j = 0; j < paramCount; j++) {
         const char* paramType = functionParamTypes[i][j];
         printf("Please enter a(n) %s for the parameter \"%s\" : ", paramType, functionParamNames[i][j]);
         if (strcmp(paramType, "bool") == 0) {
             char tmp[7] = "      ";
             scanf("%6s", tmp);
-            if (strcmp(tmp,"true") == 0)
+            if (strcmp(tmp, "true") == 0)
                 parameters.push<bool>(true);
-            else if (strcmp(tmp,"false") == 0)
+            else if (strcmp(tmp, "false") == 0)
                 parameters.push<bool>(false);
             else {
                 printf("ERROR\n");
@@ -64,8 +74,12 @@ int main(int argc, char** argv) {
             float tmp;
             scanf("%f", &tmp);
             parameters.push<float>(tmp);
+        } else if (strcmp(paramType, "double") == 0) {
+            double tmp;
+            scanf("%lf", &tmp);
+            parameters.push<double>(tmp);
         }
     }
-    functionPointers[i](parameters.pointer);
+    //functionPointers[i](parameters.pointer);
     return 0;
 }

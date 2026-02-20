@@ -5,6 +5,7 @@ llvm::LLVMContext* Context = nullptr;
 
 llvm::Type* ptr_t = nullptr;
 llvm::Type* char_t = nullptr;
+llvm::Type* i32_t = nullptr;
 
 llvm::Function* printChar = nullptr;
 llvm::Function* printStr = nullptr;
@@ -22,7 +23,13 @@ void populateGlobals(llvm::Function& F) {
 
         ptr_t = llvm::PointerType::get(*Context, 0);
         char_t = llvm::Type::getInt8Ty(*Context);
-
+        i32_t = llvm::Type::getInt32Ty(*Context);
+    }
+}
+void populateStdLib(llvm::Function& F) {
+    if (!Module)
+        populateGlobals(F);
+    if (!printChar) {
         printChar = Module->getFunction("printChar");
         printStr = Module->getFunction("printStr");
         //printBool = Module->getFunction("printBool");
@@ -34,12 +41,29 @@ void populateGlobals(llvm::Function& F) {
     }
 }
 
-llvm::GlobalVariable* createGlobalString(std::string str) {
-    // create string to be used
-    llvm::GlobalVariable* gStr = new llvm::GlobalVariable(*Module, llvm::ArrayType::get(char_t, static_cast<unsigned int>(str.size())+1u), true, llvm::GlobalValue::PrivateLinkage, 0, "str");
+llvm::GlobalVariable* createGlobalString(std::string str, std::string varName) {
+    llvm::GlobalVariable* gStr = new llvm::GlobalVariable(*Module, llvm::ArrayType::get(char_t, static_cast<unsigned int>(str.size())+1u), true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
     gStr->setInitializer(llvm::ConstantDataArray::getString(*Context, str, true));
     return gStr;
 }
+llvm::GlobalVariable* createGlobalPtrArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName) {
+    llvm::ArrayType* T = llvm::ArrayType::get(ptr_t, static_cast<unsigned int>(vals.size()));
+    llvm::GlobalVariable* gArr = new llvm::GlobalVariable(*Module, T, true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
+    gArr->setInitializer(llvm::ConstantArray::get(T, vals));
+    return gArr;
+}
+llvm::GlobalVariable* createGlobalInt(int val, std::string varName) {
+    llvm::GlobalVariable* gInt = new llvm::GlobalVariable(*Module, i32_t, true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
+    gInt->setInitializer(llvm::ConstantInt::get(i32_t, val));
+    return gInt;
+}
+llvm::GlobalVariable* createGlobalIntArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName) {
+    llvm::ArrayType* T = llvm::ArrayType::get(i32_t, static_cast<unsigned int>(vals.size()));
+    llvm::GlobalVariable* gArr = new llvm::GlobalVariable(*Module, T, true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
+    gArr->setInitializer(llvm::ConstantArray::get(T, vals));
+    return gArr;
+}
+
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst) {
     // create print function call
     llvm::CallInst* printCall = llvm::CallInst::Create(f, { val }, "");

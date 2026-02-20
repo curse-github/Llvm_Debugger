@@ -14,6 +14,7 @@
 #include "llvm/Passes/PassPlugin.h"
 #include "llvm/Transforms/Utils/BasicBlockUtils.h"
 #include "llvm/Transforms/Utils/Cloning.h"
+#include "llvm/Transforms/Utils/ValueMapper.h"
 #include "llvm/Support/raw_ostream.h"
 #include <llvm/TargetParser/Host.h>
 
@@ -25,6 +26,7 @@ extern llvm::LLVMContext* Context;
 
 extern llvm::Type* ptr_t;
 extern llvm::Type* char_t;
+extern llvm::Type* i32_t;
 
 extern llvm::Function* printChar;
 extern llvm::Function* printStr;
@@ -36,8 +38,12 @@ extern llvm::Function* printDouble;
 extern llvm::Function* printlnChar;
 
 void populateGlobals(llvm::Function& F);
+void populateStdLib(llvm::Function& F);
 
-llvm::GlobalVariable* createGlobalString(std::string str);
+llvm::GlobalVariable* createGlobalString(std::string str, std::string varName="str");
+llvm::GlobalVariable* createGlobalPtrArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName);
+llvm::GlobalVariable* createGlobalInt(int val, std::string varName);
+llvm::GlobalVariable* createGlobalIntArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName);
 
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);

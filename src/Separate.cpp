@@ -3,16 +3,6 @@
 #include "Separate.h"
 #include <iostream>
 
-void printFuncSig(llvm::Function& F) {
-    std::cout << F.getName().str() << "(";
-    const unsigned int arg_size = F.arg_size();
-    for(unsigned int i = 0; i < arg_size; i++) {
-        llvm::Argument* arg = F.getArg(i);
-        std::cout << ((i != 0) ? ", " : "") << getTypeAsString(arg);
-    }
-    std::cout << ")\n";
-}
-
 llvm::PreservedAnalyses Separate::run(llvm::Function& F, llvm::FunctionAnalysisManager& FAM) {
     llvm::LLVMContext Context;
     llvm::Type* ptr_t = llvm::PointerType::get(Context, 0);
@@ -35,7 +25,6 @@ llvm::PreservedAnalyses Separate::run(llvm::Function& F, llvm::FunctionAnalysisM
             if (inst == nullptr) continue;
             llvm::Function* calledFunc = inst->getCalledFunction();
             if (calledFunc->isDeclaration()) continue;
-            printFuncSig(*calledFunc);
             llvm::Function::Create(calledFunc->getFunctionType(), llvm::Function::InternalLinkage, calledFunc->getName().str(), Module);
         }
     }

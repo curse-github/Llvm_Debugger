@@ -5,7 +5,7 @@ llvm::GlobalVariable* calledStr = nullptr;
 llvm::GlobalVariable* commaStr = nullptr;
 
 llvm::PreservedAnalyses AddDebugPrint::run(llvm::Function& F, llvm::FunctionAnalysisManager& FAM) {
-    populateGlobals(F);
+    populateStdLib(F);
     if (calledStr == nullptr) {
         calledStr = createGlobalString("called ");
         commaStr = createGlobalString(", ");
