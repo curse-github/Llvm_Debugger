@@ -33,53 +33,63 @@ extern int functionParamCounts[];
 extern const char** functionParamNames[];
 extern const char** functionParamTypes[];
 typedef void(*wrapperFT)(void*);
-//extern wrapperFT functionPointers[];
+extern wrapperFT functionPointers[];
 
 int main(int argc, char** argv) {
     printf("Pick a function from the following:\n");
     for(int i = 0; i < numFunctions; i++) {
-        printf("  %d: %s\n", i, functionNames[i]);
+        printf("  %d: %s(", i, functionNames[i]);
+        int paramCount = functionParamCounts[i];
+        for(int j = 0; j < paramCount; j++)
+            printf((j!=(paramCount-1))?"%s %s, ":"%s %s", functionParamTypes[i][j], functionParamNames[i][j]);
+        printf(")\n");
     }
-    int i = 0;
+    int i;
     scanf("%d", &i);
 
     std::string functionName = functionNames[i];
-    printf("You chose the function \"%s\".\n", functionName.c_str());
+    // printf("You chose the function \"%s\".\n", functionName.c_str());
     int paramCount = functionParamCounts[i];
-    printf("\"%s\" has %d parameters.\n", functionName.c_str(), paramCount);
+    // printf("\"%s\" has %d parameters.\n", functionName.c_str(), paramCount);
     bufferWriter parameters;
     for(int j = 0; j < paramCount; j++) {
         const char* paramType = functionParamTypes[i][j];
-        printf("Please enter a(n) %s for the parameter \"%s\" : ", paramType, functionParamNames[i][j]);
         if (strcmp(paramType, "bool") == 0) {
             char tmp[7] = "      ";
-            scanf("%6s", tmp);
-            if (strcmp(tmp, "true") == 0)
-                parameters.push<bool>(true);
-            else if (strcmp(tmp, "false") == 0)
-                parameters.push<bool>(false);
-            else {
-                printf("ERROR\n");
-                return 1;
+            while (true) {
+                printf("Please enter a bool for the parameter \"%s\" : ", functionParamNames[i][j]);
+                scanf("%6s", tmp);
+                if (strcmp(tmp, "true") == 0) {
+                    parameters.push<bool>(true);
+                    break;
+                } else if (strcmp(tmp, "false") == 0) {
+                    parameters.push<bool>(false);
+                    break;
+                } else
+                    printf("Invalid value try again.\n");
             }
         } else if (strcmp(paramType, "char") == 0) {
             char tmp;
+            printf("Please enter a char for the parameter \"%s\" : ", functionParamNames[i][j]);
             scanf(" %c", &tmp);
             parameters.push<char>(tmp);
         } else if (strcmp(paramType, "int") == 0) {
             int tmp;
+            printf("Please enter an int for the parameter \"%s\" : ", functionParamNames[i][j]);
             scanf("%d", &tmp);
             parameters.push<int>(tmp);
         } else if (strcmp(paramType, "float") == 0) {
             float tmp;
+            printf("Please enter a float for the parameter \"%s\" : ", functionParamNames[i][j]);
             scanf("%f", &tmp);
             parameters.push<float>(tmp);
         } else if (strcmp(paramType, "double") == 0) {
             double tmp;
+            printf("Please enter a double for the parameter \"%s\" : ", functionParamNames[i][j]);
             scanf("%lf", &tmp);
             parameters.push<double>(tmp);
         }
     }
-    //functionPointers[i](parameters.pointer);
+    functionPointers[i](parameters.pointer);
     return 0;
 }

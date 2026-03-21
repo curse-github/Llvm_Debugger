@@ -3,9 +3,16 @@
 llvm::Module* Module = nullptr;
 llvm::LLVMContext* Context = nullptr;
 
-llvm::Type* ptr_t = nullptr;
-llvm::Type* char_t = nullptr;
-llvm::Type* i32_t = nullptr;
+llvm::Type* void_t = nullptr;// void
+llvm::Type* ptr_t = nullptr;// void*
+llvm::Type* i1_t = nullptr;// bool
+llvm::Type* i8_t = nullptr;// char
+llvm::Type* i16_t = nullptr;// short
+llvm::Type* i32_t = nullptr;// int
+llvm::Type* i64_t = nullptr;// long
+llvm::Type* f16_t = nullptr;// half
+llvm::Type* f32_t = nullptr;// float
+llvm::Type* f64_t = nullptr;// double
 
 llvm::Function* printChar = nullptr;
 llvm::Function* printStr = nullptr;
@@ -16,14 +23,29 @@ llvm::Function* printFloat = nullptr;
 llvm::Function* printDouble = nullptr;
 llvm::Function* printlnChar = nullptr;
 
+void populateGlobals(llvm::Module& _Module) {
+    if (!Module)
+        Module = &_Module;
+    populateGlobals();
+}
 void populateGlobals(llvm::Function& F) {
-    if (!Module) {
+    if (!Module)
         Module = F.getParent();
+    populateGlobals();
+}
+void populateGlobals() {
+    if (Context == nullptr) {
         Context = &Module->getContext();
-
+        void_t = llvm::Type::getVoidTy(*Context);
         ptr_t = llvm::PointerType::get(*Context, 0);
-        char_t = llvm::Type::getInt8Ty(*Context);
+        i1_t = llvm::Type::getInt1Ty(*Context);
+        i8_t = llvm::Type::getInt8Ty(*Context);
+        i32_t = llvm::Type::getInt16Ty(*Context);
         i32_t = llvm::Type::getInt32Ty(*Context);
+        i64_t = llvm::Type::getInt64Ty(*Context);
+        f16_t = llvm::Type::getHalfTy(*Context);
+        f32_t = llvm::Type::getFloatTy(*Context);
+        f64_t = llvm::Type::getDoubleTy(*Context);
     }
 }
 void populateStdLib(llvm::Function& F) {
@@ -42,7 +64,7 @@ void populateStdLib(llvm::Function& F) {
 }
 
 llvm::GlobalVariable* createGlobalString(std::string str, std::string varName) {
-    llvm::GlobalVariable* gStr = new llvm::GlobalVariable(*Module, llvm::ArrayType::get(char_t, static_cast<unsigned int>(str.size())+1u), true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
+    llvm::GlobalVariable* gStr = new llvm::GlobalVariable(*Module, llvm::ArrayType::get(i8_t, static_cast<unsigned int>(str.size())+1u), true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
     gStr->setInitializer(llvm::ConstantDataArray::getString(*Context, str, true));
     return gStr;
 }
@@ -73,7 +95,7 @@ llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::it
 }
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst) {
     // create print function call
-    llvm::CallInst* printCall = llvm::CallInst::Create(f, { llvm::ConstantInt::get(char_t, chr, true) }, "");
+    llvm::CallInst* printCall = llvm::CallInst::Create(f, { llvm::ConstantInt::get(i8_t, chr, true) }, "");
     printCall->setTailCall();
     printCall->insertBefore(beforeInst);
     return printCall;
@@ -110,6 +132,34 @@ std::string getTypeAsString(llvm::Value* val) {
         return attemptFindPointerType(val);
     else
         return "unknown";
+    
+}
+int getTypeBitWidth(llvm::Type* ty) {
+    if (ty->isIntegerTy()) {
+        const unsigned int bitWidth = ty->getIntegerBitWidth();
+        switch(bitWidth) {
+            case 1:
+            case 8:
+            case 16:
+            case 32:
+            case 64:
+                return bitWidth;
+            default:
+                return -1;
+        }
+    } else if (ty->isFloatingPointTy()) {
+        if (ty->isHalfTy())
+            return 16;
+        else if (ty->isFloatTy())
+            return 32;
+        else if (ty->isDoubleTy())
+            return 64;
+        else
+            return -1;
+    } else if (ty->isPointerTy())
+        return 64;
+    else
+        return -1;
     
 }
 //#include <iostream>

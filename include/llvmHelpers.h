@@ -24,9 +24,16 @@
 extern llvm::Module* Module;
 extern llvm::LLVMContext* Context;
 
-extern llvm::Type* ptr_t;
-extern llvm::Type* char_t;
-extern llvm::Type* i32_t;
+extern llvm::Type* void_t;// void
+extern llvm::Type* ptr_t;// void*
+extern llvm::Type* i1_t;// bool
+extern llvm::Type* i8_t;// char
+extern llvm::Type* i16_t;// short
+extern llvm::Type* i32_t;// int
+extern llvm::Type* i64_t;// long
+extern llvm::Type* f16_t;// half
+extern llvm::Type* f32_t;// float
+extern llvm::Type* f64_t;// double
 
 extern llvm::Function* printChar;
 extern llvm::Function* printStr;
@@ -37,7 +44,10 @@ extern llvm::Function* printFloat;
 extern llvm::Function* printDouble;
 extern llvm::Function* printlnChar;
 
+void populateGlobals(llvm::Module& _Module);
 void populateGlobals(llvm::Function& F);
+void populateGlobals();
+
 void populateStdLib(llvm::Function& F);
 
 llvm::GlobalVariable* createGlobalString(std::string str, std::string varName="str");
@@ -49,6 +59,7 @@ llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::it
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);
 
 std::string getTypeAsString(llvm::Value* val);
+int getTypeBitWidth(llvm::Type* ty);
 std::string attemptFindPointerType(llvm::Value* val, bool isArray = false);
 void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 

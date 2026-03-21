@@ -23,15 +23,16 @@ else
 endif
 .\tmp\input_for_librarify.ll:
 	@-echo creating input_for_librarify.ll
-	@clang++ ./src/testProgram.cpp -O3 -S -emit-llvm -fno-discard-value-names -o ./tmp/input_for_librarify.ll
+	@clang++ ./src/testProgram.cpp -O3 -S -emit-llvm -fno-discard-value-names -fno-inline -o ./tmp/input_for_librarify.ll
 
 testLibrarify: mkdir .\tmp\input_for_librarify.ll libLibrarify.$(dynamicExt)
 	@-echo running libLibrarify.$(dynamicExt) plugin on input_for_librarify.ll
 	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/input_for_librarify.ll -S -o ./tmp/output_from_librarify.ll
-	clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
-	ar rcs ./out/output.a ./tmp/output.o
-	clang++ ./src/controller.cpp ./out/output.a -o ./out/controller.out
-	./out/controller.out
+	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
+	@ar rcs ./out/output.a ./tmp/output.o
+	@clang++ ./src/controller.cpp ./out/output.a -o ./out/controller.out
+	@#clear
+	@./out/controller.out
 
 testSeparate: mkdir .\tmp\input_for_passes.ll stdlib libSeparate.$(dynamicExt)
 	@-echo running libSeparate.$(dynamicExt) plugin on input_for_passes.ll

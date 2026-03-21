@@ -1,5 +1,5 @@
 #include <iostream>
 
-void bar(int a, bool b, char c, float d) {
-    printf("a: %d\nb: %s\nc: '%c'\nd: %.3f\n", a, b?"true":"false", c, d);
+void bar(int a, double b, bool c, char d, float e) {
+    printf("a: %d\nb: %.3lf\nc: %s\nd: '%c'\ne: %.3f", a, b, c?"true":"false", d, e);
 }
