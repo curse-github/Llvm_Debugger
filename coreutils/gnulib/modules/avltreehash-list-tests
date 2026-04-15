@@ -1,0 +1,15 @@
+Files:
+tests/test-avltreehash_list.c
+tests/macros.h
+
+Depends-on:
+array-list
+stdcountof-h
+streq
+
+configure.ac:
+
+Makefile.am:
+TESTS += test-avltreehash_list
+check_PROGRAMS += test-avltreehash_list
+
