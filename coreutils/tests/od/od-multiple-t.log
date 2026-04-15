@@ -1,0 +1,4606 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-od-multiple-t.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-od-multiple-t.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
++++ perms='drwx------ 2 4096 Apr 15 17:17 /home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ od
++ require_built_ od
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env od --version
+od (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jim Meyering.
++ seq 19
+++ wc -c
++ test 48 -eq 48
++ list='a c dC dS dI dL oC oS oI oL uC uS uI uL xC xS xI xL fF fD'
++ for format1 in $list
++ for format2 in $list
++ od -An -taz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a a 510
+++ expr 85 '*' 6
++ echo a a 510
++ for format2 in $list
++ od -An -taz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a c 510
+++ expr 85 '*' 6
++ echo a c 510
++ for format2 in $list
++ od -An -taz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a dC 606
+++ expr 101 '*' 6
++ echo a dC 606
++ for format2 in $list
++ od -An -taz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a dS 510
+++ expr 85 '*' 6
++ echo a dS 510
++ for format2 in $list
++ od -An -taz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a dI 510
+++ expr 85 '*' 6
++ echo a dI 510
++ for format2 in $list
++ od -An -taz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a dL 510
+++ expr 85 '*' 6
++ echo a dL 510
++ for format2 in $list
++ od -An -taz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a oC 510
+++ expr 85 '*' 6
++ echo a oC 510
++ for format2 in $list
++ od -An -taz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a oS 510
+++ expr 85 '*' 6
++ echo a oS 510
++ for format2 in $list
++ od -An -taz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a oI 510
+++ expr 85 '*' 6
++ echo a oI 510
++ for format2 in $list
++ od -An -taz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a oL 510
+++ expr 85 '*' 6
++ echo a oL 510
++ for format2 in $list
++ od -An -taz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a uC 510
+++ expr 85 '*' 6
++ echo a uC 510
++ for format2 in $list
++ od -An -taz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a uS 510
+++ expr 85 '*' 6
++ echo a uS 510
++ for format2 in $list
++ od -An -taz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a uI 510
+++ expr 85 '*' 6
++ echo a uI 510
++ for format2 in $list
++ od -An -taz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a uL 510
+++ expr 85 '*' 6
++ echo a uL 510
++ for format2 in $list
++ od -An -taz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a xC 510
+++ expr 85 '*' 6
++ echo a xC 510
++ for format2 in $list
++ od -An -taz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a xS 510
+++ expr 85 '*' 6
++ echo a xS 510
++ for format2 in $list
++ od -An -taz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a xI 510
+++ expr 85 '*' 6
++ echo a xI 510
++ for format2 in $list
++ od -An -taz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a xL 510
+++ expr 85 '*' 6
++ echo a xL 510
++ for format2 in $list
++ od -An -taz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a fF 510
+++ expr 85 '*' 6
++ echo a fF 510
++ for format2 in $list
++ od -An -taz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo a fD 510
+++ expr 85 '*' 6
++ echo a fD 510
++ for format1 in $list
++ for format2 in $list
++ od -An -tcz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c a 510
+++ expr 85 '*' 6
++ echo c a 510
++ for format2 in $list
++ od -An -tcz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c c 510
+++ expr 85 '*' 6
++ echo c c 510
++ for format2 in $list
++ od -An -tcz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c dC 606
+++ expr 101 '*' 6
++ echo c dC 606
++ for format2 in $list
++ od -An -tcz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c dS 510
+++ expr 85 '*' 6
++ echo c dS 510
++ for format2 in $list
++ od -An -tcz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c dI 510
+++ expr 85 '*' 6
++ echo c dI 510
++ for format2 in $list
++ od -An -tcz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c dL 510
+++ expr 85 '*' 6
++ echo c dL 510
++ for format2 in $list
++ od -An -tcz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c oC 510
+++ expr 85 '*' 6
++ echo c oC 510
++ for format2 in $list
++ od -An -tcz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c oS 510
+++ expr 85 '*' 6
++ echo c oS 510
++ for format2 in $list
++ od -An -tcz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c oI 510
+++ expr 85 '*' 6
++ echo c oI 510
++ for format2 in $list
++ od -An -tcz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c oL 510
+++ expr 85 '*' 6
++ echo c oL 510
++ for format2 in $list
++ od -An -tcz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c uC 510
+++ expr 85 '*' 6
++ echo c uC 510
++ for format2 in $list
++ od -An -tcz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c uS 510
+++ expr 85 '*' 6
++ echo c uS 510
++ for format2 in $list
++ od -An -tcz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c uI 510
+++ expr 85 '*' 6
++ echo c uI 510
++ for format2 in $list
++ od -An -tcz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c uL 510
+++ expr 85 '*' 6
++ echo c uL 510
++ for format2 in $list
++ od -An -tcz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c xC 510
+++ expr 85 '*' 6
++ echo c xC 510
++ for format2 in $list
++ od -An -tcz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c xS 510
+++ expr 85 '*' 6
++ echo c xS 510
++ for format2 in $list
++ od -An -tcz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c xI 510
+++ expr 85 '*' 6
++ echo c xI 510
++ for format2 in $list
++ od -An -tcz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c xL 510
+++ expr 85 '*' 6
++ echo c xL 510
++ for format2 in $list
++ od -An -tcz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c fF 510
+++ expr 85 '*' 6
++ echo c fF 510
++ for format2 in $list
++ od -An -tcz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo c fD 510
+++ expr 85 '*' 6
++ echo c fD 510
++ for format1 in $list
++ for format2 in $list
++ od -An -tdCz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC a 606
+++ expr 101 '*' 6
++ echo dC a 606
++ for format2 in $list
++ od -An -tdCz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC c 606
+++ expr 101 '*' 6
++ echo dC c 606
++ for format2 in $list
++ od -An -tdCz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC dC 606
+++ expr 101 '*' 6
++ echo dC dC 606
++ for format2 in $list
++ od -An -tdCz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC dS 606
+++ expr 101 '*' 6
++ echo dC dS 606
++ for format2 in $list
++ od -An -tdCz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC dI 606
+++ expr 101 '*' 6
++ echo dC dI 606
++ for format2 in $list
++ od -An -tdCz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC dL 606
+++ expr 101 '*' 6
++ echo dC dL 606
++ for format2 in $list
++ od -An -tdCz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC oC 606
+++ expr 101 '*' 6
++ echo dC oC 606
++ for format2 in $list
++ od -An -tdCz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC oS 606
+++ expr 101 '*' 6
++ echo dC oS 606
++ for format2 in $list
++ od -An -tdCz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC oI 606
+++ expr 101 '*' 6
++ echo dC oI 606
++ for format2 in $list
++ od -An -tdCz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC oL 606
+++ expr 101 '*' 6
++ echo dC oL 606
++ for format2 in $list
++ od -An -tdCz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC uC 606
+++ expr 101 '*' 6
++ echo dC uC 606
++ for format2 in $list
++ od -An -tdCz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC uS 606
+++ expr 101 '*' 6
++ echo dC uS 606
++ for format2 in $list
++ od -An -tdCz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC uI 606
+++ expr 101 '*' 6
++ echo dC uI 606
++ for format2 in $list
++ od -An -tdCz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC uL 606
+++ expr 101 '*' 6
++ echo dC uL 606
++ for format2 in $list
++ od -An -tdCz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC xC 606
+++ expr 101 '*' 6
++ echo dC xC 606
++ for format2 in $list
++ od -An -tdCz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC xS 606
+++ expr 101 '*' 6
++ echo dC xS 606
++ for format2 in $list
++ od -An -tdCz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC xI 606
+++ expr 101 '*' 6
++ echo dC xI 606
++ for format2 in $list
++ od -An -tdCz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC xL 606
+++ expr 101 '*' 6
++ echo dC xL 606
++ for format2 in $list
++ od -An -tdCz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC fF 606
+++ expr 101 '*' 6
++ echo dC fF 606
++ for format2 in $list
++ od -An -tdCz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dC fD 606
+++ expr 101 '*' 6
++ echo dC fD 606
++ for format1 in $list
++ for format2 in $list
++ od -An -tdSz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS a 510
+++ expr 85 '*' 6
++ echo dS a 510
++ for format2 in $list
++ od -An -tdSz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS c 510
+++ expr 85 '*' 6
++ echo dS c 510
++ for format2 in $list
++ od -An -tdSz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS dC 606
+++ expr 101 '*' 6
++ echo dS dC 606
++ for format2 in $list
++ od -An -tdSz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS dS 462
+++ expr 77 '*' 6
++ echo dS dS 462
++ for format2 in $list
++ od -An -tdSz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS dI 462
+++ expr 77 '*' 6
++ echo dS dI 462
++ for format2 in $list
++ od -An -tdSz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS dL 462
+++ expr 77 '*' 6
++ echo dS dL 462
++ for format2 in $list
++ od -An -tdSz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS oC 510
+++ expr 85 '*' 6
++ echo dS oC 510
++ for format2 in $list
++ od -An -tdSz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS oS 462
+++ expr 77 '*' 6
++ echo dS oS 462
++ for format2 in $list
++ od -An -tdSz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS oI 462
+++ expr 77 '*' 6
++ echo dS oI 462
++ for format2 in $list
++ od -An -tdSz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS oL 462
+++ expr 77 '*' 6
++ echo dS oL 462
++ for format2 in $list
++ od -An -tdSz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS uC 510
+++ expr 85 '*' 6
++ echo dS uC 510
++ for format2 in $list
++ od -An -tdSz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS uS 462
+++ expr 77 '*' 6
++ echo dS uS 462
++ for format2 in $list
++ od -An -tdSz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS uI 462
+++ expr 77 '*' 6
++ echo dS uI 462
++ for format2 in $list
++ od -An -tdSz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS uL 462
+++ expr 77 '*' 6
++ echo dS uL 462
++ for format2 in $list
++ od -An -tdSz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS xC 462
+++ expr 77 '*' 6
++ echo dS xC 462
++ for format2 in $list
++ od -An -tdSz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS xS 462
+++ expr 77 '*' 6
++ echo dS xS 462
++ for format2 in $list
++ od -An -tdSz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS xI 462
+++ expr 77 '*' 6
++ echo dS xI 462
++ for format2 in $list
++ od -An -tdSz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS xL 462
+++ expr 77 '*' 6
++ echo dS xL 462
++ for format2 in $list
++ od -An -tdSz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS fF 510
+++ expr 85 '*' 6
++ echo dS fF 510
++ for format2 in $list
++ od -An -tdSz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dS fD 462
+++ expr 77 '*' 6
++ echo dS fD 462
++ for format1 in $list
++ for format2 in $list
++ od -An -tdIz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI a 510
+++ expr 85 '*' 6
++ echo dI a 510
++ for format2 in $list
++ od -An -tdIz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI c 510
+++ expr 85 '*' 6
++ echo dI c 510
++ for format2 in $list
++ od -An -tdIz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI dC 606
+++ expr 101 '*' 6
++ echo dI dC 606
++ for format2 in $list
++ od -An -tdIz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI dS 462
+++ expr 77 '*' 6
++ echo dI dS 462
++ for format2 in $list
++ od -An -tdIz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI dI 414
+++ expr 69 '*' 6
++ echo dI dI 414
++ for format2 in $list
++ od -An -tdIz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI dL 414
+++ expr 69 '*' 6
++ echo dI dL 414
++ for format2 in $list
++ od -An -tdIz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI oC 510
+++ expr 85 '*' 6
++ echo dI oC 510
++ for format2 in $list
++ od -An -tdIz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI oS 462
+++ expr 77 '*' 6
++ echo dI oS 462
++ for format2 in $list
++ od -An -tdIz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI oI 414
+++ expr 69 '*' 6
++ echo dI oI 414
++ for format2 in $list
++ od -An -tdIz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI oL 414
+++ expr 69 '*' 6
++ echo dI oL 414
++ for format2 in $list
++ od -An -tdIz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI uC 510
+++ expr 85 '*' 6
++ echo dI uC 510
++ for format2 in $list
++ od -An -tdIz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI uS 414
+++ expr 69 '*' 6
++ echo dI uS 414
++ for format2 in $list
++ od -An -tdIz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI uI 414
+++ expr 69 '*' 6
++ echo dI uI 414
++ for format2 in $list
++ od -An -tdIz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI uL 414
+++ expr 69 '*' 6
++ echo dI uL 414
++ for format2 in $list
++ od -An -tdIz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI xC 414
+++ expr 69 '*' 6
++ echo dI xC 414
++ for format2 in $list
++ od -An -tdIz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI xS 414
+++ expr 69 '*' 6
++ echo dI xS 414
++ for format2 in $list
++ od -An -tdIz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI xI 414
+++ expr 69 '*' 6
++ echo dI xI 414
++ for format2 in $list
++ od -An -tdIz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI xL 414
+++ expr 69 '*' 6
++ echo dI xL 414
++ for format2 in $list
++ od -An -tdIz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI fF 510
+++ expr 85 '*' 6
++ echo dI fF 510
++ for format2 in $list
++ od -An -tdIz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dI fD 426
+++ expr 71 '*' 6
++ echo dI fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -tdLz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL a 510
+++ expr 85 '*' 6
++ echo dL a 510
++ for format2 in $list
++ od -An -tdLz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL c 510
+++ expr 85 '*' 6
++ echo dL c 510
++ for format2 in $list
++ od -An -tdLz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL dC 606
+++ expr 101 '*' 6
++ echo dL dC 606
++ for format2 in $list
++ od -An -tdLz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL dS 462
+++ expr 77 '*' 6
++ echo dL dS 462
++ for format2 in $list
++ od -An -tdLz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL dI 414
+++ expr 69 '*' 6
++ echo dL dI 414
++ for format2 in $list
++ od -An -tdLz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL dL 378
+++ expr 63 '*' 6
++ echo dL dL 378
++ for format2 in $list
++ od -An -tdLz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL oC 510
+++ expr 85 '*' 6
++ echo dL oC 510
++ for format2 in $list
++ od -An -tdLz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL oS 462
+++ expr 77 '*' 6
++ echo dL oS 462
++ for format2 in $list
++ od -An -tdLz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL oI 414
+++ expr 69 '*' 6
++ echo dL oI 414
++ for format2 in $list
++ od -An -tdLz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL oL 402
+++ expr 67 '*' 6
++ echo dL oL 402
++ for format2 in $list
++ od -An -tdLz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL uC 510
+++ expr 85 '*' 6
++ echo dL uC 510
++ for format2 in $list
++ od -An -tdLz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL uS 414
+++ expr 69 '*' 6
++ echo dL uS 414
++ for format2 in $list
++ od -An -tdLz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL uI 390
+++ expr 65 '*' 6
++ echo dL uI 390
++ for format2 in $list
++ od -An -tdLz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL uL 378
+++ expr 63 '*' 6
++ echo dL uL 378
++ for format2 in $list
++ od -An -tdLz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL xC 414
+++ expr 69 '*' 6
++ echo dL xC 414
++ for format2 in $list
++ od -An -tdLz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL xS 378
+++ expr 63 '*' 6
++ echo dL xS 378
++ for format2 in $list
++ od -An -tdLz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL xI 378
+++ expr 63 '*' 6
++ echo dL xI 378
++ for format2 in $list
++ od -An -tdLz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL xL 378
+++ expr 63 '*' 6
++ echo dL xL 378
++ for format2 in $list
++ od -An -tdLz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL fF 510
+++ expr 85 '*' 6
++ echo dL fF 510
++ for format2 in $list
++ od -An -tdLz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo dL fD 426
+++ expr 71 '*' 6
++ echo dL fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -toCz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC a 510
+++ expr 85 '*' 6
++ echo oC a 510
++ for format2 in $list
++ od -An -toCz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC c 510
+++ expr 85 '*' 6
++ echo oC c 510
++ for format2 in $list
++ od -An -toCz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC dC 606
+++ expr 101 '*' 6
++ echo oC dC 606
++ for format2 in $list
++ od -An -toCz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC dS 510
+++ expr 85 '*' 6
++ echo oC dS 510
++ for format2 in $list
++ od -An -toCz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC dI 510
+++ expr 85 '*' 6
++ echo oC dI 510
++ for format2 in $list
++ od -An -toCz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC dL 510
+++ expr 85 '*' 6
++ echo oC dL 510
++ for format2 in $list
++ od -An -toCz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC oC 510
+++ expr 85 '*' 6
++ echo oC oC 510
++ for format2 in $list
++ od -An -toCz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC oS 510
+++ expr 85 '*' 6
++ echo oC oS 510
++ for format2 in $list
++ od -An -toCz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC oI 510
+++ expr 85 '*' 6
++ echo oC oI 510
++ for format2 in $list
++ od -An -toCz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC oL 510
+++ expr 85 '*' 6
++ echo oC oL 510
++ for format2 in $list
++ od -An -toCz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC uC 510
+++ expr 85 '*' 6
++ echo oC uC 510
++ for format2 in $list
++ od -An -toCz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC uS 510
+++ expr 85 '*' 6
++ echo oC uS 510
++ for format2 in $list
++ od -An -toCz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC uI 510
+++ expr 85 '*' 6
++ echo oC uI 510
++ for format2 in $list
++ od -An -toCz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC uL 510
+++ expr 85 '*' 6
++ echo oC uL 510
++ for format2 in $list
++ od -An -toCz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC xC 510
+++ expr 85 '*' 6
++ echo oC xC 510
++ for format2 in $list
++ od -An -toCz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC xS 510
+++ expr 85 '*' 6
++ echo oC xS 510
++ for format2 in $list
++ od -An -toCz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC xI 510
+++ expr 85 '*' 6
++ echo oC xI 510
++ for format2 in $list
++ od -An -toCz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC xL 510
+++ expr 85 '*' 6
++ echo oC xL 510
++ for format2 in $list
++ od -An -toCz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC fF 510
+++ expr 85 '*' 6
++ echo oC fF 510
++ for format2 in $list
++ od -An -toCz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oC fD 510
+++ expr 85 '*' 6
++ echo oC fD 510
++ for format1 in $list
++ for format2 in $list
++ od -An -toSz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS a 510
+++ expr 85 '*' 6
++ echo oS a 510
++ for format2 in $list
++ od -An -toSz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS c 510
+++ expr 85 '*' 6
++ echo oS c 510
++ for format2 in $list
++ od -An -toSz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS dC 606
+++ expr 101 '*' 6
++ echo oS dC 606
++ for format2 in $list
++ od -An -toSz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS dS 462
+++ expr 77 '*' 6
++ echo oS dS 462
++ for format2 in $list
++ od -An -toSz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS dI 462
+++ expr 77 '*' 6
++ echo oS dI 462
++ for format2 in $list
++ od -An -toSz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS dL 462
+++ expr 77 '*' 6
++ echo oS dL 462
++ for format2 in $list
++ od -An -toSz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS oC 510
+++ expr 85 '*' 6
++ echo oS oC 510
++ for format2 in $list
++ od -An -toSz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS oS 462
+++ expr 77 '*' 6
++ echo oS oS 462
++ for format2 in $list
++ od -An -toSz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS oI 462
+++ expr 77 '*' 6
++ echo oS oI 462
++ for format2 in $list
++ od -An -toSz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS oL 462
+++ expr 77 '*' 6
++ echo oS oL 462
++ for format2 in $list
++ od -An -toSz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS uC 510
+++ expr 85 '*' 6
++ echo oS uC 510
++ for format2 in $list
++ od -An -toSz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS uS 462
+++ expr 77 '*' 6
++ echo oS uS 462
++ for format2 in $list
++ od -An -toSz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS uI 462
+++ expr 77 '*' 6
++ echo oS uI 462
++ for format2 in $list
++ od -An -toSz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS uL 462
+++ expr 77 '*' 6
++ echo oS uL 462
++ for format2 in $list
++ od -An -toSz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS xC 462
+++ expr 77 '*' 6
++ echo oS xC 462
++ for format2 in $list
++ od -An -toSz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS xS 462
+++ expr 77 '*' 6
++ echo oS xS 462
++ for format2 in $list
++ od -An -toSz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS xI 462
+++ expr 77 '*' 6
++ echo oS xI 462
++ for format2 in $list
++ od -An -toSz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS xL 462
+++ expr 77 '*' 6
++ echo oS xL 462
++ for format2 in $list
++ od -An -toSz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS fF 510
+++ expr 85 '*' 6
++ echo oS fF 510
++ for format2 in $list
++ od -An -toSz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oS fD 462
+++ expr 77 '*' 6
++ echo oS fD 462
++ for format1 in $list
++ for format2 in $list
++ od -An -toIz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI a 510
+++ expr 85 '*' 6
++ echo oI a 510
++ for format2 in $list
++ od -An -toIz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI c 510
+++ expr 85 '*' 6
++ echo oI c 510
++ for format2 in $list
++ od -An -toIz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI dC 606
+++ expr 101 '*' 6
++ echo oI dC 606
++ for format2 in $list
++ od -An -toIz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI dS 462
+++ expr 77 '*' 6
++ echo oI dS 462
++ for format2 in $list
++ od -An -toIz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI dI 414
+++ expr 69 '*' 6
++ echo oI dI 414
++ for format2 in $list
++ od -An -toIz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI dL 414
+++ expr 69 '*' 6
++ echo oI dL 414
++ for format2 in $list
++ od -An -toIz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI oC 510
+++ expr 85 '*' 6
++ echo oI oC 510
++ for format2 in $list
++ od -An -toIz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI oS 462
+++ expr 77 '*' 6
++ echo oI oS 462
++ for format2 in $list
++ od -An -toIz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI oI 414
+++ expr 69 '*' 6
++ echo oI oI 414
++ for format2 in $list
++ od -An -toIz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI oL 414
+++ expr 69 '*' 6
++ echo oI oL 414
++ for format2 in $list
++ od -An -toIz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI uC 510
+++ expr 85 '*' 6
++ echo oI uC 510
++ for format2 in $list
++ od -An -toIz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI uS 414
+++ expr 69 '*' 6
++ echo oI uS 414
++ for format2 in $list
++ od -An -toIz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI uI 414
+++ expr 69 '*' 6
++ echo oI uI 414
++ for format2 in $list
++ od -An -toIz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI uL 414
+++ expr 69 '*' 6
++ echo oI uL 414
++ for format2 in $list
++ od -An -toIz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI xC 414
+++ expr 69 '*' 6
++ echo oI xC 414
++ for format2 in $list
++ od -An -toIz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI xS 414
+++ expr 69 '*' 6
++ echo oI xS 414
++ for format2 in $list
++ od -An -toIz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI xI 414
+++ expr 69 '*' 6
++ echo oI xI 414
++ for format2 in $list
++ od -An -toIz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI xL 414
+++ expr 69 '*' 6
++ echo oI xL 414
++ for format2 in $list
++ od -An -toIz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI fF 510
+++ expr 85 '*' 6
++ echo oI fF 510
++ for format2 in $list
++ od -An -toIz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oI fD 426
+++ expr 71 '*' 6
++ echo oI fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -toLz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL a 510
+++ expr 85 '*' 6
++ echo oL a 510
++ for format2 in $list
++ od -An -toLz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL c 510
+++ expr 85 '*' 6
++ echo oL c 510
++ for format2 in $list
++ od -An -toLz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL dC 606
+++ expr 101 '*' 6
++ echo oL dC 606
++ for format2 in $list
++ od -An -toLz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL dS 462
+++ expr 77 '*' 6
++ echo oL dS 462
++ for format2 in $list
++ od -An -toLz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL dI 414
+++ expr 69 '*' 6
++ echo oL dI 414
++ for format2 in $list
++ od -An -toLz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL dL 402
+++ expr 67 '*' 6
++ echo oL dL 402
++ for format2 in $list
++ od -An -toLz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL oC 510
+++ expr 85 '*' 6
++ echo oL oC 510
++ for format2 in $list
++ od -An -toLz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL oS 462
+++ expr 77 '*' 6
++ echo oL oS 462
++ for format2 in $list
++ od -An -toLz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL oI 414
+++ expr 69 '*' 6
++ echo oL oI 414
++ for format2 in $list
++ od -An -toLz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL oL 402
+++ expr 67 '*' 6
++ echo oL oL 402
++ for format2 in $list
++ od -An -toLz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL uC 510
+++ expr 85 '*' 6
++ echo oL uC 510
++ for format2 in $list
++ od -An -toLz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL uS 414
+++ expr 69 '*' 6
++ echo oL uS 414
++ for format2 in $list
++ od -An -toLz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL uI 402
+++ expr 67 '*' 6
++ echo oL uI 402
++ for format2 in $list
++ od -An -toLz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL uL 402
+++ expr 67 '*' 6
++ echo oL uL 402
++ for format2 in $list
++ od -An -toLz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL xC 414
+++ expr 69 '*' 6
++ echo oL xC 414
++ for format2 in $list
++ od -An -toLz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL xS 402
+++ expr 67 '*' 6
++ echo oL xS 402
++ for format2 in $list
++ od -An -toLz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL xI 402
+++ expr 67 '*' 6
++ echo oL xI 402
++ for format2 in $list
++ od -An -toLz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL xL 402
+++ expr 67 '*' 6
++ echo oL xL 402
++ for format2 in $list
++ od -An -toLz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL fF 510
+++ expr 85 '*' 6
++ echo oL fF 510
++ for format2 in $list
++ od -An -toLz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo oL fD 426
+++ expr 71 '*' 6
++ echo oL fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -tuCz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC a 510
+++ expr 85 '*' 6
++ echo uC a 510
++ for format2 in $list
++ od -An -tuCz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC c 510
+++ expr 85 '*' 6
++ echo uC c 510
++ for format2 in $list
++ od -An -tuCz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC dC 606
+++ expr 101 '*' 6
++ echo uC dC 606
++ for format2 in $list
++ od -An -tuCz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC dS 510
+++ expr 85 '*' 6
++ echo uC dS 510
++ for format2 in $list
++ od -An -tuCz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC dI 510
+++ expr 85 '*' 6
++ echo uC dI 510
++ for format2 in $list
++ od -An -tuCz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC dL 510
+++ expr 85 '*' 6
++ echo uC dL 510
++ for format2 in $list
++ od -An -tuCz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC oC 510
+++ expr 85 '*' 6
++ echo uC oC 510
++ for format2 in $list
++ od -An -tuCz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC oS 510
+++ expr 85 '*' 6
++ echo uC oS 510
++ for format2 in $list
++ od -An -tuCz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC oI 510
+++ expr 85 '*' 6
++ echo uC oI 510
++ for format2 in $list
++ od -An -tuCz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC oL 510
+++ expr 85 '*' 6
++ echo uC oL 510
++ for format2 in $list
++ od -An -tuCz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC uC 510
+++ expr 85 '*' 6
++ echo uC uC 510
++ for format2 in $list
++ od -An -tuCz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC uS 510
+++ expr 85 '*' 6
++ echo uC uS 510
++ for format2 in $list
++ od -An -tuCz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC uI 510
+++ expr 85 '*' 6
++ echo uC uI 510
++ for format2 in $list
++ od -An -tuCz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC uL 510
+++ expr 85 '*' 6
++ echo uC uL 510
++ for format2 in $list
++ od -An -tuCz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC xC 510
+++ expr 85 '*' 6
++ echo uC xC 510
++ for format2 in $list
++ od -An -tuCz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC xS 510
+++ expr 85 '*' 6
++ echo uC xS 510
++ for format2 in $list
++ od -An -tuCz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC xI 510
+++ expr 85 '*' 6
++ echo uC xI 510
++ for format2 in $list
++ od -An -tuCz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC xL 510
+++ expr 85 '*' 6
++ echo uC xL 510
++ for format2 in $list
++ od -An -tuCz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC fF 510
+++ expr 85 '*' 6
++ echo uC fF 510
++ for format2 in $list
++ od -An -tuCz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uC fD 510
+++ expr 85 '*' 6
++ echo uC fD 510
++ for format1 in $list
++ for format2 in $list
++ od -An -tuSz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS a 510
+++ expr 85 '*' 6
++ echo uS a 510
++ for format2 in $list
++ od -An -tuSz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS c 510
+++ expr 85 '*' 6
++ echo uS c 510
++ for format2 in $list
++ od -An -tuSz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS dC 606
+++ expr 101 '*' 6
++ echo uS dC 606
++ for format2 in $list
++ od -An -tuSz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS dS 462
+++ expr 77 '*' 6
++ echo uS dS 462
++ for format2 in $list
++ od -An -tuSz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS dI 414
+++ expr 69 '*' 6
++ echo uS dI 414
++ for format2 in $list
++ od -An -tuSz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS dL 414
+++ expr 69 '*' 6
++ echo uS dL 414
++ for format2 in $list
++ od -An -tuSz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS oC 510
+++ expr 85 '*' 6
++ echo uS oC 510
++ for format2 in $list
++ od -An -tuSz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS oS 462
+++ expr 77 '*' 6
++ echo uS oS 462
++ for format2 in $list
++ od -An -tuSz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS oI 414
+++ expr 69 '*' 6
++ echo uS oI 414
++ for format2 in $list
++ od -An -tuSz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS oL 414
+++ expr 69 '*' 6
++ echo uS oL 414
++ for format2 in $list
++ od -An -tuSz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS uC 510
+++ expr 85 '*' 6
++ echo uS uC 510
++ for format2 in $list
++ od -An -tuSz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS uS 414
+++ expr 69 '*' 6
++ echo uS uS 414
++ for format2 in $list
++ od -An -tuSz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS uI 414
+++ expr 69 '*' 6
++ echo uS uI 414
++ for format2 in $list
++ od -An -tuSz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS uL 414
+++ expr 69 '*' 6
++ echo uS uL 414
++ for format2 in $list
++ od -An -tuSz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS xC 414
+++ expr 69 '*' 6
++ echo uS xC 414
++ for format2 in $list
++ od -An -tuSz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS xS 414
+++ expr 69 '*' 6
++ echo uS xS 414
++ for format2 in $list
++ od -An -tuSz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS xI 414
+++ expr 69 '*' 6
++ echo uS xI 414
++ for format2 in $list
++ od -An -tuSz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS xL 414
+++ expr 69 '*' 6
++ echo uS xL 414
++ for format2 in $list
++ od -An -tuSz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS fF 510
+++ expr 85 '*' 6
++ echo uS fF 510
++ for format2 in $list
++ od -An -tuSz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uS fD 426
+++ expr 71 '*' 6
++ echo uS fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -tuIz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI a 510
+++ expr 85 '*' 6
++ echo uI a 510
++ for format2 in $list
++ od -An -tuIz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI c 510
+++ expr 85 '*' 6
++ echo uI c 510
++ for format2 in $list
++ od -An -tuIz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI dC 606
+++ expr 101 '*' 6
++ echo uI dC 606
++ for format2 in $list
++ od -An -tuIz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI dS 462
+++ expr 77 '*' 6
++ echo uI dS 462
++ for format2 in $list
++ od -An -tuIz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI dI 414
+++ expr 69 '*' 6
++ echo uI dI 414
++ for format2 in $list
++ od -An -tuIz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI dL 390
+++ expr 65 '*' 6
++ echo uI dL 390
++ for format2 in $list
++ od -An -tuIz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI oC 510
+++ expr 85 '*' 6
++ echo uI oC 510
++ for format2 in $list
++ od -An -tuIz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI oS 462
+++ expr 77 '*' 6
++ echo uI oS 462
++ for format2 in $list
++ od -An -tuIz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI oI 414
+++ expr 69 '*' 6
++ echo uI oI 414
++ for format2 in $list
++ od -An -tuIz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI oL 402
+++ expr 67 '*' 6
++ echo uI oL 402
++ for format2 in $list
++ od -An -tuIz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI uC 510
+++ expr 85 '*' 6
++ echo uI uC 510
++ for format2 in $list
++ od -An -tuIz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI uS 414
+++ expr 69 '*' 6
++ echo uI uS 414
++ for format2 in $list
++ od -An -tuIz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI uI 390
+++ expr 65 '*' 6
++ echo uI uI 390
++ for format2 in $list
++ od -An -tuIz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI uL 390
+++ expr 65 '*' 6
++ echo uI uL 390
++ for format2 in $list
++ od -An -tuIz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI xC 414
+++ expr 69 '*' 6
++ echo uI xC 414
++ for format2 in $list
++ od -An -tuIz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI xS 390
+++ expr 65 '*' 6
++ echo uI xS 390
++ for format2 in $list
++ od -An -tuIz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI xI 390
+++ expr 65 '*' 6
++ echo uI xI 390
++ for format2 in $list
++ od -An -tuIz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI xL 390
+++ expr 65 '*' 6
++ echo uI xL 390
++ for format2 in $list
++ od -An -tuIz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI fF 510
+++ expr 85 '*' 6
++ echo uI fF 510
++ for format2 in $list
++ od -An -tuIz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uI fD 426
+++ expr 71 '*' 6
++ echo uI fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -tuLz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL a 510
+++ expr 85 '*' 6
++ echo uL a 510
++ for format2 in $list
++ od -An -tuLz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL c 510
+++ expr 85 '*' 6
++ echo uL c 510
++ for format2 in $list
++ od -An -tuLz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL dC 606
+++ expr 101 '*' 6
++ echo uL dC 606
++ for format2 in $list
++ od -An -tuLz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL dS 462
+++ expr 77 '*' 6
++ echo uL dS 462
++ for format2 in $list
++ od -An -tuLz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL dI 414
+++ expr 69 '*' 6
++ echo uL dI 414
++ for format2 in $list
++ od -An -tuLz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL dL 378
+++ expr 63 '*' 6
++ echo uL dL 378
++ for format2 in $list
++ od -An -tuLz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL oC 510
+++ expr 85 '*' 6
++ echo uL oC 510
++ for format2 in $list
++ od -An -tuLz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL oS 462
+++ expr 77 '*' 6
++ echo uL oS 462
++ for format2 in $list
++ od -An -tuLz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL oI 414
+++ expr 69 '*' 6
++ echo uL oI 414
++ for format2 in $list
++ od -An -tuLz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL oL 402
+++ expr 67 '*' 6
++ echo uL oL 402
++ for format2 in $list
++ od -An -tuLz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL uC 510
+++ expr 85 '*' 6
++ echo uL uC 510
++ for format2 in $list
++ od -An -tuLz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL uS 414
+++ expr 69 '*' 6
++ echo uL uS 414
++ for format2 in $list
++ od -An -tuLz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL uI 390
+++ expr 65 '*' 6
++ echo uL uI 390
++ for format2 in $list
++ od -An -tuLz -tuLz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL uL 378
+++ expr 63 '*' 6
++ echo uL uL 378
++ for format2 in $list
++ od -An -tuLz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL xC 414
+++ expr 69 '*' 6
++ echo uL xC 414
++ for format2 in $list
++ od -An -tuLz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL xS 378
+++ expr 63 '*' 6
++ echo uL xS 378
++ for format2 in $list
++ od -An -tuLz -txIz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL xI 378
+++ expr 63 '*' 6
++ echo uL xI 378
++ for format2 in $list
++ od -An -tuLz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL xL 378
+++ expr 63 '*' 6
++ echo uL xL 378
++ for format2 in $list
++ od -An -tuLz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL fF 510
+++ expr 85 '*' 6
++ echo uL fF 510
++ for format2 in $list
++ od -An -tuLz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo uL fD 426
+++ expr 71 '*' 6
++ echo uL fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -txCz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC a 510
+++ expr 85 '*' 6
++ echo xC a 510
++ for format2 in $list
++ od -An -txCz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC c 510
+++ expr 85 '*' 6
++ echo xC c 510
++ for format2 in $list
++ od -An -txCz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC dC 606
+++ expr 101 '*' 6
++ echo xC dC 606
++ for format2 in $list
++ od -An -txCz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC dS 462
+++ expr 77 '*' 6
++ echo xC dS 462
++ for format2 in $list
++ od -An -txCz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC dI 414
+++ expr 69 '*' 6
++ echo xC dI 414
++ for format2 in $list
++ od -An -txCz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC dL 414
+++ expr 69 '*' 6
++ echo xC dL 414
++ for format2 in $list
++ od -An -txCz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC oC 510
+++ expr 85 '*' 6
++ echo xC oC 510
++ for format2 in $list
++ od -An -txCz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC oS 462
+++ expr 77 '*' 6
++ echo xC oS 462
++ for format2 in $list
++ od -An -txCz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC oI 414
+++ expr 69 '*' 6
++ echo xC oI 414
++ for format2 in $list
++ od -An -txCz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC oL 414
+++ expr 69 '*' 6
++ echo xC oL 414
++ for format2 in $list
++ od -An -txCz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC uC 510
+++ expr 85 '*' 6
++ echo xC uC 510
++ for format2 in $list
++ od -An -txCz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC uS 414
+++ expr 69 '*' 6
++ echo xC uS 414
++ for format2 in $list
++ od -An -txCz -tuIz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC uI 414
+++ expr 69 '*' 6
++ echo xC uI 414
++ for format2 in $list
++ od -An -txCz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC uL 414
+++ expr 69 '*' 6
++ echo xC uL 414
++ for format2 in $list
++ od -An -txCz -txCz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC xC 414
+++ expr 69 '*' 6
++ echo xC xC 414
++ for format2 in $list
++ od -An -txCz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC xS 414
+++ expr 69 '*' 6
++ echo xC xS 414
++ for format2 in $list
++ od -An -txCz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC xI 414
+++ expr 69 '*' 6
++ echo xC xI 414
++ for format2 in $list
++ od -An -txCz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC xL 414
+++ expr 69 '*' 6
++ echo xC xL 414
++ for format2 in $list
++ od -An -txCz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC fF 510
+++ expr 85 '*' 6
++ echo xC fF 510
++ for format2 in $list
++ od -An -txCz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xC fD 426
+++ expr 71 '*' 6
++ echo xC fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -txSz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS a 510
+++ expr 85 '*' 6
++ echo xS a 510
++ for format2 in $list
++ od -An -txSz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS c 510
+++ expr 85 '*' 6
++ echo xS c 510
++ for format2 in $list
++ od -An -txSz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS dC 606
+++ expr 101 '*' 6
++ echo xS dC 606
++ for format2 in $list
++ od -An -txSz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS dS 462
+++ expr 77 '*' 6
++ echo xS dS 462
++ for format2 in $list
++ od -An -txSz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS dI 414
+++ expr 69 '*' 6
++ echo xS dI 414
++ for format2 in $list
++ od -An -txSz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS dL 378
+++ expr 63 '*' 6
++ echo xS dL 378
++ for format2 in $list
++ od -An -txSz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS oC 510
+++ expr 85 '*' 6
++ echo xS oC 510
++ for format2 in $list
++ od -An -txSz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS oS 462
+++ expr 77 '*' 6
++ echo xS oS 462
++ for format2 in $list
++ od -An -txSz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS oI 414
+++ expr 69 '*' 6
++ echo xS oI 414
++ for format2 in $list
++ od -An -txSz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS oL 402
+++ expr 67 '*' 6
++ echo xS oL 402
++ for format2 in $list
++ od -An -txSz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS uC 510
+++ expr 85 '*' 6
++ echo xS uC 510
++ for format2 in $list
++ od -An -txSz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS uS 414
+++ expr 69 '*' 6
++ echo xS uS 414
++ for format2 in $list
++ od -An -txSz -tuIz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS uI 390
+++ expr 65 '*' 6
++ echo xS uI 390
++ for format2 in $list
++ od -An -txSz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS uL 378
+++ expr 63 '*' 6
++ echo xS uL 378
++ for format2 in $list
++ od -An -txSz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS xC 414
+++ expr 69 '*' 6
++ echo xS xC 414
++ for format2 in $list
++ od -An -txSz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=61
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS xS 366
+++ expr 61 '*' 6
++ echo xS xS 366
++ for format2 in $list
++ od -An -txSz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=61
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS xI 366
+++ expr 61 '*' 6
++ echo xS xI 366
++ for format2 in $list
++ od -An -txSz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=61
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS xL 366
+++ expr 61 '*' 6
++ echo xS xL 366
++ for format2 in $list
++ od -An -txSz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS fF 510
+++ expr 85 '*' 6
++ echo xS fF 510
++ for format2 in $list
++ od -An -txSz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xS fD 426
+++ expr 71 '*' 6
++ echo xS fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -txIz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI a 510
+++ expr 85 '*' 6
++ echo xI a 510
++ for format2 in $list
++ od -An -txIz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI c 510
+++ expr 85 '*' 6
++ echo xI c 510
++ for format2 in $list
++ od -An -txIz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI dC 606
+++ expr 101 '*' 6
++ echo xI dC 606
++ for format2 in $list
++ od -An -txIz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI dS 462
+++ expr 77 '*' 6
++ echo xI dS 462
++ for format2 in $list
++ od -An -txIz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI dI 414
+++ expr 69 '*' 6
++ echo xI dI 414
++ for format2 in $list
++ od -An -txIz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI dL 378
+++ expr 63 '*' 6
++ echo xI dL 378
++ for format2 in $list
++ od -An -txIz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI oC 510
+++ expr 85 '*' 6
++ echo xI oC 510
++ for format2 in $list
++ od -An -txIz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI oS 462
+++ expr 77 '*' 6
++ echo xI oS 462
++ for format2 in $list
++ od -An -txIz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI oI 414
+++ expr 69 '*' 6
++ echo xI oI 414
++ for format2 in $list
++ od -An -txIz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI oL 402
+++ expr 67 '*' 6
++ echo xI oL 402
++ for format2 in $list
++ od -An -txIz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI uC 510
+++ expr 85 '*' 6
++ echo xI uC 510
++ for format2 in $list
++ od -An -txIz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI uS 414
+++ expr 69 '*' 6
++ echo xI uS 414
++ for format2 in $list
++ od -An -txIz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI uI 390
+++ expr 65 '*' 6
++ echo xI uI 390
++ for format2 in $list
++ od -An -txIz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI uL 378
+++ expr 63 '*' 6
++ echo xI uL 378
++ for format2 in $list
++ od -An -txIz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI xC 414
+++ expr 69 '*' 6
++ echo xI xC 414
++ for format2 in $list
++ od -An -txIz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=61
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI xS 366
+++ expr 61 '*' 6
++ echo xI xS 366
++ for format2 in $list
++ od -An -txIz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=57
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI xI 342
+++ expr 57 '*' 6
++ echo xI xI 342
++ for format2 in $list
++ od -An -txIz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=57
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI xL 342
+++ expr 57 '*' 6
++ echo xI xL 342
++ for format2 in $list
++ od -An -txIz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI fF 510
+++ expr 85 '*' 6
++ echo xI fF 510
++ for format2 in $list
++ od -An -txIz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xI fD 426
+++ expr 71 '*' 6
++ echo xI fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -txLz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL a 510
+++ expr 85 '*' 6
++ echo xL a 510
++ for format2 in $list
++ od -An -txLz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL c 510
+++ expr 85 '*' 6
++ echo xL c 510
++ for format2 in $list
++ od -An -txLz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL dC 606
+++ expr 101 '*' 6
++ echo xL dC 606
++ for format2 in $list
++ od -An -txLz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL dS 462
+++ expr 77 '*' 6
++ echo xL dS 462
++ for format2 in $list
++ od -An -txLz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL dI 414
+++ expr 69 '*' 6
++ echo xL dI 414
++ for format2 in $list
++ od -An -txLz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL dL 378
+++ expr 63 '*' 6
++ echo xL dL 378
++ for format2 in $list
++ od -An -txLz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL oC 510
+++ expr 85 '*' 6
++ echo xL oC 510
++ for format2 in $list
++ od -An -txLz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL oS 462
+++ expr 77 '*' 6
++ echo xL oS 462
++ for format2 in $list
++ od -An -txLz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL oI 414
+++ expr 69 '*' 6
++ echo xL oI 414
++ for format2 in $list
++ od -An -txLz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=67
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL oL 402
+++ expr 67 '*' 6
++ echo xL oL 402
++ for format2 in $list
++ od -An -txLz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL uC 510
+++ expr 85 '*' 6
++ echo xL uC 510
++ for format2 in $list
++ od -An -txLz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL uS 414
+++ expr 69 '*' 6
++ echo xL uS 414
++ for format2 in $list
++ od -An -txLz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=65
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL uI 390
+++ expr 65 '*' 6
++ echo xL uI 390
++ for format2 in $list
++ od -An -txLz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=63
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL uL 378
+++ expr 63 '*' 6
++ echo xL uL 378
++ for format2 in $list
++ od -An -txLz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=69
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL xC 414
+++ expr 69 '*' 6
++ echo xL xC 414
++ for format2 in $list
++ od -An -txLz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=61
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL xS 366
+++ expr 61 '*' 6
++ echo xL xS 366
++ for format2 in $list
++ od -An -txLz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=57
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL xI 342
+++ expr 57 '*' 6
++ echo xL xI 342
++ for format2 in $list
++ od -An -txLz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=55
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL xL 330
+++ expr 55 '*' 6
++ echo xL xL 330
++ for format2 in $list
++ od -An -txLz -tfFz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL fF 510
+++ expr 85 '*' 6
++ echo xL fF 510
++ for format2 in $list
++ od -An -txLz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo xL fD 426
+++ expr 71 '*' 6
++ echo xL fD 426
++ for format1 in $list
++ for format2 in $list
++ od -An -tfFz -taz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF a 510
+++ expr 85 '*' 6
++ echo fF a 510
++ for format2 in $list
++ od -An -tfFz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF c 510
+++ expr 85 '*' 6
++ echo fF c 510
++ for format2 in $list
++ od -An -tfFz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF dC 606
+++ expr 101 '*' 6
++ echo fF dC 606
++ for format2 in $list
++ od -An -tfFz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF dS 510
+++ expr 85 '*' 6
++ echo fF dS 510
++ for format2 in $list
++ od -An -tfFz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF dI 510
+++ expr 85 '*' 6
++ echo fF dI 510
++ for format2 in $list
++ od -An -tfFz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF dL 510
+++ expr 85 '*' 6
++ echo fF dL 510
++ for format2 in $list
++ od -An -tfFz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF oC 510
+++ expr 85 '*' 6
++ echo fF oC 510
++ for format2 in $list
++ od -An -tfFz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF oS 510
+++ expr 85 '*' 6
++ echo fF oS 510
++ for format2 in $list
++ od -An -tfFz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF oI 510
+++ expr 85 '*' 6
++ echo fF oI 510
++ for format2 in $list
++ od -An -tfFz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF oL 510
+++ expr 85 '*' 6
++ echo fF oL 510
++ for format2 in $list
++ od -An -tfFz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF uC 510
+++ expr 85 '*' 6
++ echo fF uC 510
++ for format2 in $list
++ od -An -tfFz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF uS 510
+++ expr 85 '*' 6
++ echo fF uS 510
++ for format2 in $list
++ od -An -tfFz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF uI 510
+++ expr 85 '*' 6
++ echo fF uI 510
++ for format2 in $list
++ od -An -tfFz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF uL 510
+++ expr 85 '*' 6
++ echo fF uL 510
++ for format2 in $list
++ od -An -tfFz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF xC 510
+++ expr 85 '*' 6
++ echo fF xC 510
++ for format2 in $list
++ od -An -tfFz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF xS 510
+++ expr 85 '*' 6
++ echo fF xS 510
++ for format2 in $list
++ od -An -tfFz -txIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF xI 510
+++ expr 85 '*' 6
++ echo fF xI 510
++ for format2 in $list
++ od -An -tfFz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF xL 510
+++ expr 85 '*' 6
++ echo fF xL 510
++ for format2 in $list
++ od -An -tfFz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF fF 510
+++ expr 85 '*' 6
++ echo fF fF 510
++ for format2 in $list
++ od -An -tfFz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fF fD 510
+++ expr 85 '*' 6
++ echo fF fD 510
++ for format1 in $list
++ for format2 in $list
++ od -An -tfDz -taz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD a 510
+++ expr 85 '*' 6
++ echo fD a 510
++ for format2 in $list
++ od -An -tfDz -tcz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD c 510
+++ expr 85 '*' 6
++ echo fD c 510
++ for format2 in $list
++ od -An -tfDz -tdCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=101
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD dC 606
+++ expr 101 '*' 6
++ echo fD dC 606
++ for format2 in $list
++ od -An -tfDz -tdSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD dS 462
+++ expr 77 '*' 6
++ echo fD dS 462
++ for format2 in $list
++ od -An -tfDz -tdIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD dI 426
+++ expr 71 '*' 6
++ echo fD dI 426
++ for format2 in $list
++ od -An -tfDz -tdLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD dL 426
+++ expr 71 '*' 6
++ echo fD dL 426
++ for format2 in $list
++ od -An -tfDz -toCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD oC 510
+++ expr 85 '*' 6
++ echo fD oC 510
++ for format2 in $list
++ od -An -tfDz -toSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=77
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD oS 462
+++ expr 77 '*' 6
++ echo fD oS 462
++ for format2 in $list
++ od -An -tfDz -toIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD oI 426
+++ expr 71 '*' 6
++ echo fD oI 426
++ for format2 in $list
++ od -An -tfDz -toLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD oL 426
+++ expr 71 '*' 6
++ echo fD oL 426
++ for format2 in $list
++ od -An -tfDz -tuCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD uC 510
+++ expr 85 '*' 6
++ echo fD uC 510
++ for format2 in $list
++ od -An -tfDz -tuSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD uS 426
+++ expr 71 '*' 6
++ echo fD uS 426
++ for format2 in $list
++ od -An -tfDz -tuIz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD uI 426
+++ expr 71 '*' 6
++ echo fD uI 426
++ for format2 in $list
++ od -An -tfDz -tuLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD uL 426
+++ expr 71 '*' 6
++ echo fD uL 426
++ for format2 in $list
++ od -An -tfDz -txCz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD xC 426
+++ expr 71 '*' 6
++ echo fD xC 426
++ for format2 in $list
++ od -An -tfDz -txSz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD xS 426
+++ expr 71 '*' 6
++ echo fD xS 426
++ for format2 in $list
++ od -An -tfDz -txIz in
+++ wc -c
+++ head -n1 out-raw
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD xI 426
+++ expr 71 '*' 6
++ echo fD xI 426
++ for format2 in $list
++ od -An -tfDz -txLz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD xL 426
+++ expr 71 '*' 6
++ echo fD xL 426
++ for format2 in $list
++ od -An -tfDz -tfFz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=85
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD fF 510
+++ expr 85 '*' 6
++ echo fD fF 510
++ for format2 in $list
++ od -An -tfDz -tfDz in
+++ head -n1 out-raw
+++ wc -c
++ linewidth=71
+++ wc -l
++ linecount=6
+++ wc -c
++ echo fD fD 426
+++ expr 71 '*' 6
++ echo fD fD 426
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-od-multiple-t.sh.FAQX
++ exit 0
+PASS tests/od/od-multiple-t.sh (exit status: 0)

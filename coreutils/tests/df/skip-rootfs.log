@@ -1,0 +1,196 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-skip-rootfs.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-skip-rootfs.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
++++ perms='drwx------ 2 4096 Apr 15 17:18 /home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ df
++ require_built_ df
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env df --version
+df (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Torbjorn Granlund, David MacKenzie, and Paul Eggert.
++ timeout 10 df
+Filesystem      1K-blocks     Used Available Use% Mounted on
+/dev/nvme0n1p69 330826864 42970944 270977636  14% /
+devtmpfs         16180220        0  16180220   0% /dev
+tmpfs            16253240    49432  16203808   1% /dev/shm
+efivarfs              438      240       194  56% /sys/firmware/efi/efivars
+tmpfs             6501296     1704   6499592   1% /run
+tmpfs            16253240    36516  16216724   1% /tmp
+none                 1024        0      1024   0% /run/credentials/systemd-journald.service
+none                 1024        0      1024   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p67   1046512   241652    804860  24% /boot
+tmpfs             3250648      500   3250148   1% /run/user/1000
++ DF_a
++ df -a -x fuse.portal
++ grep '^rootfs' out
++ skip_ 'no rootfs in mtab'
++ warn_ 'skip-rootfs.sh: skipped test: no rootfs in mtab'
++ case $IFS in
++ printf '%s\n' 'skip-rootfs.sh: skipped test: no rootfs in mtab'
+skip-rootfs.sh: skipped test: no rootfs in mtab
++ test 9 = 2
++ local 'args=skip-rootfs.sh: skipped test: no rootfs in mtab'
++ local 'firstline=skip-rootfs.sh: skipped test: no rootfs in mtab'
++ printf '%s\n' 'skip-rootfs.sh: skipped test: no rootfs in mtab'
++ Exit 77
++ set +e
++ exit 77
++ exit 77
++ remove_tmp_
++ __st=77
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-skip-rootfs.sh.k67T
++ exit 77
+SKIP tests/df/skip-rootfs.sh (exit status: 77)

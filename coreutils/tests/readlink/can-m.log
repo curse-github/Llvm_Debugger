@@ -1,0 +1,384 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-can-m.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-can-m.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
++++ perms='drwx------ 2 4096 Apr 15 17:18 /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ readlink pwd
++ require_built_ readlink pwd
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env readlink --version
+readlink (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Dmitry V. Levin.
++ for i in $*
++ env pwd --version
+pwd (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jim Meyering.
+++ pwd
++ pwd=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
+++ env pwd -P
++ my_pwd=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
++ tmp=d
++ mkdir d
++ cd d
++ mkdir subdir removed
++ touch regfile
++ ln -s regfile link1
++ ln -s subdir link2
++ ln -s missing link3
++ ln -s subdir/missing link4
++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/removed
++ rmdir ../removed
+++ returns_ 1 readlink -e .
++ v=
++ test -z ''
++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d
++ for p in "" "$pwd/$tmp/"
+++ readlink -m regfile
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m ./regfile/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m regfile/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m ./regfile/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m subdir
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m ./subdir/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m subdir/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m ./subdir/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m missing
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m ./missing/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m missing/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m ./missing/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m link1
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m ./link1/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m link1/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m ./link1/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m link2
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m ./link2/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m link2/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m ./link2/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m link2/more/more2
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2 = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
+++ readlink -m ./link2/more/more2/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2 = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
+++ readlink -m link3
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m ./link3/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m link3/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m ./link3/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m link4
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
+++ readlink -m ./link4/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
+++ readlink -m link4/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
+++ readlink -m ./link4/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
++ for p in "" "$pwd/$tmp/"
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./regfile/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./regfile/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./subdir/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./subdir/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./missing/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./missing/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link1
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link1/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link1/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link1/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/regfile/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link2
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link2/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link2/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link2/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link2/more/more2
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2 = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link2/more/more2/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2 = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/more/more2
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link3
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link3/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link3/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link3/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/missing/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link4
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link4/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/link4/more
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
+++ readlink -m /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/./link4/more/
++ v=/home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
++ test /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more = /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc/d/subdir/missing/more
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-can-m.sh.UdQc
++ exit 0
+PASS tests/readlink/can-m.sh (exit status: 0)

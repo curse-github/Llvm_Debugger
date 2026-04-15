@@ -1,0 +1,2199 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-part-symlink.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-part-symlink.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
++++ perms='drwx------ 2 4096 Apr 15 17:18 /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ cp mv
++ require_built_ cp mv
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env cp --version
+cp (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Torbjorn Granlund, David MacKenzie, and Jim Meyering.
++ for i in $*
++ env mv --version
+mv (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Mike Parker, David MacKenzie, and Jim Meyering.
++ . /home/curse/Desktop/Research/Debugger/coreutils/tests/other-fs-tmpdir
+++ test '' = set
+++ CANDIDATE_TMP_DIRS='/tmp /tmp /dev/shm /var/tmp /usr/tmp /home/curse'
+++ other_partition_tmpdir=
++++ stat -c %d .
+++ dot_mount_point=66312
+++ for d in $CANDIDATE_TMP_DIRS
+++ test -d /tmp
++++ stat -L -c %d /tmp
+++ d_mount_point=35
+++ test x35 = x66312
+++ mkdir /tmp/tmp141190
+++ other_partition_tmpdir=/tmp/tmp141190
+++ break
+++ test -z /tmp/tmp141190
+++ test yes = yes
+++ set -x
++ require_local_dir_
++ require_mount_list_
++ local 'mount_list_fail=cannot read table of mounted file systems'
++ df --local
++ grep -F 'cannot read table of mounted file systems'
++ is_local_dir_ .
++ test 1 = 1
++ df --local .
+++ pwd
++ pwd_tmp=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
++ unset CDPATH
++ exec
++ contents=XYZ
++ loc_reg=loc_reg
++ loc_sl=loc_sl
++ rem_reg=/tmp/tmp141190/rem_reg
++ rem_sl=/tmp/tmp141190/rem_sl
++ for copy in cp mv
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f '/tmp/tmp141190/*'
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ cp loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp loc_reg rem_sl
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ test cp = cp
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ cp --rem loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp --rem loc_reg rem_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_sl
++ echo ' (loc_reg) (rem_sl)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f loc_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ cp --rem -d loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp --rem -d loc_reg rem_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_sl
++ echo ' (loc_reg) (rem_sl)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f loc_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ cp --rem -b loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp --rem -b loc_reg rem_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=$'rem_sl\nrem_sl~ -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' rem_sl~ '->' 'dir/loc_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f loc_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl /tmp/tmp141190/rem_sl~
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ cp -b loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp -b loc_reg rem_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=$'rem_sl\nrem_sl~ -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' rem_sl~ '->' 'dir/loc_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f loc_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl /tmp/tmp141190/rem_sl~
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ cp -bd loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp -bd loc_reg rem_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=$'rem_sl\nrem_sl~ -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' rem_sl~ '->' 'dir/loc_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f loc_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl /tmp/tmp141190/rem_sl~
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ sed 's,^,$,;s/ / $/'
+++ echo loc_reg rem_sl
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ cp -d loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp -d loc_reg rem_sl
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ test cp = cp
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ cd ..
++ echo
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ cp /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp rem_sl loc_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ cp --rem /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp --rem rem_sl loc_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ cp --rem -d /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp --rem -d rem_sl loc_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ cp --rem -b /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp --rem -b rem_sl loc_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ cp -b /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp -b rem_sl loc_reg
++ test -s .err
++ tr -d '\n'
++ echo ' ['
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ cp -bd /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp -bd rem_sl loc_reg
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=$'loc_reg -> dir/loc_reg\nloc_reg~'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg' '->' dir/loc_reg 'loc_reg~) (rem_sl' '->' 'dir/loc_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ echo ' symlink-loop'
++ for f in $actual_args
++ test -f loc_reg
++ echo ' symlink-loop'
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ cp -d /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp -d rem_sl loc_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_reg
++ cd ..
++ echo
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ cp loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp loc_sl rem_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ test cp = cp
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ cp --rem loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp --rem loc_sl rem_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ test cp = cp
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ cp --rem -d loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp --rem -d loc_sl rem_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ test cp = cp
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ cp --rem -b loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp --rem -b loc_sl rem_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ test cp = cp
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ sed 's/  *$//'
++ cp -b loc_sl /tmp/tmp141190/rem_reg
++ copy_status=1
++ echo 1 cp -b loc_sl rem_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ test cp = cp
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ cp -bd loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp -bd loc_sl rem_reg
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
+++ ls -gG --ignore=.err .
++ ls2=$'rem_reg -> rem_reg\nrem_reg~'
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg' '->' rem_reg 'rem_reg~)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f loc_sl
++ echo ' symlink-loop'
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ echo ' symlink-loop'
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg /tmp/tmp141190/rem_reg~
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ cp -d loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp -d loc_sl rem_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ test cp = cp
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ cd ..
++ echo
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ cp /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp rem_reg loc_sl
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ cp --rem /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp --rem rem_reg loc_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_sl
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl) (rem_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ cp --rem -d /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp --rem -d rem_reg loc_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_sl
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl) (rem_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ cp --rem -b /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp --rem -b rem_reg loc_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=$'loc_sl\nloc_sl~ -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' loc_sl~ '->' 'rem_reg) (rem_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ sed 's/  *$//'
++ cp -b /tmp/tmp141190/rem_reg loc_sl
++ copy_status=0
++ echo 0 cp -b rem_reg loc_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=$'loc_sl\nloc_sl~ -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' loc_sl~ '->' 'rem_reg) (rem_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ cp -bd /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 cp -bd rem_reg loc_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=$'loc_sl\nloc_sl~ -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' loc_sl~ '->' 'rem_reg) (rem_reg)'
++ test 0 '!=' 0
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ test 0 '!=' 0
++ case "$(cat $f)" in
+++ cat loc_sl
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test cp = mv
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ cp -d /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 cp -d rem_reg loc_sl
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ test cp = cp
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ for f in $actual_args
++ test -f loc_sl
++ test 1 '!=' 0
++ test
++ case "$(cat $f)" in
+++ cat loc_sl
++ cd ..
++ echo
++ for copy in cp mv
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ mv loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 mv loc_reg rem_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_sl
++ echo ' () (rem_sl)'
++ test 0 '!=' 0
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo loc_reg rem_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_reg $rem_sl'
+++ eval echo '$loc_reg' '$rem_sl'
++++ echo loc_reg /tmp/tmp141190/rem_sl
++ actual_args='loc_reg /tmp/tmp141190/rem_sl'
++ mv -b loc_reg /tmp/tmp141190/rem_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 mv -b loc_reg rem_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=$'rem_sl\nrem_sl~ -> dir/loc_reg'
++ echo ' () (rem_sl' rem_sl~ '->' 'dir/loc_reg)'
++ test 0 '!=' 0
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ echo
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl /tmp/tmp141190/rem_sl~
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ mv /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 mv rem_sl loc_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ tr -d '\n'
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_reg
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2='rem_sl -> dir/loc_reg'
++ echo ' (loc_reg) (rem_sl' '->' 'dir/loc_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_sl
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_sl
++ for f in $actual_args
++ test -f loc_reg
++ case "$(cat $f)" in
+++ cat loc_reg
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_sl
++ mkdir dir
++ cd dir
++ case "$args" in
+++ pwd
++ reg_abs=/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg
++ case "$args" in
++ case "$args" in
++ case "$args" in
++ slink=/tmp/tmp141190/rem_sl
++ echo XYZ
++ ln -nsf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/dir/loc_reg /tmp/tmp141190/rem_sl
+++ echo rem_sl loc_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_sl $loc_reg'
+++ eval echo '$rem_sl' '$loc_reg'
++++ echo /tmp/tmp141190/rem_sl loc_reg
++ actual_args='/tmp/tmp141190/rem_sl loc_reg'
++ mv -b /tmp/tmp141190/rem_sl loc_reg
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 mv -b rem_sl loc_reg
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=$'loc_reg -> dir/loc_reg\nloc_reg~'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=
++ echo ' (loc_reg' '->' dir/loc_reg 'loc_reg~) ()'
++ test 0 '!=' 0
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ echo
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f '/tmp/tmp141190/*'
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ mv loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=1
++ echo 1 mv loc_sl rem_reg
++ test -s .err
++ echo ' ['
++ tr -d '\n'
++ tr -d '\n'
++ sed 's/^[^:][^:]*\(..\):/\1:/;s,/tmp/tmp141190/,,' .err
++ echo ']'
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls='loc_sl -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=rem_reg
++ echo ' (loc_sl' '->' 'rem_reg) (rem_reg)'
++ test 1 '!=' 0
++ for f in $actual_args
++ test -f loc_sl
++ case "$(cat $f)" in
+++ cat loc_sl
++ for f in $actual_args
++ test -f /tmp/tmp141190/rem_reg
++ case "$(cat $f)" in
+++ cat /tmp/tmp141190/rem_reg
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo loc_sl rem_reg
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$loc_sl $rem_reg'
+++ eval echo '$loc_sl' '$rem_reg'
++++ echo loc_sl /tmp/tmp141190/rem_reg
++ actual_args='loc_sl /tmp/tmp141190/rem_reg'
++ mv -b loc_sl /tmp/tmp141190/rem_reg
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 mv -b loc_sl rem_reg
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=$'rem_reg -> rem_reg\nrem_reg~'
++ echo ' () (rem_reg' '->' rem_reg 'rem_reg~)'
++ test 0 '!=' 0
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ echo
++ for args in 'loc_reg rem_sl' 'rem_sl loc_reg' 'loc_sl rem_reg' 'rem_reg loc_sl'
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f /tmp/tmp141190/rem_reg /tmp/tmp141190/rem_reg~
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ mv /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 mv rem_reg loc_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=loc_sl
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=
++ echo ' (loc_sl) ()'
++ test 0 '!=' 0
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ rm -rf dir
++ rm -f '/tmp/tmp141190/*'
++ mkdir dir
++ cd dir
++ case "$args" in
++ case "$args" in
++ reg_abs=/tmp/tmp141190/rem_reg
++ case "$args" in
++ slink=loc_sl
++ case "$args" in
++ echo XYZ
++ ln -nsf /tmp/tmp141190/rem_reg loc_sl
+++ echo rem_reg loc_sl
+++ sed 's,^,$,;s/ / $/'
++ actual_args='$rem_reg $loc_sl'
+++ eval echo '$rem_reg' '$loc_sl'
++++ echo /tmp/tmp141190/rem_reg loc_sl
++ actual_args='/tmp/tmp141190/rem_reg loc_sl'
++ mv -b /tmp/tmp141190/rem_reg loc_sl
++ sed 's/  *$//'
++ copy_status=0
++ echo 0 mv -b rem_reg loc_sl
++ test -s .err
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls=$'loc_sl\nloc_sl~ -> rem_reg'
+++ cd /tmp/tmp141190
+++ ls -gG --ignore=.err .
+++ sed -e '/^total /d' -e s,/tmp/tmp141190/,, -e s,/home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg/,, -e 's/^[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *[^ ]*  *//'
++ ls2=
++ echo ' (loc_sl' loc_sl~ '->' 'rem_reg) ()'
++ test 0 '!=' 0
++ test mv = cp
++ cd ..
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ for options in '' --rem '--rem -d' '--rem -b' -b -bd -d
++ case "$options" in
++ test mv = mv
++ continue
++ echo
++ test 0 = 1
++ cat
++ compare expected actual
++ compare_dev_null_ expected actual
++ test 2 = 2
++ test xexpected = x/dev/null
++ test xactual = x/dev/null
++ return 2
++ case $? in
++ compare_ expected actual
++ LC_ALL=C
++ diff -u expected actual
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ rm -rf /tmp/tmp141190
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-part-symlink.sh.jMGg
++ exit 0
+PASS tests/mv/part-symlink.sh (exit status: 0)

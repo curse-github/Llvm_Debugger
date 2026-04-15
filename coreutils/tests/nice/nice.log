@@ -1,0 +1,877 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-nice.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-nice.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
++++ perms='drwx------ 2 4096 Apr 15 17:17 /home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ nice
++ require_built_ nice
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env nice --version
+nice (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David MacKenzie.
++ getlimits_
+++ getlimits
++ eval CHAR_MAX=127 CHAR_OFLOW=128 CHAR_MIN=-128 CHAR_UFLOW=-129 SCHAR_MAX=127 SCHAR_OFLOW=128 SCHAR_MIN=-128 SCHAR_UFLOW=-129 UCHAR_MAX=255 UCHAR_OFLOW=256 SHRT_MAX=32767 SHRT_OFLOW=32768 SHRT_MIN=-32768 SHRT_UFLOW=-32769 INT_MAX=2147483647 INT_OFLOW=2147483648 INT_MIN=-2147483648 INT_UFLOW=-2147483649 UINT_MAX=4294967295 UINT_OFLOW=4294967296 LONG_MAX=9223372036854775807 LONG_OFLOW=9223372036854775808 LONG_MIN=-9223372036854775808 LONG_UFLOW=-9223372036854775809 ULONG_MAX=18446744073709551615 ULONG_OFLOW=18446744073709551616 SIZE_MAX=18446744073709551615 SIZE_OFLOW=18446744073709551616 SSIZE_MAX=9223372036854775807 SSIZE_OFLOW=9223372036854775808 SSIZE_MIN=-9223372036854775808 SSIZE_UFLOW=-9223372036854775809 TIME_T_MAX=9223372036854775807 TIME_T_OFLOW=9223372036854775808 TIME_T_MIN=-9223372036854775808 TIME_T_UFLOW=-9223372036854775809 UID_T_MAX=4294967295 UID_T_OFLOW=4294967296 GID_T_MAX=4294967295 GID_T_OFLOW=4294967296 PID_T_MAX=2147483647 PID_T_OFLOW=2147483648 PID_T_MIN=-2147483648 PID_T_UFLOW=-2147483649 OFF_T_MAX=9223372036854775807 OFF_T_OFLOW=9223372036854775808 OFF_T_MIN=-9223372036854775808 OFF_T_UFLOW=-9223372036854775809 OFF64_T_MAX=9223372036854775807 OFF64_T_OFLOW=9223372036854775808 OFF64_T_MIN=-9223372036854775808 OFF64_T_UFLOW=-9223372036854775809 INTMAX_MAX=9223372036854775807 INTMAX_OFLOW=9223372036854775808 INTMAX_MIN=-9223372036854775808 INTMAX_UFLOW=-9223372036854775809 UINTMAX_MAX=18446744073709551615 UINTMAX_OFLOW=18446744073709551616 FLT_MIN=1.1754944e-38 FLT_MAX=3.4028235e+38 DBL_MIN=2.2250738585072014e-308 DBL_MAX=1.7976931348623157e+308 LDBL_MIN=3.3621031431120935063e-4932 LDBL_MAX=1.189731495357231765e+4932 SIGRTMIN=34 SIGRTMAX=64 IO_BUFSIZE=262144 'EDOM='\''Numerical' argument out of 'domain'\''' 'EILSEQ='\''Invalid' or incomplete multibyte or wide 'character'\''' 'ERANGE='\''Numerical' result out of 'range'\''' 'E2BIG='\''Argument' list too 'long'\''' 'EACCES='\''Permission' 'denied'\''' 'EADDRINUSE='\''Address' already in 'use'\''' 'EADDRNOTAVAIL='\''Cannot' assign requested 'address'\''' 'EAFNOSUPPORT='\''Address' family not supported by 'protocol'\''' 'EAGAIN='\''Resource' temporarily 'unavailable'\''' 'EALREADY='\''Operation' already in 'progress'\''' 'EBADF='\''Bad' file 'descriptor'\''' 'EBADMSG='\''Bad' 'message'\''' 'EBUSY='\''Device' or resource 'busy'\''' 'ECANCELED='\''Operation' 'canceled'\''' 'ECHILD='\''No' child 'processes'\''' 'ECONNABORTED='\''Software' caused connection 'abort'\''' 'ECONNREFUSED='\''Connection' 'refused'\''' 'ECONNRESET='\''Connection' reset by 'peer'\''' 'EDEADLK='\''Resource' deadlock 'avoided'\''' 'EDESTADDRREQ='\''Destination' address 'required'\''' 'EDQUOT='\''Disk' quota 'exceeded'\''' 'EEXIST='\''File' 'exists'\''' 'EFAULT='\''Bad' 'address'\''' 'EFBIG='\''File' too 'large'\''' 'EHOSTUNREACH='\''No' route to 'host'\''' 'EIDRM='\''Identifier' 'removed'\''' 'EINPROGRESS='\''Operation' now in 'progress'\''' 'EINTR='\''Interrupted' system 'call'\''' 'EINVAL='\''Invalid' 'argument'\''' 'EIO='\''Input/output' 'error'\''' 'EISCONN='\''Transport' endpoint is already 'connected'\''' 'EISDIR='\''Is' a 'directory'\''' 'ELOOP='\''Too' many levels of symbolic 'links'\''' 'EMFILE='\''Too' many open 'files'\''' 'EMLINK='\''Too' many 'links'\''' 'EMSGSIZE='\''Message' too 'long'\''' 'EMULTIHOP='\''Multihop' 'attempted'\''' 'ENAMETOOLONG='\''File' name too 'long'\''' 'ENETDOWN='\''Network' is 'down'\''' 'ENETRESET='\''Network' dropped connection on 'reset'\''' 'ENETUNREACH='\''Network' is 'unreachable'\''' 'ENFILE='\''Too' many open files in 'system'\''' 'ENOBUFS='\''No' buffer space 'available'\''' 'ENODATA='\''No' data 'available'\''' 'ENODEV='\''No' such 'device'\''' 'ENOENT='\''No' such file or 'directory'\''' 'ENOEXEC='\''Exec' format 'error'\''' 'ENOLCK='\''No' locks 'available'\''' 'ENOLINK='\''Link' has been 'severed'\''' 'ENOMEM='\''Cannot' allocate 'memory'\''' 'ENOMSG='\''No' message of desired 'type'\''' 'ENOPROTOOPT='\''Protocol' not 'available'\''' 'ENOSPC='\''No' space left on 'device'\''' 'ENOSR='\''Out' of streams 'resources'\''' 'ENOSTR='\''Device' not a 'stream'\''' 'ENOSYS='\''Function' not 'implemented'\''' 'ENOTCONN='\''Transport' endpoint is not 'connected'\''' 'ENOTDIR='\''Not' a 'directory'\''' 'ENOTEMPTY='\''Directory' not 'empty'\''' 'ENOTRECOVERABLE='\''State' not 'recoverable'\''' 'ENOTSOCK='\''Socket' operation on 'non-socket'\''' 'ENOTTY='\''Inappropriate' ioctl for 'device'\''' 'ENXIO='\''No' such device or 'address'\''' 'EOPNOTSUPP='\''Operation' not 'supported'\''' 'EOVERFLOW='\''Value' too large for defined data 'type'\''' 'EOWNERDEAD='\''Owner' 'died'\''' 'EPERM='\''Operation' not 'permitted'\''' 'EPIPE='\''Broken' 'pipe'\''' 'EPROTO='\''Protocol' 'error'\''' 'EPROTONOSUPPORT='\''Protocol' not 'supported'\''' 'EPROTOTYPE='\''Protocol' wrong type for 'socket'\''' 'EROFS='\''Read-only' file 'system'\''' 'ESOCKTNOSUPPORT='\''Socket' type not 'supported'\''' 'ESPIPE='\''Illegal' 'seek'\''' 'ESRCH='\''No' such 'process'\''' 'ESTALE='\''Stale' file 'handle'\''' 'ETIME='\''Timer' 'expired'\''' 'ETIMEDOUT='\''Connection' timed 'out'\''' 'ETXTBSY='\''Text' file 'busy'\''' 'EXDEV='\''Invalid' cross-device 'link'\''' 'EADV='\''Advertise' 'error'\''' 'EBADE='\''Invalid' 'exchange'\''' 'EBADFD='\''File' descriptor in bad 'state'\''' 'EBADR='\''Invalid' request 'descriptor'\''' 'EBADRQC='\''Invalid' request 'code'\''' 'EBADSLT='\''Invalid' 'slot'\''' 'EBFONT='\''Bad' font file 'format'\''' 'ECHRNG='\''Channel' number out of 'range'\''' 'ECOMM='\''Communication' error on 'send'\''' 'EDOTDOT='\''RFS' specific 'error'\''' 'EHOSTDOWN='\''Host' is 'down'\''' 'EHWPOISON='\''Memory' page has hardware 'error'\''' 'EISNAM='\''Is' a named type 'file'\''' 'EKEYEXPIRED='\''Key' has 'expired'\''' 'EKEYREJECTED='\''Key' was rejected by 'service'\''' 'EKEYREVOKED='\''Key' has been 'revoked'\''' 'EL2HLT='\''Level' 2 'halted'\''' 'EL2NSYNC='\''Level' 2 not 'synchronized'\''' 'EL3HLT='\''Level' 3 'halted'\''' 'EL3RST='\''Level' 3 'reset'\''' 'ELIBACC='\''Can' not access a needed shared 'library'\''' 'ELIBBAD='\''Accessing' a corrupted shared 'library'\''' 'ELIBEXEC='\''Cannot' exec a shared library 'directly'\''' 'ELIBMAX='\''Attempting' to link in too many shared 'libraries'\''' 'ELIBSCN='\''.lib' section in a.out 'corrupted'\''' 'ELNRNG='\''Link' number out of 'range'\''' 'EMEDIUMTYPE='\''Wrong' medium 'type'\''' 'ENAVAIL='\''No' XENIX semaphores 'available'\''' 'ENOANO='\''No' 'anode'\''' 'ENOCSI='\''No' CSI structure 'available'\''' 'ENOKEY='\''Required' key not 'available'\''' 'ENOMEDIUM='\''No' medium 'found'\''' 'ENONET='\''Machine' is not on the 'network'\''' 'ENOPKG='\''Package' not 'installed'\''' 'ENOTBLK='\''Block' device 'required'\''' 'ENOTNAM='\''Not' a XENIX named type 'file'\''' 'ENOTUNIQ='\''Name' not unique on 'network'\''' 'EPFNOSUPPORT='\''Protocol' family not 'supported'\''' 'EREMCHG='\''Remote' address 'changed'\''' 'EREMOTE='\''Object' is 'remote'\''' 'EREMOTEIO='\''Remote' I/O 'error'\''' 'ERESTART='\''Interrupted' system call should be 'restarted'\''' 'ERFKILL='\''Operation' not possible due to 'RF-kill'\''' 'ESHUTDOWN='\''Cannot' send after transport endpoint 'shutdown'\''' 'ESRMNT='\''Srmount' 'error'\''' 'ESTRPIPE='\''Streams' pipe 'error'\''' 'ETOOMANYREFS='\''Too' many references: cannot 'splice'\''' 'EUCLEAN='\''Structure' needs 'cleaning'\''' 'EUNATCH='\''Protocol' driver not 'attached'\''' 'EUSERS='\''Too' many 'users'\''' 'EXFULL='\''Exchange' 'full'\''' 'ENOTSUP='\''Operation' not 'supported'\''' 'EWOULDBLOCK='\''Resource' temporarily 'unavailable'\''' 'EDEADLOCK='\''Resource' deadlock 'avoided'\'''
+++ CHAR_MAX=127
+++ CHAR_OFLOW=128
+++ CHAR_MIN=-128
+++ CHAR_UFLOW=-129
+++ SCHAR_MAX=127
+++ SCHAR_OFLOW=128
+++ SCHAR_MIN=-128
+++ SCHAR_UFLOW=-129
+++ UCHAR_MAX=255
+++ UCHAR_OFLOW=256
+++ SHRT_MAX=32767
+++ SHRT_OFLOW=32768
+++ SHRT_MIN=-32768
+++ SHRT_UFLOW=-32769
+++ INT_MAX=2147483647
+++ INT_OFLOW=2147483648
+++ INT_MIN=-2147483648
+++ INT_UFLOW=-2147483649
+++ UINT_MAX=4294967295
+++ UINT_OFLOW=4294967296
+++ LONG_MAX=9223372036854775807
+++ LONG_OFLOW=9223372036854775808
+++ LONG_MIN=-9223372036854775808
+++ LONG_UFLOW=-9223372036854775809
+++ ULONG_MAX=18446744073709551615
+++ ULONG_OFLOW=18446744073709551616
+++ SIZE_MAX=18446744073709551615
+++ SIZE_OFLOW=18446744073709551616
+++ SSIZE_MAX=9223372036854775807
+++ SSIZE_OFLOW=9223372036854775808
+++ SSIZE_MIN=-9223372036854775808
+++ SSIZE_UFLOW=-9223372036854775809
+++ TIME_T_MAX=9223372036854775807
+++ TIME_T_OFLOW=9223372036854775808
+++ TIME_T_MIN=-9223372036854775808
+++ TIME_T_UFLOW=-9223372036854775809
+++ UID_T_MAX=4294967295
+++ UID_T_OFLOW=4294967296
+++ GID_T_MAX=4294967295
+++ GID_T_OFLOW=4294967296
+++ PID_T_MAX=2147483647
+++ PID_T_OFLOW=2147483648
+++ PID_T_MIN=-2147483648
+++ PID_T_UFLOW=-2147483649
+++ OFF_T_MAX=9223372036854775807
+++ OFF_T_OFLOW=9223372036854775808
+++ OFF_T_MIN=-9223372036854775808
+++ OFF_T_UFLOW=-9223372036854775809
+++ OFF64_T_MAX=9223372036854775807
+++ OFF64_T_OFLOW=9223372036854775808
+++ OFF64_T_MIN=-9223372036854775808
+++ OFF64_T_UFLOW=-9223372036854775809
+++ INTMAX_MAX=9223372036854775807
+++ INTMAX_OFLOW=9223372036854775808
+++ INTMAX_MIN=-9223372036854775808
+++ INTMAX_UFLOW=-9223372036854775809
+++ UINTMAX_MAX=18446744073709551615
+++ UINTMAX_OFLOW=18446744073709551616
+++ FLT_MIN=1.1754944e-38
+++ FLT_MAX=3.4028235e+38
+++ DBL_MIN=2.2250738585072014e-308
+++ DBL_MAX=1.7976931348623157e+308
+++ LDBL_MIN=3.3621031431120935063e-4932
+++ LDBL_MAX=1.189731495357231765e+4932
+++ SIGRTMIN=34
+++ SIGRTMAX=64
+++ IO_BUFSIZE=262144
+++ EDOM='Numerical argument out of domain'
+++ EILSEQ='Invalid or incomplete multibyte or wide character'
+++ ERANGE='Numerical result out of range'
+++ E2BIG='Argument list too long'
+++ EACCES='Permission denied'
+++ EADDRINUSE='Address already in use'
+++ EADDRNOTAVAIL='Cannot assign requested address'
+++ EAFNOSUPPORT='Address family not supported by protocol'
+++ EAGAIN='Resource temporarily unavailable'
+++ EALREADY='Operation already in progress'
+++ EBADF='Bad file descriptor'
+++ EBADMSG='Bad message'
+++ EBUSY='Device or resource busy'
+++ ECANCELED='Operation canceled'
+++ ECHILD='No child processes'
+++ ECONNABORTED='Software caused connection abort'
+++ ECONNREFUSED='Connection refused'
+++ ECONNRESET='Connection reset by peer'
+++ EDEADLK='Resource deadlock avoided'
+++ EDESTADDRREQ='Destination address required'
+++ EDQUOT='Disk quota exceeded'
+++ EEXIST='File exists'
+++ EFAULT='Bad address'
+++ EFBIG='File too large'
+++ EHOSTUNREACH='No route to host'
+++ EIDRM='Identifier removed'
+++ EINPROGRESS='Operation now in progress'
+++ EINTR='Interrupted system call'
+++ EINVAL='Invalid argument'
+++ EIO='Input/output error'
+++ EISCONN='Transport endpoint is already connected'
+++ EISDIR='Is a directory'
+++ ELOOP='Too many levels of symbolic links'
+++ EMFILE='Too many open files'
+++ EMLINK='Too many links'
+++ EMSGSIZE='Message too long'
+++ EMULTIHOP='Multihop attempted'
+++ ENAMETOOLONG='File name too long'
+++ ENETDOWN='Network is down'
+++ ENETRESET='Network dropped connection on reset'
+++ ENETUNREACH='Network is unreachable'
+++ ENFILE='Too many open files in system'
+++ ENOBUFS='No buffer space available'
+++ ENODATA='No data available'
+++ ENODEV='No such device'
+++ ENOENT='No such file or directory'
+++ ENOEXEC='Exec format error'
+++ ENOLCK='No locks available'
+++ ENOLINK='Link has been severed'
+++ ENOMEM='Cannot allocate memory'
+++ ENOMSG='No message of desired type'
+++ ENOPROTOOPT='Protocol not available'
+++ ENOSPC='No space left on device'
+++ ENOSR='Out of streams resources'
+++ ENOSTR='Device not a stream'
+++ ENOSYS='Function not implemented'
+++ ENOTCONN='Transport endpoint is not connected'
+++ ENOTDIR='Not a directory'
+++ ENOTEMPTY='Directory not empty'
+++ ENOTRECOVERABLE='State not recoverable'
+++ ENOTSOCK='Socket operation on non-socket'
+++ ENOTTY='Inappropriate ioctl for device'
+++ ENXIO='No such device or address'
+++ EOPNOTSUPP='Operation not supported'
+++ EOVERFLOW='Value too large for defined data type'
+++ EOWNERDEAD='Owner died'
+++ EPERM='Operation not permitted'
+++ EPIPE='Broken pipe'
+++ EPROTO='Protocol error'
+++ EPROTONOSUPPORT='Protocol not supported'
+++ EPROTOTYPE='Protocol wrong type for socket'
+++ EROFS='Read-only file system'
+++ ESOCKTNOSUPPORT='Socket type not supported'
+++ ESPIPE='Illegal seek'
+++ ESRCH='No such process'
+++ ESTALE='Stale file handle'
+++ ETIME='Timer expired'
+++ ETIMEDOUT='Connection timed out'
+++ ETXTBSY='Text file busy'
+++ EXDEV='Invalid cross-device link'
+++ EADV='Advertise error'
+++ EBADE='Invalid exchange'
+++ EBADFD='File descriptor in bad state'
+++ EBADR='Invalid request descriptor'
+++ EBADRQC='Invalid request code'
+++ EBADSLT='Invalid slot'
+++ EBFONT='Bad font file format'
+++ ECHRNG='Channel number out of range'
+++ ECOMM='Communication error on send'
+++ EDOTDOT='RFS specific error'
+++ EHOSTDOWN='Host is down'
+++ EHWPOISON='Memory page has hardware error'
+++ EISNAM='Is a named type file'
+++ EKEYEXPIRED='Key has expired'
+++ EKEYREJECTED='Key was rejected by service'
+++ EKEYREVOKED='Key has been revoked'
+++ EL2HLT='Level 2 halted'
+++ EL2NSYNC='Level 2 not synchronized'
+++ EL3HLT='Level 3 halted'
+++ EL3RST='Level 3 reset'
+++ ELIBACC='Can not access a needed shared library'
+++ ELIBBAD='Accessing a corrupted shared library'
+++ ELIBEXEC='Cannot exec a shared library directly'
+++ ELIBMAX='Attempting to link in too many shared libraries'
+++ ELIBSCN='.lib section in a.out corrupted'
+++ ELNRNG='Link number out of range'
+++ EMEDIUMTYPE='Wrong medium type'
+++ ENAVAIL='No XENIX semaphores available'
+++ ENOANO='No anode'
+++ ENOCSI='No CSI structure available'
+++ ENOKEY='Required key not available'
+++ ENOMEDIUM='No medium found'
+++ ENONET='Machine is not on the network'
+++ ENOPKG='Package not installed'
+++ ENOTBLK='Block device required'
+++ ENOTNAM='Not a XENIX named type file'
+++ ENOTUNIQ='Name not unique on network'
+++ EPFNOSUPPORT='Protocol family not supported'
+++ EREMCHG='Remote address changed'
+++ EREMOTE='Object is remote'
+++ EREMOTEIO='Remote I/O error'
+++ ERESTART='Interrupted system call should be restarted'
+++ ERFKILL='Operation not possible due to RF-kill'
+++ ESHUTDOWN='Cannot send after transport endpoint shutdown'
+++ ESRMNT='Srmount error'
+++ ESTRPIPE='Streams pipe error'
+++ ETOOMANYREFS='Too many references: cannot splice'
+++ EUCLEAN='Structure needs cleaning'
+++ EUNATCH='Protocol driver not attached'
+++ EUSERS='Too many users'
+++ EXFULL='Exchange full'
+++ ENOTSUP='Operation not supported'
+++ EWOULDBLOCK='Resource temporarily unavailable'
+++ EDEADLOCK='Resource deadlock avoided'
++ test 2147483647
++ tests=$'\n0 empty 10\n1 -1 1\n2 -12 12\n3 -1:-2 2\n4 -n:1 1\n5 -n:1:-2 2\n6 -n:1:-+12 12\n7 -2:-n:1 1\n8 -2:-n:12 12\n9 -+1 1\n10 -+12 12\n11 -+1:-+12 12\n12 -n:+1 1\n13 --1:-2 2\n14 --1:-2:-13 13\n15 --1:-n:2 2\n16 --1:-n:2:-3 3\n17 --1:-n:2:-13 13\n18 -n:-1:-12 12\n19 --1:-12 12\nNA LAST NA\n'
++ set -- 0 empty 10 1 -1 1 2 -12 12 3 -1:-2 2 4 -n:1 1 5 -n:1:-2 2 6 -n:1:-+12 12 7 -2:-n:1 1 8 -2:-n:12 12 9 -+1 1 10 -+12 12 11 -+1:-+12 12 12 -n:+1 1 13 --1:-2 2 14 --1:-2:-13 13 15 --1:-n:2 2 16 --1:-n:2:-3 3 17 --1:-n:2:-13 13 18 -n:-1:-12 12 19 --1:-12 12 NA LAST NA
+++ nice
++ niceness=0
++ test 0 = 0
++ : ok
++ :
++ test_name=0
++ args=empty
++ expected_result=10
++ test empty = empty
++ args=
++ test x = xLAST
+++ echo x
+++ tr : ' '
+++ sed 's/^x//'
++ args=
++ test yes = yes
++ echo 'test 0... '
++ tr -d '\n'
+test 0... ++ nice nice
++ test x10 = x10
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=1
++ args=-1
++ expected_result=1
++ test -1 = empty
++ test x-1 = xLAST
+++ echo x-1
+++ tr : ' '
+++ sed 's/^x//'
++ args=-1
++ test yes = yes
++ echo 'test 1... '
++ tr -d '\n'
+test 1... ++ nice -1 nice
++ test x1 = x1
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=2
++ args=-12
++ expected_result=12
++ test -12 = empty
++ test x-12 = xLAST
+++ echo x-12
+++ tr : ' '
+++ sed 's/^x//'
++ args=-12
++ test yes = yes
++ echo 'test 2... '
++ tr -d '\n'
+test 2... ++ nice -12 nice
++ test x12 = x12
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=3
++ args=-1:-2
++ expected_result=2
++ test -1:-2 = empty
++ test x-1:-2 = xLAST
+++ echo x-1:-2
+++ tr : ' '
+++ sed 's/^x//'
++ args='-1 -2'
++ test yes = yes
++ echo 'test 3... '
++ tr -d '\n'
+test 3... ++ nice -1 -2 nice
++ test x2 = x2
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=4
++ args=-n:1
++ expected_result=1
++ test -n:1 = empty
++ test x-n:1 = xLAST
+++ echo x-n:1
+++ tr : ' '
+++ sed 's/^x//'
++ args='-n 1'
++ test yes = yes
++ echo 'test 4... '
++ tr -d '\n'
+test 4... ++ nice -n 1 nice
++ test x1 = x1
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=5
++ args=-n:1:-2
++ expected_result=2
++ test -n:1:-2 = empty
++ test x-n:1:-2 = xLAST
+++ echo x-n:1:-2
+++ tr : ' '
+++ sed 's/^x//'
++ args='-n 1 -2'
++ test yes = yes
++ echo 'test 5... '
++ tr -d '\n'
+test 5... ++ nice -n 1 -2 nice
++ test x2 = x2
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=6
++ args=-n:1:-+12
++ expected_result=12
++ test -n:1:-+12 = empty
++ test x-n:1:-+12 = xLAST
+++ echo x-n:1:-+12
+++ tr : ' '
+++ sed 's/^x//'
++ args='-n 1 -+12'
++ test yes = yes
++ echo 'test 6... '
++ tr -d '\n'
+test 6... ++ nice -n 1 -+12 nice
++ test x12 = x12
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=7
++ args=-2:-n:1
++ expected_result=1
++ test -2:-n:1 = empty
++ test x-2:-n:1 = xLAST
+++ echo x-2:-n:1
+++ tr : ' '
+++ sed 's/^x//'
++ args='-2 -n 1'
++ test yes = yes
++ echo 'test 7... '
++ tr -d '\n'
+test 7... ++ nice -2 -n 1 nice
++ test x1 = x1
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=8
++ args=-2:-n:12
++ expected_result=12
++ test -2:-n:12 = empty
++ test x-2:-n:12 = xLAST
+++ echo x-2:-n:12
+++ tr : ' '
+++ sed 's/^x//'
++ args='-2 -n 12'
++ test yes = yes
++ echo 'test 8... '
++ tr -d '\n'
+test 8... ++ nice -2 -n 12 nice
++ test x12 = x12
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=9
++ args=-+1
++ expected_result=1
++ test -+1 = empty
++ test x-+1 = xLAST
+++ echo x-+1
+++ tr : ' '
+++ sed 's/^x//'
++ args=-+1
++ test yes = yes
++ echo 'test 9... '
++ tr -d '\n'
+test 9... ++ nice -+1 nice
++ test x1 = x1
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=10
++ args=-+12
++ expected_result=12
++ test -+12 = empty
++ test x-+12 = xLAST
+++ echo x-+12
+++ tr : ' '
+++ sed 's/^x//'
++ args=-+12
++ test yes = yes
++ echo 'test 10... '
++ tr -d '\n'
+test 10... ++ nice -+12 nice
++ test x12 = x12
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=11
++ args=-+1:-+12
++ expected_result=12
++ test -+1:-+12 = empty
++ test x-+1:-+12 = xLAST
+++ echo x-+1:-+12
+++ tr : ' '
+++ sed 's/^x//'
++ args='-+1 -+12'
++ test yes = yes
++ echo 'test 11... '
++ tr -d '\n'
+test 11... ++ nice -+1 -+12 nice
++ test x12 = x12
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=12
++ args=-n:+1
++ expected_result=1
++ test -n:+1 = empty
++ test x-n:+1 = xLAST
+++ echo x-n:+1
+++ tr : ' '
+++ sed 's/^x//'
++ args='-n +1'
++ test yes = yes
++ echo 'test 12... '
++ tr -d '\n'
+test 12... ++ nice -n +1 nice
++ test x1 = x1
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=13
++ args=--1:-2
++ expected_result=2
++ test --1:-2 = empty
++ test x--1:-2 = xLAST
+++ echo x--1:-2
+++ tr : ' '
+++ sed 's/^x//'
++ args='--1 -2'
++ test yes = yes
++ echo 'test 13... '
++ tr -d '\n'
+test 13... ++ nice --1 -2 nice
++ test x2 = x2
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=14
++ args=--1:-2:-13
++ expected_result=13
++ test --1:-2:-13 = empty
++ test x--1:-2:-13 = xLAST
+++ echo x--1:-2:-13
+++ tr : ' '
+++ sed 's/^x//'
++ args='--1 -2 -13'
++ test yes = yes
++ echo 'test 14... '
++ tr -d '\n'
+test 14... ++ nice --1 -2 -13 nice
++ test x13 = x13
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=15
++ args=--1:-n:2
++ expected_result=2
++ test --1:-n:2 = empty
++ test x--1:-n:2 = xLAST
+++ echo x--1:-n:2
+++ tr : ' '
+++ sed 's/^x//'
++ args='--1 -n 2'
++ test yes = yes
++ echo 'test 15... '
++ tr -d '\n'
+test 15... ++ nice --1 -n 2 nice
++ test x2 = x2
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=16
++ args=--1:-n:2:-3
++ expected_result=3
++ test --1:-n:2:-3 = empty
++ test x--1:-n:2:-3 = xLAST
+++ echo x--1:-n:2:-3
+++ tr : ' '
+++ sed 's/^x//'
++ args='--1 -n 2 -3'
++ test yes = yes
++ echo 'test 16... '
++ tr -d '\n'
+test 16... ++ nice --1 -n 2 -3 nice
++ test x3 = x3
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=17
++ args=--1:-n:2:-13
++ expected_result=13
++ test --1:-n:2:-13 = empty
++ test x--1:-n:2:-13 = xLAST
+++ echo x--1:-n:2:-13
+++ tr : ' '
+++ sed 's/^x//'
++ args='--1 -n 2 -13'
++ test yes = yes
++ echo 'test 17... '
++ tr -d '\n'
+test 17... ++ nice --1 -n 2 -13 nice
++ test x13 = x13
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=18
++ args=-n:-1:-12
++ expected_result=12
++ test -n:-1:-12 = empty
++ test x-n:-1:-12 = xLAST
+++ echo x-n:-1:-12
+++ tr : ' '
+++ sed 's/^x//'
++ args='-n -1 -12'
++ test yes = yes
++ echo 'test 18... '
++ tr -d '\n'
+test 18... ++ nice -n -1 -12 nice
++ test x12 = x12
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=19
++ args=--1:-12
++ expected_result=12
++ test --1:-12 = empty
++ test x--1:-12 = xLAST
+++ echo x--1:-12
+++ tr : ' '
+++ sed 's/^x//'
++ args='--1 -12'
++ test yes = yes
++ echo 'test 19... '
++ tr -d '\n'
+test 19... ++ nice --1 -12 nice
++ test x12 = x12
++ ok=ok
++ test yes = yes
++ echo ok
+ok
++ shift
++ shift
++ shift
++ :
++ test_name=NA
++ args=LAST
++ expected_result=NA
++ test LAST = empty
++ test xLAST = xLAST
++ break
+++ nice -n -1 nice
++ test x0 = x0
+++ uname
++ test Linux = GNU
++ nice -n -1 true
++ compare /dev/null err
++ compare_dev_null_ /dev/null err
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s err
++ emit_diff_u_header_ /dev/null err
++ printf '%s\n' 'diff -u /dev/null err' $'--- /dev/null\t1970-01-01' $'+++ err\t1970-01-01'
+diff -u /dev/null err
+--- /dev/null	1970-01-01
++++ err	1970-01-01
++ sed 's/^/+/' err
++nice: cannot set niceness: Permission denied
++ return 1
++ case $? in
++ return 1
++ mv err exp
++ nice --1 true
++ compare exp err
++ compare_dev_null_ exp err
++ test 2 = 2
++ test xexp = x/dev/null
++ test xerr = x/dev/null
++ return 2
++ case $? in
++ compare_ exp err
++ LC_ALL=C
++ diff -u exp err
+++ uname
++ test Linux '!=' GNU
++ test -w /dev/full
++ test -c /dev/full
++ returns_ 125 nice -n -1 nice
++ compare /dev/null out
++ compare_dev_null_ /dev/null out
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s out
++ return 0
++ return 0
++ nice -n 18446744073709551616 nice
+19
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-nice.sh.UXWy
++ exit 0
+PASS tests/nice/nice.sh (exit status: 0)

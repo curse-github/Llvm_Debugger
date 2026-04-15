@@ -1,0 +1,5763 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-getopt_vs_usage.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-getopt_vs_usage.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
++++ perms='drwx------ 2 4096 Apr 15 17:17 /home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ for prg in $built_programs
++ sprg='['
++ test '[' = ginstall
++ test -f '/home/curse/Desktop/Research/Debugger/coreutils/src/[.c'
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=b2sum
++ test b2sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/b2sum.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=base32
++ test base32 = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/base32.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=base64
++ test base64 = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/base64.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=basename
++ test basename = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/basename.c
++ test ''
++ got_option=false
+++ shortopts basename
+++ cut -s '-d'\''' -f2
+++ getopts basename
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/basename.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in basename)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env basename --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env basename --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env basename --help
++ grep -F -- ' -z'
+++ longopts basename
+++ getopts basename
+++ cut -s '-d"' -f2
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in basename)'
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/basename.c
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basename --help
++ grep -F -- --multiple
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basename --help
++ grep -F -- --suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basename --help
++ grep -F -- --zero
++ test ''
++ for prg in $built_programs
++ sprg=basenc
++ test basenc = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/basenc.c
++ test ''
++ got_option=false
+++ shortopts basenc
+++ getopts basenc
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/basenc.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in basenc)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- ' -i'
+++ longopts basenc
+++ getopts basenc
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/basenc.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in basenc)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --decode
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --wrap
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --ignore-garbage
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --base64
++ env basenc --help
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --base64url
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --base58
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --base32
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --base32hex
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --base16
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --base2msbf
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --base2lsbf
++ for opt in $(longopts $sprg)
++ got_option=true
++ env basenc --help
++ grep -F -- --z85
++ test ''
++ for prg in $built_programs
++ sprg=cat
++ test cat = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/cat.c
++ test ''
++ got_option=false
+++ shortopts cat
+++ getopts cat
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cat.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cat)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ grep -F -- ' -b'
++ env cat --help
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- ' -E'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- ' -A'
+++ longopts cat
+++ getopts cat
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cat.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cat)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- --number-nonblank
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- --number
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- --squeeze-blank
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- --show-nonprinting
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- --show-ends
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- --show-tabs
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cat --help
++ grep -F -- --show-all
++ test ''
++ for prg in $built_programs
++ sprg=chgrp
++ test chgrp = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/chgrp.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=chmod
++ test chmod = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/chmod.c
++ test ''
++ got_option=false
+++ shortopts chmod
+++ getopts chmod
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/chmod.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in chmod)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- ' -R'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- ' -v'
+++ longopts chmod
+++ getopts chmod
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/chmod.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in chmod)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --changes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --recursive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --no-dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --no-preserve-root
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --preserve-root
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --reference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --silent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chmod --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=chown
++ test chown = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/chown.c
++ test ''
++ got_option=false
+++ shortopts chown
+++ getopts chown
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/chown.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in chown)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- ' -R'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- ' -v'
+++ longopts chown
+++ getopts chown
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/chown.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in chown)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --recursive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --changes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --from
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --no-dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --no-preserve-root
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --preserve-root
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --silent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --reference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chown --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=chroot
++ test chroot = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/chroot.c
++ test ''
++ got_option=false
+++ shortopts chroot
+++ getopts chroot
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/chroot.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in chroot)'
+++ longopts chroot
+++ getopts chroot
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/chroot.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in chroot)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chroot --help
++ grep -F -- --groups
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chroot --help
++ grep -F -- --userspec
++ for opt in $(longopts $sprg)
++ got_option=true
++ env chroot --help
++ grep -F -- --skip-chdir
++ test ''
++ for prg in $built_programs
++ sprg=cksum
++ test cksum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/cksum.c
++ test ''
++ got_option=false
+++ shortopts cksum
+++ getopts cksum
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cksum.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cksum)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- ' -z'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- ' -z'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ grep -F -- ' -a'
++ env cksum --help
+++ longopts cksum
+++ cut -s '-d"' -f2
+++ getopts cksum
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cksum.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cksum)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --check
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --ignore-missing
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --status
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --warn
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --strict
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --tag
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --zero
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --length
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --check
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --ignore-missing
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --status
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --warn
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --strict
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --tag
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --zero
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --algorithm
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --base64
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --raw
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cksum --help
++ grep -F -- --untagged
++ test ''
++ for prg in $built_programs
++ sprg=comm
++ test comm = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/comm.c
++ test ''
++ got_option=false
+++ shortopts comm
+++ getopts comm
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/comm.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in comm)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env comm --help
++ grep -F -- ' -z'
+++ longopts comm
+++ getopts comm
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/comm.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in comm)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env comm --help
++ grep -F -- --check-order
++ for opt in $(longopts $sprg)
++ got_option=true
++ env comm --help
++ grep -F -- --nocheck-order
++ for opt in $(longopts $sprg)
++ got_option=true
++ env comm --help
++ grep -F -- --output-delimiter
++ for opt in $(longopts $sprg)
++ got_option=true
++ env comm --help
++ grep -F -- --total
++ for opt in $(longopts $sprg)
++ got_option=true
++ env comm --help
++ grep -F -- --zero-terminated
++ test ''
++ for prg in $built_programs
++ sprg=cp
++ test cp = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/cp.c
++ test ''
++ got_option=false
+++ shortopts cp
+++ getopts cp
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cp.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cp)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ grep -F -- ' -b'
++ env cp --help
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -L'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -P'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -x'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -R'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- ' -v'
+++ longopts cp
+++ cut -s '-d"' -f2
+++ getopts cp
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cp.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cp)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --archive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --attributes-only
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --backup
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --copy-contents
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --force
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --interactive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --link
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --no-dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --no-preserve
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --no-target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --one-file-system
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --parents
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --preserve
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --recursive
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --remove-destination
++ env cp --help
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --sparse
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --reflink
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --strip-trailing-slashes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --symbolic-link
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --update
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --verbose
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cp --help
++ grep -F -- --keep-directory-symlink
++ test ''
++ for prg in $built_programs
++ sprg=csplit
++ test csplit = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/csplit.c
++ test ''
++ got_option=false
+++ shortopts csplit
+++ getopts csplit
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/csplit.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in csplit)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- ' -k'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- ' -z'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- ' -b'
+++ longopts csplit
+++ getopts csplit
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/csplit.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in csplit)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- --digits
++ for opt in $(longopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- --silent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- --keep-files
++ for opt in $(longopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- --elide-empty-files
++ for opt in $(longopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- --prefix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- --suffix-format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env csplit --help
++ grep -F -- --suppress-matched
++ test ''
++ for prg in $built_programs
++ sprg=cut
++ test cut = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/cut.c
++ test ''
++ got_option=false
+++ shortopts cut
+++ getopts cut
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cut.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cut)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -O'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- ' -z'
+++ longopts cut
+++ getopts cut
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/cut.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in cut)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --characters
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --fields
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --delimiter
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --no-partial
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --whitespace-delimited
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --only-delimited
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --output-delimiter
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --complement
++ for opt in $(longopts $sprg)
++ got_option=true
++ env cut --help
++ grep -F -- --zero-terminated
++ test ''
++ for prg in $built_programs
++ sprg=date
++ test date = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/date.c
++ test ''
++ got_option=false
+++ shortopts date
+++ getopts date
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/date.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in date)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -I'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -R'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- ' -u'
+++ longopts date
+++ getopts date
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/date.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in date)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --date
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --file
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --iso-8601
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --reference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --resolution
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --rfc-email
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --rfc-3339
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --set
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --utc
++ for opt in $(longopts $sprg)
++ got_option=true
++ env date --help
++ grep -F -- --universal
++ test ''
++ for prg in $built_programs
++ sprg=dd
++ test dd = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/dd.c
++ test ''
++ got_option=false
+++ shortopts dd
+++ getopts dd
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/dd.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in dd)'
+++ longopts dd
+++ getopts dd
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/dd.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in dd)'
++ test ''
++ for prg in $built_programs
++ sprg=df
++ test df = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/df.c
++ test ''
++ got_option=false
+++ shortopts df
+++ getopts df
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/df.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in df)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -B'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -H'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -P'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- ' -x'
+++ longopts df
+++ cut -s '-d"' -f2
+++ getopts df
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/df.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in df)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --block-size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --inodes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --human-readable
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --si
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --local
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --output
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --portability
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --print-type
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --sync
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --no-sync
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --total
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --type
++ for opt in $(longopts $sprg)
++ got_option=true
++ env df --help
++ grep -F -- --exclude-type
++ test ''
++ for prg in $built_programs
++ sprg=dir
++ test dir = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/dir.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=dircolors
++ test dircolors = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/dircolors.c
++ test ''
++ got_option=false
+++ shortopts dircolors
+++ getopts dircolors
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/dircolors.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in dircolors)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ grep -F -- ' -c'
++ env dircolors --help
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- ' -p'
+++ longopts dircolors
+++ getopts dircolors
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/dircolors.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in dircolors)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- --bourne-shell
++ for opt in $(longopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- --sh
++ for opt in $(longopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- --csh
++ for opt in $(longopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- --c-shell
++ for opt in $(longopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- --print-database
++ for opt in $(longopts $sprg)
++ got_option=true
++ env dircolors --help
++ grep -F -- --print-ls-colors
++ test ''
++ for prg in $built_programs
++ sprg=dirname
++ test dirname = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/dirname.c
++ test ''
++ got_option=false
+++ shortopts dirname
+++ getopts dirname
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/dirname.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in dirname)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env dirname --help
++ grep -F -- ' -z'
+++ longopts dirname
+++ getopts dirname
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/dirname.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in dirname)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env dirname --help
++ grep -F -- --zero
++ test ''
++ for prg in $built_programs
++ sprg=du
++ test du = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/du.c
++ test ''
++ got_option=false
+++ shortopts du
+++ getopts du
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/du.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in du)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -A'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -B'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -L'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -D'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -X'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -0'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -P'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -x'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- ' -t'
+++ longopts du
+++ getopts du
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/du.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in du)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --apparent-size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --block-size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --count-links
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --dereference-args
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --exclude
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --exclude-from
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --files0-from
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --human-readable
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --inodes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --si
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --max-depth
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --null
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --no-dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --one-file-system
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --separate-dirs
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --summarize
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --total
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --threshold
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --time
++ for opt in $(longopts $sprg)
++ got_option=true
++ env du --help
++ grep -F -- --time-style
++ test ''
++ for prg in $built_programs
++ sprg=echo
++ test echo = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/echo.c
++ test ''
++ got_option=false
+++ shortopts echo
+++ getopts echo
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/echo.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in echo)'
+++ longopts echo
+++ getopts echo
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/echo.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in echo)'
++ test ''
++ for prg in $built_programs
++ sprg=env
++ test env = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/env.c
++ test ''
++ got_option=false
+++ shortopts env
+++ getopts env
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/env.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in env)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- ' -0'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- ' -C'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- ' -S'
+++ longopts env
+++ getopts env
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/env.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in env)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --argv0
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --ignore-environment
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --null
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --unset
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --chdir
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --default-signal
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --ignore-signal
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --block-signal
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --list-signal-handling
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env env --help
++ grep -F -- --split-string
++ test ''
++ for prg in $built_programs
++ sprg=expand
++ test expand = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/expand.c
++ test ''
++ got_option=false
+++ shortopts expand
+++ getopts expand
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/expand.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in expand)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env expand --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env expand --help
++ grep -F -- ' -i'
+++ longopts expand
+++ getopts expand
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/expand.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in expand)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env expand --help
++ grep -F -- --tabs
++ for opt in $(longopts $sprg)
++ got_option=true
++ env expand --help
++ grep -F -- --initial
++ test ''
++ for prg in $built_programs
++ sprg=expr
++ test expr = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/expr.c
++ test ''
++ got_option=false
+++ shortopts expr
+++ getopts expr
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/expr.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in expr)'
+++ longopts expr
+++ getopts expr
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/expr.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in expr)'
++ test ''
++ for prg in $built_programs
++ sprg=factor
++ test factor = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/factor.c
++ test ''
++ got_option=false
+++ shortopts factor
+++ getopts factor
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/factor.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in factor)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env factor --help
++ grep -F -- ' -h'
+++ longopts factor
+++ getopts factor
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/factor.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in factor)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env factor --help
++ grep -F -- --exponents
++ test ''
++ for prg in $built_programs
++ sprg=false
++ test false = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/false.c
++ test ''
++ got_option=false
+++ shortopts false
+++ getopts false
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/false.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in false)'
+++ longopts false
+++ getopts false
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/false.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in false)'
++ test ''
++ for prg in $built_programs
++ sprg=fmt
++ test fmt = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/fmt.c
++ test ''
++ got_option=false
+++ shortopts fmt
+++ getopts fmt
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/fmt.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in fmt)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- ' -g'
+++ longopts fmt
+++ getopts fmt
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/fmt.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in fmt)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- --crown-margin
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- --prefix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- --split-only
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- --tagged-paragraph
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- --uniform-spacing
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- --width
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fmt --help
++ grep -F -- --goal
++ test ''
++ for prg in $built_programs
++ sprg=fold
++ test fold = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/fold.c
++ test ''
++ got_option=false
+++ shortopts fold
+++ getopts fold
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/fold.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in fold)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- ' -w'
+++ longopts fold
+++ getopts fold
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/fold.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in fold)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- --bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- --characters
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- --spaces
++ for opt in $(longopts $sprg)
++ got_option=true
++ env fold --help
++ grep -F -- --width
++ test ''
++ for prg in $built_programs
++ sprg=ginstall
++ test ginstall = ginstall
++ sprg=install
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/install.c
++ test ''
++ got_option=false
+++ shortopts install
+++ getopts install
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/install.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in install)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -C'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -g'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -o'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- ' -v'
+++ longopts install
+++ getopts install
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/install.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in install)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --backup
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --compare
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --group
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --mode
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --no-target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --owner
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --preserve-timestamps
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --preserve-context
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --strip
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --strip-program
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ginstall --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=groups
++ test groups = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/groups.c
++ test ''
++ got_option=false
+++ shortopts groups
+++ getopts groups
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/groups.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in groups)'
+++ longopts groups
+++ getopts groups
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/groups.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in groups)'
++ test ''
++ for prg in $built_programs
++ sprg=head
++ test head = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/head.c
++ test ''
++ got_option=false
+++ shortopts head
+++ getopts head
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/head.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in head)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- ' -z'
+++ longopts head
+++ getopts head
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/head.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in head)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- --bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- --lines
++ for opt in $(longopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- --silent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- --verbose
++ for opt in $(longopts $sprg)
++ got_option=true
++ env head --help
++ grep -F -- --zero-terminated
++ test ''
++ for prg in $built_programs
++ sprg=hostid
++ test hostid = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/hostid.c
++ test ''
++ got_option=false
+++ shortopts hostid
+++ getopts hostid
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/hostid.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in hostid)'
+++ longopts hostid
+++ getopts hostid
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/hostid.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in hostid)'
++ test ''
++ for prg in $built_programs
++ sprg=id
++ test id = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/id.c
++ test ''
++ got_option=false
+++ shortopts id
+++ getopts id
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/id.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in id)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- ' -Z'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- ' -g'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- ' -G'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- ' -z'
+++ longopts id
+++ getopts id
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/id.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in id)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- --context
++ for opt in $(longopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- --group
++ for opt in $(longopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- --groups
++ for opt in $(longopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- --name
++ for opt in $(longopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- --real
++ for opt in $(longopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- --user
++ for opt in $(longopts $sprg)
++ got_option=true
++ env id --help
++ grep -F -- --zero
++ test ''
++ for prg in $built_programs
++ sprg=join
++ test join = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/join.c
++ test ''
++ got_option=false
+++ shortopts join
+++ getopts join
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/join.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in join)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env join --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env join --help
++ grep -F -- ' -z'
+++ longopts join
+++ getopts join
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/join.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in join)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env join --help
++ grep -F -- --ignore-case
++ for opt in $(longopts $sprg)
++ got_option=true
++ env join --help
++ grep -F -- --check-order
++ for opt in $(longopts $sprg)
++ got_option=true
++ env join --help
++ grep -F -- --nocheck-order
++ for opt in $(longopts $sprg)
++ got_option=true
++ env join --help
++ grep -F -- --zero-terminated
++ for opt in $(longopts $sprg)
++ got_option=true
++ env join --help
++ grep -F -- --header
++ test ''
++ for prg in $built_programs
++ sprg=link
++ test link = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/link.c
++ test ''
++ got_option=false
+++ shortopts link
+++ getopts link
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/link.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in link)'
+++ longopts link
+++ getopts link
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/link.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in link)'
++ test ''
++ for prg in $built_programs
++ sprg=ln
++ test ln = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/ln.c
++ test ''
++ got_option=false
+++ shortopts ln
+++ getopts ln
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/ln.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in ln)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -F'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -L'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -P'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- ' -v'
+++ longopts ln
+++ getopts ln
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/ln.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in ln)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --backup
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --no-dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --no-target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --force
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --interactive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --logical
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --physical
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --relative
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --symbolic
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ln --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=logname
++ test logname = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/logname.c
++ test ''
++ got_option=false
+++ shortopts logname
+++ getopts logname
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/logname.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in logname)'
+++ longopts logname
+++ getopts logname
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/logname.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in logname)'
++ test ''
++ for prg in $built_programs
++ sprg=ls
++ test ls = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/ls.c
++ test ''
++ got_option=false
+++ shortopts ls
+++ getopts ls
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/ls.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in ls)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -D'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -k'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -G'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -A'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -B'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -F'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -H'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -I'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -L'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -N'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -Q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -R'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- ' -Z'
+++ longopts ls
+++ getopts ls
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/ls.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in ls)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --escape
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --dired
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --full-time
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --group-directories-first
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --human-readable
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --inode
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --kibibytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --numeric-uid-gid
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --no-group
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --hide-control-chars
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --reverse
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --size
++ env ls --help
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --width
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --almost-all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --ignore-backups
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --classify
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --file-type
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --si
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --dereference-command-line
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --dereference-command-line-symlink-to-dir
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --hide
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --ignore
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --indicator-style
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --literal
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --quote-name
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --quoting-style
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --recursive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --show-control-chars
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --tabsize
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --time
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --time-style
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --zero
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --color
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --hyperlink
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --block-size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --context
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ls --help
++ grep -F -- --author
++ test ''
++ for prg in $built_programs
++ sprg=md5sum
++ test md5sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/md5sum.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=mkdir
++ test mkdir = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/mkdir.c
++ test ''
++ got_option=false
+++ shortopts mkdir
+++ getopts mkdir
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mkdir.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mkdir)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mkdir --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mkdir --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mkdir --help
++ grep -F -- ' -v'
+++ longopts mkdir
+++ getopts mkdir
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mkdir.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mkdir)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --mode
++ env mkdir --help
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mkdir --help
++ grep -F -- --parents
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --verbose
++ env mkdir --help
++ test ''
++ for prg in $built_programs
++ sprg=mkfifo
++ test mkfifo = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/mkfifo.c
++ test ''
++ got_option=false
+++ shortopts mkfifo
+++ cut -s '-d'\''' -f2
+++ getopts mkfifo
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mkfifo.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mkfifo)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mkfifo --help
++ grep -F -- ' -m'
+++ longopts mkfifo
+++ getopts mkfifo
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mkfifo.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mkfifo)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mkfifo --help
++ grep -F -- --mode
++ test ''
++ for prg in $built_programs
++ sprg=mknod
++ test mknod = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/mknod.c
++ test ''
++ got_option=false
+++ shortopts mknod
+++ getopts mknod
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mknod.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mknod)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mknod --help
++ grep -F -- ' -m'
+++ longopts mknod
+++ getopts mknod
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mknod.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mknod)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mknod --help
++ grep -F -- --mode
++ test ''
++ for prg in $built_programs
++ sprg=mktemp
++ test mktemp = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/mktemp.c
++ test ''
++ got_option=false
+++ shortopts mktemp
+++ getopts mktemp
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mktemp.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mktemp)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- ' -p'
+++ longopts mktemp
+++ getopts mktemp
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mktemp.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mktemp)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- --directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- --dry-run
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- --suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mktemp --help
++ grep -F -- --tmpdir
++ test ''
++ for prg in $built_programs
++ sprg=mv
++ test mv = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/mv.c
++ test ''
++ got_option=false
+++ shortopts mv
+++ getopts mv
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mv.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mv)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -Z'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- ' -v'
+++ longopts mv
+++ getopts mv
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/mv.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in mv)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --backup
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --context
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --exchange
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --force
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --interactive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --no-copy
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --no-target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --strip-trailing-slashes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --target-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --update
++ for opt in $(longopts $sprg)
++ got_option=true
++ env mv --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=nice
++ test nice = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/nice.c
++ test ''
++ got_option=false
+++ shortopts nice
+++ getopts nice
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nice.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nice)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nice --help
++ grep -F -- ' -n'
+++ longopts nice
+++ getopts nice
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nice.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nice)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nice --help
++ grep -F -- --adjustment
++ test ''
++ for prg in $built_programs
++ sprg=nl
++ test nl = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/nl.c
++ test ''
++ got_option=false
+++ shortopts nl
+++ getopts nl
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nl.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nl)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- ' -d'
+++ longopts nl
+++ getopts nl
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nl.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nl)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --header-numbering
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --body-numbering
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --footer-numbering
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --starting-line-number
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --line-increment
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --no-renumber
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --join-blank-lines
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --number-separator
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --number-width
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --number-format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nl --help
++ grep -F -- --section-delimiter
++ test ''
++ for prg in $built_programs
++ sprg=nohup
++ test nohup = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/nohup.c
++ test ''
++ got_option=false
+++ shortopts nohup
+++ getopts nohup
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nohup.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nohup)'
+++ longopts nohup
+++ getopts nohup
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nohup.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nohup)'
++ test ''
++ for prg in $built_programs
++ sprg=nproc
++ test nproc = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/nproc.c
++ test ''
++ got_option=false
+++ shortopts nproc
+++ getopts nproc
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nproc.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nproc)'
+++ longopts nproc
+++ getopts nproc
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/nproc.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in nproc)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nproc --help
++ grep -F -- --all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env nproc --help
++ grep -F -- --ignore
++ test ''
++ for prg in $built_programs
++ sprg=numfmt
++ test numfmt = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/numfmt.c
++ test ''
++ got_option=false
+++ shortopts numfmt
+++ getopts numfmt
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/numfmt.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in numfmt)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- ' -z'
+++ longopts numfmt
+++ getopts numfmt
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/numfmt.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in numfmt)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --from
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --from-unit
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --to
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --to-unit
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --round
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --padding
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --unit-separator
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --grouping
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --delimiter
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --field
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --header
++ env numfmt --help
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env numfmt --help
++ grep -F -- --invalid
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --zero-terminated
++ env numfmt --help
++ test ''
++ for prg in $built_programs
++ sprg=od
++ test od = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/od.c
++ test ''
++ got_option=false
+++ shortopts od
+++ getopts od
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/od.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in od)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- ' -j'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- ' -A'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- ' -N'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- ' -w'
+++ longopts od
+++ getopts od
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/od.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in od)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --skip-bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --address-radix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --read-bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --output-duplicates
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --strings
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --traditional
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --width
++ for opt in $(longopts $sprg)
++ got_option=true
++ env od --help
++ grep -F -- --endian
++ test ''
++ for prg in $built_programs
++ sprg=paste
++ test paste = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/paste.c
++ test ''
++ got_option=false
+++ shortopts paste
+++ getopts paste
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/paste.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in paste)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env paste --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env paste --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env paste --help
++ grep -F -- ' -z'
+++ longopts paste
+++ cut -s '-d"' -f2
+++ getopts paste
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/paste.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in paste)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env paste --help
++ grep -F -- --serial
++ for opt in $(longopts $sprg)
++ got_option=true
++ env paste --help
++ grep -F -- --delimiters
++ for opt in $(longopts $sprg)
++ got_option=true
++ env paste --help
++ grep -F -- --zero-terminated
++ test ''
++ for prg in $built_programs
++ sprg=pathchk
++ test pathchk = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/pathchk.c
++ test ''
++ got_option=false
+++ shortopts pathchk
+++ getopts pathchk
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pathchk.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pathchk)'
+++ longopts pathchk
+++ getopts pathchk
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pathchk.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pathchk)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pathchk --help
++ grep -F -- --portability
++ test ''
++ for prg in $built_programs
++ sprg=pinky
++ test pinky = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/pinky.c
++ test ''
++ got_option=false
+++ shortopts pinky
+++ getopts pinky
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pinky.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pinky)'
+++ longopts pinky
+++ getopts pinky
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pinky.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pinky)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pinky --help
++ grep -F -- --lookup
++ test ''
++ for prg in $built_programs
++ sprg=pr
++ test pr = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/pr.c
++ test ''
++ got_option=false
+++ shortopts pr
+++ getopts pr
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pr.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pr)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -D'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -e'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -J'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -N'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -o'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- ' -W'
+++ longopts pr
+++ getopts pr
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pr.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pr)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --pages
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --columns
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --across
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --show-control-chars
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --double-space
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --date-format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --expand-tabs
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --form-feed
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --header
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --output-tabs
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --join-lines
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --length
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --merge
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --number-lines
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --first-line-number
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --indent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --no-file-warnings
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --separator
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --sep-string
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --omit-header
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --omit-pagination
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --show-nonprinting
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --width
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pr --help
++ grep -F -- --page-width
++ test ''
++ for prg in $built_programs
++ sprg=printenv
++ test printenv = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/printenv.c
++ test ''
++ got_option=false
+++ shortopts printenv
+++ getopts printenv
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/printenv.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in printenv)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env printenv --help
++ grep -F -- ' -0'
+++ longopts printenv
+++ getopts printenv
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/printenv.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in printenv)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env printenv --help
++ grep -F -- --null
++ test ''
++ for prg in $built_programs
++ sprg=printf
++ test printf = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/printf.c
++ test ''
++ got_option=false
+++ shortopts printf
+++ getopts printf
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/printf.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in printf)'
+++ longopts printf
+++ getopts printf
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/printf.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in printf)'
++ test ''
++ for prg in $built_programs
++ sprg=ptx
++ test ptx = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/ptx.c
++ test ''
++ got_option=false
+++ shortopts ptx
+++ getopts ptx
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/ptx.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in ptx)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ grep -F -- ' -A'
++ env ptx --help
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -F'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -g'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ grep -F -- ' -i'
++ env ptx --help
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -M'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -o'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -R'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -G'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- ' -W'
+++ longopts ptx
+++ getopts ptx
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/ptx.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in ptx)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --auto-reference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --break-file
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --flag-truncation
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --ignore-case
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --gap-size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --ignore-file
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --macro-name
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --only-file
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --references
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --right-side-refs
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --sentence-regexp
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --traditional
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --typeset-mode
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --width
++ for opt in $(longopts $sprg)
++ got_option=true
++ env ptx --help
++ grep -F -- --word-regexp
++ test ''
++ for prg in $built_programs
++ sprg=pwd
++ test pwd = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/pwd.c
++ test ''
++ got_option=false
+++ shortopts pwd
+++ getopts pwd
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pwd.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pwd)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pwd --help
++ grep -F -- ' -L'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env pwd --help
++ grep -F -- ' -P'
+++ longopts pwd
+++ getopts pwd
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/pwd.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in pwd)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pwd --help
++ grep -F -- --logical
++ for opt in $(longopts $sprg)
++ got_option=true
++ env pwd --help
++ grep -F -- --physical
++ test ''
++ for prg in $built_programs
++ sprg=readlink
++ test readlink = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/readlink.c
++ test ''
++ got_option=false
+++ shortopts readlink
+++ getopts readlink
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/readlink.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in readlink)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -e'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- ' -z'
+++ longopts readlink
+++ getopts readlink
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/readlink.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in readlink)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --canonicalize
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --canonicalize-existing
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --canonicalize-missing
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --no-newline
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --silent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --verbose
++ for opt in $(longopts $sprg)
++ got_option=true
++ env readlink --help
++ grep -F -- --zero
++ test ''
++ for prg in $built_programs
++ sprg=realpath
++ test realpath = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/realpath.c
++ test ''
++ got_option=false
+++ shortopts realpath
+++ getopts realpath
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/realpath.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in realpath)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -E'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -e'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -z'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -L'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- ' -P'
+++ longopts realpath
+++ getopts realpath
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/realpath.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in realpath)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --canonicalize
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --canonicalize-existing
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --canonicalize-missing
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --relative-to
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --relative-base
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --strip
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --no-symlinks
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --zero
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --logical
++ for opt in $(longopts $sprg)
++ got_option=true
++ env realpath --help
++ grep -F -- --physical
++ test ''
++ for prg in $built_programs
++ sprg=rm
++ test rm = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/rm.c
++ test ''
++ got_option=false
+++ shortopts rm
+++ getopts rm
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/rm.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in rm)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- ' -v'
+++ longopts rm
+++ getopts rm
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/rm.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in rm)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --force
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --interactive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --one-file-system
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --no-preserve-root
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --preserve-root
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --recursive
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --dir
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rm --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=rmdir
++ test rmdir = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/rmdir.c
++ test ''
++ got_option=false
+++ shortopts rmdir
+++ getopts rmdir
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/rmdir.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in rmdir)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env rmdir --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env rmdir --help
++ grep -F -- ' -v'
+++ longopts rmdir
+++ getopts rmdir
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/rmdir.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in rmdir)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rmdir --help
++ grep -F -- --ignore-fail-on-non-empty
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rmdir --help
++ grep -F -- --parents
++ for opt in $(longopts $sprg)
++ got_option=true
++ env rmdir --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=seq
++ test seq = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/seq.c
++ test ''
++ got_option=false
+++ shortopts seq
+++ getopts seq
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/seq.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in seq)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env seq --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env seq --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env seq --help
++ grep -F -- ' -s'
+++ longopts seq
+++ getopts seq
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/seq.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in seq)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env seq --help
++ grep -F -- --equal-width
++ for opt in $(longopts $sprg)
++ got_option=true
++ env seq --help
++ grep -F -- --format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env seq --help
++ grep -F -- --separator
++ test ''
++ for prg in $built_programs
++ sprg=sha1sum
++ test sha1sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sha1sum.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=sha224sum
++ test sha224sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sha224sum.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=sha256sum
++ test sha256sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sha256sum.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=sha384sum
++ test sha384sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sha384sum.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=sha512sum
++ test sha512sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sha512sum.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=shred
++ test shred = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/shred.c
++ test ''
++ got_option=false
+++ shortopts shred
+++ getopts shred
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/shred.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in shred)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- ' -x'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- ' -z'
+++ longopts shred
+++ getopts shred
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/shred.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in shred)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --exact
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --force
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --iterations
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --random-source
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --remove
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --verbose
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shred --help
++ grep -F -- --zero
++ test ''
++ for prg in $built_programs
++ sprg=shuf
++ test shuf = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/shuf.c
++ test ''
++ got_option=false
+++ shortopts shuf
+++ getopts shuf
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/shuf.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in shuf)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- ' -e'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- ' -o'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- ' -z'
+++ longopts shuf
+++ getopts shuf
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/shuf.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in shuf)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- --echo
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- --input-range
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- --head-count
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- --output
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- --random-source
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- --repeat
++ for opt in $(longopts $sprg)
++ got_option=true
++ env shuf --help
++ grep -F -- --zero-terminated
++ test ''
++ for prg in $built_programs
++ sprg=sleep
++ test sleep = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sleep.c
++ test ''
++ got_option=false
+++ shortopts sleep
+++ getopts sleep
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sleep.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sleep)'
+++ longopts sleep
+++ getopts sleep
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sleep.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sleep)'
++ test ''
++ for prg in $built_programs
++ sprg=sort
++ test sort = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sort.c
++ test ''
++ got_option=false
+++ shortopts sort
+++ getopts sort
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sort.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sort)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -g'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ grep -F -- ' -k'
++ env sort --help
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -M'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -h'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -V'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -R'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -o'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -S'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- ' -z'
+++ longopts sort
+++ getopts sort
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sort.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sort)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --ignore-leading-blanks
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --check
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --compress-program
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --dictionary-order
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --ignore-case
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --files0-from
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --general-numeric-sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --ignore-nonprinting
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --key
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --merge
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --month-sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --numeric-sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --human-numeric-sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --version-sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --random-sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --random-source
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --sort
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --output
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --reverse
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --stable
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --batch-size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --buffer-size
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --field-separator
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --temporary-directory
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --unique
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --zero-terminated
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sort --help
++ grep -F -- --parallel
++ test ''
++ for prg in $built_programs
++ sprg=split
++ test split = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/split.c
++ test ''
++ got_option=false
+++ shortopts split
+++ getopts split
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/split.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in split)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -C'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -e'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -x'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- ' -t'
+++ longopts split
+++ getopts split
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/split.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in split)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --lines
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --line-bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --number
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --elide-empty-files
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --unbuffered
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --suffix-length
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --additional-suffix
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --numeric-suffixes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --hex-suffixes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --filter
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --verbose
++ for opt in $(longopts $sprg)
++ got_option=true
++ env split --help
++ grep -F -- --separator
++ test ''
++ for prg in $built_programs
++ sprg=stat
++ test stat = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/stat.c
++ test ''
++ got_option=false
+++ shortopts stat
+++ getopts stat
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/stat.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in stat)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- ' -L'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- ' -t'
+++ longopts stat
+++ getopts stat
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/stat.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in stat)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- --dereference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- --file-system
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- --format
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- --printf
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- --terse
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stat --help
++ grep -F -- --cached
++ test ''
++ for prg in $built_programs
++ sprg=stdbuf
++ test stdbuf = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/stdbuf.c
++ test ''
++ got_option=false
+++ shortopts stdbuf
+++ getopts stdbuf
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/stdbuf.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in stdbuf)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stdbuf --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stdbuf --help
++ grep -F -- ' -o'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stdbuf --help
++ grep -F -- ' -e'
+++ longopts stdbuf
+++ getopts stdbuf
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/stdbuf.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in stdbuf)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stdbuf --help
++ grep -F -- --input
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stdbuf --help
++ grep -F -- --output
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stdbuf --help
++ grep -F -- --error
++ test ''
++ for prg in $built_programs
++ sprg=stty
++ test stty = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/stty.c
++ test ''
++ got_option=false
+++ shortopts stty
+++ getopts stty
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/stty.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in stty)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stty --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stty --help
++ grep -F -- ' -g'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env stty --help
++ grep -F -- ' -F'
+++ longopts stty
+++ cut -s '-d"' -f2
+++ getopts stty
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/stty.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in stty)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --all
++ env stty --help
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stty --help
++ grep -F -- --save
++ for opt in $(longopts $sprg)
++ got_option=true
++ env stty --help
++ grep -F -- --file
++ test ''
++ for prg in $built_programs
++ sprg=sum
++ test sum = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sum.c
++ test ''
++ got_option=false
+++ shortopts sum
+++ getopts sum
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sum.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sum)'
+++ longopts sum
+++ getopts sum
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sum.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sum)'
++ test ''
++ for prg in $built_programs
++ sprg=sync
++ test sync = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/sync.c
++ test ''
++ got_option=false
+++ shortopts sync
+++ getopts sync
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sync.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sync)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sync --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env sync --help
++ grep -F -- ' -f'
+++ longopts sync
+++ getopts sync
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/sync.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in sync)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sync --help
++ grep -F -- --data
++ for opt in $(longopts $sprg)
++ got_option=true
++ env sync --help
++ grep -F -- --file-system
++ test ''
++ for prg in $built_programs
++ sprg=tac
++ test tac = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/tac.c
++ test ''
++ got_option=false
+++ shortopts tac
+++ getopts tac
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tac.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tac)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tac --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tac --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tac --help
++ grep -F -- ' -s'
+++ longopts tac
+++ getopts tac
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tac.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tac)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tac --help
++ grep -F -- --before
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tac --help
++ grep -F -- --regex
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tac --help
++ grep -F -- --separator
++ test ''
++ for prg in $built_programs
++ sprg=tail
++ test tail = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/tail.c
++ test ''
++ got_option=false
+++ shortopts tail
+++ getopts tail
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tail.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tail)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- ' -z'
+++ longopts tail
+++ getopts tail
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tail.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tail)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --follow
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --lines
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --max-unchanged-stats
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --pid
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --quiet
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --retry
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --silent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --sleep-interval
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --verbose
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tail --help
++ grep -F -- --zero-terminated
++ test ''
++ for prg in $built_programs
++ sprg=tee
++ test tee = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/tee.c
++ test ''
++ got_option=false
+++ shortopts tee
+++ getopts tee
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tee.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tee)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tee --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tee --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tee --help
++ grep -F -- ' -p'
+++ longopts tee
+++ getopts tee
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tee.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tee)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tee --help
++ grep -F -- --append
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tee --help
++ grep -F -- --ignore-interrupts
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tee --help
++ grep -F -- --output-error
++ test ''
++ for prg in $built_programs
++ sprg=test
++ test test = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/test.c
++ test ''
++ got_option=false
+++ shortopts test
+++ cut -s '-d'\''' -f2
+++ getopts test
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/test.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in test)'
+++ longopts test
+++ getopts test
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/test.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in test)'
++ test ''
++ for prg in $built_programs
++ sprg=timeout
++ test timeout = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/timeout.c
++ test ''
++ got_option=false
+++ shortopts timeout
+++ getopts timeout
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/timeout.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in timeout)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- ' -k'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- ' -v'
+++ longopts timeout
+++ getopts timeout
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/timeout.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in timeout)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- --foreground
++ for opt in $(longopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- --kill-after
++ for opt in $(longopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- --preserve-status
++ for opt in $(longopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- --signal
++ for opt in $(longopts $sprg)
++ got_option=true
++ env timeout --help
++ grep -F -- --verbose
++ test ''
++ for prg in $built_programs
++ sprg=touch
++ test touch = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/touch.c
++ test ''
++ got_option=false
+++ shortopts touch
+++ getopts touch
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/touch.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in touch)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- ' -h'
+++ longopts touch
+++ getopts touch
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/touch.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in touch)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- --time
++ for opt in $(longopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- --no-create
++ for opt in $(longopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- --date
++ for opt in $(longopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- --reference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env touch --help
++ grep -F -- --no-dereference
++ test ''
++ for prg in $built_programs
++ sprg=tr
++ test tr = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/tr.c
++ test ''
++ got_option=false
+++ shortopts tr
+++ getopts tr
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tr.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tr)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- ' -t'
+++ longopts tr
+++ getopts tr
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tr.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tr)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- --complement
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- --delete
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- --squeeze-repeats
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tr --help
++ grep -F -- --truncate-set1
++ test ''
++ for prg in $built_programs
++ sprg=true
++ test true = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/true.c
++ test ''
++ got_option=false
+++ shortopts true
+++ getopts true
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/true.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in true)'
+++ longopts true
+++ getopts true
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/true.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in true)'
++ test ''
++ for prg in $built_programs
++ sprg=truncate
++ test truncate = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/truncate.c
++ test ''
++ got_option=false
+++ shortopts truncate
+++ getopts truncate
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/truncate.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in truncate)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- ' -o'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- ' -s'
+++ longopts truncate
+++ getopts truncate
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/truncate.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in truncate)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- --no-create
++ for opt in $(longopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- --io-blocks
++ for opt in $(longopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- --reference
++ for opt in $(longopts $sprg)
++ got_option=true
++ env truncate --help
++ grep -F -- --size
++ test ''
++ for prg in $built_programs
++ sprg=tsort
++ test tsort = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/tsort.c
++ test ''
++ got_option=false
+++ shortopts tsort
+++ cut -s '-d'\''' -f2
+++ getopts tsort
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tsort.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tsort)'
+++ longopts tsort
+++ getopts tsort
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tsort.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tsort)'
++ test ''
++ for prg in $built_programs
++ sprg=tty
++ test tty = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/tty.c
++ test ''
++ got_option=false
+++ shortopts tty
+++ getopts tty
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tty.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tty)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tty --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env tty --help
++ grep -F -- ' -s'
+++ longopts tty
+++ getopts tty
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/tty.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in tty)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tty --help
++ grep -F -- --silent
++ for opt in $(longopts $sprg)
++ got_option=true
++ env tty --help
++ grep -F -- --quiet
++ test ''
++ for prg in $built_programs
++ sprg=uname
++ test uname = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/uname.c
++ test ''
++ got_option=false
+++ shortopts uname
+++ getopts uname
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/uname.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in uname)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -n'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -v'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- ' -o'
+++ longopts uname
+++ getopts uname
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/uname.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in uname)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --kernel-name
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --nodename
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --kernel-release
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --kernel-version
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --machine
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --processor
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --hardware-platform
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uname --help
++ grep -F -- --operating-system
++ test ''
++ for prg in $built_programs
++ sprg=unexpand
++ test unexpand = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/unexpand.c
++ test ''
++ got_option=false
+++ shortopts unexpand
+++ getopts unexpand
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/unexpand.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in unexpand)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env unexpand --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env unexpand --help
++ grep -F -- ' -a'
+++ longopts unexpand
+++ getopts unexpand
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/unexpand.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in unexpand)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env unexpand --help
++ grep -F -- --tabs
++ for opt in $(longopts $sprg)
++ got_option=true
++ env unexpand --help
++ grep -F -- --all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env unexpand --help
++ grep -F -- --first-only
++ test ''
++ for prg in $built_programs
++ sprg=uniq
++ test uniq = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/uniq.c
++ test ''
++ got_option=false
+++ shortopts uniq
+++ getopts uniq
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/uniq.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in uniq)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -D'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -i'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -f'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- ' -z'
+++ longopts uniq
+++ getopts uniq
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/uniq.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in uniq)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --count
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --repeated
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --all-repeated
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --group
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --ignore-case
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --unique
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --skip-fields
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --skip-chars
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --check-chars
++ for opt in $(longopts $sprg)
++ got_option=true
++ env uniq --help
++ grep -F -- --zero-terminated
++ test ''
++ for prg in $built_programs
++ sprg=unlink
++ test unlink = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/unlink.c
++ test ''
++ got_option=false
+++ shortopts unlink
+++ getopts unlink
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/unlink.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in unlink)'
+++ longopts unlink
+++ getopts unlink
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/unlink.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in unlink)'
++ test ''
++ for prg in $built_programs
++ sprg=users
++ test users = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/users.c
++ test ''
++ got_option=false
+++ shortopts users
+++ getopts users
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/users.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in users)'
+++ longopts users
+++ getopts users
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/users.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in users)'
++ test ''
++ for prg in $built_programs
++ sprg=vdir
++ test vdir = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/vdir.c
++ test ''
++ continue
++ for prg in $built_programs
++ sprg=wc
++ test wc = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/wc.c
++ test ''
++ got_option=false
+++ shortopts wc
+++ getopts wc
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/wc.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in wc)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- ' -c'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- ' -m'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- ' -w'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- ' -L'
+++ longopts wc
+++ cut -s '-d"' -f2
+++ getopts wc
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/wc.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in wc)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --bytes
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --chars
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --lines
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --words
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --debug
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --files0-from
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --max-line-length
++ for opt in $(longopts $sprg)
++ got_option=true
++ env wc --help
++ grep -F -- --total
++ test ''
++ for prg in $built_programs
++ sprg=who
++ test who = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/who.c
++ test ''
++ got_option=false
+++ shortopts who
+++ getopts who
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/who.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in who)'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -a'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -b'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -q'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -d'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -H'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -l'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -T'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -p'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -r'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -s'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -t'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -u'
++ for opt in $(shortopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- ' -T'
+++ longopts who
+++ getopts who
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/who.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in who)'
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --all
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --boot
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --count
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --dead
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --heading
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --login
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --lookup
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --message
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --mesg
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --process
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --runlevel
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --short
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --time
++ for opt in $(longopts $sprg)
++ got_option=true
++ env who --help
++ grep -F -- --users
++ for opt in $(longopts $sprg)
++ got_option=true
++ grep -F -- --writable
++ env who --help
++ test ''
++ for prg in $built_programs
++ sprg=whoami
++ test whoami = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/whoami.c
++ test ''
++ got_option=false
+++ shortopts whoami
+++ getopts whoami
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/whoami.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in whoami)'
+++ longopts whoami
+++ getopts whoami
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/whoami.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in whoami)'
++ test ''
++ for prg in $built_programs
++ sprg=yes
++ test yes = ginstall
++ test -f /home/curse/Desktop/Research/Debugger/coreutils/src/yes.c
++ test ''
++ got_option=false
+++ shortopts yes
+++ getopts yes
+++ cut -s '-d'\''' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/yes.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in yes)'
+++ longopts yes
+++ getopts yes
+++ cut -s '-d"' -f2
+++ sed -n '/long_*opt.*\[/,/^}/{/^ *{/p}' /home/curse/Desktop/Research/Debugger/coreutils/src/yes.c
+++ grep -Ev '("-|Deprecated|Obsolescent|Not in yes)'
++ test ''
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-getopt_vs_usage.sh.uQiM
++ exit 0
+PASS tests/misc/getopt_vs_usage.sh (exit status: 0)

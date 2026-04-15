@@ -1,0 +1,358 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-numeric.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-numeric.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
++++ perms='drwx------ 2 4096 Apr 15 17:17 /home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ split
++ require_built_ split
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env split --version
+split (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Torbjorn Granlund and Richard M. Stallman.
++ printf '1\n2\n3\n4\n5\n'
++ printf '%s\n' 1 2
++ printf '%s\n' 3 4
++ printf '%s\n' 5
++ for mode in 'numeric' 'hex'
++ for start in 0 9
++ mode_option=--numeric-suffixes
++ test 0 '!=' 0
++ split --numeric-suffixes --lines=2 in
++ test numeric = hex
++ format=d
+++ seq 0 2
++ for i in $(seq $start $(($start+2)))
+++ printf %02d 0
++ compare exp-0 x00
++ compare_dev_null_ exp-0 x00
++ test 2 = 2
++ test xexp-0 = x/dev/null
++ test xx00 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-0 x00
++ LC_ALL=C
++ diff -u exp-0 x00
++ for i in $(seq $start $(($start+2)))
+++ printf %02d 1
++ compare exp-1 x01
++ compare_dev_null_ exp-1 x01
++ test 2 = 2
++ test xexp-1 = x/dev/null
++ test xx01 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-1 x01
++ LC_ALL=C
++ diff -u exp-1 x01
++ for i in $(seq $start $(($start+2)))
+++ printf %02d 2
++ compare exp-2 x02
++ compare_dev_null_ exp-2 x02
++ test 2 = 2
++ test xexp-2 = x/dev/null
++ test xx02 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-2 x02
++ LC_ALL=C
++ diff -u exp-2 x02
++ for start in 0 9
++ mode_option=--numeric-suffixes
++ test 9 '!=' 0
++ mode_option=--numeric-suffixes=9
++ split --numeric-suffixes=9 --lines=2 in
++ test numeric = hex
++ format=d
+++ seq 9 11
++ for i in $(seq $start $(($start+2)))
+++ printf %02d 9
++ compare exp-0 x09
++ compare_dev_null_ exp-0 x09
++ test 2 = 2
++ test xexp-0 = x/dev/null
++ test xx09 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-0 x09
++ LC_ALL=C
++ diff -u exp-0 x09
++ for i in $(seq $start $(($start+2)))
+++ printf %02d 10
++ compare exp-1 x10
++ compare_dev_null_ exp-1 x10
++ test 2 = 2
++ test xexp-1 = x/dev/null
++ test xx10 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-1 x10
++ LC_ALL=C
++ diff -u exp-1 x10
++ for i in $(seq $start $(($start+2)))
+++ printf %02d 11
++ compare exp-2 x11
++ compare_dev_null_ exp-2 x11
++ test 2 = 2
++ test xexp-2 = x/dev/null
++ test xx11 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-2 x11
++ LC_ALL=C
++ diff -u exp-2 x11
++ returns_ 1 split -a 3 --numeric-suffixes=1000 in
++ returns_ 1 split --numeric-suffixes=-1 in
++ returns_ 1 split --numeric-suffixes=one in
++ for mode in 'numeric' 'hex'
++ for start in 0 9
++ mode_option=--hex-suffixes
++ test 0 '!=' 0
++ split --hex-suffixes --lines=2 in
++ test hex = hex
++ format=x
+++ seq 0 2
++ for i in $(seq $start $(($start+2)))
+++ printf %02x 0
++ compare exp-0 x00
++ compare_dev_null_ exp-0 x00
++ test 2 = 2
++ test xexp-0 = x/dev/null
++ test xx00 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-0 x00
++ LC_ALL=C
++ diff -u exp-0 x00
++ for i in $(seq $start $(($start+2)))
+++ printf %02x 1
++ compare exp-1 x01
++ compare_dev_null_ exp-1 x01
++ test 2 = 2
++ test xexp-1 = x/dev/null
++ test xx01 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-1 x01
++ LC_ALL=C
++ diff -u exp-1 x01
++ for i in $(seq $start $(($start+2)))
+++ printf %02x 2
++ compare exp-2 x02
++ compare_dev_null_ exp-2 x02
++ test 2 = 2
++ test xexp-2 = x/dev/null
++ test xx02 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-2 x02
++ LC_ALL=C
++ diff -u exp-2 x02
++ for start in 0 9
++ mode_option=--hex-suffixes
++ test 9 '!=' 0
++ mode_option=--hex-suffixes=9
++ split --hex-suffixes=9 --lines=2 in
++ test hex = hex
++ format=x
+++ seq 9 11
++ for i in $(seq $start $(($start+2)))
+++ printf %02x 9
++ compare exp-0 x09
++ compare_dev_null_ exp-0 x09
++ test 2 = 2
++ test xexp-0 = x/dev/null
++ test xx09 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-0 x09
++ LC_ALL=C
++ diff -u exp-0 x09
++ for i in $(seq $start $(($start+2)))
+++ printf %02x 10
++ compare exp-1 x0a
++ compare_dev_null_ exp-1 x0a
++ test 2 = 2
++ test xexp-1 = x/dev/null
++ test xx0a = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-1 x0a
++ LC_ALL=C
++ diff -u exp-1 x0a
++ for i in $(seq $start $(($start+2)))
+++ printf %02x 11
++ compare exp-2 x0b
++ compare_dev_null_ exp-2 x0b
++ test 2 = 2
++ test xexp-2 = x/dev/null
++ test xx0b = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-2 x0b
++ LC_ALL=C
++ diff -u exp-2 x0b
++ returns_ 1 split -a 3 --hex-suffixes=1000 in
++ returns_ 1 split --hex-suffixes=-1 in
++ returns_ 1 split --hex-suffixes=one in
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-numeric.sh.WPah
++ exit 0
+PASS tests/split/numeric.sh (exit status: 0)

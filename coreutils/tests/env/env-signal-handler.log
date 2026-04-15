@@ -1,0 +1,626 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-env-signal-handler.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-env-signal-handler.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
++++ perms='drwx------ 2 4096 Apr 15 17:16 /home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ env seq test timeout printf
++ require_built_ env seq test timeout printf
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ for i in "$@"
++ case " $built_programs " in
++ for i in "$@"
++ case " $built_programs " in
++ for i in "$@"
++ case " $built_programs " in
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env env --version
+env (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Richard Mlynarik, David MacKenzie, and Assaf Gordon.
++ for i in $*
++ env seq --version
+seq (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Ulrich Drepper.
++ for i in $*
++ env test --version
++ for i in $*
++ env timeout --version
+timeout (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Padraig Brady.
++ for i in $*
++ env printf --version
+printf (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David MacKenzie.
++ trap_sigpipe_or_skip_
++ timeout 1 true
++ grep 'Broken pipe'
++ require_bash_as_SHELL_
++ bash --version
++ SHELL=bash
++ trap '' PIPE
++ bash -c 'trap - PIPE; seq 999999 2>err1t | head -n1 > out1'
++ sed 's/^\(seq: write error:\) .*/\1/' err1t
++ printf '1\n'
++ printf 'seq: write error:\n'
++ compare exp-out out1
++ compare_dev_null_ exp-out out1
++ test 2 = 2
++ test xexp-out = x/dev/null
++ test xout1 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-out out1
++ LC_ALL=C
++ diff -u exp-out out1
++ compare exp-err1 err1
++ compare_dev_null_ exp-err1 err1
++ test 2 = 2
++ test xexp-err1 = x/dev/null
++ test xerr1 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-err1 err1
++ LC_ALL=C
++ diff -u exp-err1 err1
++ trap '' PIPE
++ env --default-signal=PIPE bash -c 'trap - PIPE; seq 999999 2>err2 | head -n1 > out2'
++ compare exp-out out2
++ compare_dev_null_ exp-out out2
++ test 2 = 2
++ test xexp-out = x/dev/null
++ test xout2 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-out out2
++ LC_ALL=C
++ diff -u exp-out out2
++ compare /dev/null err2
++ compare_dev_null_ /dev/null err2
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s err2
++ return 0
++ return 0
++ trap '' PIPE
++ env --default-signal bash -c 'trap - PIPE; seq 999999 2>err4 | head -n1 > out4'
++ compare exp-out out4
++ compare_dev_null_ exp-out out4
++ test 2 = 2
++ test xexp-out = x/dev/null
++ test xout4 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-out out4
++ LC_ALL=C
++ diff -u exp-out out4
++ compare /dev/null err4
++ compare_dev_null_ /dev/null err4
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s err4
++ return 0
++ return 0
++ env --block-signal true
++ cat
++ timeout_sig=INT
++ env_opt=
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=INT 0.1 env sleep 10
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ cat
++ timeout_sig=INT
++ env_opt=--ignore-signal=INT
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=INT 0.1 env --ignore-signal=INT sleep 10
+./tests/env/env-signal-handler.sh: line 88: 56935 Killed                     env timeout --verbose --kill-after=.1 --signal=$timeout_sig $delay env $env_opt sleep 10 > /dev/null 2> outt
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ timeout_sig=INT
++ env_opt=--ignore-signal
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=INT 0.1 env --ignore-signal sleep 10
+./tests/env/env-signal-handler.sh: line 88: 56948 Killed                     env timeout --verbose --kill-after=.1 --signal=$timeout_sig $delay env $env_opt sleep 10 > /dev/null 2> outt
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ cat
++ timeout_sig=PIPE
++ env_opt=--ignore-signal=PIPE
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=PIPE 0.1 env --ignore-signal=PIPE sleep 10
+./tests/env/env-signal-handler.sh: line 88: 56954 Killed                     env timeout --verbose --kill-after=.1 --signal=$timeout_sig $delay env $env_opt sleep 10 > /dev/null 2> outt
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ kill -l RTMIN RTMAX
+34
+64
++ for sig in RTMIN RTMAX
++ cat
++ timeout_sig=RTMIN
++ env_opt=
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=RTMIN 0.1 env sleep 10
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ cat
++ timeout_sig=RTMIN
++ env_opt=--ignore-signal=RTMIN
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=RTMIN 0.1 env --ignore-signal=RTMIN sleep 10
+./tests/env/env-signal-handler.sh: line 88: 56966 Killed                     env timeout --verbose --kill-after=.1 --signal=$timeout_sig $delay env $env_opt sleep 10 > /dev/null 2> outt
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ timeout_sig=RTMIN
++ env_opt=--ignore-signal
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=RTMIN 0.1 env --ignore-signal sleep 10
+./tests/env/env-signal-handler.sh: line 88: 56971 Killed                     env timeout --verbose --kill-after=.1 --signal=$timeout_sig $delay env $env_opt sleep 10 > /dev/null 2> outt
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ for sig in RTMIN RTMAX
++ cat
++ timeout_sig=RTMAX
++ env_opt=
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=RTMAX 0.1 env sleep 10
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ cat
++ timeout_sig=RTMAX
++ env_opt=--ignore-signal=RTMAX
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=RTMAX 0.1 env --ignore-signal=RTMAX sleep 10
+./tests/env/env-signal-handler.sh: line 88: 56991 Killed                     env timeout --verbose --kill-after=.1 --signal=$timeout_sig $delay env $env_opt sleep 10 > /dev/null 2> outt
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ timeout_sig=RTMAX
++ env_opt=--ignore-signal
++ retry_delay_ env_ignore_delay_ .1 6
++ local test_func=env_ignore_delay_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ env_ignore_delay_ 0.1
++ local delay=0.1
++ env timeout --verbose --kill-after=.1 --signal=RTMAX 0.1 env --ignore-signal sleep 10
+./tests/env/env-signal-handler.sh: line 88: 56996 Killed                     env timeout --verbose --kill-after=.1 --signal=$timeout_sig $delay env $env_opt sleep 10 > /dev/null 2> outt
++ sed -n 1,2p outt
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ time_fail=0
++ break
++ test 0 = 0
++ for sig in INT PIPE
++ env --default-signal --ignore-signal=INT --list-signal-handling true
++ sed 's/ *(.*)//' err8t
++ env printf '%s: IGNORE\n' INT
++ compare exp-err8 err8
++ compare_dev_null_ exp-err8 err8
++ test 2 = 2
++ test xexp-err8 = x/dev/null
++ test xerr8 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-err8 err8
++ LC_ALL=C
++ diff -u exp-err8 err8
++ for sig in INT PIPE
++ env --default-signal --ignore-signal=PIPE --list-signal-handling true
++ sed 's/ *(.*)//' err8t
++ env printf '%s: IGNORE\n' PIPE
++ compare exp-err8 err8
++ compare_dev_null_ exp-err8 err8
++ test 2 = 2
++ test xexp-err8 = x/dev/null
++ test xerr8 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp-err8 err8
++ LC_ALL=C
++ diff -u exp-err8 err8
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-env-signal-handler.sh.svxl
++ exit 0
+PASS tests/env/env-signal-handler.sh (exit status: 0)

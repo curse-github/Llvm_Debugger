@@ -1,0 +1,13 @@
+Files:
+tests/test-rbtree_list.c
+tests/macros.h
+
+Depends-on:
+array-list
+stdcountof-h
+
+configure.ac:
+
+Makefile.am:
+TESTS += test-rbtree_list
+check_PROGRAMS += test-rbtree_list

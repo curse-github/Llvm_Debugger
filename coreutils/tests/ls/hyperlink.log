@@ -1,0 +1,304 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-hyperlink.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-hyperlink.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
++++ perms='drwx------ 2 4096 Apr 15 17:18 /home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ ls
++ require_built_ ls
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env ls --version
+ls (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Richard M. Stallman and David MacKenzie.
++ mkdir testdir
++ cd testdir
++ ls_encoded testdir
+++ encode testdir
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon testdir
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=testdir
++ echo testdir
++ grep 'dir$'
++ dir=:
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' testdir testdir :
+++ printf 'invalidutf8\351'
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch an#chor
++ ls_encoded an#chor
+++ encode an#chor
+++ sort -k1,1.1 -s
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon an#chor
+++ uniq -w1 -d
++ ef=an%23chor
++ echo an%23chor
++ grep 'dir$'
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' an%23chor an#chor ''
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch 'back\slash'
++ ls_encoded 'back\slash'
+++ encode 'back\slash'
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon 'back\slash'
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=back%5cslash
++ echo back%5cslash
++ grep 'dir$'
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' back%5cslash 'back\slash' ''
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch col:on
++ ls_encoded col:on
+++ encode col:on
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon col:on
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=col%3aon
++ echo col%3aon
++ grep 'dir$'
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' col%3aon col:on ''
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch encoded%3Fquestion
++ ls_encoded encoded%3Fquestion
+++ encode encoded%3Fquestion
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon encoded%3Fquestion
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=encoded%253Fquestion
++ echo encoded%253Fquestion
++ grep 'dir$'
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' encoded%253Fquestion encoded%3Fquestion ''
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch $'invalidutf8\351'
++ ls_encoded $'invalidutf8\351'
+++ encode $'invalidutf8\351'
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon $'invalidutf8\351'
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=invalidutf8%e9
++ grep 'dir$'
++ echo invalidutf8%e9
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' invalidutf8%e9 $'invalidutf8\351' ''
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch 'ques?tion'
++ ls_encoded 'ques?tion'
+++ encode 'ques?tion'
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon 'ques?tion'
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=ques%3ftion
++ echo ques%3ftion
++ grep 'dir$'
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' ques%3ftion 'ques?tion' ''
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch 'sp ace'
++ ls_encoded 'sp ace'
+++ encode 'sp ace'
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon 'sp ace'
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=sp%20ace
++ echo sp%20ace
++ grep 'dir$'
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' sp%20ace 'sp ace' ''
++ for f in 'an#chor' 'back\slash' 'col:on' 'encoded%3Fquestion' "$(printf 'invalidutf8\351')" 'ques?tion' 'sp ace' 'utf8á'
++ touch $'utf8\303\241'
++ ls_encoded $'utf8\303\241'
+++ encode $'utf8\303\241'
+++ printf '%s\n' sp%20ace ques%3ftion back%5cslash encoded%253Fquestion testdir an%23chor utf8%c3%a1 invalidutf8%e9 col%3aon $'utf8\303\241'
+++ sort -k1,1.1 -s
+++ uniq -w1 -d
++ ef=utf8%c3%a1
++ echo utf8%c3%a1
++ grep 'dir$'
++ dir=
++ printf '\033]8;;file:///%s\033\\%s\033]8;;\033\\%s\n' utf8%c3%a1 $'utf8\303\241' ''
++ ln -s testdir testdirl
++ cat exp.t
++ printf '\n'
++ sed 's|[^/]testdir|&l|' exp.t
++ ls --hyper testdir testdirl
++ strip_host_and_path
++ sed 's|file://.*/|file:///|'
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ ln -s /probably_missing testlink
++ ls -l --hyper testlink
++ strip_host_and_path
++ sed 's|file://.*/|file:///|'
++ grep file:///probably_missing out
+lrwxrwxrwx 1 curse curse 17 Apr 15 17:18 ]8;;file:///probably_missing]8;;\
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-hyperlink.sh.AVlw
++ exit 0
+PASS tests/ls/hyperlink.sh (exit status: 0)

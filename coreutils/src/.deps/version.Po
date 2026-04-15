@@ -1,0 +1,5 @@
+src/version.o: src/version.c /usr/include/stdc-predef.h lib/config.h \
+ src/version.h
+/usr/include/stdc-predef.h:
+lib/config.h:
+src/version.h:

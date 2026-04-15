@@ -1,0 +1,929 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-readdir-bug.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-readdir-bug.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
++++ perms='drwx------ 2 4096 Apr 15 17:16 /home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ rm
++ require_built_ rm
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env rm --version
+rm (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Paul Rubin, David MacKenzie, Richard M. Stallman,
+and Jim Meyering.
++ mkdir b
++ cd b
+++ seq 1 250
++ for i in $(seq 1 250)
+++ printf %040d 1
++ touch 0000000000000000000000000000000000000001
++ for i in $(seq 1 250)
+++ printf %040d 2
++ touch 0000000000000000000000000000000000000002
++ for i in $(seq 1 250)
+++ printf %040d 3
++ touch 0000000000000000000000000000000000000003
++ for i in $(seq 1 250)
+++ printf %040d 4
++ touch 0000000000000000000000000000000000000004
++ for i in $(seq 1 250)
+++ printf %040d 5
++ touch 0000000000000000000000000000000000000005
++ for i in $(seq 1 250)
+++ printf %040d 6
++ touch 0000000000000000000000000000000000000006
++ for i in $(seq 1 250)
+++ printf %040d 7
++ touch 0000000000000000000000000000000000000007
++ for i in $(seq 1 250)
+++ printf %040d 8
++ touch 0000000000000000000000000000000000000008
++ for i in $(seq 1 250)
+++ printf %040d 9
++ touch 0000000000000000000000000000000000000009
++ for i in $(seq 1 250)
+++ printf %040d 10
++ touch 0000000000000000000000000000000000000010
++ for i in $(seq 1 250)
+++ printf %040d 11
++ touch 0000000000000000000000000000000000000011
++ for i in $(seq 1 250)
+++ printf %040d 12
++ touch 0000000000000000000000000000000000000012
++ for i in $(seq 1 250)
+++ printf %040d 13
++ touch 0000000000000000000000000000000000000013
++ for i in $(seq 1 250)
+++ printf %040d 14
++ touch 0000000000000000000000000000000000000014
++ for i in $(seq 1 250)
+++ printf %040d 15
++ touch 0000000000000000000000000000000000000015
++ for i in $(seq 1 250)
+++ printf %040d 16
++ touch 0000000000000000000000000000000000000016
++ for i in $(seq 1 250)
+++ printf %040d 17
++ touch 0000000000000000000000000000000000000017
++ for i in $(seq 1 250)
+++ printf %040d 18
++ touch 0000000000000000000000000000000000000018
++ for i in $(seq 1 250)
+++ printf %040d 19
++ touch 0000000000000000000000000000000000000019
++ for i in $(seq 1 250)
+++ printf %040d 20
++ touch 0000000000000000000000000000000000000020
++ for i in $(seq 1 250)
+++ printf %040d 21
++ touch 0000000000000000000000000000000000000021
++ for i in $(seq 1 250)
+++ printf %040d 22
++ touch 0000000000000000000000000000000000000022
++ for i in $(seq 1 250)
+++ printf %040d 23
++ touch 0000000000000000000000000000000000000023
++ for i in $(seq 1 250)
+++ printf %040d 24
++ touch 0000000000000000000000000000000000000024
++ for i in $(seq 1 250)
+++ printf %040d 25
++ touch 0000000000000000000000000000000000000025
++ for i in $(seq 1 250)
+++ printf %040d 26
++ touch 0000000000000000000000000000000000000026
++ for i in $(seq 1 250)
+++ printf %040d 27
++ touch 0000000000000000000000000000000000000027
++ for i in $(seq 1 250)
+++ printf %040d 28
++ touch 0000000000000000000000000000000000000028
++ for i in $(seq 1 250)
+++ printf %040d 29
++ touch 0000000000000000000000000000000000000029
++ for i in $(seq 1 250)
+++ printf %040d 30
++ touch 0000000000000000000000000000000000000030
++ for i in $(seq 1 250)
+++ printf %040d 31
++ touch 0000000000000000000000000000000000000031
++ for i in $(seq 1 250)
+++ printf %040d 32
++ touch 0000000000000000000000000000000000000032
++ for i in $(seq 1 250)
+++ printf %040d 33
++ touch 0000000000000000000000000000000000000033
++ for i in $(seq 1 250)
+++ printf %040d 34
++ touch 0000000000000000000000000000000000000034
++ for i in $(seq 1 250)
+++ printf %040d 35
++ touch 0000000000000000000000000000000000000035
++ for i in $(seq 1 250)
+++ printf %040d 36
++ touch 0000000000000000000000000000000000000036
++ for i in $(seq 1 250)
+++ printf %040d 37
++ touch 0000000000000000000000000000000000000037
++ for i in $(seq 1 250)
+++ printf %040d 38
++ touch 0000000000000000000000000000000000000038
++ for i in $(seq 1 250)
+++ printf %040d 39
++ touch 0000000000000000000000000000000000000039
++ for i in $(seq 1 250)
+++ printf %040d 40
++ touch 0000000000000000000000000000000000000040
++ for i in $(seq 1 250)
+++ printf %040d 41
++ touch 0000000000000000000000000000000000000041
++ for i in $(seq 1 250)
+++ printf %040d 42
++ touch 0000000000000000000000000000000000000042
++ for i in $(seq 1 250)
+++ printf %040d 43
++ touch 0000000000000000000000000000000000000043
++ for i in $(seq 1 250)
+++ printf %040d 44
++ touch 0000000000000000000000000000000000000044
++ for i in $(seq 1 250)
+++ printf %040d 45
++ touch 0000000000000000000000000000000000000045
++ for i in $(seq 1 250)
+++ printf %040d 46
++ touch 0000000000000000000000000000000000000046
++ for i in $(seq 1 250)
+++ printf %040d 47
++ touch 0000000000000000000000000000000000000047
++ for i in $(seq 1 250)
+++ printf %040d 48
++ touch 0000000000000000000000000000000000000048
++ for i in $(seq 1 250)
+++ printf %040d 49
++ touch 0000000000000000000000000000000000000049
++ for i in $(seq 1 250)
+++ printf %040d 50
++ touch 0000000000000000000000000000000000000050
++ for i in $(seq 1 250)
+++ printf %040d 51
++ touch 0000000000000000000000000000000000000051
++ for i in $(seq 1 250)
+++ printf %040d 52
++ touch 0000000000000000000000000000000000000052
++ for i in $(seq 1 250)
+++ printf %040d 53
++ touch 0000000000000000000000000000000000000053
++ for i in $(seq 1 250)
+++ printf %040d 54
++ touch 0000000000000000000000000000000000000054
++ for i in $(seq 1 250)
+++ printf %040d 55
++ touch 0000000000000000000000000000000000000055
++ for i in $(seq 1 250)
+++ printf %040d 56
++ touch 0000000000000000000000000000000000000056
++ for i in $(seq 1 250)
+++ printf %040d 57
++ touch 0000000000000000000000000000000000000057
++ for i in $(seq 1 250)
+++ printf %040d 58
++ touch 0000000000000000000000000000000000000058
++ for i in $(seq 1 250)
+++ printf %040d 59
++ touch 0000000000000000000000000000000000000059
++ for i in $(seq 1 250)
+++ printf %040d 60
++ touch 0000000000000000000000000000000000000060
++ for i in $(seq 1 250)
+++ printf %040d 61
++ touch 0000000000000000000000000000000000000061
++ for i in $(seq 1 250)
+++ printf %040d 62
++ touch 0000000000000000000000000000000000000062
++ for i in $(seq 1 250)
+++ printf %040d 63
++ touch 0000000000000000000000000000000000000063
++ for i in $(seq 1 250)
+++ printf %040d 64
++ touch 0000000000000000000000000000000000000064
++ for i in $(seq 1 250)
+++ printf %040d 65
++ touch 0000000000000000000000000000000000000065
++ for i in $(seq 1 250)
+++ printf %040d 66
++ touch 0000000000000000000000000000000000000066
++ for i in $(seq 1 250)
+++ printf %040d 67
++ touch 0000000000000000000000000000000000000067
++ for i in $(seq 1 250)
+++ printf %040d 68
++ touch 0000000000000000000000000000000000000068
++ for i in $(seq 1 250)
+++ printf %040d 69
++ touch 0000000000000000000000000000000000000069
++ for i in $(seq 1 250)
+++ printf %040d 70
++ touch 0000000000000000000000000000000000000070
++ for i in $(seq 1 250)
+++ printf %040d 71
++ touch 0000000000000000000000000000000000000071
++ for i in $(seq 1 250)
+++ printf %040d 72
++ touch 0000000000000000000000000000000000000072
++ for i in $(seq 1 250)
+++ printf %040d 73
++ touch 0000000000000000000000000000000000000073
++ for i in $(seq 1 250)
+++ printf %040d 74
++ touch 0000000000000000000000000000000000000074
++ for i in $(seq 1 250)
+++ printf %040d 75
++ touch 0000000000000000000000000000000000000075
++ for i in $(seq 1 250)
+++ printf %040d 76
++ touch 0000000000000000000000000000000000000076
++ for i in $(seq 1 250)
+++ printf %040d 77
++ touch 0000000000000000000000000000000000000077
++ for i in $(seq 1 250)
+++ printf %040d 78
++ touch 0000000000000000000000000000000000000078
++ for i in $(seq 1 250)
+++ printf %040d 79
++ touch 0000000000000000000000000000000000000079
++ for i in $(seq 1 250)
+++ printf %040d 80
++ touch 0000000000000000000000000000000000000080
++ for i in $(seq 1 250)
+++ printf %040d 81
++ touch 0000000000000000000000000000000000000081
++ for i in $(seq 1 250)
+++ printf %040d 82
++ touch 0000000000000000000000000000000000000082
++ for i in $(seq 1 250)
+++ printf %040d 83
++ touch 0000000000000000000000000000000000000083
++ for i in $(seq 1 250)
+++ printf %040d 84
++ touch 0000000000000000000000000000000000000084
++ for i in $(seq 1 250)
+++ printf %040d 85
++ touch 0000000000000000000000000000000000000085
++ for i in $(seq 1 250)
+++ printf %040d 86
++ touch 0000000000000000000000000000000000000086
++ for i in $(seq 1 250)
+++ printf %040d 87
++ touch 0000000000000000000000000000000000000087
++ for i in $(seq 1 250)
+++ printf %040d 88
++ touch 0000000000000000000000000000000000000088
++ for i in $(seq 1 250)
+++ printf %040d 89
++ touch 0000000000000000000000000000000000000089
++ for i in $(seq 1 250)
+++ printf %040d 90
++ touch 0000000000000000000000000000000000000090
++ for i in $(seq 1 250)
+++ printf %040d 91
++ touch 0000000000000000000000000000000000000091
++ for i in $(seq 1 250)
+++ printf %040d 92
++ touch 0000000000000000000000000000000000000092
++ for i in $(seq 1 250)
+++ printf %040d 93
++ touch 0000000000000000000000000000000000000093
++ for i in $(seq 1 250)
+++ printf %040d 94
++ touch 0000000000000000000000000000000000000094
++ for i in $(seq 1 250)
+++ printf %040d 95
++ touch 0000000000000000000000000000000000000095
++ for i in $(seq 1 250)
+++ printf %040d 96
++ touch 0000000000000000000000000000000000000096
++ for i in $(seq 1 250)
+++ printf %040d 97
++ touch 0000000000000000000000000000000000000097
++ for i in $(seq 1 250)
+++ printf %040d 98
++ touch 0000000000000000000000000000000000000098
++ for i in $(seq 1 250)
+++ printf %040d 99
++ touch 0000000000000000000000000000000000000099
++ for i in $(seq 1 250)
+++ printf %040d 100
++ touch 0000000000000000000000000000000000000100
++ for i in $(seq 1 250)
+++ printf %040d 101
++ touch 0000000000000000000000000000000000000101
++ for i in $(seq 1 250)
+++ printf %040d 102
++ touch 0000000000000000000000000000000000000102
++ for i in $(seq 1 250)
+++ printf %040d 103
++ touch 0000000000000000000000000000000000000103
++ for i in $(seq 1 250)
+++ printf %040d 104
++ touch 0000000000000000000000000000000000000104
++ for i in $(seq 1 250)
+++ printf %040d 105
++ touch 0000000000000000000000000000000000000105
++ for i in $(seq 1 250)
+++ printf %040d 106
++ touch 0000000000000000000000000000000000000106
++ for i in $(seq 1 250)
+++ printf %040d 107
++ touch 0000000000000000000000000000000000000107
++ for i in $(seq 1 250)
+++ printf %040d 108
++ touch 0000000000000000000000000000000000000108
++ for i in $(seq 1 250)
+++ printf %040d 109
++ touch 0000000000000000000000000000000000000109
++ for i in $(seq 1 250)
+++ printf %040d 110
++ touch 0000000000000000000000000000000000000110
++ for i in $(seq 1 250)
+++ printf %040d 111
++ touch 0000000000000000000000000000000000000111
++ for i in $(seq 1 250)
+++ printf %040d 112
++ touch 0000000000000000000000000000000000000112
++ for i in $(seq 1 250)
+++ printf %040d 113
++ touch 0000000000000000000000000000000000000113
++ for i in $(seq 1 250)
+++ printf %040d 114
++ touch 0000000000000000000000000000000000000114
++ for i in $(seq 1 250)
+++ printf %040d 115
++ touch 0000000000000000000000000000000000000115
++ for i in $(seq 1 250)
+++ printf %040d 116
++ touch 0000000000000000000000000000000000000116
++ for i in $(seq 1 250)
+++ printf %040d 117
++ touch 0000000000000000000000000000000000000117
++ for i in $(seq 1 250)
+++ printf %040d 118
++ touch 0000000000000000000000000000000000000118
++ for i in $(seq 1 250)
+++ printf %040d 119
++ touch 0000000000000000000000000000000000000119
++ for i in $(seq 1 250)
+++ printf %040d 120
++ touch 0000000000000000000000000000000000000120
++ for i in $(seq 1 250)
+++ printf %040d 121
++ touch 0000000000000000000000000000000000000121
++ for i in $(seq 1 250)
+++ printf %040d 122
++ touch 0000000000000000000000000000000000000122
++ for i in $(seq 1 250)
+++ printf %040d 123
++ touch 0000000000000000000000000000000000000123
++ for i in $(seq 1 250)
+++ printf %040d 124
++ touch 0000000000000000000000000000000000000124
++ for i in $(seq 1 250)
+++ printf %040d 125
++ touch 0000000000000000000000000000000000000125
++ for i in $(seq 1 250)
+++ printf %040d 126
++ touch 0000000000000000000000000000000000000126
++ for i in $(seq 1 250)
+++ printf %040d 127
++ touch 0000000000000000000000000000000000000127
++ for i in $(seq 1 250)
+++ printf %040d 128
++ touch 0000000000000000000000000000000000000128
++ for i in $(seq 1 250)
+++ printf %040d 129
++ touch 0000000000000000000000000000000000000129
++ for i in $(seq 1 250)
+++ printf %040d 130
++ touch 0000000000000000000000000000000000000130
++ for i in $(seq 1 250)
+++ printf %040d 131
++ touch 0000000000000000000000000000000000000131
++ for i in $(seq 1 250)
+++ printf %040d 132
++ touch 0000000000000000000000000000000000000132
++ for i in $(seq 1 250)
+++ printf %040d 133
++ touch 0000000000000000000000000000000000000133
++ for i in $(seq 1 250)
+++ printf %040d 134
++ touch 0000000000000000000000000000000000000134
++ for i in $(seq 1 250)
+++ printf %040d 135
++ touch 0000000000000000000000000000000000000135
++ for i in $(seq 1 250)
+++ printf %040d 136
++ touch 0000000000000000000000000000000000000136
++ for i in $(seq 1 250)
+++ printf %040d 137
++ touch 0000000000000000000000000000000000000137
++ for i in $(seq 1 250)
+++ printf %040d 138
++ touch 0000000000000000000000000000000000000138
++ for i in $(seq 1 250)
+++ printf %040d 139
++ touch 0000000000000000000000000000000000000139
++ for i in $(seq 1 250)
+++ printf %040d 140
++ touch 0000000000000000000000000000000000000140
++ for i in $(seq 1 250)
+++ printf %040d 141
++ touch 0000000000000000000000000000000000000141
++ for i in $(seq 1 250)
+++ printf %040d 142
++ touch 0000000000000000000000000000000000000142
++ for i in $(seq 1 250)
+++ printf %040d 143
++ touch 0000000000000000000000000000000000000143
++ for i in $(seq 1 250)
+++ printf %040d 144
++ touch 0000000000000000000000000000000000000144
++ for i in $(seq 1 250)
+++ printf %040d 145
++ touch 0000000000000000000000000000000000000145
++ for i in $(seq 1 250)
+++ printf %040d 146
++ touch 0000000000000000000000000000000000000146
++ for i in $(seq 1 250)
+++ printf %040d 147
++ touch 0000000000000000000000000000000000000147
++ for i in $(seq 1 250)
+++ printf %040d 148
++ touch 0000000000000000000000000000000000000148
++ for i in $(seq 1 250)
+++ printf %040d 149
++ touch 0000000000000000000000000000000000000149
++ for i in $(seq 1 250)
+++ printf %040d 150
++ touch 0000000000000000000000000000000000000150
++ for i in $(seq 1 250)
+++ printf %040d 151
++ touch 0000000000000000000000000000000000000151
++ for i in $(seq 1 250)
+++ printf %040d 152
++ touch 0000000000000000000000000000000000000152
++ for i in $(seq 1 250)
+++ printf %040d 153
++ touch 0000000000000000000000000000000000000153
++ for i in $(seq 1 250)
+++ printf %040d 154
++ touch 0000000000000000000000000000000000000154
++ for i in $(seq 1 250)
+++ printf %040d 155
++ touch 0000000000000000000000000000000000000155
++ for i in $(seq 1 250)
+++ printf %040d 156
++ touch 0000000000000000000000000000000000000156
++ for i in $(seq 1 250)
+++ printf %040d 157
++ touch 0000000000000000000000000000000000000157
++ for i in $(seq 1 250)
+++ printf %040d 158
++ touch 0000000000000000000000000000000000000158
++ for i in $(seq 1 250)
+++ printf %040d 159
++ touch 0000000000000000000000000000000000000159
++ for i in $(seq 1 250)
+++ printf %040d 160
++ touch 0000000000000000000000000000000000000160
++ for i in $(seq 1 250)
+++ printf %040d 161
++ touch 0000000000000000000000000000000000000161
++ for i in $(seq 1 250)
+++ printf %040d 162
++ touch 0000000000000000000000000000000000000162
++ for i in $(seq 1 250)
+++ printf %040d 163
++ touch 0000000000000000000000000000000000000163
++ for i in $(seq 1 250)
+++ printf %040d 164
++ touch 0000000000000000000000000000000000000164
++ for i in $(seq 1 250)
+++ printf %040d 165
++ touch 0000000000000000000000000000000000000165
++ for i in $(seq 1 250)
+++ printf %040d 166
++ touch 0000000000000000000000000000000000000166
++ for i in $(seq 1 250)
+++ printf %040d 167
++ touch 0000000000000000000000000000000000000167
++ for i in $(seq 1 250)
+++ printf %040d 168
++ touch 0000000000000000000000000000000000000168
++ for i in $(seq 1 250)
+++ printf %040d 169
++ touch 0000000000000000000000000000000000000169
++ for i in $(seq 1 250)
+++ printf %040d 170
++ touch 0000000000000000000000000000000000000170
++ for i in $(seq 1 250)
+++ printf %040d 171
++ touch 0000000000000000000000000000000000000171
++ for i in $(seq 1 250)
+++ printf %040d 172
++ touch 0000000000000000000000000000000000000172
++ for i in $(seq 1 250)
+++ printf %040d 173
++ touch 0000000000000000000000000000000000000173
++ for i in $(seq 1 250)
+++ printf %040d 174
++ touch 0000000000000000000000000000000000000174
++ for i in $(seq 1 250)
+++ printf %040d 175
++ touch 0000000000000000000000000000000000000175
++ for i in $(seq 1 250)
+++ printf %040d 176
++ touch 0000000000000000000000000000000000000176
++ for i in $(seq 1 250)
+++ printf %040d 177
++ touch 0000000000000000000000000000000000000177
++ for i in $(seq 1 250)
+++ printf %040d 178
++ touch 0000000000000000000000000000000000000178
++ for i in $(seq 1 250)
+++ printf %040d 179
++ touch 0000000000000000000000000000000000000179
++ for i in $(seq 1 250)
+++ printf %040d 180
++ touch 0000000000000000000000000000000000000180
++ for i in $(seq 1 250)
+++ printf %040d 181
++ touch 0000000000000000000000000000000000000181
++ for i in $(seq 1 250)
+++ printf %040d 182
++ touch 0000000000000000000000000000000000000182
++ for i in $(seq 1 250)
+++ printf %040d 183
++ touch 0000000000000000000000000000000000000183
++ for i in $(seq 1 250)
+++ printf %040d 184
++ touch 0000000000000000000000000000000000000184
++ for i in $(seq 1 250)
+++ printf %040d 185
++ touch 0000000000000000000000000000000000000185
++ for i in $(seq 1 250)
+++ printf %040d 186
++ touch 0000000000000000000000000000000000000186
++ for i in $(seq 1 250)
+++ printf %040d 187
++ touch 0000000000000000000000000000000000000187
++ for i in $(seq 1 250)
+++ printf %040d 188
++ touch 0000000000000000000000000000000000000188
++ for i in $(seq 1 250)
+++ printf %040d 189
++ touch 0000000000000000000000000000000000000189
++ for i in $(seq 1 250)
+++ printf %040d 190
++ touch 0000000000000000000000000000000000000190
++ for i in $(seq 1 250)
+++ printf %040d 191
++ touch 0000000000000000000000000000000000000191
++ for i in $(seq 1 250)
+++ printf %040d 192
++ touch 0000000000000000000000000000000000000192
++ for i in $(seq 1 250)
+++ printf %040d 193
++ touch 0000000000000000000000000000000000000193
++ for i in $(seq 1 250)
+++ printf %040d 194
++ touch 0000000000000000000000000000000000000194
++ for i in $(seq 1 250)
+++ printf %040d 195
++ touch 0000000000000000000000000000000000000195
++ for i in $(seq 1 250)
+++ printf %040d 196
++ touch 0000000000000000000000000000000000000196
++ for i in $(seq 1 250)
+++ printf %040d 197
++ touch 0000000000000000000000000000000000000197
++ for i in $(seq 1 250)
+++ printf %040d 198
++ touch 0000000000000000000000000000000000000198
++ for i in $(seq 1 250)
+++ printf %040d 199
++ touch 0000000000000000000000000000000000000199
++ for i in $(seq 1 250)
+++ printf %040d 200
++ touch 0000000000000000000000000000000000000200
++ for i in $(seq 1 250)
+++ printf %040d 201
++ touch 0000000000000000000000000000000000000201
++ for i in $(seq 1 250)
+++ printf %040d 202
++ touch 0000000000000000000000000000000000000202
++ for i in $(seq 1 250)
+++ printf %040d 203
++ touch 0000000000000000000000000000000000000203
++ for i in $(seq 1 250)
+++ printf %040d 204
++ touch 0000000000000000000000000000000000000204
++ for i in $(seq 1 250)
+++ printf %040d 205
++ touch 0000000000000000000000000000000000000205
++ for i in $(seq 1 250)
+++ printf %040d 206
++ touch 0000000000000000000000000000000000000206
++ for i in $(seq 1 250)
+++ printf %040d 207
++ touch 0000000000000000000000000000000000000207
++ for i in $(seq 1 250)
+++ printf %040d 208
++ touch 0000000000000000000000000000000000000208
++ for i in $(seq 1 250)
+++ printf %040d 209
++ touch 0000000000000000000000000000000000000209
++ for i in $(seq 1 250)
+++ printf %040d 210
++ touch 0000000000000000000000000000000000000210
++ for i in $(seq 1 250)
+++ printf %040d 211
++ touch 0000000000000000000000000000000000000211
++ for i in $(seq 1 250)
+++ printf %040d 212
++ touch 0000000000000000000000000000000000000212
++ for i in $(seq 1 250)
+++ printf %040d 213
++ touch 0000000000000000000000000000000000000213
++ for i in $(seq 1 250)
+++ printf %040d 214
++ touch 0000000000000000000000000000000000000214
++ for i in $(seq 1 250)
+++ printf %040d 215
++ touch 0000000000000000000000000000000000000215
++ for i in $(seq 1 250)
+++ printf %040d 216
++ touch 0000000000000000000000000000000000000216
++ for i in $(seq 1 250)
+++ printf %040d 217
++ touch 0000000000000000000000000000000000000217
++ for i in $(seq 1 250)
+++ printf %040d 218
++ touch 0000000000000000000000000000000000000218
++ for i in $(seq 1 250)
+++ printf %040d 219
++ touch 0000000000000000000000000000000000000219
++ for i in $(seq 1 250)
+++ printf %040d 220
++ touch 0000000000000000000000000000000000000220
++ for i in $(seq 1 250)
+++ printf %040d 221
++ touch 0000000000000000000000000000000000000221
++ for i in $(seq 1 250)
+++ printf %040d 222
++ touch 0000000000000000000000000000000000000222
++ for i in $(seq 1 250)
+++ printf %040d 223
++ touch 0000000000000000000000000000000000000223
++ for i in $(seq 1 250)
+++ printf %040d 224
++ touch 0000000000000000000000000000000000000224
++ for i in $(seq 1 250)
+++ printf %040d 225
++ touch 0000000000000000000000000000000000000225
++ for i in $(seq 1 250)
+++ printf %040d 226
++ touch 0000000000000000000000000000000000000226
++ for i in $(seq 1 250)
+++ printf %040d 227
++ touch 0000000000000000000000000000000000000227
++ for i in $(seq 1 250)
+++ printf %040d 228
++ touch 0000000000000000000000000000000000000228
++ for i in $(seq 1 250)
+++ printf %040d 229
++ touch 0000000000000000000000000000000000000229
++ for i in $(seq 1 250)
+++ printf %040d 230
++ touch 0000000000000000000000000000000000000230
++ for i in $(seq 1 250)
+++ printf %040d 231
++ touch 0000000000000000000000000000000000000231
++ for i in $(seq 1 250)
+++ printf %040d 232
++ touch 0000000000000000000000000000000000000232
++ for i in $(seq 1 250)
+++ printf %040d 233
++ touch 0000000000000000000000000000000000000233
++ for i in $(seq 1 250)
+++ printf %040d 234
++ touch 0000000000000000000000000000000000000234
++ for i in $(seq 1 250)
+++ printf %040d 235
++ touch 0000000000000000000000000000000000000235
++ for i in $(seq 1 250)
+++ printf %040d 236
++ touch 0000000000000000000000000000000000000236
++ for i in $(seq 1 250)
+++ printf %040d 237
++ touch 0000000000000000000000000000000000000237
++ for i in $(seq 1 250)
+++ printf %040d 238
++ touch 0000000000000000000000000000000000000238
++ for i in $(seq 1 250)
+++ printf %040d 239
++ touch 0000000000000000000000000000000000000239
++ for i in $(seq 1 250)
+++ printf %040d 240
++ touch 0000000000000000000000000000000000000240
++ for i in $(seq 1 250)
+++ printf %040d 241
++ touch 0000000000000000000000000000000000000241
++ for i in $(seq 1 250)
+++ printf %040d 242
++ touch 0000000000000000000000000000000000000242
++ for i in $(seq 1 250)
+++ printf %040d 243
++ touch 0000000000000000000000000000000000000243
++ for i in $(seq 1 250)
+++ printf %040d 244
++ touch 0000000000000000000000000000000000000244
++ for i in $(seq 1 250)
+++ printf %040d 245
++ touch 0000000000000000000000000000000000000245
++ for i in $(seq 1 250)
+++ printf %040d 246
++ touch 0000000000000000000000000000000000000246
++ for i in $(seq 1 250)
+++ printf %040d 247
++ touch 0000000000000000000000000000000000000247
++ for i in $(seq 1 250)
+++ printf %040d 248
++ touch 0000000000000000000000000000000000000248
++ for i in $(seq 1 250)
+++ printf %040d 249
++ touch 0000000000000000000000000000000000000249
++ for i in $(seq 1 250)
+++ printf %040d 250
++ touch 0000000000000000000000000000000000000250
++ cd ..
++ rm -rf b
++ test -d b
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-readdir-bug.sh.8kCX
++ exit 0
+PASS tests/rm/readdir-bug.sh (exit status: 0)

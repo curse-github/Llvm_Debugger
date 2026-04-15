@@ -1,0 +1,628 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-zero.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-zero.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
++++ perms='drwx------ 2 4096 Apr 15 17:18 /home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ id
++ require_built_ id
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env id --version
+id (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Arnold Robbins and David MacKenzie.
+++ id -nu
++ u=curse
++ id
+uid=1000(curse) gid=1000(curse) groups=1000(curse),90(network),993(input),1001(gods)
++ id curse
+uid=1000(curse) gid=1000(curse) groups=1000(curse),90(network),993(input),1001(gods)
++ echo 'id: option --zero not permitted in default format'
++ id --zero
++ compare /dev/null out
++ compare_dev_null_ /dev/null out
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s out
++ return 0
++ return 0
++ compare err-exp err
++ compare_dev_null_ err-exp err
++ test 2 = 2
++ test xerr-exp = x/dev/null
++ test xerr = x/dev/null
++ return 2
++ case $? in
++ compare_ err-exp err
++ LC_ALL=C
++ diff -u err-exp err
++ users=curse
++ for u in root man postfix sshd nobody
++ id root
++ users='curse root'
++ for u in root man postfix sshd nobody
++ id man
++ for u in root man postfix sshd nobody
++ id postfix
++ for u in root man postfix sshd nobody
++ id sshd
++ for u in root man postfix sshd nobody
++ id nobody
++ users='curse root nobody'
++ printf '%s\n' curse root nobody ''
++ printf '\n'
++ read u
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -g[z] curse'
++ printf '\n%s: ' 'id -g[z] curse'
++ id -g curse
++ id -gz curse
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -gn[z] curse'
++ printf '\n%s: ' 'id -gn[z] curse'
++ id -gn curse
++ id -gnz curse
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -gr[z] curse'
++ printf '\n%s: ' 'id -gr[z] curse'
++ id -gr curse
++ id -grz curse
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -grn[z] curse'
++ printf '\n%s: ' 'id -grn[z] curse'
++ id -grn curse
++ id -grnz curse
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -G[z] curse'
++ printf '\n%s: ' 'id -G[z] curse'
++ id -G curse
++ id -Gz curse
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Gn[z] curse'
++ printf '\n%s: ' 'id -Gn[z] curse'
++ id -Gn curse
++ id -Gnz curse
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -Gr[z] curse'
++ printf '\n%s: ' 'id -Gr[z] curse'
++ id -Gr curse
++ id -Grz curse
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Grn[z] curse'
++ printf '\n%s: ' 'id -Grn[z] curse'
++ id -Grn curse
++ id -Grnz curse
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -u[z] curse'
++ printf '\n%s: ' 'id -u[z] curse'
++ id -u curse
++ id -uz curse
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -un[z] curse'
++ printf '\n%s: ' 'id -un[z] curse'
++ id -un curse
++ id -unz curse
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -ur[z] curse'
++ printf '\n%s: ' 'id -ur[z] curse'
++ id -ur curse
++ id -urz curse
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -urn[z] curse'
++ printf '\n%s: ' 'id -urn[z] curse'
++ id -urn curse
++ id -urnz curse
++ head -c-1
++ read u
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -g[z] root'
++ printf '\n%s: ' 'id -g[z] root'
++ id -g root
++ id -gz root
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -gn[z] root'
++ printf '\n%s: ' 'id -gn[z] root'
++ id -gn root
++ id -gnz root
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -gr[z] root'
++ printf '\n%s: ' 'id -gr[z] root'
++ id -gr root
++ id -grz root
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -grn[z] root'
++ printf '\n%s: ' 'id -grn[z] root'
++ id -grn root
++ id -grnz root
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -G[z] root'
++ printf '\n%s: ' 'id -G[z] root'
++ id -G root
++ id -Gz root
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Gn[z] root'
++ printf '\n%s: ' 'id -Gn[z] root'
++ id -Gn root
++ id -Gnz root
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -Gr[z] root'
++ printf '\n%s: ' 'id -Gr[z] root'
++ id -Gr root
++ id -Grz root
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Grn[z] root'
++ printf '\n%s: ' 'id -Grn[z] root'
++ id -Grn root
++ id -Grnz root
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -u[z] root'
++ printf '\n%s: ' 'id -u[z] root'
++ id -u root
++ id -uz root
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -un[z] root'
++ printf '\n%s: ' 'id -un[z] root'
++ id -un root
++ id -unz root
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -ur[z] root'
++ printf '\n%s: ' 'id -ur[z] root'
++ id -ur root
++ id -urz root
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -urn[z] root'
++ printf '\n%s: ' 'id -urn[z] root'
++ id -urn root
++ id -urnz root
++ head -c-1
++ read u
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -g[z] nobody'
++ printf '\n%s: ' 'id -g[z] nobody'
++ id -g nobody
++ id -gz nobody
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -gn[z] nobody'
++ printf '\n%s: ' 'id -gn[z] nobody'
++ id -gn nobody
++ id -gnz nobody
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -gr[z] nobody'
++ printf '\n%s: ' 'id -gr[z] nobody'
++ id -gr nobody
++ id -grz nobody
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -grn[z] nobody'
++ printf '\n%s: ' 'id -grn[z] nobody'
++ id -grn nobody
++ id -grnz nobody
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -G[z] nobody'
++ printf '\n%s: ' 'id -G[z] nobody'
++ id -G nobody
++ id -Gz nobody
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Gn[z] nobody'
++ printf '\n%s: ' 'id -Gn[z] nobody'
++ id -Gn nobody
++ id -Gnz nobody
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -Gr[z] nobody'
++ printf '\n%s: ' 'id -Gr[z] nobody'
++ id -Gr nobody
++ id -Grz nobody
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Grn[z] nobody'
++ printf '\n%s: ' 'id -Grn[z] nobody'
++ id -Grn nobody
++ id -Grnz nobody
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -u[z] nobody'
++ printf '\n%s: ' 'id -u[z] nobody'
++ id -u nobody
++ id -uz nobody
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -un[z] nobody'
++ printf '\n%s: ' 'id -un[z] nobody'
++ id -un nobody
++ id -unz nobody
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -ur[z] nobody'
++ printf '\n%s: ' 'id -ur[z] nobody'
++ id -ur nobody
++ id -urz nobody
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -urn[z] nobody'
++ printf '\n%s: ' 'id -urn[z] nobody'
++ id -urn nobody
++ id -urnz nobody
++ head -c-1
++ read u
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -g[z] '
++ printf '\n%s: ' 'id -g[z] '
++ id -g
++ id -gz
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -gn[z] '
++ printf '\n%s: ' 'id -gn[z] '
++ id -gn
++ id -gnz
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -gr[z] '
++ printf '\n%s: ' 'id -gr[z] '
++ id -gr
++ id -grz
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -grn[z] '
++ printf '\n%s: ' 'id -grn[z] '
++ id -grn
++ id -grnz
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -G[z] '
++ printf '\n%s: ' 'id -G[z] '
++ id -G
++ id -Gz
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Gn[z] '
++ printf '\n%s: ' 'id -Gn[z] '
++ id -Gn
++ id -Gnz
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -Gr[z] '
++ printf '\n%s: ' 'id -Gr[z] '
++ id -Gr
++ id -Grz
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -Grn[z] '
++ printf '\n%s: ' 'id -Grn[z] '
++ id -Grn
++ id -Grnz
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -u[z] '
++ printf '\n%s: ' 'id -u[z] '
++ id -u
++ id -uz
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -un[z] '
++ printf '\n%s: ' 'id -un[z] '
++ id -un
++ id -unz
++ head -c-1
++ for o in g gr G Gr u ur
++ for n in '' n
++ printf '%s: ' 'id -ur[z] '
++ printf '\n%s: ' 'id -ur[z] '
++ id -ur
++ id -urz
++ head -c-1
++ for n in '' n
++ printf '%s: ' 'id -urn[z] '
++ printf '\n%s: ' 'id -urn[z] '
++ id -urn
++ id -urnz
++ head -c-1
++ read u
++ printf '\n'
++ tr '\0' ' '
++ compare exp out2
++ compare_dev_null_ exp out2
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout2 = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out2
++ LC_ALL=C
++ diff -u exp out2
++ for o in g gr u ur
++ for n in '' n
++ id -g curse root nobody
++ id -gz curse root nobody
++ tr '\0' '\n'
++ for n in '' n
++ id -gn curse root nobody
++ id -gnz curse root nobody
++ tr '\0' '\n'
++ for o in g gr u ur
++ for n in '' n
++ id -gr curse root nobody
++ id -grz curse root nobody
++ tr '\0' '\n'
++ for n in '' n
++ id -grn curse root nobody
++ id -grnz curse root nobody
++ tr '\0' '\n'
++ for o in g gr u ur
++ for n in '' n
++ id -u curse root nobody
++ id -uz curse root nobody
++ tr '\0' '\n'
++ for n in '' n
++ id -un curse root nobody
++ id -unz curse root nobody
++ tr '\0' '\n'
++ for o in g gr u ur
++ for n in '' n
++ id -ur curse root nobody
++ id -urz curse root nobody
++ tr '\0' '\n'
++ for n in '' n
++ id -urn curse root nobody
++ id -urnz curse root nobody
++ tr '\0' '\n'
++ compare tmp1 tmp3
++ compare_dev_null_ tmp1 tmp3
++ test 2 = 2
++ test xtmp1 = x/dev/null
++ test xtmp3 = x/dev/null
++ return 2
++ case $? in
++ compare_ tmp1 tmp3
++ LC_ALL=C
++ diff -u tmp1 tmp3
++ NL=$'\n'
++ for o in G Gr
++ for n in '' n
++ id -G curse root nobody
++ echo
++ id -Gz curse root nobody
++ sed $'s/  /\\\n/g'
++ tr '\0' ' '
++ echo
++ for n in '' n
++ id -Gn curse root nobody
++ echo
++ id -Gnz curse root nobody
++ tr '\0' ' '
++ sed $'s/  /\\\n/g'
++ echo
++ for o in G Gr
++ for n in '' n
++ id -Gr curse root nobody
++ echo
++ id -Grz curse root nobody
++ tr '\0' ' '
++ sed $'s/  /\\\n/g'
++ echo
++ for n in '' n
++ id -Grn curse root nobody
++ echo
++ id -Grnz curse root nobody
++ tr '\0' ' '
++ sed $'s/  /\\\n/g'
++ echo
++ compare gtmp1 gtmp3
++ compare_dev_null_ gtmp1 gtmp3
++ test 2 = 2
++ test xgtmp1 = x/dev/null
++ test xgtmp3 = x/dev/null
++ return 2
++ case $? in
++ compare_ gtmp1 gtmp3
++ LC_ALL=C
++ diff -u gtmp1 gtmp3
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-zero.sh.9ZCL
++ exit 0
+PASS tests/id/zero.sh (exit status: 0)

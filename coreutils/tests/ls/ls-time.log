@@ -1,0 +1,261 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-ls-time.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-ls-time.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
++++ perms='drwx------ 2 4096 Apr 15 17:16 /home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ ls
++ require_built_ ls
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env ls --version
+ls (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Richard M. Stallman and David MacKenzie.
++ TZ=UTC0
++ export TZ
++ t1='1998-01-15 21:00'
++ t2='1998-01-15 22:00'
++ t3='1998-01-15 23:00'
++ u1='1998-01-14 11:00'
++ u2='1998-01-14 12:00'
++ u3='1998-01-14 13:00'
++ touch -m -d '1998-01-15 23:00' a
++ touch -m -d '1998-01-15 22:00' B
++ touch -m -d '1998-01-15 21:00' c
++ for def_sort in '' '--sort=name' '-U --sort=name' '-t --sort=name'
+++ ls a B c
++ set -- B a c
++ test 'B a c' = 'B a c'
++ for def_sort in '' '--sort=name' '-U --sort=name' '-t --sort=name'
+++ ls --sort=name a B c
++ set -- B a c
++ test 'B a c' = 'B a c'
++ for def_sort in '' '--sort=name' '-U --sort=name' '-t --sort=name'
+++ ls -U --sort=name a B c
++ set -- B a c
++ test 'B a c' = 'B a c'
++ for def_sort in '' '--sort=name' '-U --sort=name' '-t --sort=name'
+++ ls -t --sort=name a B c
++ set -- B a c
++ test 'B a c' = 'B a c'
++ touch -a -d '1998-01-14 13:00' c
++ touch -a -d '1998-01-14 12:00' B
++ sleep 2
++ touch -a -d '1998-01-14 11:00' a
++ ln a a-ctime
++ rm a-ctime
+++ ls -t -c a c
++ set -- a c
++ test 'a c' = 'a c'
+++ ls -c a c
++ set -- a c
++ test 'a c' = 'a c'
++ sleep 2
++ ln c d
+++ ls --full -l --time=mtime a
++ set -- -rw-r--r-- 1 curse curse 0 1998-01-15 23:00:00.000000000 +0000 a
++ case "$*" in
+++ ls --full -lu a
++ set -- -rw-r--r-- 1 curse curse 0 1998-01-14 11:00:00.000000000 +0000 a
++ case "$*" in
+++ ls -ut a B c
++ set -- c B a
++ test 'c B a' = 'c B a'
+++ ls -u a B c
++ set -- c B a
++ test 'c B a' = 'c B a'
++ test 0 = 1
+++ ls -t a B c
++ set -- a B c
++ test 'a B c' = 'a B c'
+++ ls --time=mtime a B c
++ set -- a B c
++ test 'a B c' = 'a B c'
++ test 0 = 1
+++ ls -ct a c
++ set -- c a
++ test 'c a' = 'c a'
++ : ok
++ gettext --version
++ default_tf1='%b %e  %Y'
+++ LC_ALL=en_US
+++ gettext coreutils '%b %e  %Y'
++ en_tf1='%b %e  %Y'
++ test '%b %e  %Y' = '%b %e  %Y'
++ LC_ALL=en_US
++ ls -l c
++ ls -l --time-style=long-iso c
++ compare en_output liso_output
++ compare_dev_null_ en_output liso_output
++ test 2 = 2
++ test xen_output = x/dev/null
++ test xliso_output = x/dev/null
++ return 2
++ case $? in
++ compare_ en_output liso_output
++ LC_ALL=C
++ diff -u en_output liso_output
+--- en_output	2026-04-15 22:16:21.327975512 +0000
++++ liso_output	2026-04-15 22:16:21.328975512 +0000
+@@ -1 +1 @@
+--rw-r--r-- 2 curse curse 0 Jan 15  1998 c
++-rw-r--r-- 2 curse curse 0 1998-01-15 21:00 c
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-ls-time.sh.JEcX
++ exit 0
+PASS tests/ls/ls-time.sh (exit status: 0)

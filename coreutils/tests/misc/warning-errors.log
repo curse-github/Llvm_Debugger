@@ -1,0 +1,371 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-warning-errors.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-warning-errors.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
++++ perms='drwx------ 2 4096 Apr 15 17:16 /home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ test -w /dev/full
++ test -c /dev/full
++ touch foo
++ printf %s $'cksum --debug /dev/null\ndate --debug -d \'now\'\ndu --max-depth=0 --summarize /dev/null\nenv --debug true\nginstall --strip-program=foo foo bar\nnumfmt --debug 1\nod -w1 /dev/null\nprintf \'foo\' \'bar\'\nsort --debug /dev/null\nstat --printf \'\\\\\' .\ntail -n0 --retry foo\ntr . \'\\\\\' < /dev/null\nwc -l --debug /dev/null\n'
++ sort -k 1b,1
++ printf '%s\n' '[' b2sum base32 base64 basename basenc cat chgrp chmod chown chroot cksum comm cp csplit cut date dd df dir dircolors dirname du echo env expand expr factor false fmt fold ginstall groups head hostid id join link ln logname ls md5sum mkdir mkfifo mknod mktemp mv nice nl nohup nproc numfmt od paste pathchk pinky pr printenv printf ptx pwd readlink realpath rm rmdir seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf sleep sort split stat stdbuf stty sum sync tac tail tee test timeout touch tr true truncate tsort tty uname unexpand uniq unlink users vdir wc who whoami yes
++ sort -k 1b,1
++ join all_writers built_programs
++ expected_failure_status_sort=2
++ expected_failure_status_env=0
++ read writer
+++ printf '%s\n' 'cksum --debug /dev/null'
+++ cut -d ' ' -f1
++ cmd=cksum
++ sanitizer_build_ cksum
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 cksum --version
++ eval 'expected=$expected_failure_status_cksum'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env cksum --debug /dev/null'
+4294967295 0 /dev/null
++ test -s err
++ returns_ 1 /bin/sh -c 'env cksum --debug /dev/null'
+4294967295 0 /dev/null
++ read writer
+++ printf '%s\n' 'date --debug -d '\''now'\'''
+++ cut -d ' ' -f1
++ cmd=date
++ sanitizer_build_ date
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 date --version
++ eval 'expected=$expected_failure_status_date'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env date --debug -d '\''now'\'''
+Wed Apr 15 17:16:08 CDT 2026
++ test -s err
++ returns_ 1 /bin/sh -c 'env date --debug -d '\''now'\'''
+Wed Apr 15 17:16:08 CDT 2026
++ read writer
+++ printf '%s\n' 'du --max-depth=0 --summarize /dev/null'
+++ cut -d ' ' -f1
++ cmd=du
++ sanitizer_build_ du
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 du --version
++ eval 'expected=$expected_failure_status_du'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env du --max-depth=0 --summarize /dev/null'
+0	/dev/null
++ test -s err
++ returns_ 1 /bin/sh -c 'env du --max-depth=0 --summarize /dev/null'
+0	/dev/null
++ read writer
+++ printf '%s\n' 'env --debug true'
+++ cut -d ' ' -f1
++ cmd=env
++ sanitizer_build_ env
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 env --version
++ eval 'expected=$expected_failure_status_env'
+++ expected=0
++ test x0 = x
++ /bin/sh -c 'env env --debug true'
++ test -s err
++ returns_ 0 /bin/sh -c 'env env --debug true'
++ read writer
+++ printf '%s\n' 'ginstall --strip-program=foo foo bar'
+++ cut -d ' ' -f1
++ cmd=ginstall
++ sanitizer_build_ ginstall
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 ginstall --version
++ eval 'expected=$expected_failure_status_ginstall'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env ginstall --strip-program=foo foo bar'
++ test -s err
++ returns_ 1 /bin/sh -c 'env ginstall --strip-program=foo foo bar'
++ read writer
+++ printf '%s\n' 'numfmt --debug 1'
+++ cut -d ' ' -f1
++ cmd=numfmt
++ sanitizer_build_ numfmt
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 numfmt --version
++ eval 'expected=$expected_failure_status_numfmt'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env numfmt --debug 1'
+1
++ test -s err
++ returns_ 1 /bin/sh -c 'env numfmt --debug 1'
+1
++ read writer
+++ printf '%s\n' 'od -w1 /dev/null'
+++ cut -d ' ' -f1
++ cmd=od
++ sanitizer_build_ od
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 od --version
++ eval 'expected=$expected_failure_status_od'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env od -w1 /dev/null'
+0000000
++ test -s err
++ returns_ 1 /bin/sh -c 'env od -w1 /dev/null'
+0000000
++ read writer
+++ printf '%s\n' 'printf '\''foo'\'' '\''bar'\'''
+++ cut -d ' ' -f1
++ cmd=printf
++ sanitizer_build_ printf
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 printf --version
++ eval 'expected=$expected_failure_status_printf'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env printf '\''foo'\'' '\''bar'\'''
+foo+ test -s err
++ returns_ 1 /bin/sh -c 'env printf '\''foo'\'' '\''bar'\'''
+foo+ read writer
+++ printf '%s\n' 'sort --debug /dev/null'
+++ cut -d ' ' -f1
++ cmd=sort
++ sanitizer_build_ sort
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 sort --version
++ eval 'expected=$expected_failure_status_sort'
+++ expected=2
++ test x2 = x
++ /bin/sh -c 'env sort --debug /dev/null'
++ test -s err
++ returns_ 2 /bin/sh -c 'env sort --debug /dev/null'
++ read writer
+++ printf '%s\n' 'stat --printf '\''\'\'' .'
+++ cut -d ' ' -f1
++ cmd=stat
++ sanitizer_build_ stat
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 stat --version
++ eval 'expected=$expected_failure_status_stat'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env stat --printf '\''\'\'' .'
+\+ test -s err
++ returns_ 1 /bin/sh -c 'env stat --printf '\''\'\'' .'
+\+ read writer
+++ printf '%s\n' 'tail -n0 --retry foo'
+++ cut -d ' ' -f1
++ cmd=tail
++ sanitizer_build_ tail
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 tail --version
++ eval 'expected=$expected_failure_status_tail'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env tail -n0 --retry foo'
++ test -s err
++ returns_ 1 /bin/sh -c 'env tail -n0 --retry foo'
++ read writer
+++ printf '%s\n' 'tr . '\''\'\'' < /dev/null'
+++ cut -d ' ' -f1
++ cmd=tr
++ sanitizer_build_ tr
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 tr --version
++ eval 'expected=$expected_failure_status_tr'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env tr . '\''\'\'' < /dev/null'
++ test -s err
++ returns_ 1 /bin/sh -c 'env tr . '\''\'\'' < /dev/null'
++ read writer
+++ printf '%s\n' 'wc -l --debug /dev/null'
+++ cut -d ' ' -f1
++ cmd=wc
++ sanitizer_build_ wc
++ grep '[Ss]anitizer'
+++ printf '%sSAN_OPTIONS=help=1 ' A UB L M T
++ env ASAN_OPTIONS=help=1 UBSAN_OPTIONS=help=1 LSAN_OPTIONS=help=1 MSAN_OPTIONS=help=1 TSAN_OPTIONS=help=1 wc --version
++ eval 'expected=$expected_failure_status_wc'
+++ expected=
++ test x = x
++ expected=1
++ /bin/sh -c 'env wc -l --debug /dev/null'
+0 /dev/null
++ test -s err
++ returns_ 1 /bin/sh -c 'env wc -l --debug /dev/null'
+0 /dev/null
++ read writer
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-warning-errors.sh.z5Fg
++ exit 0
+PASS tests/misc/warning-errors.sh (exit status: 0)

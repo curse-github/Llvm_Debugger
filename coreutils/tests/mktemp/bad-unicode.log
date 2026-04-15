@@ -1,0 +1,386 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-bad-unicode.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-bad-unicode.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
++++ perms='drwx------ 2 4096 Apr 15 17:16 /home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ mktemp
++ require_built_ mktemp
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env mktemp --version
+mktemp (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jim Meyering and Eric Blake.
++ echo a
+++ bad_unicode
+++ require_built_ printf
+++ skip_=no
+++ for i in "$@"
+++ case " $built_programs " in
+++ test no = yes
+++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
++ for loc in C "$LOCALE_FR" "$LOCALE_FR_UTF8"
++ test -z C
++ export LC_ALL=C
++ LC_ALL=C
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ mktemp --tmpdir=. $'--suffix=\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ file1=$'./tmp.vTwTzZilNN\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -n $'./tmp.vTwTzZilNN\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -f $'./tmp.vTwTzZilNN\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ mktemp --tmpdir=. -d $'--suffix=\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ dir1=$'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -n $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -d $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp $'--tmpdir=./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ file2=$'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.SbAPzVSEDS'
++ test -n $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.SbAPzVSEDS'
++ test -f $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.SbAPzVSEDS'
+++ mktemp -d $'--tmpdir=./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ dir2=$'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.jQj2fIdJur'
++ test -n $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.jQj2fIdJur'
++ test -d $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.jQj2fIdJur'
+++ TMPDIR=$'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp
++ file3=$'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.Ek4MEHK2ei'
++ test -n $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.Ek4MEHK2ei'
++ test -f $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.Ek4MEHK2ei'
+++ TMPDIR=$'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp -d
++ dir3=$'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.81aQvQdBCW'
++ test -n $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.81aQvQdBCW'
++ test -d $'./tmp.C5eOGuU152\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.81aQvQdBCW'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ TMPDIR=.
+++ mktemp -t $'\377|\355\272\255|\\u0089|\355\246\277\355\277\277XXXXXX'
++ file4=$'./\377|\355\272\255|\\u0089|\355\246\277\355\277\2775l9KY9'
++ test -n $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\2775l9KY9'
++ test -f $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\2775l9KY9'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ TMPDIR=.
+++ mktemp -d -t $'\377|\355\272\255|\\u0089|\355\246\277\355\277\277XXXXXX'
++ dir4=$'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277ioOFVy'
++ test -n $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277ioOFVy'
++ test -d $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277ioOFVy'
++ for loc in C "$LOCALE_FR" "$LOCALE_FR_UTF8"
++ test -z none
++ export LC_ALL=none
++ LC_ALL=none
+./tests/mktemp/bad-unicode.sh: line 27: warning: setlocale: LC_ALL: cannot change locale (none): No such file or directory
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ mktemp --tmpdir=. $'--suffix=\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ file1=$'./tmp.2tEFRahIL6\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -n $'./tmp.2tEFRahIL6\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -f $'./tmp.2tEFRahIL6\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ mktemp --tmpdir=. -d $'--suffix=\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ dir1=$'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -n $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -d $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp $'--tmpdir=./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ file2=$'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.SeqKFCfFKD'
++ test -n $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.SeqKFCfFKD'
++ test -f $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.SeqKFCfFKD'
+++ mktemp -d $'--tmpdir=./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ dir2=$'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.hcQROf39aG'
++ test -n $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.hcQROf39aG'
++ test -d $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.hcQROf39aG'
+++ TMPDIR=$'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp
++ file3=$'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.CrOSn134yw'
++ test -n $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.CrOSn134yw'
++ test -f $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.CrOSn134yw'
+++ TMPDIR=$'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp -d
++ dir3=$'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.01LTQeJHXP'
++ test -n $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.01LTQeJHXP'
++ test -d $'./tmp.nS8OG4hZ8I\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.01LTQeJHXP'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ TMPDIR=.
+++ mktemp -t $'\377|\355\272\255|\\u0089|\355\246\277\355\277\277XXXXXX'
++ file4=$'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277IAUZLu'
++ test -n $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277IAUZLu'
++ test -f $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277IAUZLu'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ TMPDIR=.
+++ mktemp -d -t $'\377|\355\272\255|\\u0089|\355\246\277\355\277\277XXXXXX'
++ dir4=$'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277kw9JFl'
++ test -n $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277kw9JFl'
++ test -d $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277kw9JFl'
++ for loc in C "$LOCALE_FR" "$LOCALE_FR_UTF8"
++ test -z none
++ export LC_ALL=none
++ LC_ALL=none
+./tests/mktemp/bad-unicode.sh: line 27: warning: setlocale: LC_ALL: cannot change locale (none): No such file or directory
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ mktemp --tmpdir=. $'--suffix=\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ file1=$'./tmp.jbPjiqTZv4\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -n $'./tmp.jbPjiqTZv4\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -f $'./tmp.jbPjiqTZv4\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ mktemp --tmpdir=. -d $'--suffix=\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ dir1=$'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -n $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ test -d $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp $'--tmpdir=./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ file2=$'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.rkADbGQHUN'
++ test -n $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.rkADbGQHUN'
++ test -f $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.rkADbGQHUN'
+++ mktemp -d $'--tmpdir=./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
++ dir2=$'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.JBdW9LD7lF'
++ test -n $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.JBdW9LD7lF'
++ test -d $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.JBdW9LD7lF'
+++ TMPDIR=$'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp
++ file3=$'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.ACnaJNPoFG'
++ test -n $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.ACnaJNPoFG'
++ test -f $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.ACnaJNPoFG'
+++ TMPDIR=$'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277'
+++ mktemp -d
++ dir3=$'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.sDMWNg1DNz'
++ test -n $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.sDMWNg1DNz'
++ test -d $'./tmp.9vepc8tXDM\377|\355\272\255|\\u0089|\355\246\277\355\277\277/tmp.sDMWNg1DNz'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ TMPDIR=.
+++ mktemp -t $'\377|\355\272\255|\\u0089|\355\246\277\355\277\277XXXXXX'
++ file4=$'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277oO9wAU'
++ test -n $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277oO9wAU'
++ test -f $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277oO9wAU'
++++ bad_unicode
++++ require_built_ printf
++++ skip_=no
++++ for i in "$@"
++++ case " $built_programs " in
++++ test no = yes
++++ env printf '\xFF|\xED\xBA\xAD|\u0089|\xED\xA6\xBF\xED\xBF\xBF\n'
+++ TMPDIR=.
+++ mktemp -d -t $'\377|\355\272\255|\\u0089|\355\246\277\355\277\277XXXXXX'
++ dir4=$'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277YzzhZ8'
++ test -n $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277YzzhZ8'
++ test -d $'./\377|\355\272\255|\\u0089|\355\246\277\355\277\277YzzhZ8'
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-bad-unicode.sh.EQ2R
++ exit 0
+PASS tests/mktemp/bad-unicode.sh (exit status: 0)

@@ -1,0 +1,306 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-md5sum-bsd.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-md5sum-bsd.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
++++ perms='drwx------ 2 4096 Apr 15 17:17 /home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ md5sum
++ require_built_ md5sum
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env md5sum --version
+md5sum (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Ulrich Drepper, Scott Miller, and David Madore.
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo a
++ md5sum --text a
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo ' b'
++ md5sum --text ' b'
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo '*c'
++ md5sum --text '*c'
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo dd
++ md5sum --text dd
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo ' '
++ md5sum --text ' '
++ sed 's/  / /' check.md5sum
++ md5sum --strict -c check.md5sum
+a: OK
+' b': OK
+'*c': OK
+dd: OK
+' ': OK
++ md5sum --strict -c check.md5
+a: OK
+' b': OK
+'*c': OK
+dd: OK
+' ': OK
++ echo '____not_all_hex_so_no_match_____ blah'
++ cat check.md5sum
++ md5sum -c check2.md5sum
+a: OK
+' b': OK
+'*c': OK
+dd: OK
+' ': OK
++ echo 'md5sum: WARNING: 1 line is improperly formatted'
++ compare check2.exp check2.err
++ compare_dev_null_ check2.exp check2.err
++ test 2 = 2
++ test xcheck2.exp = x/dev/null
++ test xcheck2.err = x/dev/null
++ return 2
++ case $? in
++ compare_ check2.exp check2.err
++ LC_ALL=C
++ diff -u check2.exp check2.err
++ tail -n+2 check.md5
++ returns_ 1 md5sum --strict -c
+md5sum: b: No such file or directory
+b: FAILED open or read
+md5sum: c: No such file or directory
+c: FAILED open or read
+md5sum: WARNING: 2 lines are improperly formatted
+md5sum: WARNING: 2 listed files could not be read
++ returns_ 1 md5sum --tag --check /dev/null
+md5sum: the --tag option is meaningless when verifying checksums
+Try 'md5sum --help' for more information.
++ returns_ 1 md5sum --tag --text /dev/null
+md5sum: --tag does not support --text mode
+Try 'md5sum --help' for more information.
++ rm check.md5
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo a
++ md5sum --tag a
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo ' b'
++ md5sum --tag ' b'
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo '*c'
++ md5sum --tag '*c'
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo dd
++ md5sum --tag dd
++ for i in 'a' ' b' '*c' 'dd' ' '
++ echo ' '
++ md5sum --tag ' '
++ md5sum --strict -c check.md5
+a: OK
+' b': OK
+'*c': OK
+dd: OK
+' ': OK
++ echo ''
++ nl=$'\n'
++ t=$'\t'
++ rm check.md5
++ for i in 'a\b' 'a\' '\a' "a${nl}b" "a${t}b"
++ rm -f 'a\b'
++ touch 'a\b'
++ md5sum --tag 'a\b'
++ for i in 'a\b' 'a\' '\a' "a${nl}b" "a${t}b"
++ rm -f 'a\'
++ touch 'a\'
++ md5sum --tag 'a\'
++ for i in 'a\b' 'a\' '\a' "a${nl}b" "a${t}b"
++ rm -f '\a'
++ touch '\a'
++ md5sum --tag '\a'
++ for i in 'a\b' 'a\' '\a' "a${nl}b" "a${t}b"
++ rm -f $'a\nb'
++ touch $'a\nb'
++ md5sum --tag $'a\nb'
++ for i in 'a\b' 'a\' '\a' "a${nl}b" "a${t}b"
++ rm -f $'a\tb'
++ touch $'a\tb'
++ md5sum --tag $'a\tb'
++ md5sum --strict -c check.md5
++ printf '%s: OK\n' ''\''a\b'\''' ''\''a\'\''' ''\''\a'\''' ''\''a'\''$'\''\n'\'''\''b'\''' ''\''a'\''$'\''\t'\'''\''b'\'''
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ ex_file=$'test\n\\\\file'
++ ex_output='\MD5 (test\n\\\\file) = d41d8cd98f00b204e9800998ecf8427e'
++ touch $'test\n\\\\file'
++ printf '%s\n' '\MD5 (test\n\\\\file) = d41d8cd98f00b204e9800998ecf8427e'
++ md5sum --tag $'test\n\\\\file'
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-md5sum-bsd.sh.3Adr
++ exit 0
+PASS tests/cksum/md5sum-bsd.sh (exit status: 0)
