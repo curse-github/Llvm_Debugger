@@ -21,44 +21,21 @@ ifeq ($(OS),Windows_NT)
 else
 	@cp ./strLen.ll ./tmp/input_for_passes.ll
 endif
-.\tmp\input_for_librarify.ll:
-	@-echo creating input_for_librarify.ll
-	@clang++ ./src/testProgram.cpp -O3 -S -emit-llvm -fno-discard-value-names -fno-inline -o ./tmp/input_for_librarify.ll
+.\tmp\input_for_librarify.bc:
+	@-echo creating input_for_librarify.bc
+	@export LLVM_COMPILER=clang
+	@./venv/bin/wllvm++ ./src/testProgram.cpp -c -O3 -fno-discard-value-names -fno-inline -o ./tmp/input_for_librarify.o
+	@./venv/bin/extract-bc ./tmp/input_for_librarify.o -o ./tmp/input_for_librarify.bc
 
-testLibrarify: mkdir .\tmp\input_for_librarify.ll libLibrarify.$(dynamicExt)
-	@-echo running libLibrarify.$(dynamicExt) plugin on input_for_librarify.ll
-	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/input_for_librarify.ll -S -o ./tmp/output_from_librarify.ll
+testLibrarify: mkdir .\tmp\input_for_librarify.bc libLibrarify.$(dynamicExt)
+	@-echo running libLibrarify.$(dynamicExt) plugin on input_for_librarify.bc
+	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/input_for_librarify.bc -S -o ./tmp/output_from_librarify.ll
 	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
 	@ar rcs ./out/output.a ./tmp/output.o
 	@clang++ ./src/controller.cpp ./out/output.a -o ./out/controller.out
 	@#clear
 	@./out/controller.out
-
-testSeparate: mkdir .\tmp\input_for_passes.ll stdlib libSeparate.$(dynamicExt)
-	@-echo running libSeparate.$(dynamicExt) plugin on input_for_passes.ll
-	@#-echo --------------------------------
-	@opt -load-pass-plugin ./out/libSeparate.$(dynamicExt) -passes separate ./tmp/input_for_passes.ll -disable-output
-	@#-echo --------------------------------
-
-testAddDebugPrint: mkdir .\tmp\input_for_passes.ll stdlib libAddDebugPrint.$(dynamicExt)
-	@-echo running libAddDebugPrint.$(dynamicExt) plugin on input_for_passes.ll
-	@opt -load-pass-plugin ./out/libAddDebugPrint.$(dynamicExt) -passes add-debug-print ./tmp/input_for_passes.ll -S -o ./tmp/output_from_add_debug_print.ll
-	@#-echo --------------------------------
-
-	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/input_for_passes.ll ./out/libStd.$(staticExt) -o ./out/input.$(executableExt)
-	@clang++ -Werror -Wno-override-module -std=c++23 -O3 ./tmp/output_from_add_debug_print.ll ./out/libStd.$(staticExt) -o ./out/output.$(executableExt)
-	
-	@-echo --------------------------------
-	@-echo testing output.$(executableExt)
-	@-./out/output.$(executableExt)
-	@-echo
-	@-echo testing input.$(executableExt) \"\"
-	@-./out/output.$(executableExt) ""
-	@-echo
-	@-echo testing input.$(executableExt) \"abcdefghijklmnopqrstuvwxyz\"
-	@-./out/output.$(executableExt) "abcdefghijklmnopqrstuvwxyz"
-	@-echo --------------------------------
-.phony : test
+.phony : testLibrarify
 
 stdlib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
 	@-echo building std lib

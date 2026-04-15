@@ -37,7 +37,7 @@ void Librarify::run(llvm::Function& F) {
     // numFunctions
     numFunctions_value++;
     // functionNames
-    const std::string f_name = F.getName().str();
+    const std::string f_name = llvm::demangle(F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
     // functionParamCounts
     const unsigned int arg_size = F.arg_size();
