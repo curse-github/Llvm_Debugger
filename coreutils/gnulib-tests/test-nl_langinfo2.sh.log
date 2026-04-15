@@ -1,0 +1,2 @@
+Skipping test: French locale is not installed
+SKIP test-nl_langinfo2.sh (exit status: 77)

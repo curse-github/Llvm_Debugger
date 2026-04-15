@@ -1,0 +1,2 @@
+test-lutimens.h:189: assertion 'st3.st_atime == Y2K' failed
+FAIL test-fdutimensat (exit status: 134)

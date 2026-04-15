@@ -1,0 +1,6 @@
+test-verify-try.o: test-verify-try.c /usr/include/stdc-predef.h \
+ test-verify.c ../lib/config.h ../lib/verify.h
+/usr/include/stdc-predef.h:
+test-verify.c:
+../lib/config.h:
+../lib/verify.h:

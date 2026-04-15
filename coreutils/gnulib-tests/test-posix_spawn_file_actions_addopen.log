@@ -1,0 +1,1 @@
+PASS test-posix_spawn_file_actions_addopen (exit status: 0)

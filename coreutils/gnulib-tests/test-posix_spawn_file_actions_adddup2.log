@@ -1,0 +1,1 @@
+PASS test-posix_spawn_file_actions_adddup2 (exit status: 0)

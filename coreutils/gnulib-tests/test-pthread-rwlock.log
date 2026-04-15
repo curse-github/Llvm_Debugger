@@ -1,0 +1,2 @@
+Starting test_rwlock ... OK
+PASS test-pthread-rwlock (exit status: 0)

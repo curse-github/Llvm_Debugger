@@ -1,0 +1,45 @@
+Format as ISO 8601: 2017-10-26 06:40:03.123456789
+%a directive: Thu
+%A directive: Thursday
+%b directive: Oct
+%B directive: October
+%c directive: Thu Oct 26 06:40:03 2017
+%C directive: 20
+%d directive: 26
+%D directive: 10/26/17
+%e directive: 26
+%F directive: 2017-10-26
+%g directive: 17
+%G directive: 2017
+%h directive: Oct
+%H directive: 06
+%I directive: 06
+%j directive: 299
+%m directive: 10
+%M directive: 40
+%n directive: 
+
+%p directive: AM
+%r directive: 06:40:03 AM
+%R directive: 06:40
+%S directive: 03
+%t directive: 	
+%T directive: 06:40:03
+%u directive: 4
+%U directive: 43
+%V directive: 43
+%w directive: 4
+%W directive: 43
+%x directive: 10/26/17
+%X directive: 06:40:03
+%y directive: 17
+%Y directive: 2017
+%z directive: +0000
+%Z directive: GMT
+%% directive: %
+%k directive:  6
+%l directive:  6
+%P directive: am
+%s directive: 1509000003
+%N directive: 123456789
+PASS test-nstrftime-1.sh (exit status: 0)

@@ -1,0 +1,2 @@
+Skipping test: Unicode locale for Ethiopia is not installed
+SKIP test-nstrftime-ET (exit status: 77)

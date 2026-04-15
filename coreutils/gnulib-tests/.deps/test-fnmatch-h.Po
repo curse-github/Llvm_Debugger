@@ -1,0 +1,5 @@
+test-fnmatch-h.o: test-fnmatch-h.c /usr/include/stdc-predef.h \
+ ../lib/config.h /usr/include/fnmatch.h
+/usr/include/stdc-predef.h:
+../lib/config.h:
+/usr/include/fnmatch.h:

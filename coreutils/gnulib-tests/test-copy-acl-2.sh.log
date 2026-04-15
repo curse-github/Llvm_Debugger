@@ -1,0 +1,293 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests gt-test-copy-acl-2.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests
++++ template_=gt-test-copy-acl-2.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
++++ perms='drwx------ 2 4096 Apr 15 17:19 /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ IFS=$' \t\n'
+++ PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ .
++ test 1 '!=' 0
++ path_dir_=.
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/.
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/.:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/.
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
+++ pwd
++ TMPDIR=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
++ export TMPDIR
++ /bin/sh .././test-copy-acl.sh
++ test 1 = 0
++ func_tmpdir
++ : /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
++ tmp=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/glhMdME1
++ test -n /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/glhMdME1
++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/glhMdME1
++ case "$builddir" in
+++ pwd
++ builddir=/home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/..
++ cd /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/..
++ cd /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/glhMdME1
++ rm -f 'tmpfile[0-9]' 'tmpaclout[0-2]'
++ echo 'Simple contents'
++ chmod 600 tmpfile0
++ acl_flavor=none
++ acl_flavor=linux
++ case $acl_flavor in
++ func_test_copy tmpfile0 tmpfile1
++ echo 'Simple contents'
++ chmod 600 tmpfile1
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile1
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile1
++ func_test_same_acls tmpfile0 tmpfile1
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile1
++ sed -e s/tmpfile1/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ test linux '!=' none
++ test -f /usr/xpg4/bin/id
++ ID=id
+++ id -u
++ myuid=1000
+++ id -g
++ mygid=1000
++ auid=1
++ test 1 = 1000
++ agid=1
++ test 1 = 1000
++ case $acl_flavor in
++ setfacl -m user:1:1 tmpfile0
++ func_test_copy tmpfile0 tmpfile2
++ echo 'Simple contents'
++ chmod 600 tmpfile2
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile2
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile2
++ func_test_same_acls tmpfile0 tmpfile2
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile2
++ sed -e s/tmpfile2/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ setfacl -m group:1:4 tmpfile0
++ func_test_copy tmpfile0 tmpfile3
++ echo 'Simple contents'
++ chmod 600 tmpfile3
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile3
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile3
++ func_test_same_acls tmpfile0 tmpfile3
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile3
++ sed -e s/tmpfile3/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ case $acl_flavor in
++ setfacl -m other:4 tmpfile0
++ func_test_copy tmpfile0 tmpfile4
++ echo 'Simple contents'
++ chmod 600 tmpfile4
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile4
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile4
++ func_test_same_acls tmpfile0 tmpfile4
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile0
++ getfacl tmpfile4
++ sed -e s/tmpfile4/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ case $acl_flavor in
++ setfacl -x user:1 tmpfile0
++ func_test_copy tmpfile0 tmpfile5
++ echo 'Simple contents'
++ chmod 600 tmpfile5
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile5
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile5
++ func_test_same_acls tmpfile0 tmpfile5
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile5
++ sed -e s/tmpfile5/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ case $acl_flavor in
++ func_test_copy tmpfile0 tmpfile6
++ echo 'Simple contents'
++ chmod 600 tmpfile6
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile6
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile6
++ func_test_same_acls tmpfile0 tmpfile6
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile6
++ sed -e s/tmpfile6/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ case $acl_flavor in
++ setfacl -x group:1 tmpfile0
++ func_test_copy tmpfile0 tmpfile7
++ echo 'Simple contents'
++ chmod 600 tmpfile7
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile7
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile7
++ func_test_same_acls tmpfile0 tmpfile7
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile7
++ sed -e s/tmpfile7/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ case $acl_flavor in
++ setfacl -m user:1:1 tmpfile0
++ setfacl -b tmpfile0
++ func_test_copy tmpfile0 tmpfile8
++ echo 'Simple contents'
++ chmod 600 tmpfile8
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile8
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile8
++ func_test_same_acls tmpfile0 tmpfile8
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile8
++ sed -e s/tmpfile8/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ echo
++ chmod a+x tmpfile9
++ case $acl_flavor in
++ getfacl tmpfile9
++ setfacl --set-file=- tmpfile0
++ rm -f tmpfile9
++ func_test_copy tmpfile0 tmpfile9
++ echo 'Simple contents'
++ chmod 600 tmpfile9
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-copy-acl tmpfile0 tmpfile9
++ /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/../test-sameacls tmpfile0 tmpfile9
++ func_test_same_acls tmpfile0 tmpfile9
++ getfacl tmpfile0
++ sed -e s/tmpfile0/FILENAME/g
++ getfacl tmpfile9
++ sed -e s/tmpfile9/FILENAME/g
++ cmp tmpaclout1 tmpaclout2
++ rm -f tmpfile0 tmpfile1 tmpfile2 tmpfile3 tmpfile4 tmpfile5 tmpfile6 tmpfile7 tmpfile8 tmpfile9 tmpaclout1 tmpaclout2
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V/glhMdME1
++ exit 0
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ :
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gnulib-tests/gt-test-copy-acl-2.sh.Tx7V
++ exit 0
+PASS test-copy-acl-2.sh (exit status: 0)

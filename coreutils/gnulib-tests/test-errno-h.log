@@ -1,0 +1,3 @@
+EAGAIN == EWOULDBLOCK == 11
+ENOTSUP == EOPNOTSUPP == 95
+PASS test-errno-h (exit status: 0)

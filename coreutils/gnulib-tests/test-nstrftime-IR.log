@@ -1,0 +1,2 @@
+Skipping test: Unicode locale for Iran is not installed
+SKIP test-nstrftime-IR (exit status: 77)

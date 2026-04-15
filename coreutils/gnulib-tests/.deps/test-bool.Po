@@ -1,0 +1,3 @@
+test-bool.o: test-bool.c /usr/include/stdc-predef.h ../lib/config.h
+/usr/include/stdc-predef.h:
+../lib/config.h:

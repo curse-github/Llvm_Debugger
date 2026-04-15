@@ -1,0 +1,3 @@
+test_heap: address range is still mapped after free().
+test_stack: count = 0
+PASS test-memset_explicit (exit status: 0)

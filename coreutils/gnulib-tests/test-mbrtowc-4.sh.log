@@ -1,0 +1,2 @@
+Skipping test: no traditional japanese locale is installed
+SKIP test-mbrtowc-4.sh (exit status: 77)

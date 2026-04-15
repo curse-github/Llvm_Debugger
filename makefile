@@ -23,9 +23,10 @@ else
 endif
 .\tmp\input_for_librarify.bc:
 	@-echo creating input_for_librarify.bc
-	@export LLVM_COMPILER=clang
-	@./venv/bin/wllvm++ ./src/testProgram.cpp -c -O3 -fno-discard-value-names -fno-inline -o ./tmp/input_for_librarify.o
-	@./venv/bin/extract-bc ./tmp/input_for_librarify.o -o ./tmp/input_for_librarify.bc
+	@#export LLVM_COMPILER=clang
+	@#./venv/bin/wllvm++ ./src/testProgram.cpp -c -O3 -fno-discard-value-names -fno-inline -o ./tmp/input_for_librarify.o
+	@#./venv/bin/extract-bc ./tmp/input_for_librarify.o -o ./tmp/input_for_librarify.bc
+	./venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/input_for_librarify.bc
 
 testLibrarify: mkdir .\tmp\input_for_librarify.bc libLibrarify.$(dynamicExt)
 	@-echo running libLibrarify.$(dynamicExt) plugin on input_for_librarify.bc

@@ -1,0 +1,2 @@
+Skipping test: no traditional french locale is installed
+SKIP test-mbsrtoc32s-2.sh (exit status: 77)

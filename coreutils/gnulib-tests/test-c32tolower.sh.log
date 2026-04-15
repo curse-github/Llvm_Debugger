@@ -1,0 +1,19 @@
++ LC_ALL=C
++ ./test-c32tolower 0
++ LC_ALL=POSIX
++ ./test-c32tolower 0
++ : none
++ test none '!=' none
++ : none
++ test none '!=' none
++ : en_US.UTF-8
++ : none
++ test en_US.UTF-8 '!=' none
++ test none '!=' none
++ testlocale=en_US.UTF-8
++ LC_ALL=en_US.UTF-8
++ ./test-c32tolower 3
++ : none
++ test none '!=' none
++ exit 0
+PASS test-c32tolower.sh (exit status: 0)

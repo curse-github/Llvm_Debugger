@@ -1,0 +1,2 @@
+Skipping test: Unicode locale for Germany is not installed
+SKIP test-nstrftime-DE (exit status: 77)

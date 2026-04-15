@@ -1,0 +1,2 @@
+gettime_res returned 1 ns
+PASS test-gettime-res (exit status: 0)

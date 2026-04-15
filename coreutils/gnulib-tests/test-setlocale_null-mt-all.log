@@ -1,0 +1,2 @@
+Skipping test: LOCALE2 not recognized
+SKIP test-setlocale_null-mt-all (exit status: 77)

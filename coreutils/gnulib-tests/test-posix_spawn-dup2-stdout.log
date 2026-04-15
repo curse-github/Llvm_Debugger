@@ -1,0 +1,1 @@
+PASS test-posix_spawn-dup2-stdout (exit status: 0)
