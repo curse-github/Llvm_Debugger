@@ -1,0 +1,709 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-tee.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-tee.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
++++ perms='drwx------ 2 4096 Apr 15 17:17 /home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ tee
++ require_built_ tee
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env tee --version
+tee (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Mike Parker, Richard M. Stallman, and David MacKenzie.
++ echo line
++ printf '1\n2\n'
++ echo 1
++ sleep .1
++ tee
++ echo 2
++ compare exp out
++ compare_dev_null_ exp out
++ test 2 = 2
++ test xexp = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ exp out
++ LC_ALL=C
++ diff -u exp out
++ for n in 0 1 2 12 13
+++ seq 0
++ files=
++ rm -f
++ tee
++ for f in out $files
++ compare sample out
++ compare_dev_null_ sample out
++ test 2 = 2
++ test xsample = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ sample out
++ LC_ALL=C
++ diff -u sample out
++ for n in 0 1 2 12 13
+++ seq 1
++ files=1
++ rm -f 1
++ tee 1
++ for f in out $files
++ compare sample out
++ compare_dev_null_ sample out
++ test 2 = 2
++ test xsample = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ sample out
++ LC_ALL=C
++ diff -u sample out
++ for f in out $files
++ compare sample 1
++ compare_dev_null_ sample 1
++ test 2 = 2
++ test xsample = x/dev/null
++ test x1 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 1
++ LC_ALL=C
++ diff -u sample 1
++ for n in 0 1 2 12 13
+++ seq 2
++ files=$'1\n2'
++ rm -f 1 2
++ tee 1 2
++ for f in out $files
++ compare sample out
++ compare_dev_null_ sample out
++ test 2 = 2
++ test xsample = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ sample out
++ LC_ALL=C
++ diff -u sample out
++ for f in out $files
++ compare sample 1
++ compare_dev_null_ sample 1
++ test 2 = 2
++ test xsample = x/dev/null
++ test x1 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 1
++ LC_ALL=C
++ diff -u sample 1
++ for f in out $files
++ compare sample 2
++ compare_dev_null_ sample 2
++ test 2 = 2
++ test xsample = x/dev/null
++ test x2 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 2
++ LC_ALL=C
++ diff -u sample 2
++ for n in 0 1 2 12 13
+++ seq 12
++ files=$'1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12'
++ rm -f 1 2 3 4 5 6 7 8 9 10 11 12
++ tee 1 2 3 4 5 6 7 8 9 10 11 12
++ for f in out $files
++ compare sample out
++ compare_dev_null_ sample out
++ test 2 = 2
++ test xsample = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ sample out
++ LC_ALL=C
++ diff -u sample out
++ for f in out $files
++ compare sample 1
++ compare_dev_null_ sample 1
++ test 2 = 2
++ test xsample = x/dev/null
++ test x1 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 1
++ LC_ALL=C
++ diff -u sample 1
++ for f in out $files
++ compare sample 2
++ compare_dev_null_ sample 2
++ test 2 = 2
++ test xsample = x/dev/null
++ test x2 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 2
++ LC_ALL=C
++ diff -u sample 2
++ for f in out $files
++ compare sample 3
++ compare_dev_null_ sample 3
++ test 2 = 2
++ test xsample = x/dev/null
++ test x3 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 3
++ LC_ALL=C
++ diff -u sample 3
++ for f in out $files
++ compare sample 4
++ compare_dev_null_ sample 4
++ test 2 = 2
++ test xsample = x/dev/null
++ test x4 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 4
++ LC_ALL=C
++ diff -u sample 4
++ for f in out $files
++ compare sample 5
++ compare_dev_null_ sample 5
++ test 2 = 2
++ test xsample = x/dev/null
++ test x5 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 5
++ LC_ALL=C
++ diff -u sample 5
++ for f in out $files
++ compare sample 6
++ compare_dev_null_ sample 6
++ test 2 = 2
++ test xsample = x/dev/null
++ test x6 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 6
++ LC_ALL=C
++ diff -u sample 6
++ for f in out $files
++ compare sample 7
++ compare_dev_null_ sample 7
++ test 2 = 2
++ test xsample = x/dev/null
++ test x7 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 7
++ LC_ALL=C
++ diff -u sample 7
++ for f in out $files
++ compare sample 8
++ compare_dev_null_ sample 8
++ test 2 = 2
++ test xsample = x/dev/null
++ test x8 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 8
++ LC_ALL=C
++ diff -u sample 8
++ for f in out $files
++ compare sample 9
++ compare_dev_null_ sample 9
++ test 2 = 2
++ test xsample = x/dev/null
++ test x9 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 9
++ LC_ALL=C
++ diff -u sample 9
++ for f in out $files
++ compare sample 10
++ compare_dev_null_ sample 10
++ test 2 = 2
++ test xsample = x/dev/null
++ test x10 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 10
++ LC_ALL=C
++ diff -u sample 10
++ for f in out $files
++ compare sample 11
++ compare_dev_null_ sample 11
++ test 2 = 2
++ test xsample = x/dev/null
++ test x11 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 11
++ LC_ALL=C
++ diff -u sample 11
++ for f in out $files
++ compare sample 12
++ compare_dev_null_ sample 12
++ test 2 = 2
++ test xsample = x/dev/null
++ test x12 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 12
++ LC_ALL=C
++ diff -u sample 12
++ for n in 0 1 2 12 13
+++ seq 13
++ files=$'1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13'
++ rm -f 1 2 3 4 5 6 7 8 9 10 11 12 13
++ tee 1 2 3 4 5 6 7 8 9 10 11 12 13
++ for f in out $files
++ compare sample out
++ compare_dev_null_ sample out
++ test 2 = 2
++ test xsample = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ sample out
++ LC_ALL=C
++ diff -u sample out
++ for f in out $files
++ compare sample 1
++ compare_dev_null_ sample 1
++ test 2 = 2
++ test xsample = x/dev/null
++ test x1 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 1
++ LC_ALL=C
++ diff -u sample 1
++ for f in out $files
++ compare sample 2
++ compare_dev_null_ sample 2
++ test 2 = 2
++ test xsample = x/dev/null
++ test x2 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 2
++ LC_ALL=C
++ diff -u sample 2
++ for f in out $files
++ compare sample 3
++ compare_dev_null_ sample 3
++ test 2 = 2
++ test xsample = x/dev/null
++ test x3 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 3
++ LC_ALL=C
++ diff -u sample 3
++ for f in out $files
++ compare sample 4
++ compare_dev_null_ sample 4
++ test 2 = 2
++ test xsample = x/dev/null
++ test x4 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 4
++ LC_ALL=C
++ diff -u sample 4
++ for f in out $files
++ compare sample 5
++ compare_dev_null_ sample 5
++ test 2 = 2
++ test xsample = x/dev/null
++ test x5 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 5
++ LC_ALL=C
++ diff -u sample 5
++ for f in out $files
++ compare sample 6
++ compare_dev_null_ sample 6
++ test 2 = 2
++ test xsample = x/dev/null
++ test x6 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 6
++ LC_ALL=C
++ diff -u sample 6
++ for f in out $files
++ compare sample 7
++ compare_dev_null_ sample 7
++ test 2 = 2
++ test xsample = x/dev/null
++ test x7 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 7
++ LC_ALL=C
++ diff -u sample 7
++ for f in out $files
++ compare sample 8
++ compare_dev_null_ sample 8
++ test 2 = 2
++ test xsample = x/dev/null
++ test x8 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 8
++ LC_ALL=C
++ diff -u sample 8
++ for f in out $files
++ compare sample 9
++ compare_dev_null_ sample 9
++ test 2 = 2
++ test xsample = x/dev/null
++ test x9 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 9
++ LC_ALL=C
++ diff -u sample 9
++ for f in out $files
++ compare sample 10
++ compare_dev_null_ sample 10
++ test 2 = 2
++ test xsample = x/dev/null
++ test x10 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 10
++ LC_ALL=C
++ diff -u sample 10
++ for f in out $files
++ compare sample 11
++ compare_dev_null_ sample 11
++ test 2 = 2
++ test xsample = x/dev/null
++ test x11 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 11
++ LC_ALL=C
++ diff -u sample 11
++ for f in out $files
++ compare sample 12
++ compare_dev_null_ sample 12
++ test 2 = 2
++ test xsample = x/dev/null
++ test x12 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 12
++ LC_ALL=C
++ diff -u sample 12
++ for f in out $files
++ compare sample 13
++ compare_dev_null_ sample 13
++ test 2 = 2
++ test xsample = x/dev/null
++ test x13 = x/dev/null
++ return 2
++ case $? in
++ compare_ sample 13
++ LC_ALL=C
++ diff -u sample 13
++ tee -
++ compare sample ./-
++ compare_dev_null_ sample ./-
++ test 2 = 2
++ test xsample = x/dev/null
++ test x./- = x/dev/null
++ return 2
++ case $? in
++ compare_ sample ./-
++ LC_ALL=C
++ diff -u sample ./-
++ compare sample out
++ compare_dev_null_ sample out
++ test 2 = 2
++ test xsample = x/dev/null
++ test xout = x/dev/null
++ return 2
++ case $? in
++ compare_ sample out
++ LC_ALL=C
++ diff -u sample out
++ compare /dev/null err
++ compare_dev_null_ /dev/null err
++ test 2 = 2
++ test x/dev/null = x/dev/null
++ test -s err
++ return 0
++ return 0
++ test -w /dev/full
++ test -c /dev/full
++ yes
++ returns_ 1 timeout 10 tee /dev/full
+++ wc -l
++ test 2 = 2
++ seq 10000
++ returns_ 1 tee /dev/full out2
++ cmp multi_read out1
++ cmp multi_read out2
+++ wc -l
++ test 1 = 1
++ returns_ 1 tee out1 out2
++ cmp multi_read out1
++ cmp multi_read out2
+++ wc -l
++ test 1 = 1
++ case $host_os in
++ retry_delay_ tee_exited .1 7
++ local test_func=tee_exited
++ local init_delay=.1
++ local max_n_tries=7
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 7
++ :
++ timeout 10 tee -p
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ touch tee.exited
++ local delay=0.1
++ tee_exited 0.1
++ sleep 0.1
++ test -f tee.exited
++ time_fail=0
++ break
++ test 0 = 0
+++ wc -l
++ test 0 = 0
++ test -f tee.exited
++ uid_is_privileged_
+++ id -u
++ my_uid=1000
++ case $my_uid in
++ return 1
++ touch file.ro
++ chmod a-w file.ro
++ returns_ 1 tee -p file.ro
+tee: file.ro: Permission denied
++ mkfifo_or_skip_ fifo
++ test 1 = 1
++ mkfifo fifo
++ pid=101868
++ read_fifo_delayed
++ dd count=20 bs=100K if=/dev/zero status=none
++ dd count=0 oflag=nonblock status=none
++ sleep .1
++ timeout 10 tee
++ timeout 10 dd of=/dev/null status=none
++ test -f tee.fail
++ cleanup_
++ kill 101868
++ wait 101868
++ read_fifo
++ yes
++ timeout 10 dd count=1 if=fifo of=/dev/null status=none
++ pipe_status=141
++ read_fifo
++ timeout 10 dd count=1 if=fifo of=/dev/null status=none
++ yes
++ returns_ 141 timeout 10 tee ./e/noent
+++ wc -l
++ test 1 = 1
++ read_fifo
++ timeout 10 dd count=1 if=fifo of=/dev/null status=none
++ yes
++ timeout 10 tee -p
+++ wc -l
++ test 0 = 0
++ read_fifo
++ timeout 10 dd count=1 if=fifo of=/dev/null status=none
++ yes
++ returns_ 1 timeout 10 tee --output-error=warn
+++ wc -l
++ test 1 = 1
++ read_fifo
++ timeout 10 dd count=1 if=fifo of=/dev/null status=none
++ yes
++ returns_ 1 timeout 10 tee --output-error=exit /dev/null
+++ wc -l
++ test 1 = 1
++ read_fifo
++ timeout 10 dd count=1 if=fifo of=/dev/null status=none
++ yes
++ returns_ 1 timeout 10 tee --output-error=exit ./e/noent
+++ wc -l
++ test 1 = 1
++ read_fifo
++ timeout 10 dd count=1 if=fifo of=/dev/null status=none
++ yes
++ timeout 10 tee --output-error=exit-nopipe
+++ wc -l
++ test 0 = 0
++ wait
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ kill 101868
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-tee.sh.OHvF
++ exit 0
+PASS tests/tee/tee.sh (exit status: 0)

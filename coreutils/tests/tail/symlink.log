@@ -1,0 +1,404 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-symlink.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-symlink.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
++++ perms='drwx------ 2 4096 Apr 15 17:17 /home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ tail
++ require_built_ tail
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env tail --version
+tail (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Paul Rubin, David MacKenzie, Ian Lance Taylor,
+and Jim Meyering.
++ fastpoll='-s.1 --max-unchanged-stats=1'
++ ln -nsf target symlink
++ pid=116263
++ retry_delay_ wait4lines_ .1 6 1
++ local test_func=wait4lines_
++ timeout 10 tail -s.1 --max-unchanged-stats=1 -F symlink
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ wait4lines_ 0.1 1
++ local delay=0.1
++ local elc=1
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 1 -ge 1 ']'
++ time_fail=0
++ break
++ test 0 = 0
++ echo X
++ retry_delay_ wait4lines_ .1 6 3
++ local test_func=wait4lines_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ wait4lines_ 0.1 3
++ local delay=0.1
++ local elc=3
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 1 -ge 3 ']'
++ sleep 0.1
++ return 1
++ time_fail=1
+++ expr 1 + 1
++ attempt=2
+++ expr 1 '*' 2
++ num_sleeps=2
++ test 2 -le 6
+++ gawk -v n=2 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.2
++ wait4lines_ 0.2 3
++ local delay=0.2
++ local elc=3
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 2 -ge 3 ']'
++ sleep 0.2
++ return 1
++ time_fail=1
+++ expr 2 + 1
++ attempt=3
+++ expr 2 '*' 2
++ num_sleeps=4
++ test 3 -le 6
+++ gawk -v n=4 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.4
++ wait4lines_ 0.4 3
++ local delay=0.4
++ local elc=3
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 3 -ge 3 ']'
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 116263
++ wait 116263
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 3 = 3 ']'
++ grep -F 'cannot open' out
+tail: cannot open 'symlink' for reading: No such file or directory
++ grep -F 'has appeared' out
+tail: 'symlink' has appeared;  following new file
++ grep '^X$' out
+X
++ rm -f target out
++ echo X1
++ ln -nsf target1 symlink
++ pid=116295
++ retry_delay_ wait4lines_ .1 6 1
++ local test_func=wait4lines_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ timeout 10 tail -s.1 --max-unchanged-stats=1 -F symlink
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ wait4lines_ 0.1 1
++ local delay=0.1
++ local elc=1
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 1 -ge 1 ']'
++ time_fail=0
++ break
++ test 0 = 0
++ ln -nsf target2 symlink
++ retry_delay_ wait4lines_ .1 6 2
++ local test_func=wait4lines_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ wait4lines_ 0.1 2
++ local delay=0.1
++ local elc=2
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 1 -ge 2 ']'
++ sleep 0.1
++ return 1
++ time_fail=1
+++ expr 1 + 1
++ attempt=2
+++ expr 1 '*' 2
++ num_sleeps=2
++ test 2 -le 6
+++ gawk -v n=2 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.2
++ wait4lines_ 0.2 2
++ local delay=0.2
++ local elc=2
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 2 -ge 2 ']'
++ time_fail=0
++ break
++ test 0 = 0
++ echo X2
++ retry_delay_ wait4lines_ .1 6 4
++ local test_func=wait4lines_
++ local init_delay=.1
++ local max_n_tries=6
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 6
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ wait4lines_ 0.1 4
++ local delay=0.1
++ local elc=4
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 2 -ge 4 ']'
++ sleep 0.1
++ return 1
++ time_fail=1
+++ expr 1 + 1
++ attempt=2
+++ expr 1 '*' 2
++ num_sleeps=2
++ test 2 -le 6
+++ gawk -v n=2 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.2
++ wait4lines_ 0.2 4
++ local delay=0.2
++ local elc=4
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 3 -ge 4 ']'
++ sleep 0.2
++ return 1
++ time_fail=1
+++ expr 2 + 1
++ attempt=3
+++ expr 2 '*' 2
++ num_sleeps=4
++ test 3 -le 6
+++ gawk -v n=4 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.4
++ wait4lines_ 0.4 4
++ local delay=0.4
++ local elc=4
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 4 -ge 4 ']'
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 116295
++ wait 116295
+++ countlines_
+++ grep -Ev 'inotify (resources exhausted|cannot be used)' out
+++ wc -l
++ '[' 4 = 4 ']'
++ grep -F 'become inacce' out
+tail: 'symlink' has become inaccessible: No such file or directory
++ grep -F 'has appeared' out
+tail: 'symlink' has appeared;  following new file
++ grep '^X1$' out
+X1
++ grep '^X2$' out
+X2
++ rm -f target1 target2 out
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ kill 116295
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-symlink.sh.nqDr
++ exit 0
+PASS tests/tail/symlink.sh (exit status: 0)

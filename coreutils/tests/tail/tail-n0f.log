@@ -1,0 +1,407 @@
+++ initial_cwd_=/home/curse/Desktop/Research/Debugger/coreutils
++++ testdir_prefix_
++++ printf gt
+++ pfx_=gt
++++ mktempd_ /home/curse/Desktop/Research/Debugger/coreutils gt-tail-n0f.sh.XXXX
++++ case $# in
++++ destdir_=/home/curse/Desktop/Research/Debugger/coreutils
++++ template_=gt-tail-n0f.sh.XXXX
++++ MAX_TRIES_=4
++++ case $destdir_ in
++++ destdir_slash_=/home/curse/Desktop/Research/Debugger/coreutils/
++++ case $template_ in
+++++ unset TMPDIR
++++ d=/home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
++++ case $d in
++++ :
++++ test -d /home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
+++++ ls -dgo /home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
++++ perms='drwx------ 2 4096 Apr 15 17:16 /home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c'
++++ case $perms in
++++ :
++++ echo /home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
++++ return
+++ test_dir_=/home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
+++ cd /home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
+++ case $srcdir in
+++ srcdir=../.
+++ builddir=..
+++ export srcdir builddir
+++ gl_init_sh_nl_=$'\n'
+++ IFS=$' \t\n'
+++ for sig_ in 1 2 3 13 15
++++ expr 1 + 128
+++ eval 'trap '\''Exit 129'\'' 1'
++++ trap 'Exit 129' 1
+++ for sig_ in 1 2 3 13 15
++++ expr 2 + 128
+++ eval 'trap '\''Exit 130'\'' 2'
++++ trap 'Exit 130' 2
+++ for sig_ in 1 2 3 13 15
++++ expr 3 + 128
+++ eval 'trap '\''Exit 131'\'' 3'
++++ trap 'Exit 131' 3
+++ for sig_ in 1 2 3 13 15
++++ expr 13 + 128
+++ eval 'trap '\''Exit 141'\'' 13'
++++ trap 'Exit 141' 13
+++ for sig_ in 1 2 3 13 15
++++ expr 15 + 128
+++ eval 'trap '\''Exit 143'\'' 15'
++++ trap 'Exit 143' 15
+++ saved_IFS=$' \t\n'
+++ IFS=:
+++ new_PATH=
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/Desktop/Research/Debugger/coreutils/src/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/local/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /var/lib/flatpak/exports/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/jvm/default/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/site_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/vendor_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/bin/core_perl/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /home/curse/.spicetify/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/lib/qt6/bin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin
+++ for dir in $PATH
+++ IFS=$' \t\n'
+++ case "$dir" in
+++ test -d /usr/sbin/.
+++ new_PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ IFS=$' \t\n'
+++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
+++ export PATH
+++ trap remove_tmp_ EXIT
++ path_prepend_ ./src
++ test 1 '!=' 0
++ path_dir_=./src
++ case $path_dir_ in
++ abs_path_dir_=/home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $abs_path_dir_ in
++ PATH=/home/curse/Desktop/Research/Debugger/coreutils/./src:/home/curse/Desktop/Research/Debugger/coreutils/src:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/curse/.spicetify:/home/curse/.spicetify:/usr/lib/qt6/bin:/sbin:/usr/sbin
++ create_exe_shims_ /home/curse/Desktop/Research/Debugger/coreutils/./src
++ case $EXEEXT in
++ return 0
++ shift
++ test 0 '!=' 0
++ export PATH
++ print_ver_ tail
++ require_built_ tail
++ skip_=no
++ for i in "$@"
++ case " $built_programs " in
++ test no = yes
++ test yes = yes
++ local i
++ for i in $*
++ env tail --version
+tail (GNU coreutils) 9.10.289-a8598
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Paul Rubin, David MacKenzie, Ian Lance Taylor,
+and Jim Meyering.
++ require_proc_pid_status_
++ local pid=59612
++ sleep .5
++ sleep 2
++ grep $'^State:[\t ]*[S]' /proc/59612/status
++ kill 59612
++ touch empty
++ echo anything
++ touch unreadable
++ chmod 0 unreadable
++ tail -c0 unreadable
++ tail -n0 unreadable
++ for mode in '' '---disable-inotify'
++ for file in empty nonempty
++ for c_or_n in c n
++ pid=59628
++ retry_delay_ tail_sleeping .1 4
++ tail --sleep=4 -c 0 -f empty
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59628
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59628/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59628
++ wait 59628
++ for c_or_n in c n
++ pid=59632
++ retry_delay_ tail_sleeping .1 4
++ tail --sleep=4 -n 0 -f empty
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59632
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59632/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59632
++ wait 59632
++ for file in empty nonempty
++ for c_or_n in c n
++ pid=59636
++ retry_delay_ tail_sleeping .1 4
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
++ tail --sleep=4 -c 0 -f nonempty
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59636
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59636/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59636
++ wait 59636
++ for c_or_n in c n
++ pid=59640
++ retry_delay_ tail_sleeping .1 4
++ tail --sleep=4 -n 0 -f nonempty
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59640
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59640/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59640
++ wait 59640
++ for mode in '' '---disable-inotify'
++ for file in empty nonempty
++ for c_or_n in c n
++ pid=59644
++ retry_delay_ tail_sleeping .1 4
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
++ tail --sleep=4 -c 0 -f ---disable-inotify empty
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59644
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59644/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59644
++ wait 59644
++ for c_or_n in c n
++ pid=59648
++ retry_delay_ tail_sleeping .1 4
++ tail --sleep=4 -n 0 -f ---disable-inotify empty
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59648
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59648/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59648
++ wait 59648
++ for file in empty nonempty
++ for c_or_n in c n
++ pid=59652
++ retry_delay_ tail_sleeping .1 4
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
++ tail --sleep=4 -c 0 -f ---disable-inotify nonempty
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59652
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59652/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59652
++ wait 59652
++ for c_or_n in c n
++ pid=59656
++ retry_delay_ tail_sleeping .1 4
++ tail --sleep=4 -n 0 -f ---disable-inotify nonempty
++ local test_func=tail_sleeping
++ local init_delay=.1
++ local max_n_tries=4
++ shift 3
++ local attempt=1
++ local num_sleeps=1
++ local time_fail
++ test 1 -le 4
+++ gawk -v n=1 -v s=.1 'BEGIN { print s * n }'
++ local delay=0.1
++ tail_sleeping 0.1
++ local delay=0.1
++ sleep 0.1
+++ get_process_status_ 59656
+++ sed -n $'/^State:[\t ]*\\([[:alpha:]]\\).*/s//\\1/p' /proc/59656/status
++ state=S
++ case $state in
++ time_fail=0
++ break
++ test 0 = 0
++ cleanup_
++ kill 59656
++ wait 59656
++ Exit 0
++ set +e
++ exit 0
++ exit 0
++ remove_tmp_
++ __st=0
++ cleanup_
++ kill 59656
++ test '' = yes
++ cd /home/curse/Desktop/Research/Debugger/coreutils
++ chmod -R u+rwx /home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
++ rm -rf /home/curse/Desktop/Research/Debugger/coreutils/gt-tail-n0f.sh.ry2c
++ exit 0
+PASS tests/tail/tail-n0f.sh (exit status: 0)
