@@ -1,5 +1,0 @@
-Starting test_tls ... OK
-Starting test_tls_dtorcheck1 ... OK
-Starting test_tls_dtorcheck2 ... OK
-Starting test_tls_racecheck ... OK
-PASS test-tls (exit status: 0)

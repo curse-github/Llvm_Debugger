@@ -1,2 +1,0 @@
-Skipping test: not a native Windows system
-SKIP test-wcrtomb-w32-6.sh (exit status: 77)

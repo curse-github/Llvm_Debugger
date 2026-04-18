@@ -1,2 +1,0 @@
-tm_zone = GMT
-PASS test-gmtime_r (exit status: 0)

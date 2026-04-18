@@ -1,6 +1,0 @@
-tm_zone = CEST
-tm_zone = CET
-tm_zone = CEST
-tm_zone = CEST
-tm_zone = CET
-PASS test-localtime_r (exit status: 0)

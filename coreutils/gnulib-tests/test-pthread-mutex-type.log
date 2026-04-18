@@ -1,6 +1,0 @@
-PTHREAD_MUTEX_NORMAL     -> type = NORMAL
-PTHREAD_MUTEX_ERRORCHECK -> type = NORMAL
-PTHREAD_MUTEX_RECURSIVE  -> type = RECURSIVE
-PTHREAD_MUTEX_DEFAULT    -> type = NORMAL
-Default                  -> type = NORMAL
-PASS test-pthread-mutex-type (exit status: 0)

@@ -1,9 +1,0 @@
-Here are the read_utmp results.
-Flags: B = Boot, U = User Process
-
-                                                              Termi‐      Flags
-    Time (GMT)             User          Device        PID    nation Exit  B U  Host
-------------------- ------------------ ----------- ---------- ------ ----  - -  ----
-2026-04-15 22:03:21 reboot             ~                    0    0     0   X    6.19.11-arch1-1
-2026-04-15 22:03:29 curse              tty1               907    0     0     X  
-PASS test-readutmp (exit status: 0)
