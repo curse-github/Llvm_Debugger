@@ -1,8 +1,0 @@
-lib/libcoreutils_a-hashcode-string1.o: lib/hashcode-string1.c \
- /usr/include/stdc-predef.h lib/config.h lib/hashcode-string1.h \
- lib/stddef.h /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h
-/usr/include/stdc-predef.h:
-lib/config.h:
-lib/hashcode-string1.h:
-lib/stddef.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:

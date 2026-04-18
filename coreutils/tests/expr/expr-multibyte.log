@@ -1,2 +1,0 @@
-expr-multibyte.pl: this test requires FR-UTF8 locale
-SKIP tests/expr/expr-multibyte.pl (exit status: 77)

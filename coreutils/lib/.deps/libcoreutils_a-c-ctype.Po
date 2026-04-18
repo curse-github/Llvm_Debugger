@@ -1,5 +1,0 @@
-lib/libcoreutils_a-c-ctype.o: lib/c-ctype.c /usr/include/stdc-predef.h \
- lib/config.h lib/c-ctype.h
-/usr/include/stdc-predef.h:
-lib/config.h:
-lib/c-ctype.h:
