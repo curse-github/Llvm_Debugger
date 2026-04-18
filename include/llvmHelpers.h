@@ -60,7 +60,7 @@ llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator b
 
 std::string getTypeAsString(llvm::Value* val);
 int getTypeBitWidth(llvm::Type* ty);
-std::string attemptFindPointerType(llvm::Value* val, bool isArray = false);
+std::string attemptFindPointerType(llvm::Value* val, bool isArray = false, int depth=0, llvm::Function* parentFunction=nullptr);
 void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 
 #endif// __LLVM_HELPERS

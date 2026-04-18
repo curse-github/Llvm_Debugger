@@ -3,8 +3,8 @@
 #include "Librarify.h"
 #include <iostream>
 
-void printFuncSig(const llvm::Function& F, const std::string& f_name) {
-    std::cout << f_name << "(";
+void printFuncSig(const llvm::Function& F) {
+    std::cout << llvm::demangle(F.getName().str()) << "(";
     const unsigned int arg_size = F.arg_size();
     for(unsigned int i = 0; i < arg_size; i++) {
         llvm::Argument* arg = F.getArg(i);
@@ -22,9 +22,12 @@ std::vector<llvm::Constant*> functionPointers_value;
 
 llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
     populateGlobals(Module);
-    for(llvm::Function& F : Module)
+    int i = 0;
+    for(llvm::Function& F : Module) {
         if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
-            run(F);
+            run(F, i);
+        i++;
+    }
     createGlobalInt(numFunctions_value, "numFunctions");
     createGlobalPtrArray(functionNames_value, "functionNames");
     createGlobalIntArray(functionParamCounts_value, "functionParamCounts");
@@ -33,14 +36,18 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     createGlobalPtrArray(functionPointers_value, "functionPointers");
     return llvm::PreservedAnalyses::none();
 }
-void Librarify::run(llvm::Function& F) {
+void Librarify::run(llvm::Function& F, int tmp) {
+    //printFuncSig(F);
     // numFunctions
     numFunctions_value++;
     // functionNames
     const std::string f_name = llvm::demangle(F.getName().str());
+    if (f_name == "main")
+        F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
     // functionParamCounts
     const unsigned int arg_size = F.arg_size();
+    std::cout << f_name << '(' << arg_size << ")\n";
     functionParamCounts_value.push_back(llvm::ConstantInt::get(i32_t, arg_size));
     // functionParamNames
     std::vector<llvm::Constant*> tmp_paramName_values;
@@ -84,6 +91,7 @@ void Librarify::run(llvm::Function& F) {
         out->setName("out");
         llvm::ReturnInst::Create(*Context, out)->insertInto(wrapper_entry, wrapper_entry->end());
     }
+    // functionPointers_value
     functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(wrapper_f));
 }
 

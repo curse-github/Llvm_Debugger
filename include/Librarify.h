@@ -18,7 +18,7 @@ struct LIBRARIFY_API Librarify : public llvm::PassInfoMixin<Librarify> {
     static bool isRequired() { return true; }
 
     llvm::PreservedAnalyses run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM);
-    void run(llvm::Function& F);
+    void run(llvm::Function& F, int tmp);
     void librarify(llvm::BasicBlock* B, llvm::Value* TargetVal, std::unordered_map<llvm::Value*, llvm::Value*>& ValRe_mapper);
 };
 

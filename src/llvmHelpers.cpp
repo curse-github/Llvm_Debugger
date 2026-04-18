@@ -101,7 +101,9 @@ llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator b
     return printCall;
 }
 
+#include <iostream>
 std::string getTypeAsString(llvm::Value* val) {
+    std::cout << "        getTypeAsString(\"" << val->getName().str() << "\")\n";
     llvm::Type* ty = val->getType();
     if (ty->isIntegerTy()) {
         const unsigned int bitWidth = ty->getIntegerBitWidth();
@@ -169,21 +171,28 @@ std::string valueToString(llvm::Value* inst) {
     inst->print(rso);
     return str;
 }
-std::string attemptFindPointerType(llvm::Value* val, bool isArray) {
+std::string attemptFindPointerType(llvm::Value* val, bool isArray, int depth, llvm::Function* parentFunction) {
+    std::cout << "            attemptFindPointerType(\"" << val->getName().str() << "\", depth=" << depth << ")\n";
     for(llvm::User* user : val->users()) {
         if (llvm::dyn_cast_or_null<llvm::Instruction>(user)) {
             // if it used in a load instruction, the type is a pointer to the type load instruction
             if (llvm::dyn_cast_or_null<llvm::LoadInst>(user)) {
+                std::cout << "                \"" << user->getName().str() << "\" = load \"" << val->getName().str() << "\"\n";
                 return getTypeAsString(user) + (isArray?"[]":"*");
             // if it used in a getelementptr instruction, the type is the same as the getelementptr instruction
             } else if (llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user)) {
-                return attemptFindPointerType(user, true);
+                std::cout << "                \"" << user->getName().str() << "\" = get element \"" << val->getName().str() << "\"\n";
+                return attemptFindPointerType(user, true, depth+1);
             // if it used in a call instruction, get the type from how the argument is used in that function
             } else if (llvm::dyn_cast_or_null<llvm::CallInst>(user)) {
                 llvm::CallInst* call = llvm::dyn_cast<llvm::CallInst>(user);
+                if ((parentFunction != nullptr) && (call->getFunction() == parentFunction))
+                    continue;
                 for (unsigned int i = 0; i < user->getNumOperands(); i++)
-                    if (user->getOperand(i) == val)
-                        return attemptFindPointerType(call->getCalledFunction()->getArg(i));
+                    if (user->getOperand(i) == val) {
+                        std::cout << "                    call " << call->getFunction()->getName().str() << "(arg[\"" << user->getOperand(i)->getName().str() << "\"] = \"" << val->getName().str() << "\")\n";
+                        return attemptFindPointerType(call->getCalledFunction()->getArg(i), false, depth+1, call->getFunction());
+                    }
                 return isArray?"void[]":"void*";
             }
         }

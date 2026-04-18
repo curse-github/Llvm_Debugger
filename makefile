@@ -21,21 +21,26 @@ ifeq ($(OS),Windows_NT)
 else
 	@cp ./strLen.ll ./tmp/input_for_passes.ll
 endif
-.\tmp\input_for_librarify.bc:
+.\tmp\input_for_librarify.ll:
 	@-echo creating input_for_librarify.bc
 	@#export LLVM_COMPILER=clang
 	@#./venv/bin/wllvm++ ./src/testProgram.cpp -c -O3 -fno-discard-value-names -fno-inline -o ./tmp/input_for_librarify.o
 	@#./venv/bin/extract-bc ./tmp/input_for_librarify.o -o ./tmp/input_for_librarify.bc
-	./venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/input_for_librarify.bc
+./tmp/ls.ll:
+	@./venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
+	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll
+./tmp/cat.ll:
+	@./venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/cat.bc
+	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
 
-testLibrarify: mkdir .\tmp\input_for_librarify.bc libLibrarify.$(dynamicExt)
-	@-echo running libLibrarify.$(dynamicExt) plugin on input_for_librarify.bc
-	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/input_for_librarify.bc -S -o ./tmp/output_from_librarify.ll
+testLibrarify: mkdir .\tmp\input_for_librarify.ll libLibrarify.$(dynamicExt)
+	@-echo running libLibrarify.$(dynamicExt) plugin on input_for_librarify.ll
+	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/input_for_librarify.ll -S -o ./tmp/output_from_librarify.ll
 	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
 	@ar rcs ./out/output.a ./tmp/output.o
-	@clang++ ./src/controller.cpp ./out/output.a -o ./out/controller.out
+	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.out
 	@#clear
-	@./out/controller.out
+	@#./out/controller.out
 .phony : testLibrarify
 
 stdlib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
