@@ -30,9 +30,10 @@ testLibrarify: mkdir ./tmp/ls.ll libLibrarify.$(dynamicExt)
 	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/ls.ll -S -o ./tmp/output_from_librarify.ll
 	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
 	@ar rcs ./out/output.a ./tmp/output.o
-	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.out
-	@#clear
-	@#./out/controller.out
+	@-echo compiling controller.$(executableExt)
+	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.$(executableExt)
+	@-echo running controller.$(executableExt)
+	@./out/controller.$(executableExt)
 .phony : testLibrarify
 
 stdlib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll

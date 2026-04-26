@@ -11,7 +11,6 @@
 #endif
 
 #include "llvmHelpers.h"
-#include "llvm/Demangle/Demangle.h"
 #include <vector>
 
 struct LIBRARIFY_API Librarify : public llvm::PassInfoMixin<Librarify> {

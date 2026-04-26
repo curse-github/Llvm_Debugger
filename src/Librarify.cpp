@@ -3,23 +3,19 @@
 #include "Librarify.h"
 #include <iostream>
 
-void printFuncSig(const llvm::Function& F) {
-    std::cout << llvm::demangle(F.getName().str()) << "(";
-    const unsigned int arg_size = F.arg_size();
-    for(unsigned int i = 0; i < arg_size; i++) {
-        llvm::Argument* arg = F.getArg(i);
-        std::cout << ((i != 0) ? ", " : "") << getTypeAsString(arg);
-    }
-    std::cout << ")\n";
-}
 
-int numFunctions_value = 0;
+unsigned int numFunctions_value = 0;
 std::vector<llvm::Constant*> functionNames_value;
+std::vector<llvm::Constant*> functionReturnTypes_value;
 std::vector<llvm::Constant*> functionParamCounts_value;
 std::vector<llvm::Constant*> functionParamNames_value;
 std::vector<llvm::Constant*> functionParamTypes_value;
 std::vector<llvm::Constant*> functionPointers_value;
 
+unsigned int numArgs = 0;
+unsigned int numArgTypesDetermined = 0;
+unsigned int numPointers = 0;
+unsigned int numPointerTypesDetermined = 0;
 llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
     populateGlobals(Module);
     int i = 0;
@@ -28,8 +24,11 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
             run(F, i);
         i++;
     }
+    std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/numPointers) << "%) pointer types found\n";
+    std::cout << numArgTypesDetermined << " out of " << numArgs << " (" << (numArgTypesDetermined*100.0/numArgs) << "%) total types found\n";
     createGlobalInt(numFunctions_value, "numFunctions");
     createGlobalPtrArray(functionNames_value, "functionNames");
+    createGlobalPtrArray(functionReturnTypes_value, "functionReturnTypes");
     createGlobalIntArray(functionParamCounts_value, "functionParamCounts");
     createGlobalPtrArray(functionParamNames_value, "functionParamNames");
     createGlobalPtrArray(functionParamTypes_value, "functionParamTypes");
@@ -45,9 +44,10 @@ void Librarify::run(llvm::Function& F, int tmp) {
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
+    // functionReturnTypes
+    functionReturnTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(basicGetTypeAsString(F.getReturnType()))));
     // functionParamCounts
     const unsigned int arg_size = F.arg_size();
-    std::cout << f_name << '(' << arg_size << ")\n";
     functionParamCounts_value.push_back(llvm::ConstantInt::get(i32_t, arg_size));
     // functionParamNames
     std::vector<llvm::Constant*> tmp_paramName_values;
@@ -56,8 +56,20 @@ void Librarify::run(llvm::Function& F, int tmp) {
     functionParamNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalPtrArray(tmp_paramName_values, f_name + "_paramNames")));
     // functionParamTypes
     std::vector<llvm::Constant*> tmp_paramType_values;
-    for(unsigned int i = 0; i < arg_size; i++)
-        tmp_paramType_values.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(getTypeAsString(F.getArg(i)))));
+    for(unsigned int i = 0; i < arg_size; i++) {
+        //std::cout << f_name << '.' << F.getArg(i)->getName().str() << '\n';
+        const std::string tmp = getTypeAsString(F.getArg(i));
+        numArgs++;
+        if (tmp.ends_with('*')) {
+            numPointers++;
+            if (tmp.rfind("void*", 0) != 0) {
+                numArgTypesDetermined++;
+                numPointerTypesDetermined++;
+            }
+        } else
+            numArgTypesDetermined++;
+        tmp_paramType_values.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(tmp)));
+    }
     functionParamTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalPtrArray(tmp_paramType_values, f_name + "_paramTypes")));
     // functionPointers
     llvm::FunctionType* wrapper_f_t = llvm::FunctionType::get(F.getReturnType(), { ptr_t }, false);

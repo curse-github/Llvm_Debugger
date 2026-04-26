@@ -17,9 +17,11 @@
 #include "llvm/Transforms/Utils/ValueMapper.h"
 #include "llvm/Support/raw_ostream.h"
 #include <llvm/TargetParser/Host.h>
+#include "llvm/Demangle/Demangle.h"
 
 #include <memory>
 #include <vector>
+#include <iostream>
 
 extern llvm::Module* Module;
 extern llvm::LLVMContext* Context;
@@ -50,6 +52,9 @@ void populateGlobals();
 
 void populateStdLib(llvm::Function& F);
 
+std::string valueToString(llvm::Value* inst);
+void printFuncSig(const llvm::Function& F);
+
 llvm::GlobalVariable* createGlobalString(std::string str, std::string varName="str");
 llvm::GlobalVariable* createGlobalPtrArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName);
 llvm::GlobalVariable* createGlobalInt(int val, std::string varName);
@@ -58,9 +63,10 @@ llvm::GlobalVariable* createGlobalIntArray(llvm::ArrayRef<llvm::Constant*> vals,
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);
 
-std::string getTypeAsString(llvm::Value* val);
+std::string basicGetTypeAsString(llvm::Type* ty);
+std::string getTypeAsString(llvm::Value* val, llvm::Function* topLevelFunction=nullptr);
 int getTypeBitWidth(llvm::Type* ty);
-std::string attemptFindPointerType(llvm::Value* val, bool isArray = false, int depth=0, llvm::Function* parentFunction=nullptr);
+std::string attemptFindPointerType(llvm::Value* val, llvm::Function* topLevelFunction=nullptr);
 void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 
 #endif// __LLVM_HELPERS

@@ -9,4 +9,8 @@ cd ./coreutils
 # preserves function parameter names, and will optimize code, but not completely optimize out functions
 export CFLAGS="-fno-inline -fno-discard-value-names -O3"
 ./configure
+sudo rm -R .git/
+rm ./.gitignore
+echo * > ./.gitignore
+sudo rm -R ./gnulib/.git
 make

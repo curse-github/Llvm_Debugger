@@ -63,6 +63,22 @@ void populateStdLib(llvm::Function& F) {
     }
 }
 
+std::string valueToString(llvm::Value* inst) {
+    std::string str;
+    llvm::raw_string_ostream rso(str);
+    inst->print(rso);
+    return str;
+}
+void printFuncSig(const llvm::Function& F) {
+    std::cout << llvm::demangle(F.getName().str()) << "(";
+    const unsigned int arg_size = F.arg_size();
+    for(unsigned int i = 0; i < arg_size; i++) {
+        llvm::Argument* arg = F.getArg(i);
+        std::cout << ((i != 0) ? ", " : "") << getTypeAsString(arg);
+    }
+    std::cout << ")\n";
+}
+
 llvm::GlobalVariable* createGlobalString(std::string str, std::string varName) {
     llvm::GlobalVariable* gStr = new llvm::GlobalVariable(*Module, llvm::ArrayType::get(i8_t, static_cast<unsigned int>(str.size())+1u), true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
     gStr->setInitializer(llvm::ConstantDataArray::getString(*Context, str, true));
@@ -100,10 +116,40 @@ llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator b
     printCall->insertBefore(beforeInst);
     return printCall;
 }
-
-#include <iostream>
-std::string getTypeAsString(llvm::Value* val) {
-    std::cout << "        getTypeAsString(\"" << val->getName().str() << "\")\n";
+std::string basicGetTypeAsString(llvm::Type* ty) {
+if (ty->isIntegerTy()) {
+        const unsigned int bitWidth = ty->getIntegerBitWidth();
+        switch(bitWidth) {
+            case 1:
+                return "bool";
+            case 8:
+                return "char";
+            case 16:
+                return "short";
+            case 32:
+                return "int";
+            case 64:
+                return "long";
+            default:
+                return "unknown";
+        }
+    } else if (ty->isFloatingPointTy()) {
+        if (ty->isHalfTy())
+            return "half";
+        else if (ty->isFloatTy())
+            return "float";
+        else if (ty->isDoubleTy())
+            return "double";
+        else
+            return "unknown";
+    } else if (ty->isPointerTy())
+        return "void*";
+     else if (ty->isVoidTy())
+        return "void";
+    else
+        return "unknown";
+}
+std::string getTypeAsString(llvm::Value* val, llvm::Function* topLevelFunction) {
     llvm::Type* ty = val->getType();
     if (ty->isIntegerTy()) {
         const unsigned int bitWidth = ty->getIntegerBitWidth();
@@ -131,7 +177,9 @@ std::string getTypeAsString(llvm::Value* val) {
         else
             return "unknown";
     } else if (ty->isPointerTy())
-        return attemptFindPointerType(val);
+        return attemptFindPointerType(val, topLevelFunction);
+    else if (ty->isVoidTy())
+        return "void";
     else
         return "unknown";
     
@@ -164,41 +212,51 @@ int getTypeBitWidth(llvm::Type* ty) {
         return -1;
     
 }
-//#include <iostream>
-std::string valueToString(llvm::Value* inst) {
-    std::string str;
-    llvm::raw_string_ostream rso(str);
-    inst->print(rso);
-    return str;
-}
-std::string attemptFindPointerType(llvm::Value* val, bool isArray, int depth, llvm::Function* parentFunction) {
-    std::cout << "            attemptFindPointerType(\"" << val->getName().str() << "\", depth=" << depth << ")\n";
+std::string attemptFindPointerType(llvm::Value* val, llvm::Function* topLevelFunction) {
+    std::vector<std::string> possible;
     for(llvm::User* user : val->users()) {
         if (llvm::dyn_cast_or_null<llvm::Instruction>(user)) {
             // if it used in a load instruction, the type is a pointer to the type load instruction
-            if (llvm::dyn_cast_or_null<llvm::LoadInst>(user)) {
-                std::cout << "                \"" << user->getName().str() << "\" = load \"" << val->getName().str() << "\"\n";
-                return getTypeAsString(user) + (isArray?"[]":"*");
+            if (llvm::dyn_cast_or_null<llvm::LoadInst>(user))
+                possible.push_back(getTypeAsString(user, topLevelFunction) + "*");
+            // if it used in a store instruction, the type may be found
+            else if (llvm::dyn_cast_or_null<llvm::StoreInst>(user)) {
+                llvm::StoreInst* store = llvm::dyn_cast_or_null<llvm::StoreInst>(user);
+                if (store->getOperand(1) == val) {
+                    // if its value is being set, its type is the value of the first operand
+                    if (store->getOperand(0)->getType()->isPointerTy())
+                        continue;
+                    // if it is being set to the value of another pointer it is probably better to find the type somewhere else
+                    possible.push_back(getTypeAsString(store->getOperand(0), topLevelFunction) + "*");
+                }// else
+                    // if it is being used to set, you technically could get from the value of the second operand
+                    // but skipping for now
             // if it used in a getelementptr instruction, the type is the same as the getelementptr instruction
-            } else if (llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user)) {
-                std::cout << "                \"" << user->getName().str() << "\" = get element \"" << val->getName().str() << "\"\n";
-                return attemptFindPointerType(user, true, depth+1);
+            } else if (llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user))
+                possible.push_back(attemptFindPointerType(user, topLevelFunction));
             // if it used in a call instruction, get the type from how the argument is used in that function
-            } else if (llvm::dyn_cast_or_null<llvm::CallInst>(user)) {
+            else if (llvm::dyn_cast_or_null<llvm::CallInst>(user)) {
                 llvm::CallInst* call = llvm::dyn_cast<llvm::CallInst>(user);
-                if ((parentFunction != nullptr) && (call->getFunction() == parentFunction))
+                // help avoid recursion
+                if ((topLevelFunction != nullptr) && (call->getCalledFunction() == topLevelFunction))
                     continue;
-                for (unsigned int i = 0; i < user->getNumOperands(); i++)
+                if (llvm::dyn_cast_or_null<llvm::Constant>(call->getCalledFunction()) == nullptr)
+                    continue;
+                unsigned int numArgs = std::min(user->getNumOperands(), static_cast<unsigned int>(call->getCalledFunction()->arg_size()));
+                for (unsigned int i = 0; i < numArgs; i++)
                     if (user->getOperand(i) == val) {
-                        std::cout << "                    call " << call->getFunction()->getName().str() << "(arg[\"" << user->getOperand(i)->getName().str() << "\"] = \"" << val->getName().str() << "\")\n";
-                        return attemptFindPointerType(call->getCalledFunction()->getArg(i), false, depth+1, call->getFunction());
+                        possible.push_back(attemptFindPointerType(call->getCalledFunction()->getArg(i), call->getFunction()));
+                        break;
                     }
-                return isArray?"void[]":"void*";
             }
         }
     }
-    //std::cout << "did not find known pointer use.\n";
-    return isArray?"void[]":"void*";
+    for (size_t i = 0; i < possible.size(); i++) {
+        if (possible[i].starts_with("void*"))
+            continue;
+        return possible[i];
+    }
+    return "void*";
 }
 llvm::GlobalVariable* unknownStr = nullptr;
 void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst) {
