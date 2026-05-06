@@ -25,7 +25,7 @@ libs = $(shell llvm-config --ldflags --libs core support passes)
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/cat.bc
 	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
 
-testLibrarify: mkdir ./tmp/ls.ll libLibrarify.$(dynamicExt)
+test: mkdir ./tmp/ls.ll libLibrarify.$(dynamicExt)
 	@-echo running libLibrarify.$(dynamicExt) plugin on ls.ll
 	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/ls.ll -S -o ./tmp/output_from_librarify.ll
 	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
@@ -33,8 +33,8 @@ testLibrarify: mkdir ./tmp/ls.ll libLibrarify.$(dynamicExt)
 	@-echo compiling controller.$(executableExt)
 	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.$(executableExt)
 	@-echo running controller.$(executableExt)
-	@./out/controller.$(executableExt)
-.phony : testLibrarify
+	@#./out/controller.$(executableExt)
+.phony : test
 
 stdlib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
 	@-echo building std lib

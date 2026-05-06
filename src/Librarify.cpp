@@ -3,7 +3,6 @@
 #include "Librarify.h"
 #include <iostream>
 
-
 unsigned int numFunctions_value = 0;
 std::vector<llvm::Constant*> functionNames_value;
 std::vector<llvm::Constant*> functionReturnTypes_value;
@@ -36,7 +35,6 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     return llvm::PreservedAnalyses::none();
 }
 void Librarify::run(llvm::Function& F, int tmp) {
-    //printFuncSig(F);
     // numFunctions
     numFunctions_value++;
     // functionNames
@@ -62,7 +60,7 @@ void Librarify::run(llvm::Function& F, int tmp) {
         numArgs++;
         if (tmp.ends_with('*')) {
             numPointers++;
-            if (tmp.rfind("void*", 0) != 0) {
+            if (tmp != "void*") {
                 numArgTypesDetermined++;
                 numPointerTypesDetermined++;
             }

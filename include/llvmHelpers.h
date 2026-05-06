@@ -22,6 +22,8 @@
 #include <memory>
 #include <vector>
 #include <iostream>
+#include <algorithm>
+#include <map>
 
 extern llvm::Module* Module;
 extern llvm::LLVMContext* Context;
@@ -64,9 +66,10 @@ llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::it
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);
 
 std::string basicGetTypeAsString(llvm::Type* ty);
-std::string getTypeAsString(llvm::Value* val, llvm::Function* topLevelFunction=nullptr);
+extern std::vector<llvm::Function*> visitedFunctions_global;
+extern std::map<llvm::Value*, std::string> determinedTypes;
+std::string getTypeAsString(llvm::Value* val, std::vector<llvm::Function*>& visitedFunctions=visitedFunctions_global, unsigned int depth=0, std::string indent="    ");
 int getTypeBitWidth(llvm::Type* ty);
-std::string attemptFindPointerType(llvm::Value* val, llvm::Function* topLevelFunction=nullptr);
-void tryPrintValue(llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
+//std::string attemptFindPointerType(llvm::Value* val, std::vector<llvm::Function*>& visitedFunctions=visitedFunctions_global, unsigned int depth=0, std::string indent="    ");
 
 #endif// __LLVM_HELPERS

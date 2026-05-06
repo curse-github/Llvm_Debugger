@@ -172,10 +172,10 @@ int main(int argc, char** argv) {
             std::cout << '\"' << functionName << "\" output = (long)" << output << '\n';
         } else if (std::strcmp(functionReturnType.c_str(), "float") == 0) {
             float output = ((floatFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (float)" << output << 'f\n';
+            std::cout << '\"' << functionName << "\" output = (float)" << output << '\n';
         } else if (std::strcmp(functionReturnType.c_str(), "double") == 0) {
             double output = ((doubleFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (double)" << output << 'f\n';
+            std::cout << '\"' << functionName << "\" output = (double)" << output << '\n';
         } else 
             functionPointers[i](parameters.pointer);
         std::cout << "\n would you like to run another function? (Y/N) : ";
