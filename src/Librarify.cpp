@@ -36,12 +36,9 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
         structTypes.push_back(ST);
         structNames.push_back(ST->getName().str());
     }
-    int i = 0;
-    for(llvm::Function& F : Module) {
+    for(llvm::Function& F : Module)
         if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
-            run(F, i);
-        i++;
-    }
+            run(F);
     //printStructTypes(Module);
     std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u,numPointers)) << "%) pointer types found\n";
     std::cout << numArgTypesDetermined << " out of " << numArgs << " (" << (numArgTypesDetermined*100.0/numArgs) << "%) total types found\n";
@@ -53,18 +50,32 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     createGlobalPtrArray(functionParamTypes_value, "functionParamTypes");
     createGlobalPtrArray(functionPointers_value, "functionPointers");
 
-    createGlobalInt(static_cast<int>(structNames.size()), "numStructs");
-    std::vector<llvm::Constant*> structNameCStrs;
-    for (std::string str : structNames)
-        structNameCStrs.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(str.c_str())));
-    createGlobalPtrArray(structNameCStrs, "structNames");
+    std::vector<llvm::Constant*> structNamesValues;
+    std::vector<llvm::Constant*> structNumContainedTypesValues;
+    std::vector<llvm::Constant*> structContainedTypesValues;
+    for (int i = 0; i < namedStructCount; i++) {
+        structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(structNames[i].c_str())));
+        structNumContainedTypesValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, structTypes[i]->getNumElements())));
+        std::vector<llvm::Constant*> tmp;
+        for (int j = 0; j < structTypes[i]->getNumElements(); j++)
+            tmp.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(basicGetTypeAsString(structTypes[i]->getTypeAtIndex(j)))));
+        structContainedTypesValues.push_back(createGlobalPtrArray(tmp, structNames[i] + ".containedTypes"));
+    }
+    createGlobalInt(namedStructCount, "numStructs");
+    createGlobalPtrArray(structNamesValues, "structNames");
+    createGlobalIntArray(structNumContainedTypesValues, "structNumContainedTypes");
+    createGlobalPtrArray(structContainedTypesValues, "structContainedTypes");
     return llvm::PreservedAnalyses::none();
 }
-void Librarify::run(llvm::Function& F, int tmp) {
+void Librarify::run(llvm::Function& F) {
     // numFunctions
     numFunctions_value++;
     // functionNames
-    const std::string f_name = llvm::demangle(F.getName().str());
+    std::string f_name = llvm::demangle(F.getName().str());
+    int tmp1 = (int)f_name.size();
+    if ((tmp1 = f_name.find('(')) != std::string::npos) {
+        f_name = f_name.substr(0, tmp1);
+    }
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
@@ -82,9 +93,11 @@ void Librarify::run(llvm::Function& F, int tmp) {
     std::vector<llvm::Constant*> tmp_paramType_values;
     for(unsigned int i = 0; i < arg_size; i++) {
         //std::cout << f_name << '.' << F.getArg(i)->getName().str() << '\n';
-        const std::string tmp = getTypeAsString(F.getArg(i));
+        std::string tmp = getTypeAsString(F.getArg(i));
         numArgs++;
         if (tmp.ends_with('*')) {
+            if (F.getArg(i)->hasByValAttr())
+                tmp = basicGetTypeAsString(F.getParamByValType(i)) + '*';
             numPointers++;
             if (tmp != "void*") {
                 numArgTypesDetermined++;

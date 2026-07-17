@@ -10,30 +10,80 @@ private:
 public:
     void* pointer;
     bufferWriter() {
-        counter = pointer = malloc(0);
+        counter = pointer = nullptr;
+    }
+    bufferWriter(const bufferWriter& copy) {
+        pointer = malloc((char*)copy.counter-(char*)copy.pointer);
+        std::memcpy(pointer,copy.pointer,(char*)copy.counter-(char*)copy.pointer);
+        counter = (void*)((char*)pointer+((char*)copy.counter-(char*)copy.pointer));
+    }
+    bufferWriter(bufferWriter&& move) {
+        pointer = move.pointer;
+        counter = move.counter;
+        move.pointer = nullptr;
+        move.counter = nullptr;
+    }
+    bufferWriter& operator=(const bufferWriter& copy) {
+        pointer = malloc((char*)copy.counter-(char*)copy.pointer);
+        std::memcpy(pointer,copy.pointer,(char*)copy.counter-(char*)copy.pointer);
+        counter = (void*)((char*)pointer+((char*)copy.counter-(char*)copy.pointer));
+        return *this;
+    }
+    bufferWriter& operator=(bufferWriter&& move) {
+        pointer = move.pointer;
+        counter = move.counter;
+        move.pointer = nullptr;
+        move.counter = nullptr;
+        return *this;
     }
     ~bufferWriter() {
-        free(pointer);
+        if (pointer != nullptr) free(pointer);
         pointer = nullptr;
         counter = nullptr;
     }
     template<typename T>
     void push(T val) {
+        // resere new space
         void* old = pointer;
         pointer = malloc((char*)counter-(char*)old+sizeof(T));
         std::memcpy(pointer,old,(char*)counter-(char*)old);
-        counter=(void*)((char*)counter-(char*)old+(char*)pointer);
-        *(T*)counter = val;
+        counter=(void*)((char*)pointer+((char*)counter-(char*)old));
+        // free old space
+        free(old);
+        // push new value
+        *((T*)counter) = val;
         counter=(void*)((char*)counter+sizeof(T));
     }
     template<>
     void push<void*>(void* val) {
+        // resere new space
         void* old = pointer;
         pointer = malloc((char*)counter-(char*)old+sizeof(void*));
         std::memcpy(pointer,old,(char*)counter-(char*)old);
-        counter=(void*)((char*)counter-(char*)old+(char*)pointer);
-        *(void**)counter = val;
+        counter=(void*)((char*)pointer+((char*)counter-(char*)old));
+        // free old space
+        free(old);
+        // push new value
+        *((void**)counter) = val;
         counter=(void*)((char*)counter+sizeof(void*));
+    }
+    void roundToMultipleOf(int amount) {
+        // round size
+        int oldCount = (int)((char*)counter-(char*)pointer);
+        int count = oldCount+(amount-oldCount%amount)%amount;
+        if (count == oldCount) return;
+        // resere new space
+        void* old = pointer;
+        pointer = malloc((char*)counter-(char*)old+(count-oldCount));
+        std::memcpy(pointer,old,(char*)counter-(char*)old);
+        counter=(void*)((char*)pointer+((char*)counter-(char*)old));
+        // free old space
+        free(old);
+        // zero out new space
+        for (int i = 0; i < (count-oldCount); i++) {
+            *(char*)counter = '\00';
+            counter = (void*)((char*)counter+1);
+        }
     }
 };
 
@@ -55,65 +105,72 @@ extern wrapperFT functionPointers[];
 
 extern unsigned int numStructs;
 extern const char* structNames[];
+extern unsigned int structNumContainedTypes[];
+extern const char** structContainedTypes[];
 
-void inputBool(bufferWriter* parameters, std::string paramName) {
+void inputBool(bufferWriter& parameters, std::string paramName, bool doRound) {
     std::string tmp;
     while (true) {
         std::cout << "Please enter a bool for the parameter \"" << paramName << "\" : ";
         std::cin >> tmp;
         if (std::strcmp(tmp.c_str(), "true") == 0) {
-            parameters->push<bool>(true);
+            parameters.push<bool>(true);
             break;
         } else if (std::strcmp(tmp.c_str(), "false") == 0) {
-            parameters->push<bool>(false);
+            parameters.push<bool>(false);
             break;
         } else
             std::cout << "Invalid value try again.\n";
     }
 }
-void inputChar(bufferWriter* parameters, std::string paramName) {
+void inputChar(bufferWriter& parameters, std::string paramName, bool doRound) {
     char tmp;
     std::cout << "Please enter a char for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
-    parameters->push<char>(tmp);
+    parameters.push<char>(tmp);
 }
-void inputShort(bufferWriter* parameters, std::string paramName) {
+void inputShort(bufferWriter& parameters, std::string paramName, bool doRound) {
     short tmp;
     std::cout << "Please enter a short for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
-    parameters->push<short>(tmp);
+    parameters.push<short>(tmp);
 }
-void inputInt(bufferWriter* parameters, std::string paramName) {
+void inputInt(bufferWriter& parameters, std::string paramName, bool doRound) {
     int tmp;
     std::cout << "Please enter an int for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
-    parameters->push<int>(tmp);
+    parameters.roundToMultipleOf(sizeof(int));
+    parameters.push<int>(tmp);
 }
-void inputLong(bufferWriter* parameters, std::string paramName) {
+void inputLong(bufferWriter& parameters, std::string paramName, bool doRound) {
     long tmp;
     std::cout << "Please enter a long for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
-    parameters->push<long>(tmp);
+    parameters.roundToMultipleOf(sizeof(long));
+    parameters.push<long>(tmp);
 }
-void inputFloat(bufferWriter* parameters, std::string paramName) {
+void inputFloat(bufferWriter& parameters, std::string paramName, bool doRound) {
     float tmp;
     std::cout << "Please enter a float for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
-    parameters->push<float>(tmp);
+    parameters.roundToMultipleOf(sizeof(float));
+    parameters.push<float>(tmp);
 }
-void inputDouble(bufferWriter* parameters, std::string paramName) {
+void inputDouble(bufferWriter& parameters, std::string paramName, bool doRound) {
     double tmp;
     std::cout << "Please enter a double for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
-    parameters->push<double>(tmp);
+    parameters.roundToMultipleOf(sizeof(double));
+    parameters.push<double>(tmp);
 }
-void inputCStr(bufferWriter* parameters, std::string paramName) {
+void inputCStr(bufferWriter& parameters, std::string paramName, bool doRound) {
     std::string tmp;
     std::cout << "Please enter a string for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
-    parameters->push<void*>((void*)tmp.c_str());
+    parameters.roundToMultipleOf(sizeof(void*));
+    parameters.push<void*>((void*)tmp.c_str());
 }
-typedef void(*inputFT)(bufferWriter*, std::string);
+typedef void(*inputFT)(bufferWriter&, std::string, bool);
 std::map<std::string, inputFT> inputFunctions = {
     {"bool", inputBool},
     {"char", inputChar},
@@ -124,28 +181,89 @@ std::map<std::string, inputFT> inputFunctions = {
     {"double", inputDouble},
     {"char*", inputCStr}
 };
+bool isInputableType(std::string type) {
+    if (type[type.size()-1] == '*') {// is an pointer type
+        return isInputableType(type.substr(0,type.size()-1));
+    } else if (type[type.size()-1] == ']') {// is an array type
+        return false;
+    } else if (inputFunctions.count(type) > 0)
+        return true;
+    else {
+        bool isStruct = false;
+        int i;
+        for(i = 0; !isStruct&&(i < numStructs); i++) {
+            if (type == structNames[i]) {
+                isStruct = true;
+                break;
+            }
+        }
+        if (!isStruct)
+            return false;
+        bool isValid = true;
+        for (int j = 0; j < structNumContainedTypes[i]; j++) {
+            if (!isInputableType(structContainedTypes[i][j])) {
+                isValid = false;
+                break;
+            }
+        }
+        return isValid;
+    }
+}
+void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter>& storage, std::string paramName, bool doRound=false) {
+    if (type=="char*")
+        inputFunctions[type](parameters, paramName, doRound);
+    else if (type[type.size()-1] == '*') {// is an pointer type
+        size_t i = storage.size();
+        storage.push_back((bufferWriter&&)bufferWriter());
+        inputType(type.substr(0,type.size()-1), storage[i], storage, "*"+paramName);
+        parameters.push<void*>(storage[i].pointer);
+        return;
+    } else if (type[type.size()-1] == ']')// is an array type
+        return;
+    else if (inputFunctions.count(type) > 0)
+        inputFunctions[type](parameters, paramName, doRound);
+    else {
+        bool isStruct = false;
+        int i;
+        for(i = 0; !isStruct&&(i < numStructs); i++) {
+            if (type == structNames[i]) {
+                isStruct = true;
+                break;
+            }
+        }
+        if (!isStruct)
+            return;
+        for (int j = 0; j < structNumContainedTypes[i]; j++) {
+            inputType(structContainedTypes[i][j], parameters, storage, paramName+'['+std::to_string(j)+']', true);
+        }
+        return;
+    }
+}
 
 int main(int argc, char** argv) {
     std::vector<unsigned int> valid_indices;
     size_t numValid = 0ull;
     for (unsigned int i = 0; i < numFunctions; i++) {
         const std::string functionReturnType = functionReturnTypes[i];
-        bool valid = (functionReturnType != "unknown") && (functionReturnType[functionReturnType.size()-1] != '*');
+        bool isValid = (functionReturnType != "unknown") && (functionReturnType[functionReturnType.size()-1] != '*');
         unsigned int paramCount = functionParamCounts[i];
-        for(int j = 0; valid && (j < paramCount); j++) {
-            const std::string functionParamType = functionParamTypes[i][j];
-            if (inputFunctions.count(functionParamType) <= 0)
-                valid = false;
-        }
-        if (valid) {
+        for(int j = 0; isValid && (j < paramCount); j++)
+            if (!isInputableType(functionParamTypes[i][j]))
+                isValid = false;
+        if (isValid) {
             valid_indices.push_back(i);
             numValid++;
         }
     }
     std::cout << "Can call " << numValid << " out of " << numFunctions << " functions.\n";
-    /*std::cout << "struct types {\n";
+    /*
+    std::cout << "struct types {\n";
     for(int i = 0; i < numStructs; i++) {
-        std::cout << "    " << structNames[i] << '\n';
+        std::cout << "    " << structNames[i] << " : {\n";
+        for (int j = 0; j < structNumContainedTypes[i]; j++) {
+            std::cout << "        " << structContainedTypes[i][j] << '\n';
+        }
+        std::cout << "    }\n";
     }
     std::cout << "}\n";//*/
 
@@ -165,7 +283,7 @@ int main(int argc, char** argv) {
         std::cin >> index;
         while (index < 1 || index > numValid) {
             std::cout << "Invalid choice.\nRe-enter your choice: ";
-        std::cin >> index;
+            std::cin >> index;
         }
         unsigned int i = valid_indices[static_cast<size_t>(index-1)];
 
@@ -179,8 +297,9 @@ int main(int argc, char** argv) {
         std::cout << ")\"\n";
 
         bufferWriter parameters;
+        std::vector<bufferWriter> storage;
         for(int j = 0; j < paramCount; j++)
-            inputFunctions[paramType](&functionParamTypes[i][j], functionParamNames[i][j]);
+            inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j]);
         
         if (std::strcmp(functionReturnType.c_str(), "bool") == 0) {
             bool output = ((boolFT)functionPointers[i])(parameters.pointer);
