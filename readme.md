@@ -1,13 +1,6 @@
-command to test the different avaliable experiments are as follows<br>
-add debug print
-```
-make testAddDebugPrint
-```
-separate
-```
-make testSeparate
-```
+command to test is as follows<br>
 librarify
 ```
-make testLibrarify
+make test
 ```
+this runs the "librarification" on both the ls and cat coreutils programs

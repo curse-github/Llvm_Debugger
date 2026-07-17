@@ -15,26 +15,44 @@ endif
 includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
-./tmp/input_for_librarify.ll:
-	@-echo creating input_for_librarify.bc
-	@./wllvm_venv/bin/clang++ ./src/testProgram.cpp -c -O3 -fno-discard-value-names -fno-inline -o ./tmp/input_for_librarify.o
+./tmp/testProgram.ll: ./src/testProgram.cpp
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testProgram.cpp -O3 -fno-discard-value-names -fno-inline -c -o ./tmp/testProgram.o
+	@./wllvm_venv/bin/extract-bc ./tmp/testProgram.o -o ./tmp/testProgram.bc
+	@llvm-dis ./tmp/testProgram.bc -o ./tmp/testProgram.ll
 ./tmp/ls.ll:
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
 	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll
 ./tmp/cat.ll:
-	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/cat.bc
+	@./wllvm_venv/bin/extract-bc ./coreutils/src/cat -o ./tmp/cat.bc
 	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
 
-test: mkdir ./tmp/ls.ll libLibrarify.$(dynamicExt)
+test: mkdir ./tmp/testProgram.ll libLibrarify.$(dynamicExt)
+	@-echo
+	@-echo running libLibrarify.$(dynamicExt) plugin on testProgram.ll
+	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/testProgram.ll -S -o ./tmp/output_from_librarify.ll
+	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
+	@ar rcs ./out/output.a ./tmp/output.o
+	@-echo
+	@-echo compiling controller.$(executableExt)
+	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.$(executableExt)
+	@-echo running controller.$(executableExt)
+	@-echo
+	@./out/controller.$(executableExt)
+.phony : test
+
+run: mkdir ./tmp/ls.ll libLibrarify.$(dynamicExt)
+	@-echo
 	@-echo running libLibrarify.$(dynamicExt) plugin on ls.ll
 	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/ls.ll -S -o ./tmp/output_from_librarify.ll
 	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
 	@ar rcs ./out/output.a ./tmp/output.o
+	@-echo
 	@-echo compiling controller.$(executableExt)
 	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.$(executableExt)
 	@-echo running controller.$(executableExt)
-	@#./out/controller.$(executableExt)
-.phony : test
+	@-echo
+	@./out/controller.$(executableExt)
+.phony : run
 
 stdlib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
 	@-echo building std lib

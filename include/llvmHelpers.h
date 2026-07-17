@@ -4,10 +4,11 @@
 #include "llvm/IR/BasicBlock.h"
 #include "llvm/IR/PassManager.h"
 #include "llvm/IR/ValueMap.h"
-#include "llvm/ADT/Statistic.h"
 #include "llvm/IR/Module.h"
 #include "llvm/IR/Constants.h"
 #include "llvm/IR/GlobalVariable.h"
+#include "llvm/IR/DerivedTypes.h"
+#include "llvm/ADT/Statistic.h"
 #include "llvm/Support/RandomNumberGenerator.h"
 #include "llvm/Pass.h"
 #include "llvm/Passes/PassBuilder.h"
@@ -54,7 +55,8 @@ void populateGlobals();
 
 void populateStdLib(llvm::Function& F);
 
-std::string valueToString(llvm::Value* inst);
+std::string valueToString(llvm::Value* val);
+std::string typeToString(llvm::Value* val);
 void printFuncSig(const llvm::Function& F);
 
 llvm::GlobalVariable* createGlobalString(std::string str, std::string varName="str");
@@ -65,6 +67,10 @@ llvm::GlobalVariable* createGlobalIntArray(llvm::ArrayRef<llvm::Constant*> vals,
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);
 
+extern unsigned int namedStructCount;
+extern std::vector<llvm::StructType*> structTypes;
+extern std::vector<std::string> structNames;
+extern std::map<llvm::Type*, unsigned int> structTypeToNameIndex;
 std::string basicGetTypeAsString(llvm::Type* ty);
 extern std::vector<llvm::Function*> visitedFunctions_global;
 extern std::map<llvm::Value*, std::string> determinedTypes;

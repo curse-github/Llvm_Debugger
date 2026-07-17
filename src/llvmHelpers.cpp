@@ -65,10 +65,16 @@ void populateStdLib(llvm::Function& F) {
     }
 }
 
-std::string valueToString(llvm::Value* inst) {
+std::string valueToString(llvm::Value* val) {
     std::string str;
     llvm::raw_string_ostream rso(str);
-    inst->print(rso);
+    val->print(rso);
+    return str;
+}
+std::string typeToString(llvm::Type* ty) {
+    std::string str;
+    llvm::raw_string_ostream rso(str);
+    ty->print(rso);
     return str;
 }
 void printFuncSig(const llvm::Function& F) {
@@ -118,8 +124,12 @@ llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator b
     printCall->insertBefore(beforeInst);
     return printCall;
 }
+unsigned int namedStructCount = 0;
+std::vector<llvm::StructType*> structTypes;
+std::vector<std::string> structNames;
+std::map<llvm::Type*, unsigned int> structTypeToNameIndex;
 std::string basicGetTypeAsString(llvm::Type* ty) {
-if (ty->isIntegerTy()) {
+    if (ty->isIntegerTy()) {
         const unsigned int bitWidth = ty->getIntegerBitWidth();
         switch(bitWidth) {
             case 1:
@@ -146,9 +156,21 @@ if (ty->isIntegerTy()) {
             return "unknown";
     } else if (ty->isPointerTy())
         return "void*";
-     else if (ty->isVoidTy())
+    else if (ty->isVoidTy())
         return "void";
-    else
+    else if (structTypeToNameIndex.count(ty) > 0)
+        return structNames[structTypeToNameIndex[ty]];
+    else if (ty->isStructTy()) {
+        std::string name = "struct.unknown" + std::to_string(namedStructCount);
+        structTypeToNameIndex[ty] = namedStructCount;
+        namedStructCount++;
+        structTypes.push_back((llvm::StructType*)ty);
+        structNames.push_back(name);
+        return name;
+    } else if (ty->isArrayTy()) {
+        llvm::ArrayType* aty = (llvm::ArrayType*)ty;
+        return basicGetTypeAsString(aty->getElementType()) + '[' + std::to_string(aty->getNumElements()) + ']';
+    } else
         return "unknown";
 }
 std::string attemptFindPointerType(llvm::Value* val, std::vector<llvm::Function*>& visitedFunctions=visitedFunctions_global, unsigned int depth=0, std::string indent="    ");
@@ -158,44 +180,16 @@ std::string getTypeAsString(llvm::Value* val, std::vector<llvm::Function*>& visi
         return determinedTypes[val];
     llvm::Type* ty = val->getType();
     std::string typeStr = "unknown";
-    if (ty->isIntegerTy()) {
-        const unsigned int bitWidth = ty->getIntegerBitWidth();
-        switch(bitWidth) {
-            case 1:
-                typeStr = "bool";
-                break;
-            case 8:
-                typeStr = "char";
-                break;
-            case 16:
-                typeStr = "short";
-                break;
-            case 32:
-                typeStr = "int";
-                break;
-            case 64:
-                typeStr = "long";
-                break;
-        }
-    } else if (ty->isFloatingPointTy()) {
-        if (ty->isHalfTy())
-            typeStr = "half";
-        else if (ty->isFloatTy())
-            typeStr = "float";
-        else if (ty->isDoubleTy())
-            typeStr = "double";
-    } else if (ty->isPointerTy()) {
+    if (ty->isPointerTy()) {
         if (llvm::dyn_cast_or_null<llvm::Constant>(val))
-            // is essentially a void*
-            typeStr = "void*";
-        else {
+            typeStr = "void*";// is essentially a nullptr or void*
+        else
             typeStr = attemptFindPointerType(val, visitedFunctions, depth, indent+"    ");
-        }
-    } else if (ty->isVoidTy())
-        typeStr = "void";
+    } else {
+        typeStr = basicGetTypeAsString(ty);
+    }
     determinedTypes[val] = typeStr;
     return typeStr;
-    
 }
 int getTypeBitWidth(llvm::Type* ty) {
     if (ty->isIntegerTy()) {
@@ -223,10 +217,12 @@ int getTypeBitWidth(llvm::Type* ty) {
         return 64;
     else
         return -1;
-    
 }
 std::string attemptFindPointerType(llvm::Value* val, std::vector<llvm::Function*>& visitedFunctions, unsigned int depth, std::string indent) {
-    if (depth>1000) return "void*";
+    if (depth>1000) {
+        //std::cout << "reached max depth\n";
+        return "void*";
+    }
     std::vector<std::string> possible;
     for(llvm::User* user : val->users()) {
         if (llvm::dyn_cast_or_null<llvm::Instruction>(user) != nullptr) {
@@ -266,6 +262,9 @@ std::string attemptFindPointerType(llvm::Value* val, std::vector<llvm::Function*
             // if it used in a phi instruction, the type is the same as the phi instruction
             } else if ((llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user) != nullptr)||(llvm::dyn_cast_or_null<llvm::PHINode>(user) != nullptr))
                 possible.push_back(getTypeAsString(user, visitedFunctions, depth+1, indent+"    "));
+            else {
+                //std::cout << valueToString(user) << '\n';
+            }
         }
     }
     if (depth == 0)
