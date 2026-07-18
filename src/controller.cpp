@@ -85,6 +85,9 @@ public:
             counter = (void*)((char*)counter+1);
         }
     }
+    int getSize() {
+        return (int)((char*)counter-(char*)pointer);
+    }
 };
 
 extern unsigned int numFunctions;
@@ -108,7 +111,30 @@ extern const char* structNames[];
 extern unsigned int structNumContainedTypes[];
 extern const char** structContainedTypes[];
 
-void inputBool(bufferWriter& parameters, std::string paramName, bool doRound) {
+template<typename T> struct TypeName { static const char *Get() { return ""; }};
+#define ENABLE_TYPENAME(A) template<> struct TypeName<A> { static const char *Get() { return #A; }};
+ENABLE_TYPENAME(char)
+ENABLE_TYPENAME(short)
+//ENABLE_TYPENAME(int)
+ENABLE_TYPENAME(long)
+ENABLE_TYPENAME(float)
+ENABLE_TYPENAME(double)
+template <typename T>
+void input(bufferWriter& parameters, std::string paramName, bool doRound) {
+    T tmp;
+    std::cout << "Please enter a " << TypeName<T>::Get() << " for the parameter \"" << paramName << "\" : ";
+    std::cin >> tmp;
+    parameters.push<T>(tmp);
+}
+template <>
+void input<int>(bufferWriter& parameters, std::string paramName, bool doRound) {// override to replace "a" with "an"
+    int tmp;
+    std::cout << "Please enter an int for the parameter \"" << paramName << "\" : ";
+    std::cin >> tmp;
+    parameters.push<int>(tmp);
+}
+template <>
+void input<bool>(bufferWriter& parameters, std::string paramName, bool doRound) {// override because method of input is different
     std::string tmp;
     while (true) {
         std::cout << "Please enter a bool for the parameter \"" << paramName << "\" : ";
@@ -123,47 +149,7 @@ void inputBool(bufferWriter& parameters, std::string paramName, bool doRound) {
             std::cout << "Invalid value try again.\n";
     }
 }
-void inputChar(bufferWriter& parameters, std::string paramName, bool doRound) {
-    char tmp;
-    std::cout << "Please enter a char for the parameter \"" << paramName << "\" : ";
-    std::cin >> tmp;
-    parameters.push<char>(tmp);
-}
-void inputShort(bufferWriter& parameters, std::string paramName, bool doRound) {
-    short tmp;
-    std::cout << "Please enter a short for the parameter \"" << paramName << "\" : ";
-    std::cin >> tmp;
-    parameters.push<short>(tmp);
-}
-void inputInt(bufferWriter& parameters, std::string paramName, bool doRound) {
-    int tmp;
-    std::cout << "Please enter an int for the parameter \"" << paramName << "\" : ";
-    std::cin >> tmp;
-    parameters.roundToMultipleOf(sizeof(int));
-    parameters.push<int>(tmp);
-}
-void inputLong(bufferWriter& parameters, std::string paramName, bool doRound) {
-    long tmp;
-    std::cout << "Please enter a long for the parameter \"" << paramName << "\" : ";
-    std::cin >> tmp;
-    parameters.roundToMultipleOf(sizeof(long));
-    parameters.push<long>(tmp);
-}
-void inputFloat(bufferWriter& parameters, std::string paramName, bool doRound) {
-    float tmp;
-    std::cout << "Please enter a float for the parameter \"" << paramName << "\" : ";
-    std::cin >> tmp;
-    parameters.roundToMultipleOf(sizeof(float));
-    parameters.push<float>(tmp);
-}
-void inputDouble(bufferWriter& parameters, std::string paramName, bool doRound) {
-    double tmp;
-    std::cout << "Please enter a double for the parameter \"" << paramName << "\" : ";
-    std::cin >> tmp;
-    parameters.roundToMultipleOf(sizeof(double));
-    parameters.push<double>(tmp);
-}
-void inputCStr(bufferWriter& parameters, std::string paramName, bool doRound) {
+void inputCStr(bufferWriter& parameters, std::string paramName, bool doRound) {// override because method of input is different
     std::string tmp;
     std::cout << "Please enter a string for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
@@ -172,20 +158,20 @@ void inputCStr(bufferWriter& parameters, std::string paramName, bool doRound) {
 }
 typedef void(*inputFT)(bufferWriter&, std::string, bool);
 std::map<std::string, inputFT> inputFunctions = {
-    {"bool", inputBool},
-    {"char", inputChar},
-    {"short", inputShort},
-    {"int", inputInt},
-    {"long", inputLong},
-    {"float", inputFloat},
-    {"double", inputDouble},
+    {"bool", input<bool>},
+    {"char", input<char>},
+    {"short", input<short>},
+    {"int", input<int>},
+    {"long", input<long>},
+    {"float", input<float>},
+    {"double", input<double>},
     {"char*", inputCStr}
 };
 bool isInputableType(std::string type) {
     if (type[type.size()-1] == '*') {// is an pointer type
         return isInputableType(type.substr(0,type.size()-1));
     } else if (type[type.size()-1] == ']') {// is an array type
-        return false;
+        return isInputableType(type.substr(0,type.find_last_of('[')));
     } else if (inputFunctions.count(type) > 0)
         return true;
     else {
@@ -215,12 +201,18 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
     else if (type[type.size()-1] == '*') {// is an pointer type
         size_t i = storage.size();
         storage.push_back((bufferWriter&&)bufferWriter());
-        inputType(type.substr(0,type.size()-1), storage[i], storage, "*"+paramName);
+        inputType(type.substr(0,type.size()-1), storage[i], storage, "(*"+paramName+")");
         parameters.push<void*>(storage[i].pointer);
         return;
-    } else if (type[type.size()-1] == ']')// is an array type
+    } else if (type[type.size()-1] == ']') {// is an array type
+        size_t str_i = type.find_last_of('[');
+        std::string newType = type.substr(0,str_i);
+        int count = std::stoi(type.substr(str_i+1, type.size()-str_i-2));
+        //std::cout << count << " x " << newType << '\n';
+        for (int i = 0; i < count; i++)
+            inputType(newType, parameters, storage, paramName+'['+std::to_string(i)+']', false);
         return;
-    else if (inputFunctions.count(type) > 0)
+    } else if (inputFunctions.count(type) > 0)
         inputFunctions[type](parameters, paramName, doRound);
     else {
         bool isStruct = false;
@@ -233,29 +225,40 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
         }
         if (!isStruct)
             return;
-        for (int j = 0; j < structNumContainedTypes[i]; j++) {
+        for (int j = 0; j < structNumContainedTypes[i]; j++)
             inputType(structContainedTypes[i][j], parameters, storage, paramName+'['+std::to_string(j)+']', true);
-        }
         return;
     }
 }
 
 int main(int argc, char** argv) {
-    std::vector<unsigned int> valid_indices;
+    std::vector<bool> isFunctionValid;
+    std::vector<bool> canPrintFunctionOutput;
     size_t numValid = 0ull;
     for (unsigned int i = 0; i < numFunctions; i++) {
         const std::string functionReturnType = functionReturnTypes[i];
-        bool isValid = (functionReturnType != "unknown") && (functionReturnType[functionReturnType.size()-1] != '*');
+        bool isValid = true;
         unsigned int paramCount = functionParamCounts[i];
         for(int j = 0; isValid && (j < paramCount); j++)
             if (!isInputableType(functionParamTypes[i][j]))
                 isValid = false;
-        if (isValid) {
-            valid_indices.push_back(i);
-            numValid++;
-        }
+        isFunctionValid.push_back(isValid);
+        canPrintFunctionOutput.push_back((functionReturnType != "unknown") && (functionReturnType[functionReturnType.size()-1] != '*'));
+        if (isValid) numValid++;
     }
-    std::cout << "Can call " << numValid << " out of " << numFunctions << " functions.\n";
+    /*
+    if (numValid != numFunctions) {
+        std::cout << "Can call " << numValid << " out of " << numFunctions << " functions.\n";
+        std::cout << "Invalid functions are as follows:\n";
+    }
+    for(size_t i = 0; i < numFunctions; i++) {
+        if (isFunctionValid[i]) continue;
+        std::cout << "  " << (i+1) << ": " << functionReturnTypes[i] << ' ' << functionNames[i] << '(';
+        unsigned int paramCount = functionParamCounts[i];
+        for(int j = 0; j < paramCount; j++)
+            std::cout << functionParamTypes[i][j] << ' ' << functionParamNames[i][j] << ((j!=(paramCount-1))?", ":"");
+        std::cout << ")\n";
+    }//*/
     /*
     std::cout << "struct types {\n";
     for(int i = 0; i < numStructs; i++) {
@@ -270,22 +273,22 @@ int main(int argc, char** argv) {
     char choice = 'Y';
     while ((choice == 'Y') || (choice == 'y')) {
         std::cout << "Pick a function from the following:\n";
-        for(size_t index = 0; index < numValid; index++) {
-            unsigned int i = valid_indices[index];
-            std::cout << "  " << (index+1) << ": " << functionReturnTypes[i] << ' ' << functionNames[i] << '(';
+        for(unsigned int i = 0; i < numFunctions; i++) {
+            if (!isFunctionValid[i]) continue;
+            std::cout << "  " << (i+1) << ": " << functionReturnTypes[i] << ' ' << functionNames[i] << '(';
             unsigned int paramCount = functionParamCounts[i];
             for(int j = 0; j < paramCount; j++)
                 std::cout << functionParamTypes[i][j] << ' ' << functionParamNames[i][j] << ((j!=(paramCount-1))?", ":"");
             std::cout << ")\n";
         }
-        unsigned int index = 0;
         std::cout << "Enter your choice: ";
-        std::cin >> index;
-        while (index < 1 || index > numValid) {
+        unsigned int i = 0;
+        std::cin >> i;
+        while (i < 1 || i > numFunctions || !isFunctionValid[i-1]) {
             std::cout << "Invalid choice.\nRe-enter your choice: ";
-            std::cin >> index;
+            std::cin >> i;
         }
-        unsigned int i = valid_indices[static_cast<size_t>(index-1)];
+        i--;
 
         std::string functionName = functionNames[i];
         std::cout << "\nYou chose the function \"";
@@ -300,28 +303,30 @@ int main(int argc, char** argv) {
         std::vector<bufferWriter> storage;
         for(int j = 0; j < paramCount; j++)
             inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j]);
-        
-        if (std::strcmp(functionReturnType.c_str(), "bool") == 0) {
-            bool output = ((boolFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (bool)" << (output?"true":"false") << '\n';
-        } else if (std::strcmp(functionReturnType.c_str(), "char") == 0) {
-            char output = ((charFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (char)'" << output << "'\n";
-        } else if (std::strcmp(functionReturnType.c_str(), "short") == 0) {
-            short output = ((shortFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (short)" << output << '\n';
-        } else if (std::strcmp(functionReturnType.c_str(), "int") == 0) {
-            int output = ((intFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (int)" << output << '\n';
-        } else if (std::strcmp(functionReturnType.c_str(), "long") == 0) {
-            long output = ((longFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (long)" << output << '\n';
-        } else if (std::strcmp(functionReturnType.c_str(), "float") == 0) {
-            float output = ((floatFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (float)" << output << '\n';
-        } else if (std::strcmp(functionReturnType.c_str(), "double") == 0) {
-            double output = ((doubleFT)functionPointers[i])(parameters.pointer);
-            std::cout << '\"' << functionName << "\" output = (double)" << output << '\n';
+        if (canPrintFunctionOutput[i]) {
+            if (std::strcmp(functionReturnType.c_str(), "bool") == 0) {
+                bool output = ((boolFT)functionPointers[i])(parameters.pointer);
+                std::cout << '\"' << functionName << "\" output = (bool)" << (output?"true":"false") << '\n';
+            } else if (std::strcmp(functionReturnType.c_str(), "char") == 0) {
+                char output = ((charFT)functionPointers[i])(parameters.pointer);
+                std::cout << '\"' << functionName << "\" output = (char)'" << output << "'\n";
+            } else if (std::strcmp(functionReturnType.c_str(), "short") == 0) {
+                short output = ((shortFT)functionPointers[i])(parameters.pointer);
+                std::cout << '\"' << functionName << "\" output = (short)" << output << '\n';
+            } else if (std::strcmp(functionReturnType.c_str(), "int") == 0) {
+                int output = ((intFT)functionPointers[i])(parameters.pointer);
+                std::cout << '\"' << functionName << "\" output = (int)" << output << '\n';
+            } else if (std::strcmp(functionReturnType.c_str(), "long") == 0) {
+                long output = ((longFT)functionPointers[i])(parameters.pointer);
+                std::cout << '\"' << functionName << "\" output = (long)" << output << '\n';
+            } else if (std::strcmp(functionReturnType.c_str(), "float") == 0) {
+                float output = ((floatFT)functionPointers[i])(parameters.pointer);
+                std::cout << '\"' << functionName << "\" output = (float)" << output << '\n';
+            } else if (std::strcmp(functionReturnType.c_str(), "double") == 0) {
+                double output = ((doubleFT)functionPointers[i])(parameters.pointer);
+                std::cout << '\"' << functionName << "\" output = (double)" << output << '\n';
+            } else 
+                functionPointers[i](parameters.pointer);
         } else 
             functionPointers[i](parameters.pointer);
         std::cout << "\nwould you like to run another function? (Y/N) : ";

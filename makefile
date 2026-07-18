@@ -16,7 +16,7 @@ includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
 ./tmp/testProgram.ll: ./src/testProgram.cpp
-	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testProgram.cpp -O3 -fno-discard-value-names -fno-inline -c -o ./tmp/testProgram.o
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testProgram.cpp -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testProgram.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testProgram.o -o ./tmp/testProgram.bc
 	@llvm-dis ./tmp/testProgram.bc -o ./tmp/testProgram.ll
 ./tmp/ls.ll:
