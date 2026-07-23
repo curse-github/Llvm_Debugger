@@ -185,9 +185,8 @@ std::string getTypeAsString(llvm::Value* val, std::vector<llvm::Function*>& visi
             typeStr = "void*";// is essentially a nullptr or void*
         else
             typeStr = attemptFindPointerType(val, visitedFunctions, depth, indent+"    ");
-    } else {
+    } else
         typeStr = basicGetTypeAsString(ty);
-    }
     determinedTypes[val] = typeStr;
     return typeStr;
 }
@@ -235,34 +234,52 @@ std::string attemptFindPointerType(llvm::Value* val, std::vector<llvm::Function*
                 if (store->getOperand(1) == val) {
                     // if its value is being set, its type is the value of the first operand
                     possible.push_back(getTypeAsString(store->getOperand(0), visitedFunctions, depth+1, indent+"    ") + "*");
-                } // else
-                    // if it is being used to set, you technically could get from the value of the second operand
-                    // but skipping for now
+                } else {
+                    std::string tmp = getTypeAsString(store->getOperand(1), visitedFunctions, depth+1, indent+"    ");
+                    if (tmp[tmp.size()-1] == '*') {
+                        if (tmp == "void*")
+                            possible.push_back("void*");
+                        else
+                            possible.push_back(tmp.substr(0,tmp.size()-1));
+                    }
+                }
             // if it used in a call instruction, get the type from how the argument is used in that function
             } else if (llvm::dyn_cast_or_null<llvm::CallInst>(user) != nullptr) {
                 llvm::CallInst* call = llvm::dyn_cast<llvm::CallInst>(user);
                 // help avoid recursion
                 llvm::Function* func = call->getCalledFunction();
-                // if function is only declarations no analysis can be done on its body
-                if (llvm::dyn_cast_or_null<llvm::GlobalValue>(func) == nullptr)
-                    continue;
-                if (func->isDeclaration())
-                    continue;
-                // function cannot be checked already
-                if (std::find(visitedFunctions.begin(), visitedFunctions.end(), func) != visitedFunctions.end())
-                    continue;
-                unsigned int numArgs = std::min(user->getNumOperands(), static_cast<unsigned int>(func->arg_size()));
-                for (unsigned int i = 0; i < numArgs; i++)
-                    if (user->getOperand(i) == val) {
-                        visitedFunctions.push_back(call->getFunction());
-                        possible.push_back(getTypeAsString(call->getCalledFunction()->getArg(i), visitedFunctions, depth+1, indent+"    "));
-                        break;
-                    }
+                if (func != nullptr) {
+                    // if function is only declarations no analysis can be done on its body
+                    if (llvm::dyn_cast_or_null<llvm::GlobalValue>(func) == nullptr)
+                        continue;
+                    if (func->isDeclaration())
+                        continue;
+                    // function cannot be checked already
+                    if (std::find(visitedFunctions.begin(), visitedFunctions.end(), func) != visitedFunctions.end())
+                        continue;
+                    unsigned int numArgs = std::min(user->getNumOperands(), static_cast<unsigned int>(func->arg_size()));
+                    for (unsigned int i = 0; i < numArgs; i++)
+                        if (user->getOperand(i) == val) {
+                            visitedFunctions.push_back(call->getFunction());
+                            possible.push_back(getTypeAsString(func->getArg(i), visitedFunctions, depth+1, indent+"    "));
+                            break;
+                        }
+                } else {
+                    llvm::Value* called = call->getCalledOperand();
+                    if (called == val)
+                        return "f_ptr";
+                }
             // if it used in a getelementptr instruction, the type is the same as the getelementptr instruction
+            } else if (llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user) != nullptr) {
+                llvm::GetElementPtrInst* gepi = llvm::dyn_cast<llvm::GetElementPtrInst>(user);
+                if (gepi->isInBounds())
+                    possible.push_back(basicGetTypeAsString(gepi->getSourceElementType()) + '*');
+                else 
+                    possible.push_back(getTypeAsString(gepi, visitedFunctions, depth+1, indent+"    "));
             // if it used in a phi instruction, the type is the same as the phi instruction
-            } else if ((llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user) != nullptr)||(llvm::dyn_cast_or_null<llvm::PHINode>(user) != nullptr))
+            } else if (llvm::dyn_cast_or_null<llvm::PHINode>(user) != nullptr) {
                 possible.push_back(getTypeAsString(user, visitedFunctions, depth+1, indent+"    "));
-            else {
+            } else {
                 //std::cout << valueToString(user) << '\n';
             }
         }

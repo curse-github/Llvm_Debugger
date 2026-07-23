@@ -2,7 +2,16 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include <map> 
+#include <map>
+
+template<typename T> struct TypeName { static const char *Get() { return ""; }};
+#define ENABLE_TYPENAME(A) template<> struct TypeName<A> { static const char *Get() { return #A; }};
+ENABLE_TYPENAME(char)
+ENABLE_TYPENAME(short)
+ENABLE_TYPENAME(int)
+ENABLE_TYPENAME(long)
+ENABLE_TYPENAME(float)
+ENABLE_TYPENAME(double)
 
 class bufferWriter {
 private:
@@ -43,6 +52,7 @@ public:
     }
     template<typename T>
     void push(T val) {
+        std::cout << "placing " << TypeName<T>::Get() << " at offset " << ((char*)counter-(char*)pointer) << '\n';
         // resere new space
         void* old = pointer;
         pointer = malloc((char*)counter-(char*)old+sizeof(T));
@@ -111,19 +121,12 @@ extern const char* structNames[];
 extern unsigned int structNumContainedTypes[];
 extern const char** structContainedTypes[];
 
-template<typename T> struct TypeName { static const char *Get() { return ""; }};
-#define ENABLE_TYPENAME(A) template<> struct TypeName<A> { static const char *Get() { return #A; }};
-ENABLE_TYPENAME(char)
-ENABLE_TYPENAME(short)
-//ENABLE_TYPENAME(int)
-ENABLE_TYPENAME(long)
-ENABLE_TYPENAME(float)
-ENABLE_TYPENAME(double)
 template <typename T>
 void input(bufferWriter& parameters, std::string paramName, bool doRound) {
     T tmp;
     std::cout << "Please enter a " << TypeName<T>::Get() << " for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
+    if (doRound) parameters.roundToMultipleOf(sizeof(T));
     parameters.push<T>(tmp);
 }
 template <>
@@ -131,11 +134,13 @@ void input<int>(bufferWriter& parameters, std::string paramName, bool doRound) {
     int tmp;
     std::cout << "Please enter an int for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
+    if (doRound) parameters.roundToMultipleOf(sizeof(int));
     parameters.push<int>(tmp);
 }
 template <>
 void input<bool>(bufferWriter& parameters, std::string paramName, bool doRound) {// override because method of input is different
     std::string tmp;
+    // dont bother rounder to the nearest single byte
     while (true) {
         std::cout << "Please enter a bool for the parameter \"" << paramName << "\" : ";
         std::cin >> tmp;
@@ -195,20 +200,22 @@ bool isInputableType(std::string type) {
         return isValid;
     }
 }
-void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter>& storage, std::string paramName, bool doRound=false) {
+void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter>& storage, std::string paramName, bool doRound) {
     if (type=="char*")
         inputFunctions[type](parameters, paramName, doRound);
     else if (type[type.size()-1] == '*') {// is an pointer type
         size_t i = storage.size();
         storage.push_back((bufferWriter&&)bufferWriter());
-        inputType(type.substr(0,type.size()-1), storage[i], storage, "(*"+paramName+")");
+        std::string newType = type.substr(0,type.size()-1);
+        //std::cout << "Creating pointer of type \"" << newType << "*\"\n";
+        inputType(newType, storage[i], storage, "(*"+paramName+")", doRound);
         parameters.push<void*>(storage[i].pointer);
         return;
     } else if (type[type.size()-1] == ']') {// is an array type
         size_t str_i = type.find_last_of('[');
         std::string newType = type.substr(0,str_i);
         int count = std::stoi(type.substr(str_i+1, type.size()-str_i-2));
-        //std::cout << count << " x " << newType << '\n';
+        //std::cout << "Creating array of type \"" << newType << "[" << count << "]\"\n";
         for (int i = 0; i < count; i++)
             inputType(newType, parameters, storage, paramName+'['+std::to_string(i)+']', false);
         return;
@@ -217,14 +224,14 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
     else {
         bool isStruct = false;
         int i;
-        for(i = 0; !isStruct&&(i < numStructs); i++) {
+        for(i = 0; !isStruct&&(i < numStructs); i++)
             if (type == structNames[i]) {
                 isStruct = true;
                 break;
             }
-        }
         if (!isStruct)
             return;
+        //std::cout << "Creating struct of type \"" << type << "\"\n";
         for (int j = 0; j < structNumContainedTypes[i]; j++)
             inputType(structContainedTypes[i][j], parameters, storage, paramName+'['+std::to_string(j)+']', true);
         return;
@@ -246,7 +253,7 @@ int main(int argc, char** argv) {
         canPrintFunctionOutput.push_back((functionReturnType != "unknown") && (functionReturnType[functionReturnType.size()-1] != '*'));
         if (isValid) numValid++;
     }
-    /*
+    //* 
     if (numValid != numFunctions) {
         std::cout << "Can call " << numValid << " out of " << numFunctions << " functions.\n";
         std::cout << "Invalid functions are as follows:\n";
@@ -302,7 +309,7 @@ int main(int argc, char** argv) {
         bufferWriter parameters;
         std::vector<bufferWriter> storage;
         for(int j = 0; j < paramCount; j++)
-            inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j]);
+            inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j], false);
         if (canPrintFunctionOutput[i]) {
             if (std::strcmp(functionReturnType.c_str(), "bool") == 0) {
                 bool output = ((boolFT)functionPointers[i])(parameters.pointer);
