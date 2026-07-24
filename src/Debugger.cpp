@@ -1,6 +1,6 @@
-#define _BUILD_LIBRARIFY
+#define _BUILD_DEBUGGER
 
-#include "Librarify.h"
+#include "Debugger.h"
 #include <iostream>
 #include <algorithm>
 
@@ -28,7 +28,7 @@ unsigned int numArgs = 0;
 unsigned int numArgTypesDetermined = 0;
 unsigned int numPointers = 0;
 unsigned int numPointerTypesDetermined = 0;
-llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
+llvm::PreservedAnalyses Debugger::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
     populateGlobals(Module);
     for (llvm::StructType* ST: Module.getIdentifiedStructTypes()) {
         structTypeToNameIndex[(llvm::Type*)ST] = namedStructCount;
@@ -65,9 +65,12 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     createGlobalPtrArray(structNamesValues, "structNames");
     createGlobalIntArray(structNumContainedTypesValues, "structNumContainedTypes");
     createGlobalPtrArray(structContainedTypesValues, "structContainedTypes");
+    for(llvm::Function& F : Module)
+        if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
+            debuggerPass(&F);
     return llvm::PreservedAnalyses::none();
 }
-void Librarify::librarifyPass(llvm::Function& F) {
+void Debugger::librarifyPass(llvm::Function& F) {
     // numFunctions
     numFunctions_value++;
     // functionNames
@@ -146,19 +149,28 @@ void Librarify::librarifyPass(llvm::Function& F) {
     // functionPointers_value
     functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(wrapper_f));
 }
+void Debugger::debuggerPass(llvm::Function* F) {
+    for (llvm::User* tmp : F->users()) {
+        llvm::Instruction* Inst = llvm::dyn_cast_or_null<llvm::Instruction>(tmp);
+        if (Inst != nullptr) {
+            if (!Inst->getParent()->getParent()->getName().str().ends_with("_wrapper"))
+                // insert things before and after this insturction to create a callstack basically
+        }
+    }
+}
 
 
-llvm::PassPluginLibraryInfo getLibrarifyPluginInfo() {
+llvm::PassPluginLibraryInfo getDebuggerPluginInfo() {
     return {
-        LLVM_PLUGIN_API_VERSION, "Librarify", LLVM_VERSION_STRING,
+        LLVM_PLUGIN_API_VERSION, "Debugger", LLVM_VERSION_STRING,
         [](llvm::PassBuilder& passBuilder) {
             passBuilder.registerPipelineParsingCallback(
                 [](
                     llvm::StringRef Name, llvm::ModulePassManager& MPM,
                     llvm::ArrayRef<llvm::PassBuilder::PipelineElement>
                 ) {
-                    if (Name == "librarify") {
-                        MPM.addPass(Librarify());
+                    if (Name == "debugger") {
+                        MPM.addPass(Debugger());
                         return true;
                     }
                     return false;
@@ -172,5 +184,5 @@ llvm::PassPluginLibraryInfo getLibrarifyPluginInfo() {
 #endif
 extern "C"
 llvm::PassPluginLibraryInfo llvmGetPassPluginInfo() {
-    return getLibrarifyPluginInfo();
+    return getDebuggerPluginInfo();
 }

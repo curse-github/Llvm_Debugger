@@ -15,6 +15,8 @@ endif
 includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
+.phony : librarify stdlib mkdir clean
+
 ./tmp/testProgram.ll: ./src/testProgram.cpp
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testProgram.cpp -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testProgram.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testProgram.o -o ./tmp/testProgram.bc
@@ -26,33 +28,31 @@ libs = $(shell llvm-config --ldflags --libs core support passes)
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/cat -o ./tmp/cat.bc
 	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
 
-test: mkdir ./tmp/testProgram.ll libLibrarify.$(dynamicExt)
+librarify: mkdir ./tmp/$(TARGET).ll libLibrarify.$(dynamicExt)
 	@-echo
-	@-echo running libLibrarify.$(dynamicExt) plugin on testProgram.ll
-	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/testProgram.ll -S -o ./tmp/output_from_librarify.ll
+	@-echo running librarify.$(dynamicExt) pass on $(TARGET).ll
+	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/output_from_librarify.ll
 	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
 	@ar rcs ./out/output.a ./tmp/output.o
 	@-echo
-	@-echo compiling controller.$(executableExt)
-	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.$(executableExt)
-	@-echo running controller.$(executableExt)
+	@-echo compiling librarifyController.$(executableExt)
+	@clang++ ./src/librarifyController.cpp ./out/output.a -lcap -o ./out/librarifyController.$(executableExt)
+	@-echo running librarifyController.$(executableExt)
 	@-echo
-	@./out/controller.$(executableExt)
-.phony : test
+	@./out/librarifyController.$(executableExt)
 
-run: mkdir ./tmp/ls.ll libLibrarify.$(dynamicExt)
+debugger: mkdir ./tmp/$(TARGET).ll libDebugger.$(dynamicExt)
 	@-echo
-	@-echo running libLibrarify.$(dynamicExt) plugin on ls.ll
-	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/ls.ll -S -o ./tmp/output_from_librarify.ll
-	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
+	@-echo running debugger.$(dynamicExt) pass on $(TARGET).ll
+	@opt -load-pass-plugin ./out/libDebugger.$(dynamicExt) -passes debugger ./tmp/$(TARGET).ll -S -o ./tmp/output_from_debugger.ll
+	@clang++ ./tmp/output_from_debugger.ll -c -o ./tmp/output.o
 	@ar rcs ./out/output.a ./tmp/output.o
 	@-echo
-	@-echo compiling controller.$(executableExt)
-	@clang++ ./src/controller.cpp ./out/output.a -lcap -o ./out/controller.$(executableExt)
-	@-echo running controller.$(executableExt)
+	@-echo compiling debuggerController.$(executableExt)
+	@clang++ ./src/debuggerController.cpp ./out/output.a -lcap -o ./out/debuggerController.$(executableExt)
+	@-echo running debuggerController.$(executableExt)
 	@-echo
-	@./out/controller.$(executableExt)
-.phony : run
+	@./out/debuggerController.$(executableExt)
 
 stdlib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
 	@-echo building std lib
@@ -64,12 +64,15 @@ else
 endif
 	@ar rcs ./out/libStd.$(staticExt) ./tmp/cppStdLib.$(objectExt) ./tmp/llvmStdLib.$(objectExt)
 	@-echo finished building std lib
-.phony : stdlib
 
 libLibrarify.$(dynamicExt): mkdir ./src/Librarify.cpp ./src/llvmHelpers.cpp
 	@-echo building libLibrarify.$(dynamicExt)
 	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/Librarify.cpp ./src/llvmHelpers.cpp $(libs) -shared -o ./out/libLibrarify.$(dynamicExt)
 	@-echo finished building libLibrarify.$(dynamicExt)
+libDebugger.$(dynamicExt): mkdir ./src/Debugger.cpp ./src/llvmHelpers.cpp
+	@-echo building libDebugger.$(dynamicExt)
+	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/Debugger.cpp ./src/llvmHelpers.cpp $(libs) -shared -o ./out/libDebugger.$(dynamicExt)
+	@-echo finished building libDebugger.$(dynamicExt)
 
 mkdir:
 ifeq ($(OS),Windows_NT)
@@ -81,9 +84,7 @@ else
 endif
 	@mkdir out
 	@mkdir tmp
-.phony : mkdir
 
 clean:
 	@-rm -R out
 	@-rm -R tmp
-.phony : clean
