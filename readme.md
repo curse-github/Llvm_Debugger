@@ -6,6 +6,10 @@ Command to run either librarify or the debugger are as follows <br>
 `make debugger TARGET="ls"`<br>
 `make debugger TARGET="cat"`<br>
 `make debugger TARGET="testProgram"`<br>
+To add more usable targets add instructions to the makefile file for making ./tmp/example.ll<br>
+This gives the the functionality to run<br>
+`make librarify TARGET="example"` or <br>
+`make debugger TARGET="example"`<br>
 <br><br>
 ## Writeup:
 Explanation of project:
