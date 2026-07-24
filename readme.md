@@ -1,11 +1,11 @@
 ## Instructions:
 Command to run either librarify or the debugger are as follows <br>
-`make librarify TARGET="ls"`
-`make librarify TARGET="cat"`
-`make librarify TARGET="testProgram"`
-`make debugger TARGET="ls"`
-`make debugger TARGET="cat"`
-`make debugger TARGET="testProgram"`
+`make librarify TARGET="ls"`<br>
+`make librarify TARGET="cat"`<br>
+`make librarify TARGET="testProgram"`<br>
+`make debugger TARGET="ls"`<br>
+`make debugger TARGET="cat"`<br>
+`make debugger TARGET="testProgram"`<br>
 <br><br>
 ## Writeup:
 Explanation of project:
