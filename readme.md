@@ -1,14 +1,13 @@
-command to run either librarify or the debugger are as follows <br>
-```
-make librarify TARGET="ls"
-make librarify TARGET="cat"
-make librarify TARGET="testProgram"
-make debugger TARGET="ls"
-make debugger TARGET="cat"
-make debugger TARGET="testProgram"
-```
+## Instructions:
+Command to run either librarify or the debugger are as follows <br>
+'make librarify TARGET="ls"'
+'make librarify TARGET="cat"'
+'make librarify TARGET="testProgram"'
+'make debugger TARGET="ls"'
+'make debugger TARGET="cat"'
+'make debugger TARGET="testProgram"'
 <br><br>
-## Writeup
+## Writeup:
 Explanation of project:
 The “librarification” part of this project consists of two parts, a controller, and a modified version of the original program being analysed These two parts cover the two main portions of the code, however both portions have other challenges not covered in the basic definition of the process.<br>
 The first is a controller program which receives some basic information of the structure of original code as well as pointers to wrappers of the functions. Where the wrappers of the original functions are functions which can take in a byte buffer of the parameters intended to be received by the function and then call the original function appropriately and proxy its return value. Upon running, the controller receives input from the user on the intended function to be run, gets input from the user on the parameters of that function in the correct types, packs that data into a byte buffer, calls the wrapper function, and finally outputs to the user the output of the function.<br>
