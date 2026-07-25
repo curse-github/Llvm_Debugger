@@ -28,6 +28,10 @@ unsigned int numArgs = 0;
 unsigned int numArgTypesDetermined = 0;
 unsigned int numPointers = 0;
 unsigned int numPointerTypesDetermined = 0;
+
+llvm::FunctionType* logFunction_T;
+llvm::Function* logFunctionParameters;
+llvm::Function* logFunctionReturn;
 llvm::PreservedAnalyses Debugger::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
     populateGlobals(Module);
     for (llvm::StructType* ST: Module.getIdentifiedStructTypes()) {
@@ -40,7 +44,7 @@ llvm::PreservedAnalyses Debugger::run(llvm::Module& Module, llvm::ModuleAnalysis
         if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
             librarifyPass(F);
     //printStructTypes(Module);
-    std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u,numPointers)) << "%) pointer types found\n";
+    std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u, numPointers)) << "%) pointer types found\n";
     std::cout << numArgTypesDetermined << " out of " << numArgs << " (" << (numArgTypesDetermined*100.0/numArgs) << "%) total types found\n";
     createGlobalInt(numFunctions_value, "numFunctions");
     createGlobalPtrArray(functionNames_value, "functionNames");
@@ -65,6 +69,11 @@ llvm::PreservedAnalyses Debugger::run(llvm::Module& Module, llvm::ModuleAnalysis
     createGlobalPtrArray(structNamesValues, "structNames");
     createGlobalIntArray(structNumContainedTypesValues, "structNumContainedTypes");
     createGlobalPtrArray(structContainedTypesValues, "structContainedTypes");
+
+
+    logFunction_T = llvm::FunctionType::get(void_t, {ptr_t, ptr_t}, false);
+    logFunctionParameters = llvm::Function::Create(logFunction_T, llvm::Function::LinkageTypes::ExternalLinkage, "logFunctionParameters", &Module);
+    logFunctionReturn = llvm::Function::Create(logFunction_T, llvm::Function::LinkageTypes::ExternalLinkage, "logFunctionReturn", &Module);
     for(llvm::Function& F : Module)
         if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
             debuggerPass(&F);
@@ -76,9 +85,8 @@ void Debugger::librarifyPass(llvm::Function& F) {
     // functionNames
     std::string f_name = llvm::demangle(F.getName().str());
     int tmp1 = (int)f_name.size();
-    if ((tmp1 = f_name.find('(')) != std::string::npos) {
+    if ((tmp1 = f_name.find('(')) != std::string::npos)
         f_name = f_name.substr(0, tmp1);
-    }
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
@@ -150,11 +158,35 @@ void Debugger::librarifyPass(llvm::Function& F) {
     functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(wrapper_f));
 }
 void Debugger::debuggerPass(llvm::Function* F) {
+    std::string f_name = llvm::demangle(F->getName().str());
+    int tmp1 = (int)f_name.size();
+    if ((tmp1 = f_name.find('(')) != std::string::npos)
+        f_name = f_name.substr(0, tmp1);
     for (llvm::User* tmp : F->users()) {
-        llvm::Instruction* Inst = llvm::dyn_cast_or_null<llvm::Instruction>(tmp);
+        llvm::CallInst* Inst = llvm::dyn_cast_or_null<llvm::CallInst>(tmp);
         if (Inst != nullptr) {
-            if (!Inst->getParent()->getParent()->getName().str().ends_with("_wrapper"))
-                // insert things before and after this insturction to create a callstack basically
+            if (!Inst->getParent()->getParent()->getName().str().ends_with("_wrapper")) {
+                const unsigned int arg_size = F->arg_size();
+                // get amount of storage needed
+                unsigned int parameterBitWidth = 0;
+                for (int i = 0; i < arg_size; i++)
+                    parameterBitWidth += std::max(8, getTypeBitWidth(F->getArg(i)->getType()))>>3;
+                // create variable
+                llvm::ArrayType* T = llvm::ArrayType::get(i8_t, parameterBitWidth);
+                llvm::Value* storage = new llvm::AllocaInst(T, 0, "storage", Inst);
+                // populate buffer with data
+                unsigned int runningOffset = 0;
+                for(int i = 0; i < arg_size; i++) {
+                    llvm::Instruction* func_argi_p = llvm::GetElementPtrInst::CreateInBounds(i8_t, storage, { llvm::ConstantInt::get(i64_t, runningOffset) }, F->getName()+"_arg" + std::to_string(i) + "_p", Inst);
+                    new llvm::StoreInst(Inst->getArgOperand(i), func_argi_p, Inst);
+                    runningOffset += std::max(8, getTypeBitWidth(F->getArg(i)->getType()))>>3;
+                }
+                // log data
+                llvm::CallInst::Create(logFunction_T, logFunctionParameters, { createGlobalString(f_name), storage }, "", Inst);
+                llvm::CallInst::Create(logFunction_T, logFunctionReturn, {
+                    createGlobalString(f_name), llvm::ConstantPointerNull::get(llvm::dyn_cast<llvm::PointerType>(ptr_t))
+                }, "", llvm::dyn_cast<llvm::Instruction>(Inst)->getNextNode());
+            }
         }
     }
 }
@@ -162,11 +194,11 @@ void Debugger::debuggerPass(llvm::Function* F) {
 
 llvm::PassPluginLibraryInfo getDebuggerPluginInfo() {
     return {
-        LLVM_PLUGIN_API_VERSION, "Debugger", LLVM_VERSION_STRING,
+        LLVM_PLUGIN_API_VERSION, "Debugger", LLVM_VERSION_STRING, 
         [](llvm::PassBuilder& passBuilder) {
             passBuilder.registerPipelineParsingCallback(
                 [](
-                    llvm::StringRef Name, llvm::ModulePassManager& MPM,
+                    llvm::StringRef Name, llvm::ModulePassManager& MPM, 
                     llvm::ArrayRef<llvm::PassBuilder::PipelineElement>
                 ) {
                     if (Name == "debugger") {

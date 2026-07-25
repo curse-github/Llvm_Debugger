@@ -36,7 +36,7 @@ librarify: mkdir ./tmp/$(TARGET).ll libLibrarify.$(dynamicExt)
 	@ar rcs ./out/output.a ./tmp/output.o
 	@-echo
 	@-echo compiling librarifyController.$(executableExt)
-	@clang++ ./src/librarifyController.cpp ./out/output.a -lcap -o ./out/librarifyController.$(executableExt)
+	@clang++ -I./include ./src/librarifyController.cpp ./src/controllerLib.cpp ./out/output.a -lcap -o ./out/librarifyController.$(executableExt)
 	@-echo running librarifyController.$(executableExt)
 	@-echo
 	@./out/librarifyController.$(executableExt)
@@ -49,7 +49,7 @@ debugger: mkdir ./tmp/$(TARGET).ll libDebugger.$(dynamicExt)
 	@ar rcs ./out/output.a ./tmp/output.o
 	@-echo
 	@-echo compiling debuggerController.$(executableExt)
-	@clang++ ./src/debuggerController.cpp ./out/output.a -lcap -o ./out/debuggerController.$(executableExt)
+	@clang++ -I./include ./src/debuggerController.cpp ./src/controllerLib.cpp ./out/output.a -lcap -o ./out/debuggerController.$(executableExt)
 	@-echo running debuggerController.$(executableExt)
 	@-echo
 	@./out/debuggerController.$(executableExt)

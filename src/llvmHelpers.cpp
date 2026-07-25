@@ -87,9 +87,13 @@ void printFuncSig(const llvm::Function& F) {
     std::cout << ")\n";
 }
 
+std::map<std::string, llvm::GlobalVariable*> globals;
 llvm::GlobalVariable* createGlobalString(std::string str, std::string varName) {
+    if (globals.count(str) > 0)
+        return globals[str];
     llvm::GlobalVariable* gStr = new llvm::GlobalVariable(*Module, llvm::ArrayType::get(i8_t, static_cast<unsigned int>(str.size())+1u), true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
     gStr->setInitializer(llvm::ConstantDataArray::getString(*Context, str, true));
+    globals[str] = gStr;
     return gStr;
 }
 llvm::GlobalVariable* createGlobalPtrArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName) {
@@ -240,7 +244,7 @@ std::string attemptFindPointerType(llvm::Value* val, std::vector<llvm::Function*
                         if (tmp == "void*")
                             possible.push_back("void*");
                         else
-                            possible.push_back(tmp.substr(0,tmp.size()-1));
+                            possible.push_back(tmp.substr(0, tmp.size()-1));
                     }
                 }
             // if it used in a call instruction, get the type from how the argument is used in that function

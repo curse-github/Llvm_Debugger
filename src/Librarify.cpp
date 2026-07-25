@@ -40,7 +40,7 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
         if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
             librarifyPass(F);
     //printStructTypes(Module);
-    std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u,numPointers)) << "%) pointer types found\n";
+    std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u, numPointers)) << "%) pointer types found\n";
     std::cout << numArgTypesDetermined << " out of " << numArgs << " (" << (numArgTypesDetermined*100.0/numArgs) << "%) total types found\n";
     createGlobalInt(numFunctions_value, "numFunctions");
     createGlobalPtrArray(functionNames_value, "functionNames");
@@ -150,11 +150,11 @@ void Librarify::librarifyPass(llvm::Function& F) {
 
 llvm::PassPluginLibraryInfo getLibrarifyPluginInfo() {
     return {
-        LLVM_PLUGIN_API_VERSION, "Librarify", LLVM_VERSION_STRING,
+        LLVM_PLUGIN_API_VERSION, "Librarify", LLVM_VERSION_STRING, 
         [](llvm::PassBuilder& passBuilder) {
             passBuilder.registerPipelineParsingCallback(
                 [](
-                    llvm::StringRef Name, llvm::ModulePassManager& MPM,
+                    llvm::StringRef Name, llvm::ModulePassManager& MPM, 
                     llvm::ArrayRef<llvm::PassBuilder::PipelineElement>
                 ) {
                     if (Name == "librarify") {

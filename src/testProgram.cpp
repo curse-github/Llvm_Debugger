@@ -12,8 +12,8 @@ void foo2(testStruct g);
 void bar1(float a, float b, float c, float d, float e, float f);
 void bar2(float abcdef[6]);
 
-int main(int argv, char** argc) {
-    foo1(1,2.34,false,'6',7.8);
+int main(int argc, char** argv) {
+    foo2({1, 2.34, false, '6', 7.8});
     return 15;
 }
 
