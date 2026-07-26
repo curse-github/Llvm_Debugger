@@ -69,7 +69,7 @@ int main(int argc, char** argv) {
         std::cout << ")\"\n";
 
         bufferWriter parameters;
-        std::vector<bufferWriter> storage;
+        std::vector<bufferWriter*> storage;
         for(int j = 0; j < paramCount; j++)
             inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j], false);
         if (canPrintFunctionOutput[i]) {
@@ -98,6 +98,8 @@ int main(int argc, char** argv) {
                 functionPointers[i](parameters.pointer);
         } else 
             functionPointers[i](parameters.pointer);
+        for(int j = 0; j < storage.size(); j++)
+            delete storage[j];
         std::cout << "\nwould you like to run another function? (Y/N) : ";
         std::cin >> choice;
         std::cout << '\n';

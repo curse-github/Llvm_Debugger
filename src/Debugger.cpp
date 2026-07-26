@@ -173,19 +173,26 @@ void Debugger::debuggerPass(llvm::Function* F) {
                     parameterBitWidth += std::max(8, getTypeBitWidth(F->getArg(i)->getType()))>>3;
                 // create variable
                 llvm::ArrayType* T = llvm::ArrayType::get(i8_t, parameterBitWidth);
-                llvm::Value* storage = new llvm::AllocaInst(T, 0, "storage", Inst);
+                llvm::Value* input = new llvm::AllocaInst(T, 0, "input", Inst);
                 // populate buffer with data
                 unsigned int runningOffset = 0;
                 for(int i = 0; i < arg_size; i++) {
-                    llvm::Instruction* func_argi_p = llvm::GetElementPtrInst::CreateInBounds(i8_t, storage, { llvm::ConstantInt::get(i64_t, runningOffset) }, F->getName()+"_arg" + std::to_string(i) + "_p", Inst);
+                    llvm::Instruction* func_argi_p = llvm::GetElementPtrInst::CreateInBounds(i8_t, input, { llvm::ConstantInt::get(i64_t, runningOffset) }, F->getName()+"_arg" + std::to_string(i) + "_p", Inst);
                     new llvm::StoreInst(Inst->getArgOperand(i), func_argi_p, Inst);
                     runningOffset += std::max(8, getTypeBitWidth(F->getArg(i)->getType()))>>3;
                 }
                 // log data
-                llvm::CallInst::Create(logFunction_T, logFunctionParameters, { createGlobalString(f_name), storage }, "", Inst);
-                llvm::CallInst::Create(logFunction_T, logFunctionReturn, {
-                    createGlobalString(f_name), llvm::ConstantPointerNull::get(llvm::dyn_cast<llvm::PointerType>(ptr_t))
-                }, "", llvm::dyn_cast<llvm::Instruction>(Inst)->getNextNode());
+                llvm::CallInst::Create(logFunction_T, logFunctionParameters, { createGlobalString(f_name), input }, "", Inst);
+                llvm::Type* retType = F->getReturnType();
+                llvm::Instruction* afterInst = Inst->getNextNode();
+                if (!retType->isVoidTy()) {
+                    llvm::Value* output = new llvm::AllocaInst(retType, 0, "output", afterInst);
+                    new llvm::StoreInst(Inst, output, afterInst);
+                    llvm::CallInst::Create(logFunction_T, logFunctionReturn, { createGlobalString(f_name), output }, "", afterInst);
+                } else
+                    llvm::CallInst::Create(logFunction_T, logFunctionReturn, {
+                        createGlobalString(f_name), llvm::ConstantPointerNull::get(llvm::dyn_cast<llvm::PointerType>(ptr_t))
+                    }, "", afterInst);
             }
         }
     }

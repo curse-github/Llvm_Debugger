@@ -6,6 +6,7 @@
 #include <vector>
 #include <memory>
 #include <map>
+#include <fstream>
 
 template<typename T> struct TypeName { static const char *Get() { return ""; }};
 #define ENABLE_TYPENAME(A) template<> struct TypeName<A> { static const char *Get() { return #A; }};
@@ -18,8 +19,8 @@ ENABLE_TYPENAME(double)
 
 class bufferWriter {
 private:
-    void* counter;
 public:
+    void* counter;
     void* pointer;
     bufferWriter();
     bufferWriter(const bufferWriter& copy);
@@ -29,7 +30,7 @@ public:
     ~bufferWriter();
     template<typename T>
     void push(T val) {
-        //std::cout << "placing " << TypeName<T>::Get() << " at offset " << ((char*)counter-(char*)pointer) << '\n';
+        //std::cout << "placing " << TypeName<T>::Get() << " into bufferWriter " << this << " at offset " << ((char*)counter-(char*)pointer) << '\n';
         // resere new space
         void* old = pointer;
         pointer = malloc((char*)counter-(char*)old+sizeof(T));
@@ -43,6 +44,7 @@ public:
     }
     template<>
     void push<void*>(void* val) {
+        //std::cout << "placing void* into bufferWriter " << this << " at offset " << ((char*)counter-(char*)pointer) << '\n';
         // resere new space
         void* old = pointer;
         pointer = malloc((char*)counter-(char*)old+sizeof(void*));
@@ -97,11 +99,31 @@ template void input<short>(bufferWriter& parameters, std::string paramName, bool
 template void input<long>(bufferWriter& parameters, std::string paramName, bool doRound);
 template void input<float>(bufferWriter& parameters, std::string paramName, bool doRound);
 template void input<double>(bufferWriter& parameters, std::string paramName, bool doRound);
-
-void inputCStr(bufferWriter& parameters, std::string paramName, bool doRound);
 typedef void(*inputFT)(bufferWriter&, std::string, bool);
 extern std::map<std::string, inputFT> inputFunctions;
 bool isInputableType(std::string type);
-void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter>& storage, std::string paramName, bool doRound);
+void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound);
+
+template <typename T>
+void print(void* ptr, std::ostream& o) {
+    o << (*(T*)ptr);
+}
+template <>
+void print<bool>(void* ptr, std::ostream& o);
+template <>
+void print<char>(void* ptr, std::ostream& o);
+template <>
+void print<char*>(void* ptr, std::ostream& o);
+template void print<short>(void* ptr, std::ostream& o);
+template void print<int>(void* ptr, std::ostream& o);
+template void print<long>(void* ptr, std::ostream& o);
+template void print<float>(void* ptr, std::ostream& o);
+template void print<double>(void* ptr, std::ostream& o);
+typedef void(*printFT)(void*, std::ostream&);
+extern std::map<std::string, printFT> printFunctions;
+void printType(std::string type, void* ptr, std::ostream& o = std::cout);
+
+extern std::map<std::string, unsigned int> typeByteLengths;
+unsigned int getTypeByteLength(std::string type);
 
 #endif // __CONTROLLER

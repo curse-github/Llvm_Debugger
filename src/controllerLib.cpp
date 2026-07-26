@@ -2,25 +2,34 @@
 
 bufferWriter::bufferWriter() {
     counter = pointer = nullptr;
+    // std::cout << "bufferWriter " << this << " created\n";
 }
 bufferWriter::bufferWriter(const bufferWriter& copy) {
+    // std::cout << "bufferWriter " << &copy << " getting copied1 to " << this << "\n";
+    if (copy.pointer == nullptr) {
+        counter = pointer = nullptr;
+        return;
+    }
     pointer = malloc((char*)copy.counter-(char*)copy.pointer);
     std::memcpy(pointer, copy.pointer, (char*)copy.counter-(char*)copy.pointer);
     counter = (void*)((char*)pointer+((char*)copy.counter-(char*)copy.pointer));
 }
 bufferWriter::bufferWriter(bufferWriter&& move) {
+    // std::cout << "bufferWriter " << &move << " getting moved1 to " << this << "\n";
     pointer = move.pointer;
     counter = move.counter;
     move.pointer = nullptr;
     move.counter = nullptr;
 }
 bufferWriter& bufferWriter::operator=(const bufferWriter& copy) {
+    // std::cout << "bufferWriter " << &copy << " getting copied2 to " << this << "\n";
     pointer = malloc((char*)copy.counter-(char*)copy.pointer);
     std::memcpy(pointer, copy.pointer, (char*)copy.counter-(char*)copy.pointer);
     counter = (void*)((char*)pointer+((char*)copy.counter-(char*)copy.pointer));
     return *this;
 }
 bufferWriter& bufferWriter::operator=(bufferWriter&& move) {
+    // std::cout << "bufferWriter " << &move << " getting moved2 to " << this << "\n";
     pointer = move.pointer;
     counter = move.counter;
     move.pointer = nullptr;
@@ -28,6 +37,7 @@ bufferWriter& bufferWriter::operator=(bufferWriter&& move) {
     return *this;
 }
 bufferWriter::~bufferWriter() {
+    // std::cout << "bufferWriter " << this << " getting destroyed\n";
     if (pointer != nullptr) free(pointer);
     pointer = nullptr;
     counter = nullptr;
@@ -54,6 +64,7 @@ int bufferWriter::getSize() {
     return (int)((char*)counter-(char*)pointer);
 }
 
+
 template <>
 void input<int>(bufferWriter& parameters, std::string paramName, bool doRound) {// override to replace "a" with "an"
     int tmp;
@@ -79,10 +90,12 @@ void input<bool>(bufferWriter& parameters, std::string paramName, bool doRound) 
             std::cout << "Invalid value try again.\n";
     }
 }
-void inputCStr(bufferWriter& parameters, std::string paramName, bool doRound) {// override because method of input is different
+template <>
+void input<char*>(bufferWriter& parameters, std::string paramName, bool doRound) {// override because method of input is different
     std::string tmp;
     std::cout << "Please enter a string for the parameter \"" << paramName << "\" : ";
     std::cin >> tmp;
+
     parameters.roundToMultipleOf(sizeof(void*));
     parameters.push<void*>((void*)tmp.c_str());
 }
@@ -93,8 +106,7 @@ std::map<std::string, inputFT> inputFunctions = {
     {"int", input<int>}, 
     {"long", input<long>}, 
     {"float", input<float>}, 
-    {"double", input<double>}, 
-    {"char*", inputCStr}
+    {"double", input<double>}
 };
 bool isInputableType(std::string type) {
     if (type[type.size()-1] == '*') {// is an pointer type
@@ -124,22 +136,32 @@ bool isInputableType(std::string type) {
         return isValid;
     }
 }
-void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter>& storage, std::string paramName, bool doRound) {
-    if (type=="char*")
-        inputFunctions[type](parameters, paramName, doRound);
-    else if (type[type.size()-1] == '*') {// is an pointer type
+void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound) {
+    if (type=="char*") {
+        std::string tmp;
+        std::cout << "Please enter a string for the parameter \"" << paramName << "\" : ";
+        std::cin >> tmp;
         size_t i = storage.size();
-        storage.push_back((bufferWriter&&)bufferWriter());
+        storage.push_back(new bufferWriter());
+        for(int j = 0; j < tmp.size(); j++)
+            storage[i]->push<char>(tmp[j]);
+        storage[i]->push<char>('\00');
+        parameters.push<void*>(storage[i]->pointer);
+    } else if (type[type.size()-1] == '*') {// is an pointer type
+        size_t i = storage.size();
+        storage.push_back(new bufferWriter());
         std::string newType = type.substr(0, type.size()-1);
-        //std::cout << "Creating pointer of type \"" << newType << "*\"\n";
-        inputType(newType, storage[i], storage, "(*"+paramName+")", doRound);
-        parameters.push<void*>(storage[i].pointer);
+        std::cout << "Enter number of values for the " << type << ", \"" << paramName << "\" : ";
+        unsigned int count = 0;
+        std::cin >> count;
+        for (int j = 0; j < count; j++)
+            inputType(newType, *storage[i], storage, paramName+'['+std::to_string(j)+']', doRound);
+        parameters.push<void*>(storage[i]->pointer);
         return;
     } else if (type[type.size()-1] == ']') {// is an array type
         size_t str_i = type.find_last_of('[');
         std::string newType = type.substr(0, str_i);
         int count = std::stoi(type.substr(str_i+1, type.size()-str_i-2));
-        //std::cout << "Creating array of type \"" << newType << "[" << count << "]\"\n";
         for (int i = 0; i < count; i++)
             inputType(newType, parameters, storage, paramName+'['+std::to_string(i)+']', false);
         return;
@@ -160,4 +182,111 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
             inputType(structContainedTypes[i][j], parameters, storage, paramName+'['+std::to_string(j)+']', true);
         return;
     }
+}
+
+template <>
+void print<bool>(void* ptr, std::ostream& o) {
+    o << ((*(bool*)ptr)?"true":"false");
+}
+template <>
+void print<char>(void* ptr, std::ostream& o) {
+    o << '\'' << (*(char*)ptr) << '\'';
+}
+template <>
+void print<char*>(void* ptr, std::ostream& o) {
+    o << '"' << (*(char**)ptr) << '"';
+}
+std::map<std::string, printFT> printFunctions = {
+    {"bool", print<bool>}, 
+    {"char", print<char>}, 
+    {"short", print<short>}, 
+    {"int", print<int>}, 
+    {"long", print<long>}, 
+    {"float", print<float>}, 
+    {"double", print<double>}, 
+    {"char*", print<char*>}
+};
+void printType(std::string type, void* ptr, std::ostream& o) {
+    if (ptr == nullptr) {
+        o << "&nullptr";
+        return;
+    }
+    if (printFunctions.count(type) > 0)
+        printFunctions[type](ptr, o);
+    else if (type[type.size()-1] == '*') {
+        if (type == "void*") {
+            o << ptr;
+        }
+        printType(type.substr(0, type.size()-1), *(void**)ptr, o);
+    } else if (type[type.size()-1] == ']') {
+        size_t str_i = type.find_last_of('[');
+        std::string newType = type.substr(0, str_i);
+        int count = std::stoi(type.substr(str_i+1, type.size()-str_i-2));
+        unsigned int newTypeSize = getTypeByteLength(newType);
+        o << "[ ";
+        char* runningPtr = (char*)ptr;
+        for(int i = 0; i < count; i++) {
+            if (i != 0) o << ", ";
+            printType(newType, (void*)runningPtr, o);
+            runningPtr+=newTypeSize;
+        }
+        o << " ]";
+    } else {
+        bool isStruct = false;
+        int i;
+        for(i = 0; !isStruct&&(i < numStructs); i++)
+            if (type == structNames[i]) {
+                isStruct = true;
+                break;
+            }
+        if (!isStruct)
+            return;
+        o << "{ ";
+        unsigned int offset = 0;
+        for (int j = 0; j < structNumContainedTypes[i]; j++) {
+            unsigned int size = getTypeByteLength(structContainedTypes[i][j]);
+            offset = offset+(size-offset%size)%size;
+            if (j != 0) o << ", ";
+            o << "(" << structContainedTypes[i][j] << ")";
+            printType(structContainedTypes[i][j], (void*)((char*)ptr+offset), o);
+            offset += size;
+        }
+        o << " }";
+    }
+}
+
+std::map<std::string, unsigned int> typeByteLengths = {
+    {"bool", sizeof(bool)},
+    {"char", sizeof(char)},
+    {"short", sizeof(short)},
+    {"int", sizeof(int)},
+    {"long", sizeof(long)},
+    {"float", sizeof(float)},
+    {"double", sizeof(double)},
+};
+unsigned int getTypeByteLength(std::string type) {
+    if (type[type.size()-1] == '*')
+        return sizeof(void*);
+    else if (type[type.size()-1] == ']')
+        return sizeof(void*);
+    else if (typeByteLengths.count(type) > 0)
+        return typeByteLengths[type];
+    else {
+        bool isStruct = false;
+        int i;
+        for(i = 0; !isStruct&&(i < numStructs); i++)
+            if (type == structNames[i]) {
+                isStruct = true;
+                break;
+            }
+        if (!isStruct)
+            return 0;
+        unsigned int totalLength = 0;
+        for (int j = 0; j < structNumContainedTypes[i]; j++) {
+            unsigned int length = getTypeByteLength(structContainedTypes[i][j]);
+            totalLength = totalLength+(length-totalLength%length)%length;
+            totalLength += length;
+        }
+    }
+    return 0;
 }

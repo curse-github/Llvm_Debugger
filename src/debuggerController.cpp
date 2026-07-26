@@ -1,6 +1,47 @@
 #include "controllerLib.h"
 
+std::ostream* o = &std::cout;
 unsigned int indentLevel = 0;
+extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
+    for(int i = 0; i < indentLevel; i++) *o << "    ";
+    *o << "Function \"" << funcName << "\" was called";
+    indentLevel++;
+    for(int j = 0; j < numFunctions; j++) {
+        if (std::strcmp(funcName, functionNames[j]) == 0) {
+            unsigned int paramCount = functionParamCounts[j];
+            if (paramCount > 0) {
+                *o << " with parameters {\n";
+                unsigned int offset = 0;
+                for(int k = 0; k < paramCount; k++) {
+                    for(int i = 0; i < indentLevel; i++) *o << "    ";
+                    *o << functionParamNames[j][k] << " = (" << functionParamTypes[j][k] << ")";
+                    printType(functionParamTypes[j][k], (void*)((char*)buffer+offset), *o);
+                    offset += getTypeByteLength(functionParamTypes[j][k]);
+                    *o << "\n";
+                }
+                for(int i = 1; i < indentLevel; i++) *o << "    ";
+                *o << '}';
+            }
+            *o << '\n';
+        }
+    }
+}
+extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
+    indentLevel--;
+    for(int i = 0; i < indentLevel; i++) *o << "    ";
+    *o << "Function \"" << funcName << "\" returned";
+    for(int j = 0; j < numFunctions; j++) {
+        if (std::strcmp(funcName, functionNames[j]) == 0) {
+            if (std::strcmp(functionReturnTypes[j], "void") != 0) {
+                *o << ", output = (" << functionReturnTypes[j] << ")";
+                printType(functionReturnTypes[j], buffer, *o);
+                *o << "\n";
+            } else
+                *o << "\n";
+        }
+    }
+}
+
 int main(int argc, char** argv) {
     // get index of main function and whether it is valid
     int i;
@@ -13,44 +54,26 @@ int main(int argc, char** argv) {
                 isValid = false;
         break;
     }
+    // open file for output
+    std::fstream f;
+    f.open("tmp/output.txt", std::ios::out);
+    o = &f;
     // get parameters for main
     bufferWriter parameters;
-    std::vector<bufferWriter> storage;
+    std::vector<bufferWriter*> storage;
     for(int j = 0; j < functionParamCounts[i]; j++)
         inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j], false);
     // call main
+        logFunctionParameters("main", parameters.pointer);
     if (std::strcmp(functionReturnTypes[i], "int") == 0) {
-        std::cout << "Function \"main\" was called\n";
-        indentLevel++;
         int output = ((intFT)functionPointers[i])(parameters.pointer);
-        std::cout << "Function \"main\" returned\n";
-        std::cout << "exit code = (int)" << output << '\n';
-    } else 
+        logFunctionReturn("main", (void*)&output);
+    } else {
         functionPointers[i](parameters.pointer);
-    return 0;
-}
-extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
-    for(int i = 0; i < indentLevel; i++) std::cout << "    ";
-    std::cout << "Function \"" << funcName << "\" was called";
-    indentLevel++;
-    for(int j = 0; j < numFunctions; j++) {
-        if (std::strcmp(funcName, functionNames[j]) == 0) {
-            unsigned int paramCount = functionParamCounts[j];
-            if (paramCount > 0) {
-                std::cout << " with parameters {\n";
-                for(int k = 0; k < paramCount; k++) {
-                    for(int i = 0; i < indentLevel; i++) std::cout << "    ";
-                    std::cout << functionParamNames[j][k] << " = (" << functionParamTypes[j][k] << ")" << 0 << "\n";
-                }
-                for(int i = 1; i < indentLevel; i++) std::cout << "    ";
-                std::cout << '}';
-            }
-            std::cout << '\n';
-        }
+        logFunctionReturn("main", nullptr);
     }
-}
-extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
-    indentLevel--;
-    for(int i = 0; i < indentLevel; i++) std::cout << "    ";
-    std::cout << "Function \"" << funcName << "\" returned\n";
+    for(int j = 0; j < storage.size(); j++)
+        delete storage[j];
+    f.close();
+    return 0;
 }
