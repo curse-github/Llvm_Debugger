@@ -194,7 +194,11 @@ void print<char>(void* ptr, std::ostream& o) {
 }
 template <>
 void print<char*>(void* ptr, std::ostream& o) {
-    o << '"' << (*(char**)ptr) << '"';
+    const char* str = (*(const char**)ptr);
+    if (str != nullptr)
+        o << (void*)str << " = (c_str)\"" << str << "\\0\"";
+    else
+        o << "nullptr";
 }
 std::map<std::string, printFT> printFunctions = {
     {"bool", print<bool>}, 
@@ -214,10 +218,13 @@ void printType(std::string type, void* ptr, std::ostream& o) {
     if (printFunctions.count(type) > 0)
         printFunctions[type](ptr, o);
     else if (type[type.size()-1] == '*') {
-        if (type == "void*") {
+        if (type == "void*")
             o << ptr;
+        else {
+            std::string newType = type.substr(0, type.size()-1);
+            o << *(void**)ptr << " -> (" << newType << ')';
+            printType(newType, *(void**)ptr, o);
         }
-        printType(type.substr(0, type.size()-1), *(void**)ptr, o);
     } else if (type[type.size()-1] == ']') {
         size_t str_i = type.find_last_of('[');
         std::string newType = type.substr(0, str_i);

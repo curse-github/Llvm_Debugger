@@ -43,6 +43,8 @@ extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
 }
 
 int main(int argc, char** argv) {
+    for (int i = 0; i < argc; i++)
+        std::cout << '"' << argv[i] << "\"\n";
     // get index of main function and whether it is valid
     int i;
     bool isValid = true;
@@ -54,17 +56,22 @@ int main(int argc, char** argv) {
                 isValid = false;
         break;
     }
+    if (!isValid) {
+        std::cout << "Invalid main function\n";
+        return 1;
+    }
     // open file for output
-    std::fstream f;
-    f.open("tmp/output.txt", std::ios::out);
-    o = &f;
+    std::fstream* f;
+    f = new std::fstream();
+    f->open("tmp/output.txt", std::ios::out);
+    o = f;
     // get parameters for main
     bufferWriter parameters;
     std::vector<bufferWriter*> storage;
     for(int j = 0; j < functionParamCounts[i]; j++)
         inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j], false);
     // call main
-        logFunctionParameters("main", parameters.pointer);
+    logFunctionParameters("main", parameters.pointer);
     if (std::strcmp(functionReturnTypes[i], "int") == 0) {
         int output = ((intFT)functionPointers[i])(parameters.pointer);
         logFunctionReturn("main", (void*)&output);
@@ -74,6 +81,8 @@ int main(int argc, char** argv) {
     }
     for(int j = 0; j < storage.size(); j++)
         delete storage[j];
-    f.close();
+    f->close();
+    // somehow, this doesnt work any other way.
+    delete f;
     return 0;
 }
