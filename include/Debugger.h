@@ -16,8 +16,7 @@ struct DEBUGGER_API Debugger : public llvm::PassInfoMixin<Debugger> {
     static bool isRequired() { return true; }
 
     llvm::PreservedAnalyses run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM);
-    void librarifyPass(llvm::Function& F);
-    void debuggerPass(llvm::Function* F);
+    void run(llvm::Function* F);
     void debugger(llvm::BasicBlock* B, llvm::Value* TargetVal, std::unordered_map<llvm::Value*, llvm::Value*>& ValRe_mapper);
 };
 

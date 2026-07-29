@@ -17,6 +17,7 @@ void printStructTypes(llvm::Module& Module) {
 }
 
 unsigned int numFunctions_value = 0;
+std::vector<llvm::Constant*> functionMangledNames_value;
 std::vector<llvm::Constant*> functionNames_value;
 std::vector<llvm::Constant*> functionReturnTypes_value;
 std::vector<llvm::Constant*> functionParamCounts_value;
@@ -43,6 +44,7 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u, numPointers)) << "%) pointer types found\n";
     std::cout << numArgTypesDetermined << " out of " << numArgs << " (" << (numArgTypesDetermined*100.0/numArgs) << "%) total types found\n";
     createGlobalInt(numFunctions_value, "numFunctions");
+    createGlobalPtrArray(functionMangledNames_value, "functionMangledNames");
     createGlobalPtrArray(functionNames_value, "functionNames");
     createGlobalPtrArray(functionReturnTypes_value, "functionReturnTypes");
     createGlobalIntArray(functionParamCounts_value, "functionParamCounts");
@@ -70,12 +72,13 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
 void Librarify::librarifyPass(llvm::Function& F) {
     // numFunctions
     numFunctions_value++;
+    // functionMangledNames
+    functionMangledNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(F.getName().str())));
     // functionNames
     std::string f_name = llvm::demangle(F.getName().str());
     int tmp1 = (int)f_name.size();
-    if ((tmp1 = f_name.find('(')) != std::string::npos) {
+    if ((tmp1 = f_name.find('(')) != std::string::npos)
         f_name = f_name.substr(0, tmp1);
-    }
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
@@ -113,7 +116,7 @@ void Librarify::librarifyPass(llvm::Function& F) {
     functionParamTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalPtrArray(tmp_paramType_values, f_name + "_paramTypes")));
     // functionPointers
     llvm::FunctionType* wrapper_f_t = llvm::FunctionType::get(F.getReturnType(), { ptr_t }, false);
-    llvm::Function* wrapper_f = llvm::Function::Create(wrapper_f_t, llvm::Function::LinkageTypes::InternalLinkage, f_name+"_wrapper", Module);
+    llvm::Function* wrapper_f = llvm::Function::Create(wrapper_f_t, llvm::Function::LinkageTypes::InternalLinkage, F.getName().str()+"_wrapper", Module);
     llvm::Argument* buffer = wrapper_f->getArg(0);
     buffer->setName("buffer");
     llvm::BasicBlock* wrapper_entry = llvm::BasicBlock::Create(*Context, "", wrapper_f);

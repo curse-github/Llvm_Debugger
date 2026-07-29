@@ -61,6 +61,7 @@ public:
 };
 
 extern unsigned int numFunctions;
+extern const char* functionMangledNames[];
 extern const char* functionNames[];
 extern const char* functionReturnTypes[];
 extern unsigned int functionParamCounts[];

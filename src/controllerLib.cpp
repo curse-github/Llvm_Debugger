@@ -154,9 +154,13 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
         std::cout << "Enter number of values for the " << type << ", \"" << paramName << "\" : ";
         unsigned int count = 0;
         std::cin >> count;
-        for (int j = 0; j < count; j++)
-            inputType(newType, *storage[i], storage, paramName+'['+std::to_string(j)+']', doRound);
-        parameters.push<void*>(storage[i]->pointer);
+        if (count == 0)
+            parameters.push<void*>(nullptr);
+        else {
+            for (int j = 0; j < count; j++)
+                inputType(newType, *storage[i], storage, paramName+'['+std::to_string(j)+']', doRound);
+            parameters.push<void*>(storage[i]->pointer);
+        }
         return;
     } else if (type[type.size()-1] == ']') {// is an array type
         size_t str_i = type.find_last_of('[');

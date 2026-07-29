@@ -17,10 +17,14 @@ libs = $(shell llvm-config --ldflags --libs core support passes)
 
 .phony : librarify stdlib mkdir clean
 
-./tmp/testProgram.ll: ./src/testProgram.cpp
-	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testProgram.cpp -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testProgram.o
-	@./wllvm_venv/bin/extract-bc ./tmp/testProgram.o -o ./tmp/testProgram.bc
-	@llvm-dis ./tmp/testProgram.bc -o ./tmp/testProgram.ll
+./tmp/testOne.ll: ./src/testOne.cpp
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testOne.o
+	@./wllvm_venv/bin/extract-bc ./tmp/testOne.o -o ./tmp/testOne.bc
+	@llvm-dis ./tmp/testOne.bc -o ./tmp/testOne.ll
+./tmp/testTwo.ll: ./src/testTwo.cpp
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testTwo.o
+	@./wllvm_venv/bin/extract-bc ./tmp/testTwo.o -o ./tmp/testTwo.bc
+	@llvm-dis ./tmp/testTwo.bc -o ./tmp/testTwo.ll
 ./tmp/ls.ll:
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
 	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll
@@ -41,10 +45,12 @@ librarify: mkdir ./tmp/$(TARGET).ll libLibrarify.$(dynamicExt)
 	@-echo
 	@./out/librarifyController.$(executableExt)
 
-debugger: mkdir ./tmp/$(TARGET).ll libDebugger.$(dynamicExt)
+debugger: mkdir ./tmp/$(TARGET).ll libLibrarify.$(dynamicExt) libDebugger.$(dynamicExt)
 	@-echo
+	@-echo running librarify.$(dynamicExt) pass on $(TARGET).ll
+	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/output_from_librarify.ll
 	@-echo running debugger.$(dynamicExt) pass on $(TARGET).ll
-	@opt -load-pass-plugin ./out/libDebugger.$(dynamicExt) -passes debugger ./tmp/$(TARGET).ll -S -o ./tmp/output_from_debugger.ll
+	@opt -load-pass-plugin ./out/libDebugger.$(dynamicExt) -passes debugger ./tmp/output_from_librarify.ll -S -o ./tmp/output_from_debugger.ll
 	@clang++ ./tmp/output_from_debugger.ll -c -o ./tmp/output.o
 	@ar rcs ./out/output.a ./tmp/output.o
 	@-echo

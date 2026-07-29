@@ -4,11 +4,11 @@ std::ostream* o = &std::cout;
 unsigned int indentLevel = 0;
 extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
     for(int i = 0; i < indentLevel; i++) *o << "    ";
-    *o << "Function \"" << funcName << "\" was called";
     indentLevel++;
     for(int j = 0; j < numFunctions; j++) {
-        if (std::strcmp(funcName, functionNames[j]) == 0) {
+        if (std::strcmp(funcName, functionMangledNames[j]) == 0) {
             unsigned int paramCount = functionParamCounts[j];
+            *o << "Function \"" << functionNames[j] << "\" was called";
             if (paramCount > 0) {
                 *o << " with parameters {\n";
                 unsigned int offset = 0;
@@ -29,15 +29,14 @@ extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
 extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
     indentLevel--;
     for(int i = 0; i < indentLevel; i++) *o << "    ";
-    *o << "Function \"" << funcName << "\" returned";
     for(int j = 0; j < numFunctions; j++) {
-        if (std::strcmp(funcName, functionNames[j]) == 0) {
+        if (std::strcmp(funcName, functionMangledNames[j]) == 0) {
+            *o << "Function \"" << functionNames[j] << "\" returned";
             if (std::strcmp(functionReturnTypes[j], "void") != 0) {
                 *o << ", output = (" << functionReturnTypes[j] << ")";
                 printType(functionReturnTypes[j], buffer, *o);
-                *o << "\n";
-            } else
-                *o << "\n";
+            }
+            *o << "\n";
         }
     }
 }
