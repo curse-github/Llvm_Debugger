@@ -96,7 +96,6 @@ template <>
 void input<bool>(bufferWriter& parameters, std::string paramName, bool doRound);
 template void input<char>(bufferWriter& parameters, std::string paramName, bool doRound);
 template void input<short>(bufferWriter& parameters, std::string paramName, bool doRound);
-//template void input<int>(bufferWriter& parameters, std::string paramName, bool doRound);
 template void input<long>(bufferWriter& parameters, std::string paramName, bool doRound);
 template void input<float>(bufferWriter& parameters, std::string paramName, bool doRound);
 template void input<double>(bufferWriter& parameters, std::string paramName, bool doRound);

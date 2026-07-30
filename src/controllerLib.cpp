@@ -100,12 +100,12 @@ void input<char*>(bufferWriter& parameters, std::string paramName, bool doRound)
     parameters.push<void*>((void*)tmp.c_str());
 }
 std::map<std::string, inputFT> inputFunctions = {
-    {"bool", input<bool>}, 
-    {"char", input<char>}, 
-    {"short", input<short>}, 
-    {"int", input<int>}, 
-    {"long", input<long>}, 
-    {"float", input<float>}, 
+    {"bool", input<bool>},
+    {"char", input<char>},
+    {"short", input<short>},
+    {"int", input<int>},
+    {"long", input<long>},
+    {"float", input<float>},
     {"double", input<double>}
 };
 bool isInputableType(std::string type) {

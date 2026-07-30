@@ -62,8 +62,8 @@ int main(int argc, char** argv) {
     // open file for output
     std::fstream* f;
     f = new std::fstream();
-    f->open("tmp/output.txt", std::ios::out);
-    o = f;
+    f->open("out/output.txt", std::ios::out);
+    //o = f;
     // get parameters for main
     bufferWriter parameters;
     std::vector<bufferWriter*> storage;
