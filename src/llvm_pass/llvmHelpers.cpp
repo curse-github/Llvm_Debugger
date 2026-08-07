@@ -276,9 +276,13 @@ std::string attemptFindPointerType(llvm::Value* val, std::vector<llvm::Function*
             // if it used in a getelementptr instruction, the type is the same as the getelementptr instruction
             } else if (llvm::dyn_cast_or_null<llvm::GetElementPtrInst>(user) != nullptr) {
                 llvm::GetElementPtrInst* gepi = llvm::dyn_cast<llvm::GetElementPtrInst>(user);
-                if (gepi->isInBounds())
-                    possible.push_back(basicGetTypeAsString(gepi->getSourceElementType()) + '*');
-                else 
+                if (gepi->isInBounds()) {
+                    const std::string tmp = basicGetTypeAsString(gepi->getSourceElementType());
+                    if (tmp != "char")
+                        possible.push_back(tmp + '*');
+                    else
+                        possible.push_back(getTypeAsString(gepi, visitedFunctions, depth+1, indent+"    "));
+                } else
                     possible.push_back(getTypeAsString(gepi, visitedFunctions, depth+1, indent+"    "));
             // if it used in a phi instruction, the type is the same as the phi instruction
             } else if (llvm::dyn_cast_or_null<llvm::PHINode>(user) != nullptr) {

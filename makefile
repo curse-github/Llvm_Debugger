@@ -15,47 +15,47 @@ endif
 includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
-.phony : librarify stdlib mkdir clean
+clang-plugin-args = -Xclang -load -Xclang ./out/libClangPlugin.so -Xclang -add-plugin -Xclang save-func-parms
 
-./tmp/testOne.ll: ./src/testOne.cpp
-	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testOne.o
+.phony : librarify debugger stdlib mkdir clean
+
+./tmp/testOne.ll: mkdir ./src/testOne.cpp ./out/libClangPlugin.so
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp $(clang-plugin-args) -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testOne.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testOne.o -o ./tmp/testOne.bc
 	@llvm-dis ./tmp/testOne.bc -o ./tmp/testOne.ll
-./tmp/testTwo.ll: ./src/testTwo.cpp
-	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testTwo.o
+./tmp/testTwo.ll: mkdir ./src/testTwo.cpp libClangPlugin.so
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp $(clang-plugin-args) -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testTwo.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testTwo.o -o ./tmp/testTwo.bc
 	@llvm-dis ./tmp/testTwo.bc -o ./tmp/testTwo.ll
-./tmp/ls.ll:
+./tmp/ls.ll: mkdir
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
 	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll
-./tmp/cat.ll:
+./tmp/cat.ll: mkdir
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/cat -o ./tmp/cat.bc
 	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
 
-librarify: mkdir ./tmp/$(TARGET).ll libLibrarify.$(dynamicExt)
+librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt)
 	@-echo
 	@-echo running librarify.$(dynamicExt) pass on $(TARGET).ll
-	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/output_from_librarify.ll
-	@clang++ ./tmp/output_from_librarify.ll -c -o ./tmp/output.o
-	@ar rcs ./out/output.a ./tmp/output.o
+	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
+	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).o
+	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).o
 	@-echo
 	@-echo compiling librarifyController.$(executableExt)
-	@clang++ -I./include ./src/librarifyController.cpp ./src/controllerLib.cpp ./out/output.a -lcap -o ./out/librarifyController.$(executableExt)
+	@clang++ -I./include ./src/controllers/librarifyController.cpp ./src/controllers/controllerLib.cpp ./out/$(TARGET).$(staticExt) -o ./out/librarifyController.$(executableExt)
 	@-echo running librarifyController.$(executableExt)
 	@-echo
 	@./out/librarifyController.$(executableExt)
 
-debugger: mkdir ./tmp/$(TARGET).ll libLibrarify.$(dynamicExt) libDebugger.$(dynamicExt)
+debugger: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt)
 	@-echo
-	@-echo running librarify.$(dynamicExt) pass on $(TARGET).ll
-	@opt -load-pass-plugin ./out/libLibrarify.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/output_from_librarify.ll
-	@-echo running debugger.$(dynamicExt) pass on $(TARGET).ll
-	@opt -load-pass-plugin ./out/libDebugger.$(dynamicExt) -passes debugger ./tmp/output_from_librarify.ll -S -o ./tmp/output_from_debugger.ll
-	@clang++ ./tmp/output_from_debugger.ll -c -o ./tmp/output.o
-	@ar rcs ./out/output.a ./tmp/output.o
+	@-echo running librarify and logger pass on $(TARGET).ll
+	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify,logger ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
+	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).o
+	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).o
 	@-echo
 	@-echo compiling debuggerController.$(executableExt)
-	@clang++ -I./include ./src/debuggerController.cpp ./src/controllerLib.cpp ./out/output.a -lcap -o ./out/debuggerController.$(executableExt)
+	@clang++ -I./include ./src/controllers/debuggerController.cpp ./src/controllers/controllerLib.cpp ./out/$(TARGET).$(staticExt) -o ./out/debuggerController.$(executableExt)
 	@-echo running debuggerController.$(executableExt)
 	@-echo
 	@./out/debuggerController.$(executableExt)
@@ -71,14 +71,12 @@ endif
 	@ar rcs ./out/libStd.$(staticExt) ./tmp/cppStdLib.$(objectExt) ./tmp/llvmStdLib.$(objectExt)
 	@-echo finished building std lib
 
-libLibrarify.$(dynamicExt): mkdir ./src/Librarify.cpp ./src/llvmHelpers.cpp
-	@-echo building libLibrarify.$(dynamicExt)
-	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/Librarify.cpp ./src/llvmHelpers.cpp $(libs) -shared -o ./out/libLibrarify.$(dynamicExt)
-	@-echo finished building libLibrarify.$(dynamicExt)
-libDebugger.$(dynamicExt): mkdir ./src/Debugger.cpp ./src/llvmHelpers.cpp
-	@-echo building libDebugger.$(dynamicExt)
-	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/Debugger.cpp ./src/llvmHelpers.cpp $(libs) -shared -o ./out/libDebugger.$(dynamicExt)
-	@-echo finished building libDebugger.$(dynamicExt)
+./out/libLlvmPass.$(dynamicExt): mkdir ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp
+	@-echo building libLlvmPass.$(dynamicExt)
+	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/llvm_pass/getPassInfo.cpp ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp $(libs) -shared -o ./out/libLlvmPass.$(dynamicExt)
+	@-echo finished building libLlvmPass.$(dynamicExt)
+./out/libClangPlugin.$(dynamicExt): mkdir ./src/clang_plugin/saveFuncParms.cpp
+	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/clang_plugin/saveFuncParms.cpp $(libs) -shared -o ./out/libClangPlugin.$(dynamicExt)
 
 mkdir:
 ifeq ($(OS),Windows_NT)

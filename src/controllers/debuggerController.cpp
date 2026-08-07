@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
     std::fstream* f;
     f = new std::fstream();
     f->open("out/output.txt", std::ios::out);
-    //o = f;
+    o = f;
     // get parameters for main
     bufferWriter parameters;
     std::vector<bufferWriter*> storage;
@@ -78,10 +78,11 @@ int main(int argc, char** argv) {
         functionPointers[i](parameters.pointer);
         logFunctionReturn("main", nullptr);
     }
+    // cleanup
     for(int j = 0; j < storage.size(); j++)
         delete storage[j];
+    o = &std::cout;
     f->close();
-    // somehow, this doesnt work any other way.
     delete f;
     return 0;
 }

@@ -149,31 +149,3 @@ void Librarify::librarifyPass(llvm::Function& F) {
     // functionPointers_value
     functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(wrapper_f));
 }
-
-
-llvm::PassPluginLibraryInfo getLibrarifyPluginInfo() {
-    return {
-        LLVM_PLUGIN_API_VERSION, "Librarify", LLVM_VERSION_STRING, 
-        [](llvm::PassBuilder& passBuilder) {
-            passBuilder.registerPipelineParsingCallback(
-                [](
-                    llvm::StringRef Name, llvm::ModulePassManager& MPM, 
-                    llvm::ArrayRef<llvm::PassBuilder::PipelineElement>
-                ) {
-                    if (Name == "librarify") {
-                        MPM.addPass(Librarify());
-                        return true;
-                    }
-                    return false;
-                }
-            );
-        }
-    };
-}
-#ifdef _WIN32
-    #pragma comment(linker, "/EXPORT:llvmGetPassPluginInfo")
-#endif
-extern "C"
-llvm::PassPluginLibraryInfo llvmGetPassPluginInfo() {
-    return getLibrarifyPluginInfo();
-}

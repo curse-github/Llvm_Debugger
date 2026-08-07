@@ -1,13 +1,13 @@
-#define _BUILD_DEBUGGER
+#define _BUILD_LOGGER
 
-#include "Debugger.h"
+#include "Logger.h"
 #include <iostream>
 #include <algorithm>
 
 llvm::FunctionType* logFunction_T;
 llvm::Function* logFunctionParameters;
 llvm::Function* logFunctionReturn;
-llvm::PreservedAnalyses Debugger::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
+llvm::PreservedAnalyses Logger::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
     populateGlobals(Module);
     logFunction_T = llvm::FunctionType::get(void_t, {ptr_t, ptr_t}, false);
     logFunctionParameters = llvm::Function::Create(logFunction_T, llvm::Function::LinkageTypes::ExternalLinkage, "logFunctionParameters", &Module);
@@ -17,7 +17,7 @@ llvm::PreservedAnalyses Debugger::run(llvm::Module& Module, llvm::ModuleAnalysis
             run(&F);
     return llvm::PreservedAnalyses::none();
 }
-void Debugger::run(llvm::Function* F) {
+void Logger::run(llvm::Function* F) {
     std::string f_name = llvm::demangle(F->getName().str());
     int tmp1 = (int)f_name.size();
     if ((tmp1 = f_name.find('(')) != std::string::npos)
@@ -56,32 +56,4 @@ void Debugger::run(llvm::Function* F) {
             }
         }
     }
-}
-
-
-llvm::PassPluginLibraryInfo getDebuggerPluginInfo() {
-    return {
-        LLVM_PLUGIN_API_VERSION, "Debugger", LLVM_VERSION_STRING, 
-        [](llvm::PassBuilder& passBuilder) {
-            passBuilder.registerPipelineParsingCallback(
-                [](
-                    llvm::StringRef Name, llvm::ModulePassManager& MPM, 
-                    llvm::ArrayRef<llvm::PassBuilder::PipelineElement>
-                ) {
-                    if (Name == "debugger") {
-                        MPM.addPass(Debugger());
-                        return true;
-                    }
-                    return false;
-                }
-            );
-        }
-    };
-}
-#ifdef _WIN32
-    #pragma comment(linker, "/EXPORT:llvmGetPassPluginInfo")
-#endif
-extern "C"
-llvm::PassPluginLibraryInfo llvmGetPassPluginInfo() {
-    return getDebuggerPluginInfo();
 }
