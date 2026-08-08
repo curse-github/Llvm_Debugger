@@ -17,7 +17,8 @@ class testClass {
         var = copy.var;
     }
     testClass(testClass&& move) {
-        var = move.var;}
+        var = move.var;
+    }
     testClass& operator=(const testClass& copy) {
         var = copy.var;
         return *this;
@@ -40,8 +41,10 @@ class testClass {
 
 int main(int argc, char** argv) {
     test::testFunction();
+    test::testClassTwo *other = new test::testClassTwo();
+    delete other;
     testClass tst1;
     tst1.initialize();
-    testClass tst2((testClass&&)tst1);
-    return tst2.getVar();
+    //testClass tst2((testClass&&)tst1);
+    return tst1.getVar();
 }

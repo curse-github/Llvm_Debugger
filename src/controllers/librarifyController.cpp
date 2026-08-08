@@ -15,7 +15,17 @@ int main(int argc, char** argv) {
         canPrintFunctionOutput.push_back((functionReturnType != "unknown") && (functionReturnType[functionReturnType.size()-1] != '*'));
         if (isValid) numValid++;
     }
-    //* 
+    /*
+    std::cout << "struct types {\n";
+    for(int i = 0; i < numStructs; i++) {
+        std::cout << "    " << structNames[i] << " : {\n";
+        for (int j = 0; j < structNumContainedTypes[i]; j++) {
+            std::cout << "        " << structContainedTypes[i][j] << '\n';
+        }
+        std::cout << "    }\n";
+    }
+    std::cout << "}\n";//*/
+    /*
     if (numValid != numFunctions) {
         std::cout << "Can call " << numValid << " out of " << numFunctions << " functions.\n";
         std::cout << "Invalid functions are as follows:\n";
@@ -28,16 +38,6 @@ int main(int argc, char** argv) {
             std::cout << functionParamTypes[i][j] << ' ' << functionParamNames[i][j] << ((j!=(paramCount-1))?", ":"");
         std::cout << ")\n";
     }//*/
-    /*
-    std::cout << "struct types {\n";
-    for(int i = 0; i < numStructs; i++) {
-        std::cout << "    " << structNames[i] << " : {\n";
-        for (int j = 0; j < structNumContainedTypes[i]; j++) {
-            std::cout << "        " << structContainedTypes[i][j] << '\n';
-        }
-        std::cout << "    }\n";
-    }
-    std::cout << "}\n";//*/
 
     char choice = 'Y';
     while ((choice == 'Y') || (choice == 'y')) {

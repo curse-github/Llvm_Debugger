@@ -23,7 +23,7 @@ clang-plugin-args = -Xclang -load -Xclang ./out/libClangPlugin.so -Xclang -add-p
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp $(clang-plugin-args) -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testOne.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testOne.o -o ./tmp/testOne.bc
 	@llvm-dis ./tmp/testOne.bc -o ./tmp/testOne.ll
-./tmp/testTwo.ll: mkdir ./src/testTwo.cpp libClangPlugin.so
+./tmp/testTwo.ll: mkdir ./src/testTwo.cpp ./out/libClangPlugin.so
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp $(clang-plugin-args) -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testTwo.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testTwo.o -o ./tmp/testTwo.bc
 	@llvm-dis ./tmp/testTwo.bc -o ./tmp/testTwo.ll
@@ -76,7 +76,9 @@ endif
 	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/llvm_pass/getPassInfo.cpp ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp $(libs) -shared -o ./out/libLlvmPass.$(dynamicExt)
 	@-echo finished building libLlvmPass.$(dynamicExt)
 ./out/libClangPlugin.$(dynamicExt): mkdir ./src/clang_plugin/saveFuncParms.cpp
+	@-echo building libClangPlugin.$(dynamicExt)
 	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/clang_plugin/saveFuncParms.cpp $(libs) -shared -o ./out/libClangPlugin.$(dynamicExt)
+	@-echo finished building libClangPlugin.$(dynamicExt)
 
 mkdir:
 ifeq ($(OS),Windows_NT)

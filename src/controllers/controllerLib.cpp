@@ -148,20 +148,32 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
         storage[i]->push<char>('\00');
         parameters.push<void*>(storage[i]->pointer);
     } else if (type[type.size()-1] == '*') {// is an pointer type
-        size_t i = storage.size();
-        storage.push_back(new bufferWriter());
-        std::string newType = type.substr(0, type.size()-1);
-        std::cout << "Enter number of values for the " << type << ", \"" << paramName << "\" : ";
-        unsigned int count = 0;
-        std::cin >> count;
-        if (count == 0)
-            parameters.push<void*>(nullptr);
-        else {
+        if (type[type.size()-2ull] == ']') {
+            size_t str_i = type.find_last_of('[');
+            std::string newType = type.substr(0, str_i);
+            unsigned int count = std::stoi(type.substr(str_i+1, type.size()-str_i-3));
+            size_t i = storage.size();
+            storage.push_back(new bufferWriter());
             for (int j = 0; j < count; j++)
                 inputType(newType, *storage[i], storage, paramName+'['+std::to_string(j)+']', doRound);
             parameters.push<void*>(storage[i]->pointer);
+            return;
+        } else {
+            size_t i = storage.size();
+            storage.push_back(new bufferWriter());
+            std::string newType = type.substr(0, type.size()-1);
+            std::cout << "Enter number of values for the " << type << ", \"" << paramName << "\" : ";
+            unsigned int count = 0;
+            std::cin >> count;
+            if (count == 0)
+                parameters.push<void*>(nullptr);
+            else {
+                for (int j = 0; j < count; j++)
+                    inputType(newType, *storage[i], storage, paramName+'['+std::to_string(j)+']', doRound);
+                parameters.push<void*>(storage[i]->pointer);
+            }
+            return;
         }
-        return;
     } else if (type[type.size()-1] == ']') {// is an array type
         size_t str_i = type.find_last_of('[');
         std::string newType = type.substr(0, str_i);
