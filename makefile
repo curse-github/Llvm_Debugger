@@ -24,17 +24,20 @@ compile-args = -O0 -fno-discard-value-names -fno-inline
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp $(compile-args) -c -o ./tmp/testOne.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testOne.o -o ./tmp/testOne.bc
 	@llvm-dis ./tmp/testOne.bc -o ./tmp/testOne.ll
-	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only ./src/testOne.cpp
+	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only ./src/testOne.cpp
+	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only ./src/testOne.cpp
 ./tmp/testTwo.ll: ./src/testTwo.cpp ./out/libClangPlugin.so
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp $(compile-args) -c -o ./tmp/testTwo.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testTwo.o -o ./tmp/testTwo.bc
 	@llvm-dis ./tmp/testTwo.bc -o ./tmp/testTwo.ll
-	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only ./src/testTwo.cpp
+	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only ./src/testTwo.cpp
+	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only ./src/testTwo.cpp
 ./tmp/testThree.ll: ./src/testThree.c ./out/libClangPlugin.so
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testThree.c $(compile-args) -c -o ./tmp/testThree.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testThree.o -o ./tmp/testThree.bc
 	@llvm-dis ./tmp/testThree.bc -o ./tmp/testThree.ll
-	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only ./src/testThree.c
+	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only ./src/testThree.c
+	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only ./src/testThree.c
 ./tmp/ls.ll: ./coreutils/src/ls ./coreutils/src/ls.c ./out/libClangPlugin.so
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
 	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll

@@ -42,7 +42,7 @@ extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
 }
 
 int main(int argc, char** argv) {
-    //*
+    /*
     std::cout << "struct types {\n";
     for(int i = 0; i < numStructs; i++) {
         std::cout << "    " << structNames[i] << " : {\n";
@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
     std::fstream* f;
     f = new std::fstream();
     f->open("out/output.txt", std::ios::out);
-    //o = f;
+    o = f;
     // get parameters for main
     bufferWriter parameters;
     std::vector<bufferWriter*> storage;

@@ -4,6 +4,10 @@ namespace test {
     void testFunction() {
         return;
     }
+    class testClassTwo {
+        public:
+        testClassTwo() {};
+    };
 }
 
 class testClass {

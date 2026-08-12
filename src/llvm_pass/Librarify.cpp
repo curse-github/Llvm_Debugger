@@ -186,7 +186,7 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     // loop through functions in module to create data lists
     for(llvm::Function& F : Module) {
         std::string name = F.getName().str();
-        if (!name.starts_with("llvm.") && !name.ends_with("_wrapper"))
+        if (!name.starts_with("llvm.") && !name.ends_with("_wrapper") && !F.isVarArg())
             run(F);
     }
     // std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u, numPointers)) << "%) pointer types found\n";
@@ -229,11 +229,8 @@ void Librarify::run(llvm::Function& F) {
     functionMangledNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(F.getName().str())));
     // functionNames
     int tmp1 = (int)f_name.size();
-    if ((tmp1 = f_name.find('(')) != std::string::npos) {
-        std::cout << "\"" << f_name << "\" -> \"";
+    if ((tmp1 = f_name.find('(')) != std::string::npos)
         f_name = f_name.substr(0, tmp1);
-        std::cout << f_name << "\"\n";
-    }
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));

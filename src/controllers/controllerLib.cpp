@@ -210,10 +210,16 @@ void print<char>(void* ptr, std::ostream& o) {
 }
 template <>
 void print<char*>(void* ptr, std::ostream& o) {
-    const char* str = (*(const char**)ptr);
-    if (str != nullptr)
-        o << (void*)str << " = (c_str)\"" << str << "\\0\"";
-    else
+    const char* cstr = (*(const char**)ptr);
+    if (cstr != nullptr) {
+        std::string str = cstr;
+        size_t loc = str.find('\n');
+        while (loc != std::string::npos) {
+            str.replace(loc,1,"\\n");
+            loc = str.find('\n');
+        }
+        o << (void*)cstr << " = (c_str)\"" << str << "\\0\"";
+    } else
         o << "nullptr";
 }
 std::map<std::string, printFT> printFunctions = {
@@ -266,7 +272,7 @@ void printType(std::string type, void* ptr, std::ostream& o) {
             o << "unknown";
             return;
         }
-        o << "{ \"";
+        o << "{ ";
         unsigned int offset = 0;
         for (int j = 0; j < structNumFields[i]; j++) {
             unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
@@ -274,10 +280,10 @@ void printType(std::string type, void* ptr, std::ostream& o) {
             if (j != 0) o << ", ";
             o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ")";
             printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
-            o << '\n';
+            //o << '\n';
             offset += size;
         }
-        o << "\"}";
+        o << " }";
     }
 }
 

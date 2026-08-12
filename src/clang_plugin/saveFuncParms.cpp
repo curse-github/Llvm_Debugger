@@ -1,7 +1,7 @@
 #include <fstream>
 
 #include "clangHelpers.h"
-#define DEBUG
+//#define DEBUG
 
 unsigned int discardedFuncs = 0;
 void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
@@ -80,12 +80,12 @@ void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
         }
         *FuncParmsOut << '\n';
         // and v2: ... class::func(...)
-        *FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
+        /**FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
         for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
             const ParmVarDecl *PD = *i;
             *FuncParmsOut << typeToString(PD->getOriginalType()) << ',' << PD->getName().str() << ',';
         }
-        *FuncParmsOut << '\n';
+        *FuncParmsOut << '\n';*/
     } else {
         *FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
         for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
