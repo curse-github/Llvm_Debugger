@@ -79,8 +79,16 @@ extern wrapperFT functionPointers[];
 
 extern unsigned int numStructs;
 extern const char* structNames[];
-extern unsigned int structNumContainedTypes[];
-extern const char** structContainedTypes[];
+extern unsigned int structNumFields[];
+extern const char** structFieldTypes[];
+extern const char** structFieldNames[];
+
+extern unsigned int numEnums;
+extern const char* enumNames[];
+extern const char* enumTypes[];
+extern unsigned int enumNumValues[];
+extern const char** enumValueNames[];
+extern unsigned int* enumValueValues[];
 
 template <typename T>
 void input(bufferWriter& parameters, std::string paramName, bool doRound) {

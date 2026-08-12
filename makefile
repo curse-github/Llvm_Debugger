@@ -15,24 +15,35 @@ endif
 includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
-clang-plugin-args = -Xclang -load -Xclang ./out/libClangPlugin.so -Xclang -add-plugin -Xclang save-func-parms
+clang-plugin-args = -Xclang -load -Xclang ./out/libClangPlugin.so -Xclang -add-plugin -Xclang
+compile-args = -O0 -fno-discard-value-names -fno-inline
 
 .phony : librarify debugger stdlib mkdir clean
 
-./tmp/testOne.ll: mkdir ./src/testOne.cpp ./out/libClangPlugin.so
-	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp $(clang-plugin-args) -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testOne.o
+./tmp/testOne.ll: ./src/testOne.cpp ./out/libClangPlugin.so
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp $(compile-args) -c -o ./tmp/testOne.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testOne.o -o ./tmp/testOne.bc
 	@llvm-dis ./tmp/testOne.bc -o ./tmp/testOne.ll
-./tmp/testTwo.ll: mkdir ./src/testTwo.cpp ./out/libClangPlugin.so
-	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp $(clang-plugin-args) -O0 -fno-discard-value-names -fno-inline -c -o ./tmp/testTwo.o
+	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only ./src/testOne.cpp
+./tmp/testTwo.ll: ./src/testTwo.cpp ./out/libClangPlugin.so
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp $(compile-args) -c -o ./tmp/testTwo.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testTwo.o -o ./tmp/testTwo.bc
 	@llvm-dis ./tmp/testTwo.bc -o ./tmp/testTwo.ll
-./tmp/ls.ll: mkdir
+	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only ./src/testTwo.cpp
+./tmp/testThree.ll: ./src/testThree.c ./out/libClangPlugin.so
+	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testThree.c $(compile-args) -c -o ./tmp/testThree.o
+	@./wllvm_venv/bin/extract-bc ./tmp/testThree.o -o ./tmp/testThree.bc
+	@llvm-dis ./tmp/testThree.bc -o ./tmp/testThree.ll
+	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only ./src/testThree.c
+./tmp/ls.ll: ./coreutils/src/ls ./coreutils/src/ls.c ./out/libClangPlugin.so
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
 	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll
-./tmp/cat.ll: mkdir
+	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/src/ls.c
+./tmp/cat.ll:./coreutils/src/cat ./coreutils/src/cat.c ./out/libClangPlugin.so
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/cat -o ./tmp/cat.bc
 	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
+	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/cat.c
+	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/cat.c
 
 librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt)
 	@-echo
@@ -71,13 +82,13 @@ endif
 	@ar rcs ./out/libStd.$(staticExt) ./tmp/cppStdLib.$(objectExt) ./tmp/llvmStdLib.$(objectExt)
 	@-echo finished building std lib
 
-./out/libLlvmPass.$(dynamicExt): mkdir ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp
+./out/libLlvmPass.$(dynamicExt): ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp
 	@-echo building libLlvmPass.$(dynamicExt)
 	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/llvm_pass/getPassInfo.cpp ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp $(libs) -shared -o ./out/libLlvmPass.$(dynamicExt)
 	@-echo finished building libLlvmPass.$(dynamicExt)
-./out/libClangPlugin.$(dynamicExt): mkdir ./src/clang_plugin/saveFuncParms.cpp
+./out/libClangPlugin.$(dynamicExt): ./src/clang_plugin/saveFuncParms.cpp ./src/clang_plugin/saveTypedefs.cpp ./src/clang_plugin/clangHelpers.cpp
 	@-echo building libClangPlugin.$(dynamicExt)
-	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/clang_plugin/saveFuncParms.cpp $(libs) -shared -o ./out/libClangPlugin.$(dynamicExt)
+	@clang++ $(dynamicArgs) -Werror -Wall -Wno-unused-command-line-argument -Wno-deprecated-declarations -fdeclspec -std=c++23 -O3 -I$(includedir) -I./include ./src/clang_plugin/saveFuncParms.cpp ./src/clang_plugin/saveTypedefs.cpp ./src/clang_plugin/clangHelpers.cpp $(libs) -shared -o ./out/libClangPlugin.$(dynamicExt)
 	@-echo finished building libClangPlugin.$(dynamicExt)
 
 mkdir:

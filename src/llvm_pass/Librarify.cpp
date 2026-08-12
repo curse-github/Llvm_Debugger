@@ -6,18 +6,6 @@
 #include <fstream>
 #include <sstream>
 
-void printStructTypes(llvm::Module& Module) {
-    std::cout << "structs : {\n";
-    for(unsigned int i = 0u; i < namedStructCount; i++) {
-        llvm::StructType* ST = structTypes[i];
-        std::cout << "    " << structNames[i] << " : {\n";
-        for(int i = 0; i < ST->getNumElements(); i++)
-            std::cout << "        " << basicGetTypeAsString(ST->getTypeAtIndex(i)) << '\n';
-        std::cout << "    }\n";
-    }
-    std::cout << "}\n";
-}
-
 unsigned int numFunctions_value = 0;
 std::vector<llvm::Constant*> functionMangledNames_value;
 std::vector<llvm::Constant*> functionNames_value;
@@ -33,13 +21,13 @@ typedef struct {
     std::vector<std::string> paramNames;
 } functionDataEntry;
 std::map<std::string, functionDataEntry> functionData;
+std::map<std::string, std::string> enumTypesMap;
 
 unsigned int numArgs = 0;
 unsigned int numArgTypesDetermined = 0;
 unsigned int numPointers = 0;
 unsigned int numPointerTypesDetermined = 0;
-llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
-    // read data from clang plugin (functionParams.csv)
+void readFunctionParamsCsv() {
     std::fstream* f = new std::fstream();
     f->open("tmp/functionParams.csv", std::ios::in);
     std::string lineString;
@@ -60,9 +48,9 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
         // std::cout << returnType << ", " << funcName << ", " << numArgs;
         for (int i = 0; i < numArgs; i++) {
             std::string type;
-            std::string name;
             if (!std::getline(lineSStream, type, ','))
                 continue;
+            std::string name;
             if (!std::getline(lineSStream, name, ','))
                 continue;
             data.paramTypes.push_back(type);
@@ -74,20 +62,133 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     }
     f->close();
     delete f;
-    // read known struct types
+}
+std::vector<llvm::Constant*> structNamesValues;
+std::vector<llvm::Constant*> structNumFieldsValues;
+std::vector<llvm::Constant*> structFieldTypesValues;
+std::vector<llvm::Constant*> structFieldNamesValues;
+void readTypeDefsCsv() {
+    unsigned int numEnums = 0;
+    std::vector<llvm::Constant*> enumNames_value;
+    std::vector<llvm::Constant*> enumTypes_value;
+    std::vector<llvm::Constant*> enumNumValues_value;
+    std::vector<llvm::Constant*> enumValueNames_value;
+    std::vector<llvm::Constant*> enumValueValues_value;
+    std::fstream* TypedefsIn = new std::fstream();
+    TypedefsIn->open("tmp/typedefs.csv", std::ios::in);
+    std::string lineString;
+    while(std::getline(*TypedefsIn, lineString, '\n')) {
+        std::stringstream lineSStream(lineString);
+        std::string type;
+        if (!std::getline(lineSStream, type, ','))
+            continue;
+        if (type == "enum") {
+            std::string enumIntType;
+            if (!std::getline(lineSStream, type, ','))
+                continue;
+            enumTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(enumIntType)));
+            std::string enumName;
+            if (!std::getline(lineSStream, enumName, ','))
+                continue;
+            enumName = "enum."+enumName;
+            enumTypesMap[enumName] = enumIntType;
+            enumNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(enumName)));
+            std::string numValuesString;
+            if (!std::getline(lineSStream, numValuesString, ','))
+                continue;
+            unsigned int numValues = std::stoi(numValuesString);
+            enumNumValues_value.push_back(llvm::ConstantInt::get(i32_t, numValues));
+            std::vector<llvm::Constant*> tmp_valueNames;
+            std::vector<llvm::Constant*> tmp_valueValues;
+            for (int i = 0; i < numValues; i++) {
+                std::string valueString;
+                if (!std::getline(lineSStream, valueString, ','))
+                    continue;
+                int value = std::stoi(valueString);
+                tmp_valueValues.push_back(llvm::ConstantInt::get(i32_t, value));
+                std::string name;
+                if (!std::getline(lineSStream, name, ','))
+                    continue;
+                tmp_valueNames.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(name)));
+            }
+            enumValueNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalPtrArray(tmp_valueNames, enumName + "_valueNames")));
+            enumValueValues_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalIntArray(tmp_valueValues, enumName + "_valueValues")));
+            numEnums++;
+        } else if (type == "struct") {
+            std::string structName;
+            if (!std::getline(lineSStream, structName, ','))
+                continue;
+            structName = "struct."+structName;
+            structNameToIndex[structName] = structCount;
+            structCount++;
+            structNames.push_back(structName);
+
+            structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(structName.c_str())));
+            std::string numFieldsString;
+            if (!std::getline(lineSStream, numFieldsString, ','))
+                continue;
+            unsigned int numFields = std::stoi(numFieldsString);
+            structNumFieldsValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, numFields)));
+            std::vector<llvm::Constant*> tmp_FieldTypes;
+            std::vector<llvm::Constant*> tmp_FieldNames;
+            for (int j = 0; j < numFields; j++) {
+                std::string fieldType;
+                if (!std::getline(lineSStream, fieldType, ','))
+                    continue;
+                std::string fieldName;
+                if (!std::getline(lineSStream, fieldName, ','))
+                    continue;
+                tmp_FieldTypes.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(fieldType)));
+                tmp_FieldNames.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(fieldName)));
+            }
+            structFieldTypesValues.push_back(createGlobalPtrArray(tmp_FieldTypes, structName + ".fieldTypes"));
+            structFieldNamesValues.push_back(createGlobalPtrArray(tmp_FieldNames, structName + ".fieldNames"));
+        } else
+            std::cout << "ERROR!\n";
+    }
+    TypedefsIn->close();
+    delete TypedefsIn;
+    createGlobalInt(numEnums, "numEnums");
+    createGlobalPtrArray(enumNames_value, "enumNames");
+    createGlobalPtrArray(enumTypes_value, "enumTypes");
+    createGlobalIntArray(enumNumValues_value, "enumNumValues");
+    createGlobalPtrArray(enumValueNames_value, "enumValueNames");
+    createGlobalPtrArray(enumValueValues_value, "enumValueValues");
+}
+llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysisManager& MAM) {
     populateGlobals(Module);
+    // read data from csv files created by clang plugin
+    readTypeDefsCsv();
+    readFunctionParamsCsv();
+    // read known struct types
     for (llvm::StructType* ST: Module.getIdentifiedStructTypes()) {
-        structTypeToNameIndex[(llvm::Type*)ST] = namedStructCount;
         std::string structName = ST->getName().str();
-        namedStructCount++;
-        structTypes.push_back(ST);
-        structNames.push_back(structName);
+        if (structNameToIndex.count(structName) > 0) {
+            structTypeToIndex[(llvm::Type*)ST] = structNameToIndex[structName];
+        } else {
+            structTypeToIndex[(llvm::Type*)ST] = structCount;
+            structNameToIndex[structName] = structCount;
+            structCount++;
+            structNames.push_back(structName);
+
+            structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(structName.c_str())));
+            structNumFieldsValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, ST->getNumElements())));
+            std::vector<llvm::Constant*> tmp_FieldTypes;
+            for (int j = 0; j < ST->getNumElements(); j++)
+                tmp_FieldTypes.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(basicGetTypeAsString(ST->getTypeAtIndex(j)))));
+            structFieldTypesValues.push_back(createGlobalPtrArray(tmp_FieldTypes, structName + ".fieldTypes"));
+            std::vector<llvm::Constant*> tmp_FieldNames;
+            for (int j = 0; j < ST->getNumElements(); j++)
+                tmp_FieldNames.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(std::to_string(j))));
+            structFieldNamesValues.push_back(createGlobalPtrArray(tmp_FieldNames, structName + ".fieldNames"));
+        }
     }
     // loop through functions in module to create data lists
-    for(llvm::Function& F : Module)
-        if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
-            librarifyPass(F);
-    //printStructTypes(Module);
+    for(llvm::Function& F : Module) {
+        std::string name = F.getName().str();
+        if (!name.starts_with("llvm.") && !name.ends_with("_wrapper"))
+            run(F);
+    }
     // std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u, numPointers)) << "%) pointer types found\n";
     // std::cout << numArgTypesDetermined << " out of " << numArgs << " (" << (numArgTypesDetermined*100.0/numArgs) << "%) total types found\n";
     createGlobalInt(numFunctions_value, "numFunctions");
@@ -99,39 +200,47 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     createGlobalPtrArray(functionParamTypes_value, "functionParamTypes");
     createGlobalPtrArray(functionPointers_value, "functionPointers");
     // create data lists for structs
-    std::vector<llvm::Constant*> structNamesValues;
-    std::vector<llvm::Constant*> structNumContainedTypesValues;
-    std::vector<llvm::Constant*> structContainedTypesValues;
-    for (int i = 0; i < namedStructCount; i++) {
-        structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(structNames[i].c_str())));
-        structNumContainedTypesValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, structTypes[i]->getNumElements())));
-        std::vector<llvm::Constant*> tmp;
-        for (int j = 0; j < structTypes[i]->getNumElements(); j++)
-            tmp.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(basicGetTypeAsString(structTypes[i]->getTypeAtIndex(j)))));
-        structContainedTypesValues.push_back(createGlobalPtrArray(tmp, structNames[i] + ".containedTypes"));
+    for (int i = 0; i < unnamedStructTypes.size(); i++) {
+        llvm::StructType *ST = unnamedStructTypes[i];
+        std::string name = "struct.unknown" + std::to_string(i);
+        structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(name.c_str())));
+        structNumFieldsValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, ST->getNumElements())));
+        std::vector<llvm::Constant*> tmp_FieldTypes;
+        for (int j = 0; j < ST->getNumElements(); j++)
+            tmp_FieldTypes.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(basicGetTypeAsString(ST->getTypeAtIndex(j)))));
+        structFieldTypesValues.push_back(createGlobalPtrArray(tmp_FieldTypes, name + ".fieldTypes"));
+        std::vector<llvm::Constant*> tmp_FieldNames;
+        for (int j = 0; j < ST->getNumElements(); j++)
+            tmp_FieldNames.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(std::to_string(j))));
+        structFieldNamesValues.push_back(createGlobalPtrArray(tmp_FieldNames, name + ".fieldNames"));
     }
-    createGlobalInt(namedStructCount, "numStructs");
+    createGlobalInt(structCount, "numStructs");
     createGlobalPtrArray(structNamesValues, "structNames");
-    createGlobalIntArray(structNumContainedTypesValues, "structNumContainedTypes");
-    createGlobalPtrArray(structContainedTypesValues, "structContainedTypes");
+    createGlobalIntArray(structNumFieldsValues, "structNumFields");
+    createGlobalPtrArray(structFieldTypesValues, "structFieldTypes");
+    createGlobalPtrArray(structFieldNamesValues, "structFieldNames");
     return llvm::PreservedAnalyses::none();
 }
-void Librarify::librarifyPass(llvm::Function& F) {
+void Librarify::run(llvm::Function& F) {
+    std::string f_name = llvm::demangle(F.getName().str());
     // numFunctions
     numFunctions_value++;
     // functionMangledNames
     functionMangledNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(F.getName().str())));
     // functionNames
-    std::string f_name = llvm::demangle(F.getName().str());
     int tmp1 = (int)f_name.size();
-    if ((tmp1 = f_name.find('(')) != std::string::npos)
+    if ((tmp1 = f_name.find('(')) != std::string::npos) {
+        std::cout << "\"" << f_name << "\" -> \"";
         f_name = f_name.substr(0, tmp1);
+        std::cout << f_name << "\"\n";
+    }
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
     // check functionData
     bool foundFunctionDataMatch = false;
     if (functionData.count(f_name) > 0) {
+        std::string reason = "";
         functionDataEntry& data = functionData[f_name];
         const unsigned int argSize = F.arg_size();
         if (argSize == data.paramNames.size()) {
@@ -142,20 +251,29 @@ void Librarify::librarifyPass(llvm::Function& F) {
                 for(unsigned int i = 0; (i < argSize)&&foundFunctionDataMatch; i++) {
                     std::string llvmArgName = F.getArg(i)->getName().str();
                     std::string clangArgName = data.paramNames[i];
-                    if (llvmArgName != clangArgName)
+                    std::string llvmArgType = basicGetTypeAsString(F.getArg(i)->getType());
+                    std::string clangArgType = data.paramTypes[i];
+                    if (!(llvmArgType == clangArgType) && !((llvmArgType == "void*") && (clangArgType[clangArgType.size()-1] == '*'))) {
                         foundFunctionDataMatch = false;
-                    if (foundFunctionDataMatch) {
-                        std::string llvmArgType = basicGetTypeAsString(F.getArg(i)->getType());
-                        std::string clangArgType = data.paramTypes[i];
-                        if (!(llvmArgType == clangArgType) && !((llvmArgType == "void*") && (clangArgType[clangArgType.size()-1] == '*'))) {
-                            foundFunctionDataMatch = false;
+                        for(auto const& p : enumTypesMap) {
+                            size_t tmp = clangArgType.find(p.first);
+                            if (tmp != std::string::npos) {
+                                if (clangArgType.replace(tmp,p.first.size(),p.second) == llvmArgType) {
+                                    foundFunctionDataMatch = true;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+        if (!foundFunctionDataMatch) {
+            std::cout << "failed to find match for function \"" << f_name << "\" for reason \"" << reason << "\"\n";
+        }
     }
     if (foundFunctionDataMatch) {
+        //std::cout << "Found match!\n";
         functionDataEntry& data = functionData[f_name];
         // functionReturnTypes
         functionReturnTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(data.returnType)));

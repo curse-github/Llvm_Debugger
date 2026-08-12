@@ -127,8 +127,8 @@ bool isInputableType(std::string type) {
         if (!isStruct)
             return false;
         bool isValid = true;
-        for (int j = 0; j < structNumContainedTypes[i]; j++) {
-            if (!isInputableType(structContainedTypes[i][j])) {
+        for (int j = 0; j < structNumFields[i]; j++) {
+            if (!isInputableType(structFieldTypes[i][j])) {
                 isValid = false;
                 break;
             }
@@ -194,8 +194,8 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
         if (!isStruct)
             return;
         //std::cout << "Creating struct of type \"" << type << "\"\n";
-        for (int j = 0; j < structNumContainedTypes[i]; j++)
-            inputType(structContainedTypes[i][j], parameters, storage, paramName+'['+std::to_string(j)+']', true);
+        for (int j = 0; j < structNumFields[i]; j++)
+            inputType(structFieldTypes[i][j], parameters, storage, paramName+'.'+structFieldNames[i][j], true);
         return;
     }
 }
@@ -262,19 +262,22 @@ void printType(std::string type, void* ptr, std::ostream& o) {
                 isStruct = true;
                 break;
             }
-        if (!isStruct)
+        if (!isStruct) {
+            o << "unknown";
             return;
-        o << "{ ";
+        }
+        o << "{ \"";
         unsigned int offset = 0;
-        for (int j = 0; j < structNumContainedTypes[i]; j++) {
-            unsigned int size = getTypeByteLength(structContainedTypes[i][j]);
+        for (int j = 0; j < structNumFields[i]; j++) {
+            unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
             offset = offset+(size-offset%size)%size;
             if (j != 0) o << ", ";
-            o << "(" << structContainedTypes[i][j] << ")";
-            printType(structContainedTypes[i][j], (void*)((char*)ptr+offset), o);
+            o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ")";
+            printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
+            o << '\n';
             offset += size;
         }
-        o << " }";
+        o << "\"}";
     }
 }
 
@@ -305,8 +308,8 @@ unsigned int getTypeByteLength(std::string type) {
         if (!isStruct)
             return 0;
         unsigned int totalLength = 0;
-        for (int j = 0; j < structNumContainedTypes[i]; j++) {
-            unsigned int length = getTypeByteLength(structContainedTypes[i][j]);
+        for (int j = 0; j < structNumFields[i]; j++) {
+            unsigned int length = getTypeByteLength(structFieldTypes[i][j]);
             totalLength = totalLength+(length-totalLength%length)%length;
             totalLength += length;
         }

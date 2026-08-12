@@ -42,6 +42,26 @@ extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
 }
 
 int main(int argc, char** argv) {
+    //*
+    std::cout << "struct types {\n";
+    for(int i = 0; i < numStructs; i++) {
+        std::cout << "    " << structNames[i] << " : {\n";
+        for (int j = 0; j < structNumFields[i]; j++) {
+            std::cout << "        " << structFieldTypes[i][j] << ' ' << structFieldNames[i][j] << '\n';
+        }
+        std::cout << "    }\n";
+    }
+    std::cout << "}\n";
+    std::cout << "enum types {\n";
+    for(int i = 0; i < numEnums; i++) {
+        std::cout << "    " << enumNames[i] << " = " << enumTypes[i] << " : {\n";
+        for (int j = 0; j < enumNumValues[i]; j++) {
+            std::cout << "        " << enumValueNames[i][j] << " = " << enumValueValues[i][j] << '\n';
+        }
+        std::cout << "    }\n";
+    }
+    std::cout << "}\n";//*/
+    //*
     for (int i = 0; i < argc; i++)
         std::cout << '"' << argv[i] << "\"\n";
     // get index of main function and whether it is valid
@@ -63,7 +83,7 @@ int main(int argc, char** argv) {
     std::fstream* f;
     f = new std::fstream();
     f->open("out/output.txt", std::ios::out);
-    o = f;
+    //o = f;
     // get parameters for main
     bufferWriter parameters;
     std::vector<bufferWriter*> storage;

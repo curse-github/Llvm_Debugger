@@ -128,10 +128,11 @@ llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator b
     printCall->insertBefore(beforeInst);
     return printCall;
 }
-unsigned int namedStructCount = 0;
-std::vector<llvm::StructType*> structTypes;
+unsigned int structCount = 0;
 std::vector<std::string> structNames;
-std::map<llvm::Type*, unsigned int> structTypeToNameIndex;
+std::map<llvm::Type*, unsigned int> structTypeToIndex;
+std::map<std::string, unsigned int> structNameToIndex;
+std::vector<llvm::StructType*> unnamedStructTypes;
 std::string basicGetTypeAsString(llvm::Type* ty) {
     if (ty->isIntegerTy()) {
         const unsigned int bitWidth = ty->getIntegerBitWidth();
@@ -162,14 +163,14 @@ std::string basicGetTypeAsString(llvm::Type* ty) {
         return "void*";
     else if (ty->isVoidTy())
         return "void";
-    else if (structTypeToNameIndex.count(ty) > 0)
-        return structNames[structTypeToNameIndex[ty]];
     else if (ty->isStructTy()) {
-        std::string name = "struct.unknown" + std::to_string(namedStructCount);
-        structTypeToNameIndex[ty] = namedStructCount;
-        namedStructCount++;
-        structTypes.push_back((llvm::StructType*)ty);
-        structNames.push_back(name);
+        if (structTypeToIndex.count(ty) > 0)
+            return structNames[structTypeToIndex[ty]];
+        std::string name = "struct.unknown" + std::to_string(unnamedStructTypes.size());
+        unnamedStructTypes.push_back(llvm::dyn_cast<llvm::StructType>(ty));
+        structTypeToIndex[ty] = structCount;
+        structNameToIndex[name] = structCount;
+        structCount++;
         return name;
     } else if (ty->isArrayTy()) {
         llvm::ArrayType* aty = (llvm::ArrayType*)ty;

@@ -12,9 +12,11 @@ llvm::PreservedAnalyses Logger::run(llvm::Module& Module, llvm::ModuleAnalysisMa
     logFunction_T = llvm::FunctionType::get(void_t, {ptr_t, ptr_t}, false);
     logFunctionParameters = llvm::Function::Create(logFunction_T, llvm::Function::LinkageTypes::ExternalLinkage, "logFunctionParameters", &Module);
     logFunctionReturn = llvm::Function::Create(logFunction_T, llvm::Function::LinkageTypes::ExternalLinkage, "logFunctionReturn", &Module);
-    for(llvm::Function& F : Module)
-        if (!F.isDeclarationForLinker() && !F.getName().str().ends_with("_wrapper"))
+    for(llvm::Function& F : Module) {
+        std::string name = F.getName().str();
+        if (!name.starts_with("llvm.") && !name.ends_with("_wrapper"))
             run(&F);
+    }
     return llvm::PreservedAnalyses::none();
 }
 void Logger::run(llvm::Function* F) {

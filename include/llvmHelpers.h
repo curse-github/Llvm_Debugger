@@ -67,10 +67,11 @@ llvm::GlobalVariable* createGlobalIntArray(llvm::ArrayRef<llvm::Constant*> vals,
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);
 
-extern unsigned int namedStructCount;
-extern std::vector<llvm::StructType*> structTypes;
+extern unsigned int structCount;
 extern std::vector<std::string> structNames;
-extern std::map<llvm::Type*, unsigned int> structTypeToNameIndex;
+extern std::map<llvm::Type*, unsigned int> structTypeToIndex;
+extern std::map<std::string, unsigned int> structNameToIndex;
+extern std::vector<llvm::StructType*> unnamedStructTypes;
 std::string basicGetTypeAsString(llvm::Type* ty);
 extern std::vector<llvm::Function*> visitedFunctions_global;
 extern std::map<llvm::Value*, std::string> determinedTypes;

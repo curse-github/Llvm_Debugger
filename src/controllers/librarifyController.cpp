@@ -19,15 +19,24 @@ int main(int argc, char** argv) {
     std::cout << "struct types {\n";
     for(int i = 0; i < numStructs; i++) {
         std::cout << "    " << structNames[i] << " : {\n";
-        for (int j = 0; j < structNumContainedTypes[i]; j++) {
-            std::cout << "        " << structContainedTypes[i][j] << '\n';
+        for (int j = 0; j < structNumFields[i]; j++) {
+            std::cout << "        " << structFieldTypes[i][j] << ' ' << structFieldNames[i][j] << '\n';
+        }
+        std::cout << "    }\n";
+    }
+    std::cout << "}\n";
+    std::cout << "enum types {\n";
+    for(int i = 0; i < numEnums; i++) {
+        std::cout << "    " << enumNames[i] << " = " << enumTypes[i] << " : {\n";
+        for (int j = 0; j < enumNumValues[i]; j++) {
+            std::cout << "        " << enumValueNames[i][j] << " = " << enumValueValues[i][j] << '\n';
         }
         std::cout << "    }\n";
     }
     std::cout << "}\n";//*/
-    /*
+    //*
     if (numValid != numFunctions) {
-        std::cout << "Can call " << numValid << " out of " << numFunctions << " functions.\n";
+        std::cout << "Can call " << numValid << " out of " << numFunctions << " functions, " << (100*numValid/numFunctions) << "%.\n";
         std::cout << "Invalid functions are as follows:\n";
     }
     for(size_t i = 0; i < numFunctions; i++) {
