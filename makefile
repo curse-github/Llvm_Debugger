@@ -24,33 +24,44 @@ compile-args = -O0 -fno-discard-value-names -fno-inline
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp $(compile-args) -c -o ./tmp/testOne.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testOne.o -o ./tmp/testOne.bc
 	@llvm-dis ./tmp/testOne.bc -o ./tmp/testOne.ll
+	@-echo running save-typedefs clang plugin on testOne.cpp
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only ./src/testOne.cpp
+	@-echo running save-func-parms clang plugin on testOne.cpp
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only ./src/testOne.cpp
 ./tmp/testTwo.ll: ./src/testTwo.cpp ./out/libClangPlugin.so
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testTwo.cpp $(compile-args) -c -o ./tmp/testTwo.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testTwo.o -o ./tmp/testTwo.bc
 	@llvm-dis ./tmp/testTwo.bc -o ./tmp/testTwo.ll
+	@-echo running save-typedefs clang plugin on testTwo.cpp
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only ./src/testTwo.cpp
+	@-echo running save-func-parms clang plugin on testTwo.cpp
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only ./src/testTwo.cpp
 ./tmp/testThree.ll: ./src/testThree.c ./out/libClangPlugin.so
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testThree.c $(compile-args) -c -o ./tmp/testThree.o
 	@./wllvm_venv/bin/extract-bc ./tmp/testThree.o -o ./tmp/testThree.bc
 	@llvm-dis ./tmp/testThree.bc -o ./tmp/testThree.ll
+	@-echo running save-typedefs clang plugin on testThree.c
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only ./src/testThree.c
+	@-echo running save-func-parms clang plugin on testThree.c
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only ./src/testThree.c
 ./tmp/ls.ll: ./coreutils/src/ls ./coreutils/src/ls.c ./out/libClangPlugin.so
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
 	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll
-	@clang $(clang-plugin-args) $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/src/ls.c
+	@-echo running save-typedefs clang plugin on ls.c
+	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/ls.c
+	@-echo running save-func-parms clang plugin on ls.c
+	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/ls.c
 ./tmp/cat.ll:./coreutils/src/cat ./coreutils/src/cat.c ./out/libClangPlugin.so
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/cat -o ./tmp/cat.bc
 	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
+	@-echo running save-typedefs clang plugin on cat.c
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/cat.c
+	@-echo running save-func-parms clang plugin on cat.c
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/cat.c
 
 librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt)
 	@-echo
-	@-echo running librarify.$(dynamicExt) pass on $(TARGET).ll
+	@-echo running librarify llvm pass on $(TARGET).ll
 	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
 	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).o
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).o

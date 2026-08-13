@@ -5,6 +5,8 @@
 
 unsigned int discardedFuncs = 0;
 void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
+    if (dyn_cast<ClassTemplatePartialSpecializationDecl>(FD))
+        return;
     std::string name = FD->getQualifiedNameAsString();
     if (name.find("lambda") != std::string::npos) {
         discardedFuncs++;
@@ -71,7 +73,14 @@ void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
         }
         // output two versions
         // for some struct or class functions you end up with possible types of the function
-        // v1: ... class::func(class* this, ...)
+        // and v1: ... class::func(...)
+        *FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
+        for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
+            const ParmVarDecl *PD = *i;
+            *FuncParmsOut << typeToString(PD->getOriginalType()) << ',' << PD->getName().str() << ',';
+        }
+        *FuncParmsOut << '\n';
+        // v2: ... class::func(class* this, ...)
         *FuncParmsOut << returnType << ',' << name << ',' << (FD->getNumParams()+1) << ',';
         *FuncParmsOut << typeToString(MD->getThisType()) << ",this,";
         for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
@@ -79,13 +88,6 @@ void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
             *FuncParmsOut << typeToString(PD->getOriginalType()) << ',' << PD->getName().str() << ',';
         }
         *FuncParmsOut << '\n';
-        // and v2: ... class::func(...)
-        /**FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
-        for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
-            const ParmVarDecl *PD = *i;
-            *FuncParmsOut << typeToString(PD->getOriginalType()) << ',' << PD->getName().str() << ',';
-        }
-        *FuncParmsOut << '\n';*/
     } else {
         *FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
         for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
@@ -140,15 +142,10 @@ class SaveFuncParmsConsumer : public ASTConsumer {
         delete FuncParmsOut;
         FuncParmsOut = nullptr;
     }
-    std::map<std::string, bool> knownFunctions;
     void handleDecl(Decl* D) {
         if (const FunctionDecl *FD = dyn_cast<FunctionDecl>(D)) {
             std::string name = FD->getQualifiedNameAsString();
-            if (knownFunctions.count(name) == 0) {
-                knownFunctions[name] = true;
-                //std::cout << "found function \"" << name << "\"\n";
-                foundFunctions.push_back(FD);
-            }
+            foundFunctions.push_back(FD);
         }
     }
     bool HandleTopLevelDecl(DeclGroupRef DG) override {

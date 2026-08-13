@@ -166,7 +166,7 @@ std::string basicGetTypeAsString(llvm::Type* ty) {
     else if (ty->isStructTy()) {
         if (structTypeToIndex.count(ty) > 0)
             return structNames[structTypeToIndex[ty]];
-        std::string name = "struct.unknown" + std::to_string(unnamedStructTypes.size());
+        std::string name = "unknown" + std::to_string(unnamedStructTypes.size());
         unnamedStructTypes.push_back(llvm::dyn_cast<llvm::StructType>(ty));
         structTypeToIndex[ty] = structCount;
         structNameToIndex[name] = structCount;

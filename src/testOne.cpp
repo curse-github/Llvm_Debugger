@@ -45,8 +45,8 @@ int main(int argc, char** argv) {
     foo2({1, 2.34, false, '6', 7.8});
     float tmp[6] = { 1.2, 3.4, 5.6, 7.8, 9.10, 11.12 };
     bar2(tmp);
-    // testUnion output;
-    // createUnion(&output, (long)12);
-    // createUnion(&output, (int)2);
+    testUnion output;
+    //createUnion(&output, (long)12);
+    //createUnion(&output, (int)2);
     return 15;
 }

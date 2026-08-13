@@ -20,7 +20,7 @@ typedef struct {
     std::vector<std::string> paramTypes;
     std::vector<std::string> paramNames;
 } functionDataEntry;
-std::map<std::string, functionDataEntry> functionData;
+std::map<std::string, std::vector<functionDataEntry>> functionData;
 std::map<std::string, std::string> enumTypesMap;
 
 unsigned int numArgs = 0;
@@ -45,7 +45,6 @@ void readFunctionParamsCsv() {
         if (!std::getline(lineSStream, numArgsString, ','))
             continue;
         unsigned int numArgs = std::stoi(numArgsString);
-        // std::cout << returnType << ", " << funcName << ", " << numArgs;
         for (int i = 0; i < numArgs; i++) {
             std::string type;
             if (!std::getline(lineSStream, type, ','))
@@ -55,10 +54,9 @@ void readFunctionParamsCsv() {
                 continue;
             data.paramTypes.push_back(type);
             data.paramNames.push_back(name);
-            // std::cout << ", " << type << ' ' << name;
         }
-        functionData[funcName] = data;
-        // std::cout << '\n';
+        if (!functionData.contains(funcName)) functionData[funcName] = {};
+        functionData[funcName].push_back(data);
     }
     f->close();
     delete f;
@@ -90,7 +88,6 @@ void readTypeDefsCsv() {
             std::string enumName;
             if (!std::getline(lineSStream, enumName, ','))
                 continue;
-            enumName = "enum."+enumName;
             enumTypesMap[enumName] = enumIntType;
             enumNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(enumName)));
             std::string numValuesString;
@@ -118,7 +115,6 @@ void readTypeDefsCsv() {
             std::string structName;
             if (!std::getline(lineSStream, structName, ','))
                 continue;
-            structName = "struct."+structName;
             structNameToIndex[structName] = structCount;
             structCount++;
             structNames.push_back(structName);
@@ -163,9 +159,12 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     // read known struct types
     for (llvm::StructType* ST: Module.getIdentifiedStructTypes()) {
         std::string structName = ST->getName().str();
-        if (structNameToIndex.count(structName) > 0) {
+        if (!structName.starts_with("struct."))
+            continue;
+        structName = structName.substr(7z, structName.size()-7z);
+        if (structNameToIndex.count(structName) > 0)
             structTypeToIndex[(llvm::Type*)ST] = structNameToIndex[structName];
-        } else {
+        else {
             structTypeToIndex[(llvm::Type*)ST] = structCount;
             structNameToIndex[structName] = structCount;
             structCount++;
@@ -202,7 +201,7 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     // create data lists for structs
     for (int i = 0; i < unnamedStructTypes.size(); i++) {
         llvm::StructType *ST = unnamedStructTypes[i];
-        std::string name = "struct.unknown" + std::to_string(i);
+        std::string name = "unknown" + std::to_string(i);
         structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(name.c_str())));
         structNumFieldsValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, ST->getNumElements())));
         std::vector<llvm::Constant*> tmp_FieldTypes;
@@ -236,14 +235,30 @@ void Librarify::run(llvm::Function& F) {
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
     // check functionData
     bool foundFunctionDataMatch = false;
-    if (functionData.count(f_name) > 0) {
-        std::string reason = "";
-        functionDataEntry& data = functionData[f_name];
-        const unsigned int argSize = F.arg_size();
-        if (argSize == data.paramNames.size()) {
-            std::string llvmReturnType = basicGetTypeAsString(F.getReturnType());
-            std::string clangReturnType = data.returnType;
-            if ((llvmReturnType == clangReturnType) || ((llvmReturnType == "void*") && (clangReturnType[clangReturnType.size()-1] == '*'))) {
+    unsigned int j = -1;
+    if (functionData.contains(f_name)) {
+        std::vector<functionDataEntry> &specificData = functionData[f_name];
+        unsigned int size = specificData.size();
+        for (j = 0; j < size; j++) {
+            functionDataEntry &data = specificData[j];
+            const unsigned int argSize = F.arg_size();
+            if (argSize == data.paramNames.size()) {
+                std::string llvmReturnType = basicGetTypeAsString(F.getReturnType());
+                std::string clangReturnType = data.returnType;
+                if (!(llvmReturnType == clangReturnType) && !((llvmReturnType == "void*") && (clangReturnType[clangReturnType.size()-1] == '*'))) {
+                    // return true may not match
+                    for(auto const& p : enumTypesMap) {
+                        size_t tmp = clangReturnType.find(p.first);
+                        if (tmp != std::string::npos) {
+                            if (clangReturnType.replace(tmp,p.first.size(),p.second) == llvmReturnType) {
+                                foundFunctionDataMatch = true;// return true does match!
+                                break;
+                            }
+                        }
+                    }
+                    if (!foundFunctionDataMatch) continue;// return true does not match
+                    foundFunctionDataMatch = false;
+                }
                 foundFunctionDataMatch = true;
                 for(unsigned int i = 0; (i < argSize)&&foundFunctionDataMatch; i++) {
                     std::string llvmArgName = F.getArg(i)->getName().str();
@@ -251,27 +266,27 @@ void Librarify::run(llvm::Function& F) {
                     std::string llvmArgType = basicGetTypeAsString(F.getArg(i)->getType());
                     std::string clangArgType = data.paramTypes[i];
                     if (!(llvmArgType == clangArgType) && !((llvmArgType == "void*") && (clangArgType[clangArgType.size()-1] == '*'))) {
-                        foundFunctionDataMatch = false;
+                        foundFunctionDataMatch = false;// arg type may not match
                         for(auto const& p : enumTypesMap) {
                             size_t tmp = clangArgType.find(p.first);
                             if (tmp != std::string::npos) {
                                 if (clangArgType.replace(tmp,p.first.size(),p.second) == llvmArgType) {
-                                    foundFunctionDataMatch = true;
+                                    foundFunctionDataMatch = true;// arg type does match!
                                     break;
                                 }
                             }
                         }
+                        if (foundFunctionDataMatch) break;
                     }
                 }
+                if (foundFunctionDataMatch) break;
             }
         }
-        if (!foundFunctionDataMatch) {
-            std::cout << "failed to find match for function \"" << f_name << "\" for reason \"" << reason << "\"\n";
-        }
+        if (!foundFunctionDataMatch) j = -1;
     }
     if (foundFunctionDataMatch) {
         //std::cout << "Found match!\n";
-        functionDataEntry& data = functionData[f_name];
+        functionDataEntry& data = functionData[f_name][j];
         // functionReturnTypes
         functionReturnTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(data.returnType)));
         // functionParamCounts

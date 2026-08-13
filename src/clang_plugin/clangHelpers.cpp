@@ -2,9 +2,16 @@
 
 std::map<std::string, bool> knownStructs;
 std::map<std::string, bool> knownClasses;
+std::map<std::string, bool> knownUnions;
 std::map<std::string, bool> knownEnums;
 
 std::string fixTypeName(std::string inputT, bool allowVoid) {
+    for (const char c : inputT) {
+        if (c == '<')// likely a templated type, and im not sure how to deal with those yet
+            return "unknown";
+        else if ((c == '(') || (c == '}'))
+            return "unknown";
+    }
     if (inputT.find(",") != std::string::npos)
         return "unknown";
     if (inputT.starts_with("const "))
@@ -42,7 +49,7 @@ std::string fixTypeName(std::string inputT, bool allowVoid) {
     if (inputT.ends_with("]")) {// is an array type
         size_t str_i = inputT.find_last_of('[');
         std::string newType = inputT.substr(0, str_i);
-        if (str_i+2 == inputT.size()) // ends with []
+        if ((inputT.size()-str_i-2) == 0) // ends with []
             return "unknown[]";
         int count = std::stoi(inputT.substr(str_i+1, inputT.size()-str_i-2));
         std::string tmp = fixTypeName(newType);
@@ -52,13 +59,11 @@ std::string fixTypeName(std::string inputT, bool allowVoid) {
     }
     std::string outputT = "";
     for (const char c : inputT) {
-        if (c == '<')// likely a templated type, and im not sure how to deal with those yet
-            return "unknown";
         if (c != ' ')
             outputT += c;
     }
-    if (knownStructs.count(outputT) > 0) return "struct."+outputT;
-    if (knownClasses.count(outputT) > 0) return "class."+outputT;
+    if (knownStructs.count(outputT) > 0) return outputT;
+    if (knownClasses.count(outputT) > 0) return outputT;
     if (knownEnums.count(outputT) > 0) return "enum."+outputT;
     if (outputT == "_Bool") return "bool";
     if (outputT == "longlong") return "long";
