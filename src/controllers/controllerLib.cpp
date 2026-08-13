@@ -232,6 +232,7 @@ std::map<std::string, printFT> printFunctions = {
     {"double", print<double>}, 
     {"char*", print<char*>}
 };
+unsigned int getLargestTypeSizeContained(std::string type);
 void printType(std::string type, void* ptr, std::ostream& o) {
     if (ptr == nullptr) {
         o << "&nullptr";
@@ -276,11 +277,11 @@ void printType(std::string type, void* ptr, std::ostream& o) {
         unsigned int offset = 0;
         for (int j = 0; j < structNumFields[i]; j++) {
             unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
-            offset = offset+(size-offset%size)%size;
+            unsigned int largestContained = getLargestTypeSizeContained(structFieldTypes[i][j]);
+            offset = offset+(largestContained-offset%largestContained)%largestContained;
             if (j != 0) o << ", ";
             o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ")";
             printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
-            //o << '\n';
             offset += size;
         }
         o << " }";
@@ -299,9 +300,12 @@ std::map<std::string, unsigned int> typeByteLengths = {
 unsigned int getTypeByteLength(std::string type) {
     if (type[type.size()-1] == '*')
         return sizeof(void*);
-    else if (type[type.size()-1] == ']')
-        return sizeof(void*);
-    else if (typeByteLengths.count(type) > 0)
+    else if (type[type.size()-1] == ']') {
+        size_t str_i = type.find_last_of('[');
+        std::string newType = type.substr(0, str_i);
+        int count = std::stoi(type.substr(str_i+1, type.size()-str_i-2));
+        return getTypeByteLength(newType)*count;
+    } else if (typeByteLengths.count(type) > 0)
         return typeByteLengths[type];
     else {
         bool isStruct = false;
@@ -319,6 +323,35 @@ unsigned int getTypeByteLength(std::string type) {
             totalLength = totalLength+(length-totalLength%length)%length;
             totalLength += length;
         }
+        return totalLength;
+    }
+    return 0;
+}
+unsigned int getLargestTypeSizeContained(std::string type) {
+    if (type[type.size()-1] == '*')
+        return sizeof(void*);
+    else if (type[type.size()-1] == ']') {
+        size_t str_i = type.find_last_of('[');
+        std::string newType = type.substr(0, str_i);
+        return getTypeByteLength(newType);
+    } else if (typeByteLengths.count(type) > 0)
+        return typeByteLengths[type];
+    else {
+        bool isStruct = false;
+        int i;
+        for(i = 0; !isStruct&&(i < numStructs); i++)
+            if (type == structNames[i]) {
+                isStruct = true;
+                break;
+            }
+        if (!isStruct)
+            return 0;
+        unsigned int largestSize = 0;
+        for (int j = 0; j < structNumFields[i]; j++) {
+            unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
+            if (size > largestSize) largestSize = size;
+        }
+        return largestSize;
     }
     return 0;
 }

@@ -55,7 +55,7 @@ std::string fixTypeName(std::string inputT, bool allowVoid) {
         std::string tmp = fixTypeName(newType);
         if (tmp.starts_with("unknown"))
             return tmp;
-        return tmp + '['+std::to_string(count)+"]*";
+        return tmp + '['+std::to_string(count)+"]";
     }
     std::string outputT = "";
     for (const char c : inputT) {

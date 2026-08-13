@@ -83,7 +83,7 @@ debugger: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt)
 	@clang++ -I./include ./src/controllers/debuggerController.cpp ./src/controllers/controllerLib.cpp ./out/$(TARGET).$(staticExt) -o ./out/debuggerController.$(executableExt)
 	@-echo running debuggerController.$(executableExt)
 	@-echo
-	@./out/debuggerController.$(executableExt)
+	@./out/debuggerController.$(executableExt) $(ARGS)
 
 stdlib: mkdir ./lib/cppStdLib.cpp ./lib/llvmStdLibWin.ll ./lib/llvmStdLibLin.ll
 	@-echo building std lib

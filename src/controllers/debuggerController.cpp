@@ -62,8 +62,6 @@ int main(int argc, char** argv) {
     }
     std::cout << "}\n";//*/
     //*
-    for (int i = 0; i < argc; i++)
-        std::cout << '"' << argv[i] << "\"\n";
     // get index of main function and whether it is valid
     int i;
     bool isValid = true;
@@ -83,12 +81,21 @@ int main(int argc, char** argv) {
     std::fstream* f;
     f = new std::fstream();
     f->open("out/output.txt", std::ios::out);
-    o = f;
+    //o = f;
     // get parameters for main
     bufferWriter parameters;
     std::vector<bufferWriter*> storage;
-    for(int j = 0; j < functionParamCounts[i]; j++)
-        inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j], false);
+    if (argc > 1) {
+        if (functionParamCounts[i] == 2) {
+            parameters.push<int>(argc);
+            storage.push_back(new bufferWriter());
+            for(unsigned int j = 0; j < argc; j++)
+                storage[0]->push<void*>((void*)argv[j]);
+            parameters.push<void*>((void*)storage[0]->pointer);
+        }
+    } else
+        for(int j = 0; j < functionParamCounts[i]; j++)
+            inputType(functionParamTypes[i][j], parameters, storage, functionParamNames[i][j], false);
     // call main
     logFunctionParameters("main", parameters.pointer);
     if (std::strcmp(functionReturnTypes[i], "int") == 0) {

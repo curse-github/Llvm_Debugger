@@ -1,17 +1,19 @@
 ## Instructions:
 Command to run either librarify or the debugger are as follows <br>
-`make librarify TARGET="ls"`<br>
-`make librarify TARGET="cat"`<br>
-`make librarify TARGET="testOne"`<br>
-`make librarify TARGET="testTwo"`<br>
-`make debugger TARGET="ls"`<br>
-`make debugger TARGET="cat"`<br>
-`make debugger TARGET="testOne"`<br>
-`make debugger TARGET="testTwo"`<br>
+`make librarify TARGET=testOne`<br>
+`make librarify TARGET=testTwo`<br>
+`make librarify TARGET=testThree`<br>
+`make librarify TARGET=ls`<br>
+`make librarify TARGET=cat`<br>
+`make debugger TARGET=testOne`<br>
+`make debugger TARGET=testTwo`<br>
+`make debugger TARGET=testThree`<br>
+`make debugger TARGET=ls`<br>
+`make debugger TARGET=cat`<br>
 To add more usable targets, add instructions to the makefile file for making "./tmp/example.ll".<br>
 This gives the the functionality to run:<br>
-`make librarify TARGET="example"` or <br>
-`make debugger TARGET="example"`<br>
+`make librarify TARGET=example` or <br>
+`make debugger TARGET=example`<br>
 <br><br>
 ## Writeup:
 Explanation of project:
