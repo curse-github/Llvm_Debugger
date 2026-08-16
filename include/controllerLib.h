@@ -77,18 +77,25 @@ typedef float(*floatFT)(void*);
 typedef double(*doubleFT)(void*);
 extern wrapperFT functionPointers[];
 
-extern unsigned int numStructs;
-extern const char* structNames[];
-extern unsigned int structNumFields[];
-extern const char** structFieldTypes[];
-extern const char** structFieldNames[];
-
 extern unsigned int numEnums;
 extern const char* enumNames[];
 extern const char* enumTypes[];
 extern unsigned int enumNumValues[];
 extern const char** enumValueNames[];
 extern unsigned int* enumValueValues[];
+
+extern unsigned int numStructs;
+extern const char* structNames[];
+extern unsigned int structNumFields[];
+extern const char** structFieldTypes[];
+extern const char** structFieldNames[];
+
+extern unsigned int numUnions;
+extern const char* unionNames[];
+extern unsigned int unionNumFields[];
+extern const char** unionFieldTypes[];
+extern const char** unionFieldNames[];
+
 
 template <typename T>
 void input(bufferWriter& parameters, std::string paramName, bool doRound) {

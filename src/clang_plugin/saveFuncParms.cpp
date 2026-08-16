@@ -107,13 +107,16 @@ void readTypeDefs() {
         std::string type;
         if (!std::getline(lineSStream, type, ',')) break;
         std::string name;
-        if (type == "struct") {
-            if (!std::getline(lineSStream, name, ',')) break;
-            knownStructs[name] = true;
-        } else if (type == "enum") {
+        if (type == "enum") {
             if (!std::getline(lineSStream, name, ',')) break;
             if (!std::getline(lineSStream, name, ',')) break;
             knownEnums[name] = true;
+        } else if (type == "struct") {
+            if (!std::getline(lineSStream, name, ',')) break;
+            knownStructs[name] = true;
+        } else if (type == "union") {
+            if (!std::getline(lineSStream, name, ',')) break;
+            knownUnions[name] = true;
         } else
             std::cout << "ERROR!\n";
     }

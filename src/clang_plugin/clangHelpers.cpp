@@ -1,9 +1,9 @@
 #include "clangHelpers.h"
 
+std::map<std::string, bool> knownEnums;
 std::map<std::string, bool> knownStructs;
 std::map<std::string, bool> knownClasses;
 std::map<std::string, bool> knownUnions;
-std::map<std::string, bool> knownEnums;
 
 std::string fixTypeName(std::string inputT, bool allowVoid) {
     for (const char c : inputT) {
@@ -64,7 +64,8 @@ std::string fixTypeName(std::string inputT, bool allowVoid) {
     }
     if (knownStructs.count(outputT) > 0) return outputT;
     if (knownClasses.count(outputT) > 0) return outputT;
-    if (knownEnums.count(outputT) > 0) return "enum."+outputT;
+    if (knownEnums.count(outputT) > 0) return outputT;
+    if (knownUnions.count(outputT) > 0) return outputT;
     if (outputT == "_Bool") return "bool";
     if (outputT == "longlong") return "long";
     if (outputT == "longdouble") return "double";

@@ -1,0 +1,1 @@
+make debugger TARGET=ls ARGS="."

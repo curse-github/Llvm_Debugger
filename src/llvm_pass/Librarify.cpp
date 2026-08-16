@@ -65,6 +65,10 @@ std::vector<llvm::Constant*> structNamesValues;
 std::vector<llvm::Constant*> structNumFieldsValues;
 std::vector<llvm::Constant*> structFieldTypesValues;
 std::vector<llvm::Constant*> structFieldNamesValues;
+std::vector<llvm::Constant*> unionNamesValues;
+std::vector<llvm::Constant*> unionNumFieldsValues;
+std::vector<llvm::Constant*> unionFieldTypesValues;
+std::vector<llvm::Constant*> unionFieldNamesValues;
 void readTypeDefsCsv() {
     unsigned int numEnums = 0;
     std::vector<llvm::Constant*> enumNames_value;
@@ -139,6 +143,34 @@ void readTypeDefsCsv() {
             }
             structFieldTypesValues.push_back(createGlobalPtrArray(tmp_FieldTypes, structName + ".fieldTypes"));
             structFieldNamesValues.push_back(createGlobalPtrArray(tmp_FieldNames, structName + ".fieldNames"));
+        } else if (type == "union") {
+            std::string unionName;
+            if (!std::getline(lineSStream, unionName, ','))
+                continue;
+            unionNameToIndex[unionName] = unionCount;
+            unionCount++;
+            unionNames.push_back(unionName);
+
+            unionNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(unionName.c_str())));
+            std::string numFieldsString;
+            if (!std::getline(lineSStream, numFieldsString, ','))
+                continue;
+            unsigned int numFields = std::stoi(numFieldsString);
+            unionNumFieldsValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, numFields)));
+            std::vector<llvm::Constant*> tmp_FieldTypes;
+            std::vector<llvm::Constant*> tmp_FieldNames;
+            for (int j = 0; j < numFields; j++) {
+                std::string fieldType;
+                if (!std::getline(lineSStream, fieldType, ','))
+                    continue;
+                std::string fieldName;
+                if (!std::getline(lineSStream, fieldName, ','))
+                    continue;
+                tmp_FieldTypes.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(fieldType)));
+                tmp_FieldNames.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(fieldName)));
+            }
+            unionFieldTypesValues.push_back(createGlobalPtrArray(tmp_FieldTypes, unionName + ".fieldTypes"));
+            unionFieldNamesValues.push_back(createGlobalPtrArray(tmp_FieldNames, unionName + ".fieldNames"));
         } else
             std::cout << "ERROR!\n";
     }
@@ -159,27 +191,29 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     // read known struct types
     for (llvm::StructType* ST: Module.getIdentifiedStructTypes()) {
         std::string structName = ST->getName().str();
-        if (!structName.starts_with("struct."))
-            continue;
-        structName = structName.substr(7z, structName.size()-7z);
-        if (structNameToIndex.count(structName) > 0)
-            structTypeToIndex[(llvm::Type*)ST] = structNameToIndex[structName];
-        else {
-            structTypeToIndex[(llvm::Type*)ST] = structCount;
-            structNameToIndex[structName] = structCount;
-            structCount++;
-            structNames.push_back(structName);
+        if (structName.starts_with("struct.")) {
+            structName = structName.substr(7z, structName.size()-7z);
+            if (structNameToIndex.count(structName) > 0)
+                structTypeToIndex[(llvm::Type*)ST] = structNameToIndex[structName];
+            else {
+                structTypeToIndex[(llvm::Type*)ST] = structCount;
+                structNameToIndex[structName] = structCount;
+                structCount++;
+                structNames.push_back(structName);
 
-            structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(structName.c_str())));
-            structNumFieldsValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, ST->getNumElements())));
-            std::vector<llvm::Constant*> tmp_FieldTypes;
-            for (int j = 0; j < ST->getNumElements(); j++)
-                tmp_FieldTypes.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(basicGetTypeAsString(ST->getTypeAtIndex(j)))));
-            structFieldTypesValues.push_back(createGlobalPtrArray(tmp_FieldTypes, structName + ".fieldTypes"));
-            std::vector<llvm::Constant*> tmp_FieldNames;
-            for (int j = 0; j < ST->getNumElements(); j++)
-                tmp_FieldNames.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(std::to_string(j))));
-            structFieldNamesValues.push_back(createGlobalPtrArray(tmp_FieldNames, structName + ".fieldNames"));
+                structNamesValues.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(structName.c_str())));
+                structNumFieldsValues.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i32_t, ST->getNumElements())));
+                std::vector<llvm::Constant*> tmp_FieldTypes;
+                for (int j = 0; j < ST->getNumElements(); j++)
+                    tmp_FieldTypes.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(basicGetTypeAsString(ST->getTypeAtIndex(j)))));
+                structFieldTypesValues.push_back(createGlobalPtrArray(tmp_FieldTypes, structName + ".fieldTypes"));
+                std::vector<llvm::Constant*> tmp_FieldNames;
+                for (int j = 0; j < ST->getNumElements(); j++)
+                    tmp_FieldNames.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(std::to_string(j))));
+                structFieldNamesValues.push_back(createGlobalPtrArray(tmp_FieldNames, structName + ".fieldNames"));
+            }
+        } else if (structName.starts_with("union.")) {
+
         }
     }
     // loop through functions in module to create data lists
@@ -218,6 +252,11 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     createGlobalIntArray(structNumFieldsValues, "structNumFields");
     createGlobalPtrArray(structFieldTypesValues, "structFieldTypes");
     createGlobalPtrArray(structFieldNamesValues, "structFieldNames");
+    createGlobalInt(unionCount, "numUnions");
+    createGlobalPtrArray(unionNamesValues, "unionNames");
+    createGlobalIntArray(unionNumFieldsValues, "unionNumFields");
+    createGlobalPtrArray(unionFieldTypesValues, "unionFieldTypes");
+    createGlobalPtrArray(unionFieldNamesValues, "unionFieldNames");
     return llvm::PreservedAnalyses::none();
 }
 void Librarify::run(llvm::Function& F) {

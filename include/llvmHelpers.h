@@ -72,6 +72,11 @@ extern std::vector<std::string> structNames;
 extern std::map<llvm::Type*, unsigned int> structTypeToIndex;
 extern std::map<std::string, unsigned int> structNameToIndex;
 extern std::vector<llvm::StructType*> unnamedStructTypes;
+extern unsigned int unionCount;
+extern std::vector<std::string> unionNames;
+extern std::map<llvm::Type*, unsigned int> unionTypeToIndex;
+extern std::map<std::string, unsigned int> unionNameToIndex;
+
 std::string basicGetTypeAsString(llvm::Type* ty);
 extern std::vector<llvm::Function*> visitedFunctions_global;
 extern std::map<llvm::Value*, std::string> determinedTypes;

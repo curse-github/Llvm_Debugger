@@ -1,4 +1,4 @@
-#include <iostream>
+//#include <iostream>
 
 int foo(int a, double b, bool c, char d, float e) {
     return c?(a+d):((int)b+e);
@@ -34,14 +34,14 @@ float bar(float a, float b, float c, float d, float e, float f) {
 float bar(float abcdef[6]) {
     return bar(abcdef[0], abcdef[1], abcdef[2], abcdef[3], abcdef[4], abcdef[5]);
 }
-
-typedef struct {
-    bool isFloat;
-    union {
+typedef union {
         int type1;
         float type2;
         char buffer[15];
-    } value;
+    } tmp;
+typedef struct {
+    bool isFloat;
+    tmp value;
 } testUnion;
 void createUnion(testUnion* result, int value) {
     result->isFloat = false;

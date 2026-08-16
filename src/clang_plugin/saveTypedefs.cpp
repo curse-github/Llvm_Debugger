@@ -17,6 +17,27 @@ class SaveTypedefsConsumer : public ASTConsumer {
         delete TypedefsOut;
         TypedefsOut = nullptr;
     }
+    void HandleEnumDecl(EnumDecl* ED, std::string nameOverride="") {
+        std::string name = ED->getNameAsString();
+        if (name.size() == 0)
+            name = nameOverride;
+        if (name.size() == 0)
+            return;
+        unsigned int n = 0;
+        for (EnumDecl::enumerator_iterator i = ED->enumerator_begin(), e = ED->enumerator_end(); i != e; ++i) n++;
+        if (n == 0) return;
+        if (knownEnums.count(name) > 0) return;
+#ifdef DEBUG
+        std::cout << "found enum \"" << name << "\"\n";
+#endif
+        knownEnums[name] = true;
+        *TypedefsOut << "enum," << typeToString(ED->getIntegerType()) << ',' << name << ',' << n << ',';
+        for (EnumDecl::enumerator_iterator i = ED->enumerator_begin(), e = ED->enumerator_end(); i != e; ++i) {
+            EnumConstantDecl *EcD = *i;
+            *TypedefsOut << EcD->getInitVal().getExtValue() << ',' << EcD->getNameAsString() << ',';
+        }
+        *TypedefsOut << '\n';
+    }
     void HandleStructDecl(RecordDecl* RD, std::string nameOverride="") {
         std::string name = RD->getNameAsString();
         if (name.size() == 0)// this will usually be 0
@@ -38,24 +59,25 @@ class SaveTypedefsConsumer : public ASTConsumer {
         }
         *TypedefsOut << '\n';
     }
-    void handleEnumDecl(EnumDecl* ED, std::string nameOverride="") {
-        std::string name = ED->getNameAsString();
-        if (name.size() == 0)
+
+    void HandleUnionDecl(RecordDecl* RD, std::string nameOverride="") {
+        std::string name = RD->getNameAsString();
+        if (name.size() == 0)// this will usually be 0
             name = nameOverride;
         if (name.size() == 0)
             return;
         unsigned int n = 0;
-        for (EnumDecl::enumerator_iterator i = ED->enumerator_begin(), e = ED->enumerator_end(); i != e; ++i) n++;
+        for (RecordDecl::field_iterator i = RD->field_begin(), e = RD->field_end(); i != e; ++i) n++;
         if (n == 0) return;
-        if (knownEnums.count(name) > 0) return;
+        if (knownStructs.count(name) > 0) return;
 #ifdef DEBUG
-        std::cout << "found enum \"" << name << "\"\n";
+        std::cout << "found union \"" << name << "\"\n";
 #endif
-        knownEnums[name] = true;
-        *TypedefsOut << "enum," << typeToString(ED->getIntegerType()) << ',' << name << ',' << n << ',';
-        for (EnumDecl::enumerator_iterator i = ED->enumerator_begin(), e = ED->enumerator_end(); i != e; ++i) {
-            EnumConstantDecl *EcD = *i;
-            *TypedefsOut << EcD->getInitVal().getExtValue() << ',' << EcD->getNameAsString() << ',';
+        knownUnions[name] = true;
+        *TypedefsOut << "union," << name << ',' << n << ',';
+        for (RecordDecl::field_iterator i = RD->field_begin(), e = RD->field_end(); i != e; ++i) {
+            FieldDecl *FD = *i;
+            *TypedefsOut << typeToString(FD->getType()) << ',' << FD->getNameAsString() << ',';
         }
         *TypedefsOut << '\n';
     }
@@ -71,12 +93,19 @@ class SaveTypedefsConsumer : public ASTConsumer {
             } else if (typeStr.starts_with("enum ")) {
                 if (TagDecl* tmp = TdD->getAnonDeclWithTypedefName())
                     if (EnumDecl* ED = dyn_cast<EnumDecl>(tmp))
-                        handleEnumDecl(ED, typeStr.substr(5z, typeStr.size()-5z));
+                        HandleEnumDecl(ED, typeStr.substr(5z, typeStr.size()-5z));
+            } else if (typeStr.starts_with("union ")) {
+                if (TagDecl* tmp = TdD->getAnonDeclWithTypedefName())
+                    if (RecordDecl* RD = dyn_cast<RecordDecl>(tmp))
+                        HandleUnionDecl(RD, typeStr.substr(6z, typeStr.size()-6z));
             }
-        } else if (RecordDecl *RD = dyn_cast<RecordDecl>(D))
-            HandleStructDecl(RD);
-        else if (EnumDecl *ED = dyn_cast<EnumDecl>(D))
-            handleEnumDecl(ED);
+        } else if (EnumDecl *ED = dyn_cast<EnumDecl>(D))
+            HandleEnumDecl(ED);
+        else if (RecordDecl *RD = dyn_cast<RecordDecl>(D)) {
+            std::string name = RD->getNameAsString();
+            if (name.size() > 0)
+                HandleStructDecl(RD);
+        }
     }
     bool HandleTopLevelDecl(DeclGroupRef DG) override {
         for (DeclGroupRef::iterator i = DG.begin(), e = DG.end(); i != e; ++i)

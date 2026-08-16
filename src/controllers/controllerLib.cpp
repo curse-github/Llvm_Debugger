@@ -124,16 +124,17 @@ bool isInputableType(std::string type) {
                 break;
             }
         }
-        if (!isStruct)
-            return false;
-        bool isValid = true;
-        for (int j = 0; j < structNumFields[i]; j++) {
-            if (!isInputableType(structFieldTypes[i][j])) {
-                isValid = false;
-                break;
+        if (isStruct) {
+            bool isValid = true;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                if (!isInputableType(structFieldTypes[i][j])) {
+                    isValid = false;
+                    break;
+                }
             }
+            return isValid;
         }
-        return isValid;
+        return false;
     }
 }
 void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound) {
@@ -191,12 +192,12 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
                 isStruct = true;
                 break;
             }
-        if (!isStruct)
+        if (isStruct) {
+            //std::cout << "Creating struct of type \"" << type << "\"\n";
+            for (int j = 0; j < structNumFields[i]; j++)
+                inputType(structFieldTypes[i][j], parameters, storage, paramName+'.'+structFieldNames[i][j], true);
             return;
-        //std::cout << "Creating struct of type \"" << type << "\"\n";
-        for (int j = 0; j < structNumFields[i]; j++)
-            inputType(structFieldTypes[i][j], parameters, storage, paramName+'.'+structFieldNames[i][j], true);
-        return;
+        }
     }
 }
 
@@ -206,7 +207,8 @@ void print<bool>(void* ptr, std::ostream& o) {
 }
 template <>
 void print<char>(void* ptr, std::ostream& o) {
-    o << '\'' << (*(char*)ptr) << '\'';
+    char val1 = (*(char*)ptr);
+    o << '\'' << val1 << '\'';
 }
 template <>
 void print<char*>(void* ptr, std::ostream& o) {
@@ -269,22 +271,40 @@ void printType(std::string type, void* ptr, std::ostream& o) {
                 isStruct = true;
                 break;
             }
-        if (!isStruct) {
-            o << "unknown";
+        if (isStruct) {
+            o << "{ ";
+            unsigned int offset = 0;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                if (j != 0) o << ", ";
+                unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
+                unsigned int largestContained = getLargestTypeSizeContained(structFieldTypes[i][j]);
+                offset = offset+(largestContained-offset%largestContained)%largestContained;
+                o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ")";
+                printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
+                offset += size;
+            }
+            o << " }";
             return;
         }
-        o << "{ ";
-        unsigned int offset = 0;
-        for (int j = 0; j < structNumFields[i]; j++) {
-            unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
-            unsigned int largestContained = getLargestTypeSizeContained(structFieldTypes[i][j]);
-            offset = offset+(largestContained-offset%largestContained)%largestContained;
-            if (j != 0) o << ", ";
-            o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ")";
-            printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
-            offset += size;
+        bool isUnion = false;
+        for(i = 0; !isUnion&&(i < numUnions); i++)
+            if (type == unionNames[i]) {
+                isUnion = true;
+                break;
+            }
+        if (isUnion) {
+            o << "{ ";
+            unsigned int offset = 0;
+            for (int j = 0; j < unionNumFields[i]; j++) {
+                if (j != 0) o << " or ";
+                o << unionFieldNames[i][j] << "=(" << unionFieldTypes[i][j] << ")";
+                printType(unionFieldTypes[i][j], ptr, o);
+            }
+            o << " }";
+            return;
         }
-        o << " }";
+        o << "unknown";
+        return;
     }
 }
 
@@ -315,15 +335,30 @@ unsigned int getTypeByteLength(std::string type) {
                 isStruct = true;
                 break;
             }
-        if (!isStruct)
-            return 0;
-        unsigned int totalLength = 0;
-        for (int j = 0; j < structNumFields[i]; j++) {
-            unsigned int length = getTypeByteLength(structFieldTypes[i][j]);
-            totalLength = totalLength+(length-totalLength%length)%length;
-            totalLength += length;
+        if (isStruct) {
+            unsigned int totalLength = 0;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                unsigned int length = getTypeByteLength(structFieldTypes[i][j]);
+                totalLength = totalLength+(length-totalLength%length)%length;
+                totalLength += length;
+            }
+            return totalLength;
         }
-        return totalLength;
+        bool isUnion = false;
+        for(i = 0; !isUnion&&(i < numUnions); i++)
+            if (type == unionNames[i]) {
+                isUnion = true;
+                break;
+            }
+        if (isUnion) {
+            unsigned int largestSize = 0;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
+                if (size > largestSize) largestSize = size;
+            }
+            return largestSize;
+        }
+        return 0;
     }
     return 0;
 }
@@ -344,14 +379,29 @@ unsigned int getLargestTypeSizeContained(std::string type) {
                 isStruct = true;
                 break;
             }
-        if (!isStruct)
-            return 0;
-        unsigned int largestSize = 0;
-        for (int j = 0; j < structNumFields[i]; j++) {
-            unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
-            if (size > largestSize) largestSize = size;
+        if (isStruct) {
+            unsigned int largestSize = 0;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                unsigned int size = getLargestTypeSizeContained(structFieldTypes[i][j]);
+                if (size > largestSize) largestSize = size;
+            }
+            return largestSize;
         }
-        return largestSize;
+        bool isUnion = false;
+        for(i = 0; !isUnion&&(i < numUnions); i++)
+            if (type == unionNames[i]) {
+                isUnion = true;
+                break;
+            }
+        if (isUnion) {
+            unsigned int largestSize = 0;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                unsigned int size = getLargestTypeSizeContained(structFieldTypes[i][j]);
+                if (size > largestSize) largestSize = size;
+            }
+            return largestSize;
+        }
+        return 0;
     }
     return 0;
 }

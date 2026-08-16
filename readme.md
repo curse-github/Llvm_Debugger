@@ -1,3 +1,9 @@
+## General
+this is run on my machine running arch linux, with llvm version 21
+## Setup
+the project can be setup by simply running ./config.sh if on ubuntu<br>
+otherwise install the following programs, and run the ./create_coreutils.sh script<br>
+python3 python3-pip make git wget
 ## Instructions:
 Command to run either librarify or the debugger are as follows <br>
 `make librarify TARGET=testOne`<br>
@@ -8,13 +14,15 @@ Command to run either librarify or the debugger are as follows <br>
 `make debugger TARGET=testOne`<br>
 `make debugger TARGET=testTwo`<br>
 `make debugger TARGET=testThree`<br>
-`make debugger TARGET=ls`<br>
-`make debugger TARGET=cat`<br>
-To add more usable targets, add instructions to the makefile file for making "./tmp/example.ll".<br>
+`make debugger TARGET=ls ARGS="."`<br>
+`make debugger TARGET=cat ARGS="./exFile.txt"`<br>
+To add more usable targets, add instructions to the makefile file for making ./tmp/"example".ll.<br>
+This makefile target needs to create the file ./tmp/"example".ll, but also 
 This gives the the functionality to run:<br>
-`make librarify TARGET=example` or <br>
-`make debugger TARGET=example`<br>
+`make librarify TARGET="example"` or <br>
+`make debugger TARGET="example"`<br>
 <br><br>
+
 ## Writeup:
 Explanation of project:
 The “librarification” part of this project consists of two parts, a controller, and a modified version of the original program being analysed These two parts cover the two main portions of the code, however both portions have other challenges not covered in the basic definition of the process.<br>
@@ -23,42 +31,6 @@ The second part of the “librarification” is creating the modified version of
 The first issue encountered was in the transformation pass done directly on the original code, which is, in LLVM pointers don’t have any inherit types. Yet of course we can’t simply not use pointers of any kind, so what’s the solution to this? We found that by reading the actual source code and how the pointer is used, it can sometimes be enough to determine if it is a simple pointer to an integral type. More specifically, the instructions that can be useful in determining pointer type are the following, load, store, get element pointer, and calling functions. The load and store instructions are useful fairly obviously, because they will directly state the type of the variable contained within the pointer. The get element pointer instruction and calling a function are somewhat more nuanced however. These are helpful because they will point you to another value which is guaranteed to have the same type, either within the existing function or in the other function being called. These techniques together can determine many different types of pointers within the program, though there is more work that can be done.<br>
 The next problem, although admittedly easier, is inputting pointers, arrays, and structs into the byte buffers sent to the buffer functions. Additionally, in the case of structs, data within the structs may have strange alignment depending on the type. This is a small challenge since it requires extra storage to store data, and then what's actually utilized as an input is the pointer to that other data. So to fix this issue, we have a vector of the same byte buffers used as inputs for wrapper functions, which can be created as storage is needed. So when an array or pointer is needed, it creates a storage, stores the either single value or multiple consecutive values, and in the case of structs, is careful to align the values correctly. Finally, what is actually sent as the parameter to the original function is the pointer to that storage.<br>
 The next part of this project is the actual “debugger” part, another LLVM pass run directly after librarify. The goal of this portion of the project is to essentially run the program as normal but output as much useful debugging information as we can get away with. While there are a few ways you could do this, the way it works so far is as follows. Anytime a function which is defined in this function, and that we already type information for, we pack the parameters that are being used as inputs into the function into a byte buffer. This buffer is then sent to an external function which handles the logging, along with the name of the function being called. Finally, after this the function is called normally, its output stored, and then sent to a different external function, along with the name of the function that has returned. The end result of this is an output that can be generated which looks a lot like a stacktrace, but of the entire program. Next steps may be something like storing information like types and names about global variables, so that the output debug information can also show cached global variables,<br>
-## Timeline:
-<br><br>
-Feb 17th 2026<br>
-- Created test of “controller” c++ code which can call external functions based 1) on pointers to wrapper functions taking a bit buffer, and 2) arrays of data explaining the names of the external function’s name, arguments names, and argument types.
 
-Feb 20th 2026<br>
-- Created test of LLVM transformation pass which adds in the previously mentioned arrays of data about code procedural, rather than manually, and then compiles along with the “controller” created before.
-
-Mar 20th<br>
-- First working concept. Librarification now adds bit buffer wrapper functions and passes them into the “controller” c++ code to be called based on input from the user.
-
-Apr 16th<br>
-- Added source code for “coreutils” to project, containing common linux utilities like cat, ls, mkdir, and chown. utilized project WLLVM (whole-program LLVM) to help reverse the output executable file back into bytecode, which can then be turned into LLVM assembly code and processed by the librarification pass.
-
-Apr 17th<br>
-- Cleaned up codebase, removed codeutils code from being tracked in repository and instead added scripts to download for future users and added related filed to “.gitignore” file.
-
-Apr 26th<br>
-- Now prints the output return value from the functions chosen to be called by the user. Improved type determination by searching for types of pointer, (due to exact pointer types not being defined in LLVM). This is done by searching in the uses of the pointer for things like dereferencing the pointer, or storing a value in it, and then determining the type based on that.
-
-May 6th<br>
-- Improved pointer determination by evaluating more types of instructions for hints, improved possible crashes caused by infinite loops
-
-Wasn’t working on this project from May 7th → July 15
-
-Jul 16th<br>
-- Began adding support for LLVM structs and arrays into librarification code, created struct definition data into output code.
-
-Jul 17th<br>
-- Added support for structs, arrays, and pointers into the controller code, taking in the user input
-
-Jul 22nd<br>
-- Improved pointer determination by checking other half of push instructions and also detects function pointers based on function calls.
-
-Jul 24th and Jul 25th<br>
-- Added debugger LLVM pass which adds log instructions before and after existing call instructions, which send debug data about the inputs and outputs of the function to external functions
-
-Jul 28th, Jul 29th, and Jul 30th<br>
-- Testing and fixing bugs with debugger code, including occasional crashes and segmentation faults.
+## Commit log
+[log.md](./log.md)

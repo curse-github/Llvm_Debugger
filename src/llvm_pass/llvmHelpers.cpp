@@ -128,11 +128,17 @@ llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator b
     printCall->insertBefore(beforeInst);
     return printCall;
 }
+
 unsigned int structCount = 0;
 std::vector<std::string> structNames;
 std::map<llvm::Type*, unsigned int> structTypeToIndex;
 std::map<std::string, unsigned int> structNameToIndex;
 std::vector<llvm::StructType*> unnamedStructTypes;
+unsigned int unionCount = 0;
+std::vector<std::string> unionNames;
+std::map<llvm::Type*, unsigned int> unionTypeToIndex;
+std::map<std::string, unsigned int> unionNameToIndex;
+
 std::string basicGetTypeAsString(llvm::Type* ty) {
     if (ty->isIntegerTy()) {
         const unsigned int bitWidth = ty->getIntegerBitWidth();
