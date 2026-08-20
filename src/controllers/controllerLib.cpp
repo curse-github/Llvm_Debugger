@@ -2,10 +2,8 @@
 
 bufferWriter::bufferWriter() {
     counter = pointer = nullptr;
-    // std::cout << "bufferWriter " << this << " created\n";
 }
 bufferWriter::bufferWriter(const bufferWriter& copy) {
-    // std::cout << "bufferWriter " << &copy << " getting copied1 to " << this << "\n";
     if (copy.pointer == nullptr) {
         counter = pointer = nullptr;
         return;
@@ -15,21 +13,18 @@ bufferWriter::bufferWriter(const bufferWriter& copy) {
     counter = (void*)((char*)pointer+((char*)copy.counter-(char*)copy.pointer));
 }
 bufferWriter::bufferWriter(bufferWriter&& move) {
-    // std::cout << "bufferWriter " << &move << " getting moved1 to " << this << "\n";
     pointer = move.pointer;
     counter = move.counter;
     move.pointer = nullptr;
     move.counter = nullptr;
 }
 bufferWriter& bufferWriter::operator=(const bufferWriter& copy) {
-    // std::cout << "bufferWriter " << &copy << " getting copied2 to " << this << "\n";
     pointer = malloc((char*)copy.counter-(char*)copy.pointer);
     std::memcpy(pointer, copy.pointer, (char*)copy.counter-(char*)copy.pointer);
     counter = (void*)((char*)pointer+((char*)copy.counter-(char*)copy.pointer));
     return *this;
 }
 bufferWriter& bufferWriter::operator=(bufferWriter&& move) {
-    // std::cout << "bufferWriter " << &move << " getting moved2 to " << this << "\n";
     pointer = move.pointer;
     counter = move.counter;
     move.pointer = nullptr;
@@ -37,12 +32,12 @@ bufferWriter& bufferWriter::operator=(bufferWriter&& move) {
     return *this;
 }
 bufferWriter::~bufferWriter() {
-    // std::cout << "bufferWriter " << this << " getting destroyed\n";
     if (pointer != nullptr) free(pointer);
     pointer = nullptr;
     counter = nullptr;
 }
 void bufferWriter::roundToMultipleOf(int amount) {
+    if ((amount == 0) || (amount == 1)) return;
     // round size
     int oldCount = (int)((char*)counter-(char*)pointer);
     int count = oldCount+(amount-oldCount%amount)%amount;
@@ -62,6 +57,21 @@ void bufferWriter::roundToMultipleOf(int amount) {
 }
 int bufferWriter::getSize() {
     return (int)((char*)counter-(char*)pointer);
+}
+void bufferWriter::pushZeroBytes(int num) {
+    if (num == 0) return;
+    // resere new space
+    void* old = pointer;
+    pointer = malloc((char*)counter-(char*)old+sizeof(char)*num);
+    std::memcpy(pointer, old, (char*)counter-(char*)old);
+    counter=(void*)((char*)pointer+((char*)counter-(char*)old));
+    // free old space
+    free(old);
+    // push zero bytes
+    for(int i = 0; i < num; i++) {
+        *((char*)counter) = '\0';
+        counter=(void*)((char*)counter+sizeof(char));
+    }
 }
 
 
@@ -108,23 +118,39 @@ std::map<std::string, inputFT> inputFunctions = {
     {"float", input<float>},
     {"double", input<double>}
 };
+std::vector<std::string> visitedTypes;
 bool isInputableType(std::string type) {
+    if (std::find(visitedTypes.begin(), visitedTypes.end(), type) != visitedTypes.end())\
+        return true;
     if (type[type.size()-1] == '*') {// is an pointer type
-        return isInputableType(type.substr(0, type.size()-1));
+        visitedTypes.push_back(type);
+        bool retValue = isInputableType(type.substr(0, type.size()-1));
+        visitedTypes.pop_back();
+        return retValue;
     } else if (type[type.size()-1] == ']') {// is an array type
-        return isInputableType(type.substr(0, type.find_last_of('[')));
+        visitedTypes.push_back(type);
+        bool retValue = isInputableType(type.substr(0, type.find_last_of('[')));
+        visitedTypes.pop_back();
+        return retValue;
     } else if (inputFunctions.count(type) > 0)
         return true;
     else {
-        bool isStruct = false;
+        bool isEnum = false;
         int i;
-        for(i = 0; !isStruct&&(i < numStructs); i++) {
+        for(i = 0; i < numEnums; i++)
+            if (type == enumNames[i]) {
+                isEnum = true;
+                break;
+            }
+        if (isEnum) return true;
+        bool isStruct = false;
+        for(i = 0; i < numStructs; i++)
             if (type == structNames[i]) {
                 isStruct = true;
                 break;
             }
-        }
         if (isStruct) {
+            visitedTypes.push_back(type);
             bool isValid = true;
             for (int j = 0; j < structNumFields[i]; j++) {
                 if (!isInputableType(structFieldTypes[i][j])) {
@@ -132,11 +158,31 @@ bool isInputableType(std::string type) {
                     break;
                 }
             }
+            visitedTypes.pop_back();
+            return isValid;
+        }
+        bool isUnion = false;
+        for(i = 0; i < numUnions; i++)
+            if (type == unionNames[i]) {
+                isUnion = true;
+                break;
+            }
+        if (isUnion) {
+            visitedTypes.push_back(type);
+            bool isValid = true;
+            for (int j = 0; j < unionNumFields[i]; j++) {
+                if (!isInputableType(unionFieldTypes[i][j])) {
+                    isValid = false;
+                    break;
+                }
+            }
+            visitedTypes.pop_back();
             return isValid;
         }
         return false;
     }
 }
+unsigned int getLargestTypeSizeContained(std::string type);
 void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound) {
     if (type=="char*") {
         std::string tmp;
@@ -185,9 +231,32 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
     } else if (inputFunctions.count(type) > 0)
         inputFunctions[type](parameters, paramName, doRound);
     else {
-        bool isStruct = false;
         int i;
-        for(i = 0; !isStruct&&(i < numStructs); i++)
+        bool isEnum = false;
+        for(i = 0; i < numEnums; i++)
+            if (type == enumNames[i]) {
+                isEnum = true;
+                break;
+            }
+        if (isEnum) {
+            std::cout << "enum " << enumNames[i] << '\n';
+            for(int j = 0; j < enumNumValues[i]; j++)
+                std::cout << "    " << (j+1) << ": " << enumNames[i] << "::" << enumValueNames[i][j] << " = " << enumValueValues[i][j] << '\n';
+            std::cout << "Choose which value within the enum you would like to input.\n";
+            int option = -1;
+            std::cin >> option;
+            option--;
+            while ((option < 0) || (option >= enumNumValues[i])) {
+                std::cout << "Invalid option " << option << ", choose value between 1 and " << enumNumValues[i] << '\n';
+                std::cin >> option;
+                option--;
+            }
+            if (doRound) parameters.roundToMultipleOf(sizeof(int));
+            parameters.push<int>(enumValueValues[i][option]);
+            return;
+        }
+        bool isStruct = false;
+        for(i = 0; i < numStructs; i++)
             if (type == structNames[i]) {
                 isStruct = true;
                 break;
@@ -196,6 +265,30 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
             //std::cout << "Creating struct of type \"" << type << "\"\n";
             for (int j = 0; j < structNumFields[i]; j++)
                 inputType(structFieldTypes[i][j], parameters, storage, paramName+'.'+structFieldNames[i][j], true);
+            return;
+        }
+        bool isUnion = false;
+        for(i = 0; i < numUnions; i++)
+            if (type == unionNames[i]) {
+                isUnion = true;
+                break;
+            }
+        if (isUnion) {
+            std::cout << "union " << unionNames[i] << '\n';
+            for(int j = 0; j < unionNumFields[i]; j++)
+                std::cout << "    " << (j+1) << ": (" << unionFieldTypes[i][j] << ')' << unionFieldNames[i][j] << '\n';
+            std::cout << "Choose which type within the union you would like to input.\n";
+            int option = -1;
+            std::cin >> option;
+            option--;
+            while ((option < 0) || (option >= enumNumValues[i])) {
+                std::cout << "Invalid option " << option << ", choose value between 1 and " << enumNumValues[i] << '\n';
+                std::cin >> option;
+                option--;
+            }
+            if (doRound) parameters.roundToMultipleOf(getLargestTypeSizeContained(type));
+            inputType(unionFieldTypes[i][option], parameters, storage, paramName+'.'+FieldNames[i][option], false);
+            parameters.pushZeroBytes(getTypeByteLength(type)-getTypeByteLength(unionFieldTypes[i][option]));
             return;
         }
     }
@@ -214,13 +307,14 @@ template <>
 void print<char*>(void* ptr, std::ostream& o) {
     const char* cstr = (*(const char**)ptr);
     if (cstr != nullptr) {
+        o << (void*)cstr << " = (c_str)";
         std::string str = cstr;
         size_t loc = str.find('\n');
         while (loc != std::string::npos) {
             str.replace(loc,1,"\\n");
             loc = str.find('\n');
         }
-        o << (void*)cstr << " = (c_str)\"" << str << "\\0\"";
+        o << "\"" << str << "\\0\"";
     } else
         o << "nullptr";
 }
@@ -234,9 +328,8 @@ std::map<std::string, printFT> printFunctions = {
     {"double", print<double>}, 
     {"char*", print<char*>}
 };
-unsigned int getLargestTypeSizeContained(std::string type);
 void printType(std::string type, void* ptr, std::ostream& o) {
-    if (ptr == nullptr) {
+    if (((unsigned long long)ptr <= 0xff) || ((unsigned long long)ptr == 0xffffffff) || ((unsigned long long)ptr >= 0xffffffffffffff00ull)) {
         o << "&nullptr";
         return;
     }
@@ -247,7 +340,7 @@ void printType(std::string type, void* ptr, std::ostream& o) {
             o << ptr;
         else {
             std::string newType = type.substr(0, type.size()-1);
-            o << *(void**)ptr << " -> (" << newType << ')';
+            o << *(void**)ptr << " -> (" << newType << ")";
             printType(newType, *(void**)ptr, o);
         }
     } else if (type[type.size()-1] == ']') {
@@ -264,9 +357,24 @@ void printType(std::string type, void* ptr, std::ostream& o) {
         }
         o << " ]";
     } else {
-        bool isStruct = false;
         int i;
-        for(i = 0; !isStruct&&(i < numStructs); i++)
+        bool isEnum = false;
+        for(i = 0; i < numEnums; i++)
+            if (type == enumNames[i]) {
+                isEnum = true;
+                break;
+            }
+        if (isEnum) {
+            int value = (*(int*)ptr);
+            for(int j = 0; j < enumNumValues[i]; j++)
+                if (value == enumValueValues[i][j]) {
+                    o << enumValueNames[i][j];
+                    break;
+                }
+            return;
+        }
+        bool isStruct = false;
+        for(i = 0; i < numStructs; i++)
             if (type == structNames[i]) {
                 isStruct = true;
                 break;
@@ -287,7 +395,7 @@ void printType(std::string type, void* ptr, std::ostream& o) {
             return;
         }
         bool isUnion = false;
-        for(i = 0; !isUnion&&(i < numUnions); i++)
+        for(i = 0; i < numUnions; i++)
             if (type == unionNames[i]) {
                 isUnion = true;
                 break;
@@ -328,9 +436,17 @@ unsigned int getTypeByteLength(std::string type) {
     } else if (typeByteLengths.count(type) > 0)
         return typeByteLengths[type];
     else {
-        bool isStruct = false;
+        bool isEnum = false;
         int i;
-        for(i = 0; !isStruct&&(i < numStructs); i++)
+        for(i = 0; i < numEnums; i++)
+            if (type == enumNames[i]) {
+                isEnum = true;
+                break;
+            }
+        if (isEnum)
+            return getTypeByteLength(enumTypes[i]);
+        bool isStruct = false;
+        for(i = 0; i < numStructs; i++)
             if (type == structNames[i]) {
                 isStruct = true;
                 break;
@@ -345,7 +461,7 @@ unsigned int getTypeByteLength(std::string type) {
             return totalLength;
         }
         bool isUnion = false;
-        for(i = 0; !isUnion&&(i < numUnions); i++)
+        for(i = 0; i < numUnions; i++)
             if (type == unionNames[i]) {
                 isUnion = true;
                 break;
@@ -372,9 +488,17 @@ unsigned int getLargestTypeSizeContained(std::string type) {
     } else if (typeByteLengths.count(type) > 0)
         return typeByteLengths[type];
     else {
-        bool isStruct = false;
+        bool isEnum = false;
         int i;
-        for(i = 0; !isStruct&&(i < numStructs); i++)
+        for(i = 0; i < numEnums; i++)
+            if (type == enumNames[i]) {
+                isEnum = true;
+                break;
+            }
+        if (isEnum)
+            return getTypeByteLength(enumTypes[i]);
+        bool isStruct = false;
+        for(i = 0; i < numStructs; i++)
             if (type == structNames[i]) {
                 isStruct = true;
                 break;
@@ -388,7 +512,7 @@ unsigned int getLargestTypeSizeContained(std::string type) {
             return largestSize;
         }
         bool isUnion = false;
-        for(i = 0; !isUnion&&(i < numUnions); i++)
+        for(i = 0; i < numUnions; i++)
             if (type == unionNames[i]) {
                 isUnion = true;
                 break;

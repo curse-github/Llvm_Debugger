@@ -177,6 +177,7 @@ std::string basicGetTypeAsString(llvm::Type* ty) {
         structTypeToIndex[ty] = structCount;
         structNameToIndex[name] = structCount;
         structCount++;
+        structNames.push_back(name);
         return name;
     } else if (ty->isArrayTy()) {
         llvm::ArrayType* aty = (llvm::ArrayType*)ty;

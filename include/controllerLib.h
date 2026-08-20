@@ -7,6 +7,7 @@
 #include <memory>
 #include <map>
 #include <fstream>
+#include <algorithm>
 
 template<typename T> struct TypeName { static const char *Get() { return ""; }};
 #define ENABLE_TYPENAME(A) template<> struct TypeName<A> { static const char *Get() { return #A; }};
@@ -58,6 +59,7 @@ public:
     }
     void roundToMultipleOf(int amount);
     int getSize();
+    void pushZeroBytes(int num);
 };
 
 extern unsigned int numFunctions;
@@ -82,7 +84,7 @@ extern const char* enumNames[];
 extern const char* enumTypes[];
 extern unsigned int enumNumValues[];
 extern const char** enumValueNames[];
-extern unsigned int* enumValueValues[];
+extern int* enumValueValues[];
 
 extern unsigned int numStructs;
 extern const char* structNames[];
@@ -120,7 +122,7 @@ bool isInputableType(std::string type);
 void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound);
 
 template <typename T>
-void print(void* ptr, std::ostream& o) {
+void print(void* ptr, std::ostream& o=std::cout) {
     o << (*(T*)ptr);
 }
 template <>
@@ -136,7 +138,7 @@ template void print<float>(void* ptr, std::ostream& o);
 template void print<double>(void* ptr, std::ostream& o);
 typedef void(*printFT)(void*, std::ostream&);
 extern std::map<std::string, printFT> printFunctions;
-void printType(std::string type, void* ptr, std::ostream& o = std::cout);
+void printType(std::string type, void* ptr, std::ostream& o=std::cout);
 
 extern std::map<std::string, unsigned int> typeByteLengths;
 unsigned int getTypeByteLength(std::string type);

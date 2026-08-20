@@ -86,7 +86,7 @@ void readTypeDefsCsv() {
             continue;
         if (type == "enum") {
             std::string enumIntType;
-            if (!std::getline(lineSStream, type, ','))
+            if (!std::getline(lineSStream, enumIntType, ','))
                 continue;
             enumTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(enumIntType)));
             std::string enumName;

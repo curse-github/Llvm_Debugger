@@ -22,6 +22,8 @@ std::string fixTypeName(std::string inputT, bool allowVoid) {
         return fixTypeName(inputT.substr(6z,inputT.size()-6z));
     if (inputT.starts_with("unsigned "))
         return fixTypeName(inputT.substr(9z,inputT.size()-9z));
+    if (inputT.starts_with("signed "))
+        return fixTypeName(inputT.substr(7z,inputT.size()-7z));
     if (inputT.starts_with("struct "))
         return fixTypeName(inputT.substr(7z,inputT.size()-7z));
     if (inputT.starts_with("enum "))
@@ -43,7 +45,7 @@ std::string fixTypeName(std::string inputT, bool allowVoid) {
     if (inputT.ends_with("*") || inputT.ends_with("&")) {
         std::string tmp = fixTypeName(inputT.substr(0z,inputT.size()-1z), true);
         if (tmp.starts_with("unknown"))
-            return tmp;
+            return "void*";
         return tmp+'*';
     }
     if (inputT.ends_with("]")) {// is an array type

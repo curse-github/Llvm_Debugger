@@ -3,6 +3,7 @@
 std::ostream* o = &std::cout;
 unsigned int indentLevel = 0;
 extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
+    if (o == nullptr) return;
     for(int i = 0; i < indentLevel; i++) *o << "    ";
     indentLevel++;
     for(int j = 0; j < numFunctions; j++) {
@@ -27,6 +28,7 @@ extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
     }
 }
 extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
+    if (o == nullptr) return;
     indentLevel--;
     for(int i = 0; i < indentLevel; i++) *o << "    ";
     for(int j = 0; j < numFunctions; j++) {
@@ -68,9 +70,11 @@ int main(int argc, char** argv) {
     for (i = 0; i < numFunctions; i++) {
         if (std::strcmp(functionNames[i], "main") != 0)
             continue;
-        for(int j = 0; isValid && (j < functionParamCounts[i]); j++)
-            if (!isInputableType(functionParamTypes[i][j]))
+        for(int j = 0; j < functionParamCounts[i]; j++)
+            if (!isInputableType(functionParamTypes[i][j])) {
                 isValid = false;
+                break;
+            }
         break;
     }
     if (!isValid) {
@@ -78,10 +82,9 @@ int main(int argc, char** argv) {
         return 1;
     }
     // open file for output
-    std::fstream* f;
-    f = new std::fstream();
-    f->open("out/output.txt", std::ios::out);
-    o = f;
+    std::fstream f;
+    f.open("out/output.txt", std::ios::out);
+    o = &f;
     // get parameters for main
     bufferWriter parameters;
     std::vector<bufferWriter*> storage;
@@ -105,11 +108,10 @@ int main(int argc, char** argv) {
         functionPointers[i](parameters.pointer);
         logFunctionReturn("main", nullptr);
     }
+    o = nullptr;
+    f.close();
     // cleanup
     for(int j = 0; j < storage.size(); j++)
         delete storage[j];
-    o = &std::cout;
-    f->close();
-    delete f;
     return 0;
 }

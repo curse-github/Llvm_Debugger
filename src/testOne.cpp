@@ -1,6 +1,14 @@
-//#include <iostream>
+#include <iostream>
+// testing arguments and return types
+float foo(float a, float b, float c, float d, float e, float f) {
+    return a+b-c+d-e+f;
+}
+// testing overloads and arrays
+float foo(float abcdef[6]) {
+    return foo(abcdef[0], abcdef[1], abcdef[2], abcdef[3], abcdef[4], abcdef[5]);
+}
 
-int foo(int a, double b, bool c, char d, float e) {
+int bar(int a, double b, bool c, char d, float e) {
     return c?(a+d):((int)b+e);
 }
 typedef struct {
@@ -10,58 +18,84 @@ typedef struct {
     char d;
     float e;
 } fooArgs;
-int foo(fooArgs g) {
-    return foo(g.a, g.b, g.c, g.d, g.e);
+// testing inputting structs
+int bar(fooArgs g) {
+    return bar(g.a, g.b, g.c, g.d, g.e);
 }
+// testing correct struct field offsets and initializers
 struct testStruct {
-    char buf;
-    int buff;
-    char bufff;
-    fooArgs g;
+    char buf;// at offset 0
+    int buff;// at offset 4
+    char bufff;// at offset 8
+    fooArgs g;// at offset 16
     testStruct() {
         buf = '0';
         buff = 1;
         bufff = '2';
     }
 };
-int foo(testStruct h) {
-    return foo(h.g);
+int bar(testStruct h) {
+    return bar(h.g);
 }
 
-float bar(float a, float b, float c, float d, float e, float f) {
-    return a+b-c+d-e+f;
-}
-float bar(float abcdef[6]) {
-    return bar(abcdef[0], abcdef[1], abcdef[2], abcdef[3], abcdef[4], abcdef[5]);
-}
+
 typedef union {
-        int type1;
-        float type2;
-        char buffer[15];
-    } tmp;
+    int type1;
+    float type2;
+    char buffer[15];
+} testUnion;
 typedef struct {
     bool isFloat;
-    tmp value;
-} testUnion;
-void createUnion(testUnion* result, int value) {
+    testUnion value;
+} unionHandler;
+// testing unions and nested unions
+void createUnion(unionHandler* result, int value) {
     result->isFloat = false;
     result->value.type1 = value;
     return;
 }
-void createUnion(testUnion* result, float value) {
+void createUnion(unionHandler* result, float value) {
     result->isFloat = true;
     result->value.type2 = value;
     return;
 }
 
-int main(int argc, char** argv) {
+// testing enums
+enum testEnum : int {
+    TEST_LOW = 10,
+    TEST_MEDIUM = 5,
+    TEST_HIGH = 0,
+    TEST_ERROR = -1
+};
+void printEnum(testEnum val) {
+    switch (val) {
+        case TEST_LOW:
+            std::cout << "LOW\n";
+            break;
+        case TEST_MEDIUM:
+            std::cout << "MEDIUM\n";
+            break;
+        case TEST_HIGH:
+            std::cout << "HIGH\n";
+            break;
+        default:
+            std::cout << "ERROR\n";
+            break;
+    }
+}
+
+int main() {// int argc, char** argv) {
+    float tmp2[6] = { 1.2, 3.4, 5.6, 7.8, 9.10, 11.12 };
+    foo(tmp2);
     testStruct tmp1{};
     tmp1.g = {1, 2.34, false, '6', 7.8f};
-    foo(tmp1);
-    float tmp2[6] = { 1.2, 3.4, 5.6, 7.8, 9.10, 11.12 };
-    bar(tmp2);
-    testUnion output;
+    bar(tmp1);
+
+    unionHandler output;
     createUnion(&output, 12);
     createUnion(&output, 2.0f);
+
+    printEnum(TEST_HIGH);
+    printEnum(TEST_LOW);
     return 15;
 }

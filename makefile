@@ -16,7 +16,7 @@ includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
 clang-plugin-args = -Xclang -load -Xclang ./out/libClangPlugin.so -Xclang -add-plugin -Xclang
-compile-args = -O0 -fno-discard-value-names -fno-inline
+compile-args = -O0 -fno-inline -Wall -Wextra -Wno-implicit-function-declaration -fno-discard-value-names -Wno-c23-extensions -Wno-sign-compare -Wno-tautological-constant-out-of-range-compare
 
 .phony : ast-dump librarify debugger stdlib mkdir clean
 
@@ -55,12 +55,6 @@ ast-dump:
 	@-echo running clang plugin on cat.c
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/cat.c
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/cat.c
-./tmp/sleep.ll:./coreutils/src/sleep ./coreutils/src/sleep.c ./out/libClangPlugin.so
-	@./wllvm_venv/bin/extract-bc ./coreutils/src/sleep -o ./tmp/sleep.bc
-	@llvm-dis ./tmp/sleep.bc -o ./tmp/sleep.ll
-	@-echo running clang plugin on sleep.c
-	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/sleep.c
-	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -I./coreutils/lib ./coreutils/lib/quotearg.c ./coreutils/src/sleep.c
 
 librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectext) ./src/controllers/librarifyController.cpp
 	@-echo
@@ -69,7 +63,7 @@ librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/contro
 	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).$(objectext)
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectext)
 	@clang++ -I./include ./src/controllers/librarifyController.cpp -c -o ./tmp/controller.$(objectext)
-	@clang++ ./tmp/controller.$(objectext) ./tmp/controllerLib.$(objectext) ./out/$(TARGET).$(staticExt) -o ./out/$(TARGET).$(executableExt)
+	@clang++ ./tmp/controller.$(objectext) ./tmp/controllerLib.$(objectext) ./out/$(TARGET).$(staticExt) -lcap -o ./out/$(TARGET).$(executableExt)
 	@-echo running $(TARGET).$(executableExt)
 	@-echo
 	@./out/$(TARGET).$(executableExt) $(ARGS)
@@ -81,7 +75,7 @@ debugger: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/control
 	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).$(objectext)
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectext)
 	@clang++ -I./include ./src/controllers/debuggerController.cpp -c -o ./tmp/controller.$(objectext)
-	@clang++ ./tmp/controller.$(objectext) ./tmp/controllerLib.$(objectext) ./out/$(TARGET).$(staticExt) -o ./out/$(TARGET).$(executableExt)
+	@clang++ ./tmp/controller.$(objectext) ./tmp/controllerLib.$(objectext) ./out/$(TARGET).$(staticExt) -lcap -o ./out/$(TARGET).$(executableExt)
 	@-echo running $(TARGET).$(executableExt)
 	@-echo
 	@./out/$(TARGET).$(executableExt) $(ARGS)
