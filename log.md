@@ -35,3 +35,20 @@ Jul 24th and Jul 25th<br>
 
 Jul 28th, Jul 29th, and Jul 30th<br>
 - Testing and fixing bugs with debugger code, including occasional crashes and segmentation faults.
+
+Aug 6th, Aug 7th<br>
+- Implemented clang plugin which determines the original types from the C or C++ source and stores them in a file to be read in by the llvm plugin
+- Also generally improved handling of functions within namespaces or classes, in part due to the clang plugin
+
+Aug 11th<br>
+- split clang plugin into seperate parts which can be run seperately in order to run on multiple source files.
+
+Aug 12th<br>
+- finally supports overloaded functions
+- fixed several issues in cases of nested structs
+
+Aug 15th<br>
+- added actual support for unions within the code and printing of them in debug mode
+
+Aug 20th<br>
+- added support for inputting unions and enums in the librarify mode for the inputting of parameters
