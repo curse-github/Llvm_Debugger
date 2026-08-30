@@ -1,7 +1,7 @@
 #include <fstream>
 
 #include "clangHelpers.h"
-//#define DEBUG
+// #define DEBUG
 
 unsigned int discardedFuncs = 0;
 void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
@@ -64,6 +64,7 @@ void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
 #endif
     }
     // output function
+    size_t numParams = FD->getNumParams();
     if (const CXXMethodDecl *MD = dyn_cast<CXXMethodDecl>(FD)) {
         std::string className = MD->getThisType().getCanonicalType().getAsString();
         if (className.starts_with("class ")) {
@@ -74,14 +75,14 @@ void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
         // output two versions
         // for some struct or class functions you end up with possible types of the function
         // and v1: ... class::func(...)
-        *FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
+        *FuncParmsOut << returnType << ',' << name << ',' << numParams << ',' << (FD->isVariadic()?"true":"false") << ',';
         for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
             const ParmVarDecl *PD = *i;
             *FuncParmsOut << typeToString(PD->getOriginalType()) << ',' << PD->getName().str() << ',';
         }
         *FuncParmsOut << '\n';
         // v2: ... class::func(class* this, ...)
-        *FuncParmsOut << returnType << ',' << name << ',' << (FD->getNumParams()+1) << ',';
+        *FuncParmsOut << returnType << ',' << name << ',' << (numParams+1) << ',' << (FD->isVariadic()?"true":"false") << ',';
         *FuncParmsOut << typeToString(MD->getThisType()) << ",this,";
         for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
             const ParmVarDecl *PD = *i;
@@ -89,7 +90,7 @@ void HandleFunctionDecl(const FunctionDecl* FD, std::fstream* FuncParmsOut) {
         }
         *FuncParmsOut << '\n';
     } else {
-        *FuncParmsOut << returnType << ',' << name << ',' << FD->getNumParams() << ',';
+        *FuncParmsOut << returnType << ',' << name << ',' << numParams << ',' << (FD->isVariadic()?"true":"false") << ',';
         for (FunctionDecl::param_const_iterator i = FD->param_begin(), e = FD->param_end(); i != e; i++) {
             const ParmVarDecl *PD = *i;
             *FuncParmsOut << typeToString(PD->getOriginalType()) << ',' << PD->getName().str() << ',';

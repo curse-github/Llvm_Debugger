@@ -65,6 +65,7 @@ public:
 extern unsigned int numFunctions;
 extern const char* functionMangledNames[];
 extern const char* functionNames[];
+extern bool functionIsVariadic[];
 extern const char* functionReturnTypes[];
 extern unsigned int functionParamCounts[];
 extern const char** functionParamNames[];
@@ -121,6 +122,7 @@ extern std::map<std::string, inputFT> inputFunctions;
 bool isInputableType(std::string type);
 void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound);
 
+extern unsigned int indentLevel;
 template <typename T>
 void print(void* ptr, std::ostream& o=std::cout) {
     o << (*(T*)ptr);

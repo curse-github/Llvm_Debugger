@@ -1,7 +1,6 @@
 #include "controllerLib.h"
 
 std::ostream* o = &std::cout;
-unsigned int indentLevel = 0;
 extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
     if (o == nullptr) return;
     for(int i = 0; i < indentLevel; i++) *o << "    ";
@@ -20,12 +19,40 @@ extern "C" void logFunctionParameters(const char* funcName, void* buffer) {
                     offset += getTypeByteLength(functionParamTypes[j][k]);
                     *o << "\n";
                 }
+                if (functionIsVariadic[j]) {
+                    for(int i = 0; i < indentLevel; i++) *o << "    ";
+                    int n = *(int*)((char*)buffer+offset);
+                    offset += sizeof(int);
+                    if (n > 0) {
+                        *o << "... = (" << n << " * T) {\n";
+                        indentLevel++;
+                        for(int k = 0; k < n; k++) {
+                            for(int i = 0; i < indentLevel; i++) *o << "    ";
+                            char* type = *(char**)((char*)buffer+offset);
+                            *o << '(' << type << ") ";
+                            offset += sizeof(void*);
+                            printType(type, (void*)((char*)buffer+offset), *o);
+                            if (k+1!=n) *o << ',';
+                            *o << "\n";
+                            offset += getTypeByteLength(type);
+                        }
+                        indentLevel--;
+                        for(int i = 0; i < indentLevel; i++) *o << "    ";
+                        *o << "}\n";
+                    } else {
+                        *o << "... = (0 * T) { }\n";
+                    }
+                }
                 for(int i = 1; i < indentLevel; i++) *o << "    ";
                 *o << '}';
+            } else {
+                *o << " without parameters";
             }
             *o << '\n';
+            return;
         }
     }
+    *o << "Function \"" << funcName << "\" was called with unknown parameters\n";
 }
 extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
     if (o == nullptr) return;
@@ -39,8 +66,10 @@ extern "C" void logFunctionReturn(const char* funcName, void* buffer) {
                 printType(functionReturnTypes[j], buffer, *o);
             }
             *o << "\n";
+            return;
         }
     }
+    *o << "Function \"" << funcName << "\" returned\n";
 }
 
 int main(int argc, char** argv) {

@@ -63,6 +63,8 @@ llvm::GlobalVariable* createGlobalString(std::string str, std::string varName="s
 llvm::GlobalVariable* createGlobalPtrArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName);
 llvm::GlobalVariable* createGlobalInt(int val, std::string varName);
 llvm::GlobalVariable* createGlobalIntArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName);
+llvm::GlobalVariable* createGlobalCharArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName);
+llvm::GlobalVariable* createGlobalBoolArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName);
 
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst);
 llvm::CallInst* doCall(llvm::Function* f, char chr, llvm::BasicBlock::iterator beforeInst);

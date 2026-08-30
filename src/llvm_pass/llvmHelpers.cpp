@@ -113,6 +113,18 @@ llvm::GlobalVariable* createGlobalIntArray(llvm::ArrayRef<llvm::Constant*> vals,
     gArr->setInitializer(llvm::ConstantArray::get(T, vals));
     return gArr;
 }
+llvm::GlobalVariable* createGlobalCharArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName) {
+    llvm::ArrayType* T = llvm::ArrayType::get(i8_t, static_cast<unsigned int>(vals.size()));
+    llvm::GlobalVariable* gArr = new llvm::GlobalVariable(*Module, T, true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
+    gArr->setInitializer(llvm::ConstantArray::get(T, vals));
+    return gArr;
+}
+llvm::GlobalVariable* createGlobalBoolArray(llvm::ArrayRef<llvm::Constant*> vals, std::string varName) {
+    llvm::ArrayType* T = llvm::ArrayType::get(i8_t, static_cast<unsigned int>(vals.size()));
+    llvm::GlobalVariable* gArr = new llvm::GlobalVariable(*Module, T, true, llvm::GlobalValue::LinkageTypes::ExternalLinkage, 0, varName);
+    gArr->setInitializer(llvm::ConstantArray::get(T, vals));
+    return gArr;
+}
 
 llvm::CallInst* doCall(llvm::Function* f, llvm::Value* val, llvm::BasicBlock::iterator beforeInst) {
     // create print function call

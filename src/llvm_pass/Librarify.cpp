@@ -9,6 +9,7 @@
 unsigned int numFunctions_value = 0;
 std::vector<llvm::Constant*> functionMangledNames_value;
 std::vector<llvm::Constant*> functionNames_value;
+std::vector<llvm::Constant*> functionIsVariadic_value;
 std::vector<llvm::Constant*> functionReturnTypes_value;
 std::vector<llvm::Constant*> functionParamCounts_value;
 std::vector<llvm::Constant*> functionParamNames_value;
@@ -17,6 +18,7 @@ std::vector<llvm::Constant*> functionPointers_value;
 
 typedef struct {
     std::string returnType;
+    bool isVarArg;
     std::vector<std::string> paramTypes;
     std::vector<std::string> paramNames;
 } functionDataEntry;
@@ -45,6 +47,10 @@ void readFunctionParamsCsv() {
         if (!std::getline(lineSStream, numArgsString, ','))
             continue;
         unsigned int numArgs = std::stoi(numArgsString);
+        std::string isVarArgString;
+        if (!std::getline(lineSStream, isVarArgString, ','))
+            continue;
+        data.isVarArg = isVarArgString[0] == 't';
         for (int i = 0; i < numArgs; i++) {
             std::string type;
             if (!std::getline(lineSStream, type, ','))
@@ -219,7 +225,7 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     // loop through functions in module to create data lists
     for(llvm::Function& F : Module) {
         std::string name = F.getName().str();
-        if (!name.starts_with("llvm.") && !name.ends_with("_wrapper") && !F.isVarArg())
+        if (!name.starts_with("llvm.") && !name.ends_with("_wrapper"))
             run(F);
     }
     // std::cout << numPointerTypesDetermined << " out of " << numPointers << " (" << (numPointerTypesDetermined*100.0/std::max(1u, numPointers)) << "%) pointer types found\n";
@@ -227,6 +233,7 @@ llvm::PreservedAnalyses Librarify::run(llvm::Module& Module, llvm::ModuleAnalysi
     createGlobalInt(numFunctions_value, "numFunctions");
     createGlobalPtrArray(functionMangledNames_value, "functionMangledNames");
     createGlobalPtrArray(functionNames_value, "functionNames");
+    createGlobalBoolArray(functionIsVariadic_value, "functionIsVariadic");
     createGlobalPtrArray(functionReturnTypes_value, "functionReturnTypes");
     createGlobalIntArray(functionParamCounts_value, "functionParamCounts");
     createGlobalPtrArray(functionParamNames_value, "functionParamNames");
@@ -272,6 +279,7 @@ void Librarify::run(llvm::Function& F) {
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
+    functionIsVariadic_value.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i8_t, F.isVarArg())));
     // check functionData
     bool foundFunctionDataMatch = false;
     unsigned int j = -1;
@@ -372,6 +380,10 @@ void Librarify::run(llvm::Function& F) {
         functionParamTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalPtrArray(tmp_paramType_values, f_name + "_paramTypes")));
     }
     // functionPointers
+    if (F.isVarArg()) {
+        functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantPointerNull::get(llvm::dyn_cast<llvm::PointerType>(ptr_t))));
+        return;
+    }
     llvm::FunctionType* wrapper_f_t = llvm::FunctionType::get(F.getReturnType(), { ptr_t }, false);
     llvm::Function* wrapper_f = llvm::Function::Create(wrapper_f_t, llvm::Function::LinkageTypes::InternalLinkage, F.getName().str()+"_wrapper", Module);
     llvm::Argument* buffer = wrapper_f->getArg(0);
@@ -404,6 +416,5 @@ void Librarify::run(llvm::Function& F) {
         out->setName("out");
         llvm::ReturnInst::Create(*Context, out)->insertInto(wrapper_entry, wrapper_entry->end());
     }
-    // functionPointers_value
     functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(wrapper_f));
 }

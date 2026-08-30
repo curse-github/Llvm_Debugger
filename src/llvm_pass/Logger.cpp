@@ -32,20 +32,41 @@ void Logger::run(llvm::Function* F) {
             continue;
         if (Inst->getParent()->getParent()->getName().str().ends_with("_wrapper"))
             continue;
-        const unsigned int arg_size = F->arg_size();
+        const unsigned int function_arg_size = F->arg_size();
+        const unsigned int call_arg_size = Inst->arg_size();
         // get amount of storage needed
         unsigned int parameterBitWidth = 0;
-        for (int i = 0; i < arg_size; i++)
+        for (int i = 0; i < function_arg_size; i++)
             parameterBitWidth += std::max(8, getTypeBitWidth(F->getArg(i)->getType()))>>3;
+        if (F->isVarArg()) {
+            parameterBitWidth += getTypeBitWidth(i32_t);
+            for (int i = function_arg_size; i < call_arg_size; i++) {
+                parameterBitWidth += getTypeBitWidth(ptr_t)>>3;
+                parameterBitWidth += std::max(8, getTypeBitWidth(Inst->getArgOperand(i)->getType()))>>3;
+            }
+        }
         // create variable
         llvm::ArrayType* T = llvm::ArrayType::get(i8_t, parameterBitWidth);
         llvm::Value* input = new llvm::AllocaInst(T, 0, "input", Inst);
         // populate buffer with data
         unsigned int runningOffset = 0;
-        for(int i = 0; i < arg_size; i++) {
+        for(int i = 0; i < function_arg_size; i++) {
             llvm::Instruction* func_argi_p = llvm::GetElementPtrInst::CreateInBounds(i8_t, input, { llvm::ConstantInt::get(i64_t, runningOffset) }, F->getName()+"_arg" + std::to_string(i) + "_p", Inst);
             new llvm::StoreInst(Inst->getArgOperand(i), func_argi_p, Inst);
             runningOffset += std::max(8, getTypeBitWidth(F->getArg(i)->getType()))>>3;
+        }
+        if (F->isVarArg()) {
+            llvm::Instruction* func_argi_p_0 = llvm::GetElementPtrInst::CreateInBounds(i8_t, input, { llvm::ConstantInt::get(i64_t, runningOffset) }, F->getName()+"_arg_n_type_p", Inst);
+            new llvm::StoreInst(llvm::ConstantInt::get(i32_t, call_arg_size-function_arg_size), func_argi_p_0, Inst);
+            runningOffset += getTypeBitWidth(i32_t)>>3;
+            for(int i = function_arg_size; i < call_arg_size; i++) {
+                llvm::Instruction* func_argi_p_1 = llvm::GetElementPtrInst::CreateInBounds(i8_t, input, { llvm::ConstantInt::get(i64_t, runningOffset) }, F->getName()+"_arg" + std::to_string(i) + "_type_p", Inst);
+                new llvm::StoreInst(createGlobalString(getTypeAsString(Inst->getArgOperand(i))), func_argi_p_1, Inst);
+                runningOffset += getTypeBitWidth(ptr_t)>>3;
+                llvm::Instruction* func_argi_p_2 = llvm::GetElementPtrInst::CreateInBounds(i8_t, input, { llvm::ConstantInt::get(i64_t, runningOffset) }, F->getName()+"_arg" + std::to_string(i) + "_val_p", Inst);
+                new llvm::StoreInst(Inst->getArgOperand(i), func_argi_p_2, Inst);
+                runningOffset += std::max(8, getTypeBitWidth(Inst->getArgOperand(i)->getType()))>>3;
+            }
         }
         // log data
         llvm::CallInst::Create(logFunction_T, logFunctionParameters, { createGlobalString(F->getName().str()), input }, "", Inst);

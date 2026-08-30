@@ -1,13 +1,15 @@
 #include <stdio.h>
-float myPrint(float val) {
-    printf("this is a test of running c code with my debugger, %.3lf\n", val);
-    return val*2;
+#include <stdarg.h>
+#include <stdlib.h>
+void printVaList(int numArgs, ...) {
+    va_list list;
+    va_start(list, numArgs);
+    for (int i = 0; i < numArgs; i++)
+        printf("%.3f ", va_arg(list, double));
+    printf("\n");
+    va_end(list);
 }
 int main(void) {
-    myPrint(1.2);
-    myPrint(3.4);
-    myPrint(5.6);
-    myPrint(7.8);
-    myPrint(9.01);
-    myPrint(11.12);
+    printVaList(1, 1.2);
+    printVaList(3, 7.8, 9.01, 11.12);
 }

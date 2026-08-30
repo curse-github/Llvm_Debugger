@@ -287,7 +287,7 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
                 option--;
             }
             if (doRound) parameters.roundToMultipleOf(getLargestTypeSizeContained(type));
-            inputType(unionFieldTypes[i][option], parameters, storage, paramName+'.'+FieldNames[i][option], false);
+            inputType(unionFieldTypes[i][option], parameters, storage, paramName+'.'+unionFieldNames[i][option], false);
             parameters.pushZeroBytes(getTypeByteLength(type)-getTypeByteLength(unionFieldTypes[i][option]));
             return;
         }
@@ -308,6 +308,10 @@ void print<char*>(void* ptr, std::ostream& o) {
     const char* cstr = (*(const char**)ptr);
     if (cstr != nullptr) {
         o << (void*)cstr << " = (c_str)";
+        if (((unsigned long long)cstr <= 0xff) || ((unsigned long long)cstr == 0xffffffff) || ((unsigned long long)cstr >= 0xffffffffffffff00ull)) {
+            o << "&nullptr";
+            return;
+        }
         std::string str = cstr;
         size_t loc = str.find('\n');
         while (loc != std::string::npos) {
@@ -328,6 +332,7 @@ std::map<std::string, printFT> printFunctions = {
     {"double", print<double>}, 
     {"char*", print<char*>}
 };
+unsigned int indentLevel = 0;
 void printType(std::string type, void* ptr, std::ostream& o) {
     if (((unsigned long long)ptr <= 0xff) || ((unsigned long long)ptr == 0xffffffff) || ((unsigned long long)ptr >= 0xffffffffffffff00ull)) {
         o << "&nullptr";
@@ -380,17 +385,25 @@ void printType(std::string type, void* ptr, std::ostream& o) {
                 break;
             }
         if (isStruct) {
-            o << "{ ";
+            o << "{ ";//\n";
+            //indentLevel++;
+            //for(int i = 0; i < indentLevel; i++) o << "    ";
             unsigned int offset = 0;
             for (int j = 0; j < structNumFields[i]; j++) {
-                if (j != 0) o << ", ";
+                if (j != 0) {
+                    o << ", ";//\n";
+                    //for(int i = 0; i < indentLevel; i++) o << "    ";
+                }
                 unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
                 unsigned int largestContained = getLargestTypeSizeContained(structFieldTypes[i][j]);
                 offset = offset+(largestContained-offset%largestContained)%largestContained;
-                o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ")";
+                o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ") ";
                 printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
                 offset += size;
             }
+            //o << '\n';
+            //indentLevel--;
+            //for(int i = 0; i < indentLevel; i++) o << "    ";
             o << " }";
             return;
         }
