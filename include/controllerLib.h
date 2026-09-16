@@ -122,22 +122,27 @@ extern std::map<std::string, inputFT> inputFunctions;
 bool isInputableType(std::string type);
 void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound);
 
+
 extern unsigned int indentLevel;
 template <typename T>
-void print(void* ptr, std::ostream& o=std::cout) {
-    o << (*(T*)ptr);
-}
+void printPtr(void* ptr, std::ostream& o) {};
 template <>
-void print<bool>(void* ptr, std::ostream& o);
+void printPtr<bool>(void* ptr, std::ostream& o);
 template <>
-void print<char>(void* ptr, std::ostream& o);
+void printPtr<char>(void* ptr, std::ostream& o);
 template <>
-void print<char*>(void* ptr, std::ostream& o);
-template void print<short>(void* ptr, std::ostream& o);
-template void print<int>(void* ptr, std::ostream& o);
-template void print<long>(void* ptr, std::ostream& o);
-template void print<float>(void* ptr, std::ostream& o);
-template void print<double>(void* ptr, std::ostream& o);
+void printPtr<char*>(void* ptr, std::ostream& o);
+template <>
+void printPtr<int>(void* ptr, std::ostream& o);
+template <>
+void printPtr<short>(void* ptr, std::ostream& o);
+template <>
+void printPtr<long>(void* ptr, std::ostream& o);
+template <>
+void printPtr<float>(void* ptr, std::ostream& o);
+template <>
+void printPtr<double>(void* ptr, std::ostream& o);
+
 typedef void(*printFT)(void*, std::ostream&);
 extern std::map<std::string, printFT> printFunctions;
 void printType(std::string type, void* ptr, std::ostream& o=std::cout);

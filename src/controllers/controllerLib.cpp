@@ -294,17 +294,49 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
     }
 }
 
+#include <csignal>
+#include <csetjmp>
+bool IsSegFalHandled = false;
+sigjmp_buf savePoint;
+void SegFaultHandler(int) {
+    siglongjmp(savePoint, 1);
+}
+void handleSegFault() {
+    signal(SIGSEGV, SegFaultHandler);
+    IsSegFalHandled = true;
+}
+void unhandleSegFault() {
+    signal(SIGSEGV, nullptr);
+    IsSegFalHandled = false;
+}
+#include <functional>
+bool tryPossibleSegFault(std::function<void()>& posSegFal) {
+    if (IsSegFalHandled) {
+        posSegFal();
+        return true;
+    }
+    handleSegFault();
+    if (sigsetjmp(savePoint, 1) == 0) {
+        posSegFal();
+        unhandleSegFault();
+        return true;
+    } else {
+        unhandleSegFault();
+        return false;
+    }
+}
+
 template <>
-void print<bool>(void* ptr, std::ostream& o) {
+void printPtr<bool>(void* ptr, std::ostream& o) {
     o << ((*(bool*)ptr)?"true":"false");
 }
 template <>
-void print<char>(void* ptr, std::ostream& o) {
+void printPtr<char>(void* ptr, std::ostream& o) {
     char val1 = (*(char*)ptr);
     o << '\'' << val1 << '\'';
 }
 template <>
-void print<char*>(void* ptr, std::ostream& o) {
+void printPtr<char*>(void* ptr, std::ostream& o) {
     const char* cstr = (*(const char**)ptr);
     if (cstr != nullptr) {
         o << (void*)cstr << " = (c_str)";
@@ -322,17 +354,40 @@ void print<char*>(void* ptr, std::ostream& o) {
     } else
         o << "nullptr";
 }
+template <>
+void printPtr<int>(void* ptr, std::ostream& o) {
+    o << (*(int*)ptr);
+}
+template <>
+void printPtr<short>(void* ptr, std::ostream& o) {
+    o << (*(short*)ptr);
+}
+template <>
+void printPtr<long>(void* ptr, std::ostream& o) {
+    o << (*(long*)ptr);
+}
+template <>
+void printPtr<float>(void* ptr, std::ostream& o) {
+    o << (*(float*)ptr);
+}
+template <>
+void printPtr<double>(void* ptr, std::ostream& o) {
+    o << (*(double*)ptr);
+}
 std::map<std::string, printFT> printFunctions = {
-    {"bool", print<bool>}, 
-    {"char", print<char>}, 
-    {"short", print<short>}, 
-    {"int", print<int>}, 
-    {"long", print<long>}, 
-    {"float", print<float>}, 
-    {"double", print<double>}, 
-    {"char*", print<char*>}
+    {"bool", printPtr<bool>}, 
+    {"char", printPtr<char>}, 
+    {"short", printPtr<short>}, 
+    {"int", printPtr<int>}, 
+    {"long", printPtr<long>}, 
+    {"float", printPtr<float>}, 
+    {"double", printPtr<double>}, 
+    {"char*", printPtr<char*>}
 };
+
+//#define INDENT_NESTED
 unsigned int indentLevel = 0;
+std::vector<void*> enteredPointers;
 void printType(std::string type, void* ptr, std::ostream& o) {
     if (((unsigned long long)ptr <= 0xff) || ((unsigned long long)ptr == 0xffffffff) || ((unsigned long long)ptr >= 0xffffffffffffff00ull)) {
         o << "&nullptr";
@@ -344,9 +399,29 @@ void printType(std::string type, void* ptr, std::ostream& o) {
         if (type == "void*")
             o << ptr;
         else {
+            if (find(enteredPointers.cbegin(),enteredPointers.cend(),ptr)!=enteredPointers.cend()) {
+                o << "loop detected";
+                return;
+            }
             std::string newType = type.substr(0, type.size()-1);
-            o << *(void**)ptr << " -> (" << newType << ")";
-            printType(newType, *(void**)ptr, o);
+#ifdef INDENT_NESTED
+            o << *(void**)ptr << " -> \n";
+            indentLevel++;
+            for(int i = 0; i < indentLevel; i++) o << "    ";
+            o << '(' << newType << ") ";
+#else
+            o << *(void**)ptr << " -> (" << newType << ") ";
+#endif
+            enteredPointers.push_back(ptr);
+            std::function<void()> f = [newType, ptr, &o](){
+                printType(newType, *(void**)ptr, o);
+            };
+            if (!tryPossibleSegFault(f))
+                o << "segmentation fault";
+            enteredPointers.pop_back();
+#ifdef INDENT_NESTED
+            indentLevel--;
+#endif
         }
     } else if (type[type.size()-1] == ']') {
         size_t str_i = type.find_last_of('[');
@@ -385,14 +460,15 @@ void printType(std::string type, void* ptr, std::ostream& o) {
                 break;
             }
         if (isStruct) {
-            o << "{ ";//\n";
-            //indentLevel++;
-            //for(int i = 0; i < indentLevel; i++) o << "    ";
+#ifdef INDENT_NESTED
+            o << "{\n";
+            indentLevel++;
+            for(int i = 0; i < indentLevel; i++) o << "    ";
             unsigned int offset = 0;
             for (int j = 0; j < structNumFields[i]; j++) {
                 if (j != 0) {
-                    o << ", ";//\n";
-                    //for(int i = 0; i < indentLevel; i++) o << "    ";
+                    o << ",\n";
+                    for(int i = 0; i < indentLevel; i++) o << "    ";
                 }
                 unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
                 unsigned int largestContained = getLargestTypeSizeContained(structFieldTypes[i][j]);
@@ -401,10 +477,25 @@ void printType(std::string type, void* ptr, std::ostream& o) {
                 printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
                 offset += size;
             }
-            //o << '\n';
-            //indentLevel--;
-            //for(int i = 0; i < indentLevel; i++) o << "    ";
+            o << '\n';
+            indentLevel--;
+            for(int i = 0; i < indentLevel; i++) o << "    ";
             o << " }";
+#else
+            o << "{ ";
+            unsigned int offset = 0;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                if (j != 0)
+                    o << ", ";
+                unsigned int size = getTypeByteLength(structFieldTypes[i][j]);
+                unsigned int largestContained = getLargestTypeSizeContained(structFieldTypes[i][j]);
+                offset = offset+(largestContained-offset%largestContained)%largestContained;
+                o << structFieldNames[i][j] << "=(" << structFieldTypes[i][j] << ") ";
+                printType(structFieldTypes[i][j], (void*)((char*)ptr+offset), o);
+                offset += size;
+            }
+            o << " }";
+#endif
             return;
         }
         bool isUnion = false;

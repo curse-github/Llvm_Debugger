@@ -278,6 +278,7 @@ void Librarify::run(llvm::Function& F) {
         f_name = f_name.substr(0, tmp1);
     if (f_name == "main")
         F.setName("old_"+F.getName().str());
+    // std::cout << "documenting " << f_name << '\n';
     functionNames_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalString(f_name)));
     functionIsVariadic_value.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantInt::get(i8_t, F.isVarArg())));
     // check functionData
@@ -379,11 +380,13 @@ void Librarify::run(llvm::Function& F) {
         }
         functionParamTypes_value.push_back(llvm::dyn_cast<llvm::Constant>(createGlobalPtrArray(tmp_paramType_values, f_name + "_paramTypes")));
     }
+    // std::cout << "finished " << f_name << '\n';
     // functionPointers
     if (F.isVarArg()) {
         functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(llvm::ConstantPointerNull::get(llvm::dyn_cast<llvm::PointerType>(ptr_t))));
         return;
     }
+    // std::cout << "wrapping " << f_name << '\n';
     llvm::FunctionType* wrapper_f_t = llvm::FunctionType::get(F.getReturnType(), { ptr_t }, false);
     llvm::Function* wrapper_f = llvm::Function::Create(wrapper_f_t, llvm::Function::LinkageTypes::InternalLinkage, F.getName().str()+"_wrapper", Module);
     llvm::Argument* buffer = wrapper_f->getArg(0);
@@ -417,4 +420,5 @@ void Librarify::run(llvm::Function& F) {
         llvm::ReturnInst::Create(*Context, out)->insertInto(wrapper_entry, wrapper_entry->end());
     }
     functionPointers_value.push_back(llvm::dyn_cast<llvm::Constant>(wrapper_f));
+    // std::cout << "finished wrapping " << f_name << '\n';
 }

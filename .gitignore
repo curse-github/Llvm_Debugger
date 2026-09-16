@@ -1,5 +1,7 @@
-.vscode/
-tmp/
-out/
-wllvm_venv/
-coreutils/
+.vscode/*
+tmp/*
+out/*
+wllvm_venv/*
+coreutils/*
+split_vulnerability/out/*
+sort_output.txt

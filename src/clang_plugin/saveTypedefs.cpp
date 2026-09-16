@@ -51,6 +51,9 @@ class SaveTypedefsConsumer : public ASTConsumer {
 #ifdef DEBUG
         std::cout << "found struct \"" << name << "\"\n";
 #endif
+        for (RecordDecl::field_iterator i = RD->field_begin(), e = RD->field_end(); i != e; ++i)
+            if (typeToString((*i)->getType())=="unknown")
+                return;
         knownStructs[name] = true;
         *TypedefsOut << "struct," << name << ',' << n << ',';
         for (RecordDecl::field_iterator i = RD->field_begin(), e = RD->field_end(); i != e; ++i) {

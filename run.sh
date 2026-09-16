@@ -1,1 +1,2 @@
-make debugger TARGET=ls ARGS="."
+make debugger TARGET=ls
+./out/ls .

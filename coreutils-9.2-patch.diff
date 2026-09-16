@@ -1,0 +1,112 @@
+/* based on https://github.com/coreutils/coreutils/blob/master/scripts/build-older-versions/coreutils-8.4-on-glibc-2.28.diff */
+/* with 2 additional diffs */
+
+diff -r -U3 coreutils-9.2/lib/freadahead.c coreutils-9.2-patched/lib/freadahead.c
+--- coreutils-9.2/lib/freadahead.c	2010-04-23 07:44:00.000000000 -0600
++++ coreutils-9.2-patched/lib/freadahead.c	2019-08-01 18:35:31.580843463 -0600
+@@ -25,7 +25,7 @@
+ size_t
+ freadahead (FILE *fp)
+ {
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_write_ptr > fp->_IO_write_base)
+     return 0;
+   return (fp->_IO_read_end - fp->_IO_read_ptr)
+diff -r -U3 coreutils-9.2/lib/freadptr.c coreutils-9.2-patched/lib/freadptr.c
+--- coreutils-9.2/lib/freadptr.c	2010-04-23 07:44:00.000000000 -0600
++++ coreutils-9.2-patched/lib/freadptr.c	2019-08-01 18:35:31.580843463 -0600
+@@ -29,7 +29,7 @@
+   size_t size;
+
+   /* Keep this code in sync with freadahead!  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_write_ptr > fp->_IO_write_base)
+     return NULL;
+   size = fp->_IO_read_end - fp->_IO_read_ptr;
+diff -r -U3 coreutils-9.2/lib/freadseek.c coreutils-9.2-patched/lib/freadseek.c
+--- coreutils-9.2/lib/freadseek.c	2010-04-23 07:44:00.000000000 -0600
++++ coreutils-9.2-patched/lib/freadseek.c	2019-08-01 18:35:31.580843463 -0600
+@@ -34,7 +34,7 @@
+ freadptrinc (FILE *fp, size_t increment)
+ {
+   /* Keep this code in sync with freadptr!  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   fp->_IO_read_ptr += increment;
+ #elif defined __sferror || defined __DragonFly__ /* FreeBSD, NetBSD, OpenBSD, DragonFly, MacOS X, Cygwin */
+   fp_->_p += increment;
+diff -r -U3 coreutils-9.2/lib/fseeko.c coreutils-9.2-patched/lib/fseeko.c
+--- coreutils-9.2/lib/fseeko.c	2010-04-21 12:11:48.000000000 -0600
++++ coreutils-9.2-patched/lib/fseeko.c	2019-08-01 18:35:31.580843463 -0600
+@@ -42,7 +42,7 @@
+ #endif
+
+   /* These tests are based on fpurge.c.  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_read_end == fp->_IO_read_ptr
+       && fp->_IO_write_ptr == fp->_IO_write_base
+       && fp->_IO_save_base == NULL)
+diff -r -U3 coreutils-9.2/lib/fseterr.c coreutils-9.2-patched/lib/fseterr.c
+--- coreutils-9.2/lib/fseterr.c	2010-04-23 07:44:00.000000000 -0600
++++ coreutils-9.2-patched/lib/fseterr.c	2019-08-01 18:35:31.584843515 -0600
+@@ -29,7 +29,7 @@
+   /* Most systems provide FILE as a struct and the necessary bitmask in
+      <stdio.h>, because they need it for implementing getc() and putc() as
+      fast macros.  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   fp->_flags |= _IO_ERR_SEEN;
+ #elif defined __sferror || defined __DragonFly__ /* FreeBSD, NetBSD, OpenBSD, DragonFly, MacOS X, Cygwin */
+   fp_->_flags |= __SERR;
+diff -r -U3 coreutils-9.2/lib/stdio-impl.h coreutils-9.2-patched/lib/stdio-impl.h
+--- coreutils-9.2/lib/stdio-impl.h	2010-04-23 07:44:01.000000000 -0600
++++ coreutils-9.2-patched/lib/stdio-impl.h	2019-08-01 18:35:31.584843515 -0600
+@@ -18,6 +18,12 @@
+    the same implementation of stdio extension API, except that some fields
+    have different naming conventions, or their access requires some casts.  */
+
++/* Glibc 2.28 made _IO_IN_BACKUP private.  For now, work around this
++ *    problem by defining it ourselves.  FIXME: Do not rely on glibc
++ *       internals.  */
++#if !defined _IO_IN_BACKUP && defined _IO_EOF_SEEN
++# define _IO_IN_BACKUP 0x100
++#endif
+diff -r -U3 coreutils-9.2/lib/stdio.in.h coreutils-9.2-patched/lib/stdio.in.h
+--- coreutils-9.2/lib/stdio.in.h	2010-04-21 12:11:57.000000000 -0600
++++ coreutils-9.2-patched/lib/stdio.in.h	2019-08-01 18:26:34.113941755 -0600
+@@ -139,7 +139,7 @@
+    so any use of gets warrants an unconditional warning.  Assume it is
+    always declared, since it is required by C89.  */
+ #undef gets
+-_GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");
++/*_GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");*/
+diff -r -U3 coreutils-9.2/lib/posixtm.c coreutils-9.2-patched/lib/posixtm.c
+--- coreutils-9.2/lib/posixtm.c   2023-01-01 07:39:11.000000000 -0600
++++ coreutils-9.2-patched/lib/posixtm.c   2026-09-08 14:20:42.560874688 -0500
+@@ -191,7 +191,7 @@
+              | (tm0.tm_min ^ tm1.tm_min)
+              | (tm0.tm_sec ^ tm1.tm_sec)))
+         {
+-          if (ckd_add (&t, t, leapsec))
++          if (ckd_add (&t, t, leapsec?1:0))
+             return false;
+           *p = t;
+           return true;
+
+ #if @GNULIB_FOPEN@
+ # if @REPLACE_FOPEN@
+diff -r -U3 coreutils-9.2/src/system.h .coreutils-9.2-patched/src/system.h
+--- coreutils-9.2/src/system.h    2026-09-14 12:36:17.628641273 -0500
++++ coreutils-9.2-patched/src/system.h        2026-09-16 07:33:13.323695123 -0500
+@@ -15,7 +15,7 @@
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+
+ /* Include this file _after_ system headers if possible.  */
+-
++#include <stdbool.h>
+ #include <attribute.h>
+
+ #include <alloca.h>

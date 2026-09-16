@@ -23,12 +23,15 @@ llvm::PreservedAnalyses Logger::run(llvm::Module& Module, llvm::ModuleAnalysisMa
 }
 void Logger::run(llvm::Function* F) {
     std::string f_name = llvm::demangle(F->getName().str());
+    // std::cout << "logging " << f_name << '\n';
     int tmp1 = (int)f_name.size();
     if ((tmp1 = f_name.find('(')) != std::string::npos)
         f_name = f_name.substr(0, tmp1);
     for (llvm::User* tmp : F->users()) {
         llvm::CallInst* Inst = llvm::dyn_cast_or_null<llvm::CallInst>(tmp);
         if (Inst == nullptr)
+            continue;
+        if (Inst->getCalledFunction() != F)
             continue;
         if (Inst->getParent()->getParent()->getName().str().ends_with("_wrapper"))
             continue;
@@ -81,4 +84,5 @@ void Logger::run(llvm::Function* F) {
                 createGlobalString(F->getName().str()), llvm::ConstantPointerNull::get(llvm::dyn_cast<llvm::PointerType>(ptr_t))
             }, "", afterInst);
     }
+    // std::cout << "finished logging " << f_name << '\n';
 }
