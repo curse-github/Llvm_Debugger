@@ -296,34 +296,32 @@ void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWri
 
 #include <csignal>
 #include <csetjmp>
-bool IsSegFalHandled = false;
 sigjmp_buf savePoint;
 void SegFaultHandler(int) {
+    std::cout << "TEST\nTEST\nTEST\nTEST\nTEST\n";
     siglongjmp(savePoint, 1);
 }
+std::vector<void*> old_handlers;
 void handleSegFault() {
-    signal(SIGSEGV, SegFaultHandler);
-    IsSegFalHandled = true;
+    __sighandler_t old = signal(SIGSEGV, SegFaultHandler);
+    if (old != SIG_ERR)
+        old_handlers.push_back((void*)old);
 }
 void unhandleSegFault() {
-    signal(SIGSEGV, nullptr);
-    IsSegFalHandled = false;
+    if (old_handlers.size()==0) {
+        signal(SIGSEGV,nullptr);
+        return;
+    }
+    signal(SIGSEGV, (__sighandler_t)old_handlers[old_handlers.size()-1]);
+    old_handlers.pop_back();
 }
 #include <functional>
 bool tryPossibleSegFault(std::function<void()>& posSegFal) {
-    if (IsSegFalHandled) {
-        posSegFal();
-        return true;
-    }
     handleSegFault();
-    if (sigsetjmp(savePoint, 1) == 0) {
-        posSegFal();
-        unhandleSegFault();
-        return true;
-    } else {
-        unhandleSegFault();
-        return false;
-    }
+    bool noSignal = sigsetjmp(savePoint, 1) == 0;
+    if (noSignal) posSegFal();
+    unhandleSegFault();
+    return noSignal;
 }
 
 template <>
@@ -340,7 +338,7 @@ void printPtr<char*>(void* ptr, std::ostream& o) {
     const char* cstr = (*(const char**)ptr);
     if (cstr != nullptr) {
         o << (void*)cstr << " = (c_str)";
-        if (((unsigned long long)cstr <= 0xff) || ((unsigned long long)cstr == 0xffffffff) || ((unsigned long long)cstr >= 0xffffffffffffff00ull)) {
+        if (cstr == 0) {
             o << "&nullptr";
             return;
         }
