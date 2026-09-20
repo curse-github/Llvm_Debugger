@@ -1,3 +1,7 @@
+#!/bin/bash
+
+./config_coreutils.sh
+
 make clean
 
 ./clean_coreutils.sh
