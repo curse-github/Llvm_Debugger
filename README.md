@@ -3,7 +3,7 @@
 ### Tested environments
 
 - arch linux, llvm 22
-- ubuntu, llvm 22
+- kali 26.02, llvm 22
 
 ## Setup
 

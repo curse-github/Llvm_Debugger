@@ -12,6 +12,9 @@ else
 	dynamicArgs = -fPIC
 endif
 
+LLVM_BIN := /usr/lib/llvm-22/bin
+export PATH := $(LLVM_BIN):$(PATH)
+
 includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
