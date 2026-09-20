@@ -9,9 +9,10 @@ sudo apt install -y \
   bison gettext gperf texinfo git rsync xz-utils \
   lsb-release wget curl software-properties-common gnupg
 
-sudo apt install -y \
-  llvm-21-dev llvm-21-tools \
-  clang-21 clang-tools-21 \
-  libclang-21-dev lld-21
+sudo apt install \
+  llvm-22 llvm-22-dev \
+  clang-22 clang-tools-22 \
+  libclang-22-dev lld-22
+
 
 ./create_coreutils.sh
