@@ -19,8 +19,4 @@ git submodule status
 ./bootstrap
 
 ./configure
-#sudo rm -R .git/
-#rm ./.gitignore
-#echo * > ./.gitignore
-#sudo rm -R ./gnulib/.git
 make -j${nproc}

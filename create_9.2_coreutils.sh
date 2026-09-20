@@ -21,8 +21,4 @@ git reset --hard 40bf1591bb4362fa91e501bcec7c2029c5f65a43
 patch --follow-symlinks -p1 < ../coreutils-9.2-patch.diff
 
 ./configure --program-suffix=-8.4
-#sudo rm -R .git/
-#rm ./.gitignore
-#echo * > ./.gitignore
-#rm -R ./gnulib/.git
-make
+make -j${nproc}

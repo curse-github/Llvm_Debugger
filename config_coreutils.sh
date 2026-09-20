@@ -7,7 +7,7 @@ sudo apt install -y \
   build-essential autoconf automake autopoint \
   bison gettext gperf texinfo git rsync xz-utils \
   lsb-release wget curl software-properties-common gnupg
-  build-essential git \
+build-essential git \
   autoconf automake autopoint \
   bison gettext gperf \
   gzip help2man m4 patch \
