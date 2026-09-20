@@ -33,6 +33,34 @@ This gives the the functionality to run:<br>
 `make debugger TARGET="example"`<br>
 <br><br>
 
+
+## Components
+
+### src/controllers
+
+```
+controllerLib.cpp  
+
+debuggerController.cpp  
+
+librarifyController.cpp
+
+```
+
+### src/llvm\_pass
+
+```
+getPassInfo.cpp  
+
+Librarify.cpp  
+
+llvmHelpers.cpp  
+
+Logger.cpp
+
+```
+
+
 ## Writeup:
 Explanation of project:<br>
 - The process that is performed by this project consists of 5 main parts. The first two of which are clang plugins, processing the original source file. The next two are LLVM plugins, performing transformations on the LLVM assembly code. Finally there is the “controller” program which reads in the final modified code as a library and can call functions and handle logging intercepts.
