@@ -1,11 +1,24 @@
 ## General
-this is run on my machine running arch linux, with llvm version 21
+
+### Tested environments
+
+- arch linux, llvm 21
+- ubuntu, llvm 21
+
 ## Setup
+
 the project can be setup by simply running ./config.sh if on ubuntu<br>
 otherwise install the following programs, and run the ./create_coreutils.sh script<br>
 python3 python3-pip make git wget
+
+'''
+config.sh
+'''
+
 ## Instructions:
+
 Command to run either librarify or the debugger are as follows <br>
+
 `make librarify TARGET=testOne`<br>
 `make librarify TARGET=testTwo`<br>
 `make librarify TARGET=testThree`<br>
@@ -16,6 +29,7 @@ Command to run either librarify or the debugger are as follows <br>
 `make debugger TARGET=testThree`<br>
 `make debugger TARGET=ls ARGS="."`<br>
 `make debugger TARGET=cat ARGS="./exFile.txt"`<br>
+
 To add more usable targets, add instructions to the makefile file for making ./tmp/"example".ll.<br>
 This makefile target needs to create the file ./tmp/"example".ll, but also 
 This gives the the functionality to run:<br>
