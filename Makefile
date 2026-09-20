@@ -12,9 +12,6 @@ else
 	dynamicArgs = -fPIC
 endif
 
-LLVM_BIN := /usr/lib/llvm-22/bin
-export PATH := $(LLVM_BIN):$(PATH)
-
 includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
@@ -22,6 +19,8 @@ clang-plugin-args = -Xclang -load -Xclang ./out/libClangPlugin.so -Xclang -add-p
 compile-args = -g -O0 -fno-inline -Wall -Wextra -Wno-implicit-function-declaration -fno-discard-value-names -Wno-c23-extensions -Wno-sign-compare -Wno-tautological-constant-out-of-range-compare
 ifeq ($(TARGET),sort)
 additional-libs = -lcrypto
+else ifeq ($(TARGET),ls)
+additional-libs = -lcap
 else
 additional-libs = 
 endif
@@ -80,10 +79,10 @@ default: ./tmp/$(TARGET).ll
 librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectExt) ./src/controllers/librarifyController.cpp
 	@-echo running librarify pass on $(TARGET).ll
 	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
-	@clang++ ./tmp/library_$(TARGET).ll $(additional-libs) -c -o ./tmp/library_$(TARGET).$(objectExt)
+	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).$(objectExt)
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectExt)
 	@clang++ -I./include ./src/controllers/librarifyController.cpp -c -o ./tmp/controller.$(objectExt)
-	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) ./out/$(TARGET).$(staticExt) -lcap -o ./out/$(TARGET).$(executableExt)
+	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
 
 debugger: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectExt) ./src/controllers/debuggerController.cpp
 	@-echo running librarify and logger pass on $(TARGET).ll
@@ -91,7 +90,7 @@ debugger: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/control
 	@clang++ ./tmp/library_$(TARGET).ll -g -c -o ./tmp/library_$(TARGET).$(objectExt)
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectExt)
 	@clang++ -I./include ./src/controllers/debuggerController.cpp -g -c -o ./tmp/controller.$(objectExt)
-	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) -g ./out/$(TARGET).$(staticExt) $(additional-libs) -lcap -o ./out/$(TARGET).$(executableExt)
+	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) -g ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
 
 ./tmp/controllerLib.$(objectExt) : 
 	@clang++ -I./include ./src/controllers/controllerLib.cpp -c -o ./tmp/controllerLib.$(objectExt)
