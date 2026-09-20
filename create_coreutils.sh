@@ -1,4 +1,5 @@
 make clean
+
 ./clean_coreutils.sh
 
 python -m venv ./wllvm_venv
@@ -7,13 +8,21 @@ realpath ./wllvm_venv/bin/wllvm
 export LLVM_COMPILER=clang
 export CC=$(realpath ./wllvm_venv/bin/wllvm)
 
-git clone https://github.com/coreutils/coreutils -v
-cd ./coreutils
+git clone --verbose --recurse-submodules \
+  https://github.com/coreutils/coreutils.git \
+  coreutils
+
+cd coreutils
+
+git submodule status
+
 ./bootstrap
 export CFLAGS="-O0 -fno-discard-value-names -fno-inline -Wc23-extensions"
 ./configure
-sudo rm -R .git/
-rm ./.gitignore
-echo * > ./.gitignore
-sudo rm -R ./gnulib/.git
+
+#sudo rm -R .git/
+#rm ./.gitignore
+#echo * > ./.gitignore
+#sudo rm -R ./gnulib/.git
+
 make

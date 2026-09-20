@@ -1,2 +1,2 @@
-sudo rm -r wllvm_venv
-sudo rm -r coreutils
+rm -r wllvm_venv
+rm -r coreutils
