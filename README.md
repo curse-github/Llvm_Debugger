@@ -11,9 +11,9 @@ the project can be setup by simply running ./config.sh if on ubuntu<br>
 otherwise install the following programs, and run the ./create_coreutils.sh script<br>
 python3 python3-pip make git wget
 
-'''
-config.sh
-'''
+```
+./config.sh
+```
 
 ## Instructions:
 
