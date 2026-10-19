@@ -119,17 +119,17 @@ std::map<std::string, inputFT> inputFunctions = {
     {"double", input<double>}
 };
 std::vector<std::string> visitedTypes;
-bool isInputableType(std::string type) {
+bool isInputableType(std::string type, bool allowUnions) {
     if (std::find(visitedTypes.begin(), visitedTypes.end(), type) != visitedTypes.end())\
         return true;
     if (type[type.size()-1] == '*') {// is an pointer type
         visitedTypes.push_back(type);
-        bool retValue = isInputableType(type.substr(0, type.size()-1));
+        bool retValue = isInputableType(type.substr(0, type.size()-1),allowUnions);
         visitedTypes.pop_back();
         return retValue;
     } else if (type[type.size()-1] == ']') {// is an array type
         visitedTypes.push_back(type);
-        bool retValue = isInputableType(type.substr(0, type.find_last_of('[')));
+        bool retValue = isInputableType(type.substr(0, type.find_last_of('[')),allowUnions);
         visitedTypes.pop_back();
         return retValue;
     } else if (inputFunctions.count(type) > 0)
@@ -153,7 +153,7 @@ bool isInputableType(std::string type) {
             visitedTypes.push_back(type);
             bool isValid = true;
             for (int j = 0; j < structNumFields[i]; j++) {
-                if (!isInputableType(structFieldTypes[i][j])) {
+                if (!isInputableType(structFieldTypes[i][j],allowUnions)) {
                     isValid = false;
                     break;
                 }
@@ -161,25 +161,24 @@ bool isInputableType(std::string type) {
             visitedTypes.pop_back();
             return isValid;
         }
+        if (!allowUnions) return false;
         bool isUnion = false;
         for(i = 0; i < numUnions; i++)
             if (type == unionNames[i]) {
                 isUnion = true;
                 break;
             }
-        if (isUnion) {
-            visitedTypes.push_back(type);
-            bool isValid = true;
-            for (int j = 0; j < unionNumFields[i]; j++) {
-                if (!isInputableType(unionFieldTypes[i][j])) {
-                    isValid = false;
-                    break;
-                }
+        if (!isUnion) return false;
+        visitedTypes.push_back(type);
+        bool isValid = true;
+        for (int j = 0; j < unionNumFields[i]; j++) {
+            if (!isInputableType(unionFieldTypes[i][j],allowUnions)) {
+                isValid = false;
+                break;
             }
-            visitedTypes.pop_back();
-            return isValid;
         }
-        return false;
+        visitedTypes.pop_back();
+        return isValid;
     }
 }
 unsigned int getLargestTypeSizeContained(std::string type);

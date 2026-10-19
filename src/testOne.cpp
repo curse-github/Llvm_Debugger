@@ -84,7 +84,11 @@ void printEnum(testEnum val) {
     }
 }
 
-int main() {// int argc, char** argv) {
+int main(int argc, char** argv) {
+    std::cout << "argc=" << argc << ", arguments: {";
+    for(int i = 0; i < argc; i++)
+        std::cout << "\"" << argv[i] << "\"" << ((i+1 != argc)?",":"");
+    std::cout << "}\n";
     float tmp2[6] = { 1.2, 3.4, 5.6, 7.8, 9.10, 11.12 };
     foo(tmp2);
     testStruct tmp1{};

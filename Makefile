@@ -92,6 +92,14 @@ debugger: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/control
 	@clang++ -I./include ./src/controllers/debuggerController.cpp -g -c -o ./tmp/controller.$(objectExt)
 	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) -g ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
 
+fuzzerHarness: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectExt) ./src/controllers/fuzzerHarnessController.cpp
+	@-echo running librarify pass on $(TARGET).ll
+	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
+	@clang++ ./tmp/library_$(TARGET).ll -g -c -o ./tmp/library_$(TARGET).$(objectExt)
+	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectExt)
+	@clang++ -I./include ./src/controllers/fuzzerHarnessController.cpp -g -c -o ./tmp/controller.$(objectExt)
+	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) -g ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
+
 ./tmp/controllerLib.$(objectExt) : 
 	@clang++ -I./include ./src/controllers/controllerLib.cpp -c -o ./tmp/controllerLib.$(objectExt)
 ./out/libLlvmPass.$(dynamicExt): ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp

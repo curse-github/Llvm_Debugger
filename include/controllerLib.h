@@ -119,7 +119,7 @@ template void input<float>(bufferWriter& parameters, std::string paramName, bool
 template void input<double>(bufferWriter& parameters, std::string paramName, bool doRound);
 typedef void(*inputFT)(bufferWriter&, std::string, bool);
 extern std::map<std::string, inputFT> inputFunctions;
-bool isInputableType(std::string type);
+bool isInputableType(std::string type, bool allowUnions = true);
 void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound);
 
 
