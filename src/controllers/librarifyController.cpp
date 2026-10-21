@@ -103,7 +103,7 @@ int main(int argc, char** argv) {
             } else if (std::strcmp(functionReturnType.c_str(), "double") == 0) {
                 double output = ((doubleFT)functionPointers[i])(parameters.pointer);
                 std::cout << '\"' << functionName << "\" output = (double)" << output << '\n';
-            } else 
+            } else
                 functionPointers[i](parameters.pointer);
         } else 
             functionPointers[i](parameters.pointer);

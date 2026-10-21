@@ -43,7 +43,7 @@ class testClass {
     }
 };
 
-int main(int argc, char** argv) {
+int main() {
     test::testFunction();
     test::testClassTwo *other = new test::testClassTwo();
     delete other;

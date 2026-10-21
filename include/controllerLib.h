@@ -73,6 +73,7 @@ extern const char** functionParamTypes[];
 typedef void(*wrapperFT)(void*);
 typedef bool(*boolFT)(void*);
 typedef char(*charFT)(void*);
+typedef char*(*stringFT)(void*);
 typedef short(*shortFT)(void*);
 typedef int(*intFT)(void*);
 typedef long(*longFT)(void*);
