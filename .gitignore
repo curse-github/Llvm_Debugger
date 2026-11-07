@@ -3,5 +3,8 @@ tmp/*
 out/*
 wllvm_venv/*
 coreutils/*
+split_vulnerability/split.out
 split_vulnerability/out/*
 sort_output.txt
+fuzz_out/*
+AFLplusplus/*

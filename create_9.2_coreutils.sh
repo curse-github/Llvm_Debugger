@@ -8,17 +8,12 @@ export LLVM_COMPILER=clang
 export CC=$(realpath ./wllvm_venv/bin/wllvm)
 export CFLAGS="-O0 -fno-discard-value-names -fno-inline -Wc23-extensions"
 
-git clone --verbose --recurse-submodules \
-  https://github.com/coreutils/coreutils.git \
-  coreutils
-
+git clone https://github.com/coreutils/coreutils.git
 cd ./coreutils
-
-git submodule status
-git reset --hard 40bf1591bb4362fa91e501bcec7c2029c5f65a43
+git checkout v9.2
+git pull
 
 ./bootstrap
 patch --follow-symlinks -p1 < ../coreutils-9.2-patch.diff
-
-./configure --program-suffix=-8.4
-make -j${nproc}
+./configure
+make VERBOSE=1

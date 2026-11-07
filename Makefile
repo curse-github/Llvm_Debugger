@@ -16,8 +16,10 @@ includedir = $(shell llvm-config --includedir)
 libs = $(shell llvm-config --ldflags --libs core support passes)
 
 clang-plugin-args = -Xclang -load -Xclang ./out/libClangPlugin.so -Xclang -add-plugin -Xclang
-compile-args = -g -O0 -fno-inline -Wall -Wextra -Wno-implicit-function-declaration -fno-discard-value-names -Wno-c23-extensions -Wno-sign-compare -Wno-tautological-constant-out-of-range-compare
-ifeq ($(TARGET),sort)
+compile-args = -O0 -fno-inline -Wall -Wextra -Wno-implicit-function-declaration -fno-discard-value-names -Wno-c23-extensions -Wno-sign-compare -Wno-tautological-constant-out-of-range-compare
+ifeq ($(TARGET),split)
+additional-libs = -lcrypto
+else ifeq ($(TARGET),sort)
 additional-libs = -lcrypto
 else ifeq ($(TARGET),ls)
 additional-libs = -lcap
@@ -26,9 +28,6 @@ additional-libs =
 endif
 
 .phony : default librarify debugger stdlib mkdir clean
-
-default: ./tmp/$(TARGET).ll
-	@-echo
 
 ./tmp/testOne.ll: ./src/testOne.cpp ./out/libClangPlugin.$(dynamicExt)
 	@export LLVM_COMPILER=clang && ./wllvm_venv/bin/wllvm ./src/testOne.cpp $(compile-args) -c -o ./tmp/testOne.$(objectExt)
@@ -51,25 +50,25 @@ default: ./tmp/$(TARGET).ll
 	@-echo running clang plugin on testThree.c
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -Wno-everything ./src/testThree.c
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -Wno-everything ./src/testThree.c
-./tmp/ls.ll: ./out/libClangPlugin.$(dynamicExt) ./coreutils/src/$(TARGET) ./coreutils/src/$(TARGET).c
+./tmp/ls.ll: ./out/libClangPlugin.$(dynamicExt) ./coreutils/src/ls ./coreutils/src/ls.c
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/ls -o ./tmp/ls.bc
 	@llvm-dis ./tmp/ls.bc -o ./tmp/ls.ll
 	@-echo running clang plugin on ls.c
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -Wno-everything -I./coreutils/lib ./coreutils/src/ls.c
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -Wno-everything -I./coreutils/lib ./coreutils/src/ls.c
-./tmp/cat.ll: ./out/libClangPlugin.$(dynamicExt) ./coreutils/src/$(TARGET) ./coreutils/src/$(TARGET).c
+./tmp/cat.ll: ./out/libClangPlugin.$(dynamicExt) ./coreutils/src/cat ./coreutils/src/cat.c
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/cat -o ./tmp/cat.bc
 	@llvm-dis ./tmp/cat.bc -o ./tmp/cat.ll
 	@-echo running clang plugin on cat.c
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -Wno-everything -I./coreutils/lib ./coreutils/src/cat.c
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -Wno-everything -I./coreutils/lib ./coreutils/src/cat.c
-./tmp/split.ll: ./out/libClangPlugin.$(dynamicExt)
+./tmp/split.ll: ./out/libClangPlugin.$(dynamicExt) ./coreutils/src/split ./coreutils/src/split.c
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/split -o ./tmp/split.bc
 	@llvm-dis ./tmp/split.bc -o ./tmp/split.ll
 	@-echo running clang plugin on split.c
 	@clang $(clang-plugin-args) save-typedefs $(compile-args) -fsyntax-only -Wno-everything -I./coreutils/lib ./coreutils/src/split.c
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -Wno-everything -I./coreutils/lib ./coreutils/src/split.c
-./tmp/sort.ll: ./out/libClangPlugin.$(dynamicExt) ./coreutils/src/$(TARGET) ./coreutils/src/$(TARGET).c
+./tmp/sort.ll: ./out/libClangPlugin.$(dynamicExt) ./coreutils/src/sort ./coreutils/src/sort.c
 	@./wllvm_venv/bin/extract-bc ./coreutils/src/sort -o ./tmp/sort.bc
 	@llvm-dis ./tmp/sort.bc -o ./tmp/sort.ll
 	@-echo running clang plugin on sort.c
@@ -77,7 +76,6 @@ default: ./tmp/$(TARGET).ll
 	@clang $(clang-plugin-args) save-func-parms $(compile-args) -fsyntax-only -Wno-everything -I./coreutils/lib ./coreutils/src/sort.c
 
 librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectExt) ./src/controllers/librarifyController.cpp
-	@-echo running librarify pass on $(TARGET).ll
 	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
 	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).$(objectExt)
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectExt)
@@ -85,22 +83,45 @@ librarify: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/contro
 	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
 
 debugger: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectExt) ./src/controllers/debuggerController.cpp
-	@-echo running librarify and logger pass on $(TARGET).ll
 	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify,logger ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
-	@clang++ ./tmp/library_$(TARGET).ll -g -c -o ./tmp/library_$(TARGET).$(objectExt)
+	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).$(objectExt)
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectExt)
-	@clang++ -I./include ./src/controllers/debuggerController.cpp -g -c -o ./tmp/controller.$(objectExt)
-	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) -g ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
+	@clang++ -I./include ./src/controllers/debuggerController.cpp -c -o ./tmp/controller.$(objectExt)
+	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
 
-fuzzerHarness: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectExt) ./src/controllers/fuzzerHarnessController.cpp
-	@-echo running librarify pass on $(TARGET).ll
-	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
-	@clang++ ./tmp/library_$(TARGET).ll -g -c -o ./tmp/library_$(TARGET).$(objectExt)
+harness: mkdir ./tmp/$(TARGET).ll ./out/libLlvmPass.$(dynamicExt) ./tmp/controllerLib.$(objectExt) ./src/controllers/fuzzerHarnessController.cpp
+	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify,logger ./tmp/$(TARGET).ll -S -o ./tmp/library_$(TARGET).ll
+	@clang++ ./tmp/library_$(TARGET).ll -c -o ./tmp/library_$(TARGET).$(objectExt)
 	@ar rcs ./out/$(TARGET).$(staticExt) ./tmp/library_$(TARGET).$(objectExt)
-	@clang++ -I./include ./src/controllers/fuzzerHarnessController.cpp -g -c -o ./tmp/controller.$(objectExt)
-	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) -g ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
+	@clang++ -I./include ./src/controllers/fuzzerHarnessController.cpp -c -o ./tmp/controller.$(objectExt)
+	@clang++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) ./out/$(TARGET).$(staticExt) $(additional-libs) -o ./out/$(TARGET).$(executableExt)
 
-./tmp/controllerLib.$(objectExt) : 
+fuzzerHarnessTestOne: mkdir ./tmp/testOne.ll ./out/libLlvmPass.$(dynamicExt) ./src/controllers/fuzzerHarnessController.cpp
+	@./AFLplusplus/afl-clang-fast ./tmp/testOne.ll -S -emit-llvm -o ./tmp/testOne-afl.ll
+	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/testOne-afl.ll -S -o ./tmp/library_testOne.ll
+	@clang++ -I./include ./src/controllers/controllerLib.cpp -c -o ./tmp/controllerLib.$(objectExt)
+	@./AFLplusplus/afl-clang-fast++ ./tmp/library_testOne.ll -c -o ./tmp/library_testOne.$(objectExt)
+	@ar rcs ./out/testOne.$(staticExt) ./tmp/library_testOne.$(objectExt)
+	@clang++ -I./include ./src/controllers/fuzzerHarnessController.cpp -c -o ./tmp/controller.$(objectExt)
+	#@./AFLplusplus/afl-clang-fast++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) ./out/testOne.$(staticExt) -lstdc++ -o ./out/testOne.$(executableExt)
+	#@-mkdir fuzz_in
+	#@./out/testOne.out harness foo > ./fuzz_in/harness.json
+	@-mkdir fuzz_out
+	@./AFLplusplus/afl-fuzz -i fuzz_in -o fuzz_out -- ./out/testOne.out run_harness "-i" @@
+fuzzerHarnessSplit: mkdir ./tmp/split.ll ./out/libLlvmPass.$(dynamicExt) ./src/controllers/fuzzerHarnessController.cpp
+	@./AFLplusplus/afl-clang-fast ./tmp/split.ll -S -emit-llvm -o ./tmp/split-afl.ll
+	@opt -load-pass-plugin ./out/libLlvmPass.$(dynamicExt) -passes librarify ./tmp/split-afl.ll -S -o ./tmp/library_split.ll
+	@clang++ -I./include ./src/controllers/controllerLib.cpp -c -o ./tmp/controllerLib.$(objectExt)
+	@./AFLplusplus/afl-clang-fast ./tmp/library_split.ll -c -o ./tmp/library_split.$(objectExt)
+	@ar rcs ./out/split.$(staticExt) ./tmp/library_split.$(objectExt)
+	@clang++ -I./include ./src/controllers/fuzzerHarnessController.cpp -c -o ./tmp/controller.$(objectExt)
+	@./AFLplusplus/afl-clang-fast++ ./tmp/controller.$(objectExt) ./tmp/controllerLib.$(objectExt) ./out/split.$(staticExt) -lstdc++ -o ./out/split.$(executableExt)
+	@-mkdir fuzz_in
+	@cp ./split_vulnerability/split_me ./fuzz_in
+	@-mkdir fuzz_out
+	@./AFLplusplus/afl-fuzz -i fuzz_in -o fuzz_out -- ./out/split.out run "-C" 131072 @@
+
+./tmp/controllerLib.$(objectExt) :
 	@clang++ -I./include ./src/controllers/controllerLib.cpp -c -o ./tmp/controllerLib.$(objectExt)
 ./out/libLlvmPass.$(dynamicExt): ./src/llvm_pass/Logger.cpp ./src/llvm_pass/Librarify.cpp ./src/llvm_pass/llvmHelpers.cpp
 	@-echo building libLlvmPass.$(dynamicExt)
@@ -115,14 +136,28 @@ mkdir:
 ifeq ($(OS),Windows_NT)
 	@-rmdir /s /q out
 	@-rmdir /s /q tmp
+	@-rmdir /s /q fuzz_in
+	@-rmdir /s /q fuzz_out
 else
 	@-rm -rf out
 	@-rm -rf tmp
+	@-rm -rf fuzz_in
+	@-rm -rf fuzz_out
 endif
 	@mkdir out
 	@mkdir tmp
+	@mkdir fuzz_in
+	@mkdir fuzz_out
 
 clean:
-	@-rm -R out
-	@-rm -R tmp
-	@-rm -R ./split_vulnerability/out
+ifeq ($(OS),Windows_NT)
+	@-rmdir /s /q out
+	@-rmdir /s /q tmp
+	@-rmdir /s /q fuzz_in
+	@-rmdir /s /q fuzz_out
+else
+	@-rm -rf out
+	@-rm -rf tmp
+	@-rm -rf fuzz_in
+	@-rm -rf fuzz_out
+endif

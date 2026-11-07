@@ -2,6 +2,9 @@
 #include <map>
 #include <set>
 
+extern "C" void logFunctionParameters(const char* funcName, void* buffer) {}
+extern "C" void logFunctionReturn(const char* funcName, void* buffer) {}
+
 std::vector<bool> isFunctionValid;
 std::vector<bool> canPrintFunctionOutput;
 void printSpec(std::ostream& o) {
@@ -79,6 +82,9 @@ void printSpec(std::ostream& o) {
     o << "    }\n";
     o << "}\n";
 }
+const char* term="";
+int harnessIndent = 0;
+int indentMultiplier=0;
 void printDefaultValues(std::ostream& o, std::string type) {
     if (type == "bool") {
         o << "false";
@@ -96,29 +102,81 @@ void printDefaultValues(std::ostream& o, std::string type) {
         o << "0.0";
     } else if (type == "double") {
         o << "0.000";
+    } else if (type[type.size()-1] == '*') {
+        printDefaultValues(o, type.substr(0,type.size()-1));
+    } else {
+        for (int i = 0; i <= numStructs; i++) {
+            if (structNames[i] != type) continue;
+            if (!isInputableType(structNames[i],false)) continue;
+            o << "{" << term;
+            harnessIndent++;
+            for (int j = 0; j < structNumFields[i]; j++) {
+                for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+                    o << "    ";
+                o << '"' << structFieldNames[i][j] << "\":";
+                printDefaultValues(o,structFieldTypes[i][j]);
+                if ((j+1)!=structNumFields[i])
+                    o << ',';
+                o << term;
+            }
+            harnessIndent--;
+            for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+                o << "    ";
+            o << "}";
+            return;
+        }
+        std::cout << "cannot print default value.";
     }
 }
-void printHarness(std::ostream& o, std::string functionName) {
+void printHarness(std::ostream& o, std::string functionName, int overloadNum=0) {
     int i;
-    for (i = 0; i < numFunctions; i++)
-        if (functionNames[i] == functionName)
-            break;
+    int overloadFound = 0;
+    for (i = 0; i < numFunctions; i++) {
+        if (functionNames[i] == functionName) {
+            if (overloadFound == overloadNum)
+                break;
+            else
+                overloadFound++;
+        }
+    }
     if (functionNames[i] != functionName) {
         std::cout << "Could not find function \"" << functionName << "\"\n";
         return;
     }
-    o << "{\n";
-    o << "    \"FunctionName\":\"" << functionName << "\",\n";
-    o << "    \"ParamList\":[\n";
+    o << "{" << term;
+    harnessIndent++;
+    for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+        o << ' ';
+    o << "\"FunctionName\":\"" << functionName << "\"," << term;
+    for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+        o << ' ';
+    o << "\"ParamList\":[" << term;
+    harnessIndent++;
     for (int j = 0; j < functionParamCounts[i]; j++) {
-        o << "        {\n";
-        o << "            \"Name\":\"" << functionParamNames[i][j] << "\",\n";
-        o << "            \"Value\":";
+        for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+            o << ' ';
+        o << '{' << term;
+        harnessIndent++;
+        for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+            o << ' ';
+        o << "\"Name\":\"" << functionParamNames[i][j] << "\"," << term;
+        for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+            o << ' ';
+        o << "\"Value\":";
         printDefaultValues(o, functionParamTypes[i][j]);
-        o << "\n";
-        o << "        }" << (((j+1)!=functionParamCounts[i])?",":"") << '\n';
+        o << term;
+        harnessIndent--;
+        for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+            o << ' ';
+        o << '}' << (((j+1)!=functionParamCounts[i])?",":"") << term;
     }
-    o << "    ]\n";
+    harnessIndent--;
+    for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+        o << ' ';
+    o << ']' << term;
+    harnessIndent--;
+    for (int k = 0; k < harnessIndent*indentMultiplier; k++)
+        o << ' ';
     o << "}\n";
 }
 std::string getUntilQuote(std::istream& i) {
@@ -135,11 +193,25 @@ std::string parseNonString(std::istream& i) {
     std::string out;
     char c = ' ';
     char p = (char)i.peek();
-    if (p == '\'') {
+    if (p == '"' || p == '\'') {
         i >> c;
         out = p;
         out += getUntilQuote(i);
         out += p;
+        return out;
+    }
+    if (p == '{') {
+        i >> c;
+        out += c;
+        int braceCount = 1;
+        while (braceCount > 0) {
+            i >> c;
+            if (c == '{')
+                braceCount++;
+            if (c == '}')
+                braceCount--;
+            out += c;
+        }
         return out;
     }
     while (p != ' ' && p != '\n' && p != ',' && p != '}' && p != ']')
@@ -177,8 +249,10 @@ bool jsonParseParamList(std::istream& i) {
         if (key1 == "Name") {
             if (!assertChar(i,'"')) return false;
             name = getUntilQuote(i);
+            std::cout << "name = " << name << '\n';
         } else if (key1 == "Value") {
             value = parseNonString(i);
+            std::cout << "value = " << value << '\n';
         } else {
             std::cout << "Malformed json.2\n";
             return false;
@@ -195,8 +269,10 @@ bool jsonParseParamList(std::istream& i) {
         if (key2 == "Name") {
             if (!assertChar(i,'"')) return false;
             name = getUntilQuote(i);
+            std::cout << "name = " << name << '\n';
         } else if (key2 == "Value") {
             value = parseNonString(i);
+            std::cout << "value = " << value << '\n';
         } else {
             std::cout << "Malformed json.3\n";
             return false;
@@ -359,6 +435,7 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
             return false;
         }
     } else {
+        std::cout << "other type : \"" << type << "\"\n";
         return false;
     }
 }
@@ -547,17 +624,28 @@ int main(int argc, char** argv) {
             return 1;
         }
     } else if (std::strcmp(argv[1],"harness")==0) {
-        if ((argc != 3) && (argc != 5)) {
+        if ((argc < 3) || (argc > 6)) {
             std::cout << "Malformed arguments.\n";
-            if (argc >= 3)
-                std::cout << "Unknown option \"" << argv[2] << "\"\n";
             std::cout << "Enter \"<program> help\" for options.\n";
             return 1;
         }
+        // "<program> harness <func>"
         if (argc == 3) {
             printHarness(std::cout,argv[2]);
             return 0;
-        } else {
+        // "<program> harness <func> <overload>"
+        } else if (argc == 4) {
+            try {
+                int overloadNum = std::stoi(argv[3]);
+                printHarness(std::cout,argv[2], overloadNum);
+                return 0;
+            } catch (...) {
+                std::cout << "Malformed argument \"" << argv[3] << "\", could not be parsed to integer.\n";
+                return 1;
+            }
+        // "<program> harness -o <ofile> <func>"
+        // or "<program> harness <func> -o <ofile>"
+        } else if (argc == 5) {
             if (std::strcmp(argv[2],"-o") == 0 || std::strcmp(argv[2],"-O") == 0) {
                 std::fstream f;
                 f.open(argv[3], std::ios::out);
@@ -572,11 +660,64 @@ int main(int argc, char** argv) {
                 return 0;
             } else {
                 std::cout << "Malformed arguments.\n";
-                if (argc >= 3)
-                    std::cout << "Unknown option \"" << argv[2] << "\"\n";
                 std::cout << "Enter \"<program> help\" for options.\n";
                 return 1;
             }
+        // "<program> harness -o <ofile> <func> <overload>"
+        // or "<program> harness <func> -o <ofile> <overload>"
+        // or "<program> harness <func> <overload> -o <ofile>"
+        } else if (argc == 6) {
+            // "<program> harness -o <ofile> <func> <overload>"
+            if (std::strcmp(argv[2],"-o") == 0 || std::strcmp(argv[2],"-O") == 0) {
+                std::fstream f;
+                f.open(argv[3], std::ios::out);
+                try {
+                    int overloadNum = std::stoi(argv[5]);
+                    printHarness(f,argv[4], overloadNum);
+                    f.close();
+                    return 0;
+                } catch (...) {
+                    std::cout << "Malformed argument \"" << argv[5] << "\", could not be parsed to integer.\n";
+                    f.close();
+                    return 1;
+                }
+            // "<program> harness <func> -o <ofile> <overload>"
+            } else if (std::strcmp(argv[3],"-o") == 0 || std::strcmp(argv[3],"-O") == 0) {
+                std::fstream f;
+                f.open(argv[4], std::ios::out);
+                try {
+                    int overloadNum = std::stoi(argv[5]);
+                    printHarness(f,argv[2], overloadNum);
+                    f.close();
+                    return 0;
+                } catch (...) {
+                    std::cout << "Malformed argument \"" << argv[5] << "\", could not be parsed to integer.\n";
+                    f.close();
+                    return 1;
+                }
+            // "<program> harness <func> <overload> -o <ofile>"
+            } else if (std::strcmp(argv[4],"-o") == 0 || std::strcmp(argv[4],"-O") == 0) {
+                std::fstream f;
+                f.open(argv[5], std::ios::out);
+                try {
+                    int overloadNum = std::stoi(argv[3]);
+                    printHarness(f,argv[2], overloadNum);
+                    f.close();
+                    return 0;
+                } catch (...) {
+                    std::cout << "Malformed argument \"" << argv[3] << "\", could not be parsed to integer.\n";
+                    f.close();
+                    return 1;
+                }
+            } else {
+                std::cout << "Malformed arguments.\n";
+                std::cout << "Enter \"<program> help\" for options.\n";
+                return 1;
+            }
+        } else {
+            std::cout << "Malformed arguments.\n";
+            std::cout << "Enter \"<program> help\" for options.\n";
+            return 1;
         }
     } else if (std::strcmp(argv[1],"run_harness")==0) {
         if ((argc != 2) && (argc != 4)) {
