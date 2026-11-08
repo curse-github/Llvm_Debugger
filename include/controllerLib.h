@@ -28,6 +28,7 @@ public:
     bufferWriter(bufferWriter&& move);
     bufferWriter& operator=(const bufferWriter& copy);
     bufferWriter& operator=(bufferWriter&& move);
+    void clear();
     ~bufferWriter();
     template<typename T>
     void push(T val) {
@@ -150,5 +151,6 @@ void printType(std::string type, void* ptr, std::ostream& o=std::cout);
 
 extern std::map<std::string, unsigned int> typeByteLengths;
 unsigned int getTypeByteLength(std::string type);
+unsigned int getLargestTypeSizeContained(std::string type);
 
 #endif // __CONTROLLER

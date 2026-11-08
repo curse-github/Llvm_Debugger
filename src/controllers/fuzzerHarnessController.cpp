@@ -1,6 +1,7 @@
 #include "controllerLib.h"
 #include <map>
 #include <set>
+#include <sstream>
 
 extern "C" void logFunctionParameters(const char* funcName, void* buffer) {}
 extern "C" void logFunctionReturn(const char* funcName, void* buffer) {}
@@ -226,6 +227,7 @@ bool assertChar(std::istream& i, char t) {
     char c = ' ';
     if (!(i >> c) || c != t) {
         std::cout << "Malformed json.1\n";
+        std::cout << " got '" << c << "' expected '" << t << "'\n";
         return false;
     }
     return true;
@@ -249,10 +251,8 @@ bool jsonParseParamList(std::istream& i) {
         if (key1 == "Name") {
             if (!assertChar(i,'"')) return false;
             name = getUntilQuote(i);
-            std::cout << "name = " << name << '\n';
         } else if (key1 == "Value") {
             value = parseNonString(i);
-            std::cout << "value = " << value << '\n';
         } else {
             std::cout << "Malformed json.2\n";
             return false;
@@ -269,10 +269,8 @@ bool jsonParseParamList(std::istream& i) {
         if (key2 == "Name") {
             if (!assertChar(i,'"')) return false;
             name = getUntilQuote(i);
-            std::cout << "name = " << name << '\n';
         } else if (key2 == "Value") {
             value = parseNonString(i);
-            std::cout << "value = " << value << '\n';
         } else {
             std::cout << "Malformed json.3\n";
             return false;
@@ -322,7 +320,42 @@ bool readJsonHarness(std::istream& i) {
     if (!assertChar(i,'}')) return false;
     return harnessParsedFunctionName.size()>0;
 }
-bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, std::string value, std::string type) {
+bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, std::string value, std::string type, bool align=false);
+bool pushStructToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, std::string value, int structIndex) {
+    std::stringstream ss(value);
+    // parse json
+    if (!assertChar(ss,'{')) return false;
+    ss >> std::ws;
+    char next = ',';
+    std::map<std::string,std::string> structData;
+    while (next == ',') {
+        if (!assertChar(ss,'\"')) return false;
+        std::string key = getUntilQuote(ss);
+        ss >> std::ws;
+        if (!assertChar(ss,':')) return false;
+        ss >> std::ws;
+        std::string val = parseNonString(ss);
+        ss >> std::ws;
+        structData[key] = val;
+        ss >> next;
+    }
+    if (next != '}') {
+        std::cout << "Malformed json.5\n";
+        return false;
+    }
+    // parse values
+    for (int i = 0; i < structNumFields[structIndex]; i++) {
+        if (structData.find(structFieldNames[structIndex][i]) == structData.end()) {
+            std::cout << "could not find value " << structNames[structIndex] << "." << structFieldNames[structIndex][i] << " in struct data\n";
+            return false;
+        }
+        if (!pushTypeToBuffer(buff,storage,structData[structFieldNames[structIndex][i]],structFieldTypes[structIndex][i],true))
+            return false;
+    }
+    std::cout << "parsed all values\n";
+    return true;
+}
+bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, std::string value, std::string type, bool align) {
     if (type == "bool") {
         bool finalValue;
         if (value == "true")
@@ -364,6 +397,8 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
             for(int i = 1; i < value.size()-1; i++)
                 storage[index]->push<char>(value[i]);
             storage[index]->push<char>('\0');
+            if (align)
+                buff.roundToMultipleOf(sizeof(void*));
             buff.push<void*>(storage[index]->pointer);
             return true;
         }
@@ -373,6 +408,8 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
         try {
             unsigned int intValue = std::stoi(value);
             if (intValue < 65535) {
+                if (align)
+                    buff.roundToMultipleOf(sizeof(short));
                 buff.push<short>((short)intValue);
                 return true;
             } else {
@@ -389,6 +426,8 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
     } else if (type == "int") {
         try {
             unsigned int intValue = std::stoi(value);
+            if (align)
+                buff.roundToMultipleOf(sizeof(int));
             buff.push<unsigned int>(intValue);
             return true;
         } catch (std::invalid_argument const& e) {
@@ -401,6 +440,8 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
     } else if (type == "long") {
         try {
             unsigned long intValue = std::stol(value);
+            if (align)
+                buff.roundToMultipleOf(sizeof(unsigned long));
             buff.push<unsigned long>(intValue);
             return true;
         } catch (std::invalid_argument const& e) {
@@ -413,6 +454,8 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
     } else if (type == "float") {
         try {
             float intValue = std::stof(value);
+            if (align)
+                buff.roundToMultipleOf(sizeof(float));
             buff.push<float>(intValue);
             return true;
         } catch (std::invalid_argument const& e) {
@@ -425,6 +468,8 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
     } else if (type == "double") {
         try {
             double intValue = std::stod(value);
+            if (align)
+                buff.roundToMultipleOf(sizeof(double));
             buff.push<double>(intValue);
             return true;
         } catch (std::invalid_argument const& e) {
@@ -434,35 +479,82 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
             std::cout << "failed to parse (" << value << ") as float\n";
             return false;
         }
+    } else if (type[type.size()-1] == '*') {
+        if (value == "nullptr") {
+            if (align)
+                buff.roundToMultipleOf(sizeof(void*));
+            buff.push<void*>(nullptr);
+            return true;
+        }
+        int i = storage.size();
+        storage.push_back(new bufferWriter());
+        bool ret = pushTypeToBuffer(*storage[i],storage,value,type.substr(0,type.size()-1));
+        if (align)
+            buff.roundToMultipleOf(sizeof(void*));
+        buff.push<void*>(storage[i]->pointer);
+        return ret;
     } else {
+        int i = 0;
+        for (i = 0; i < numStructs; i++)
+            if (structNames[i] == type)
+                break;
+        if (i != numStructs) {
+            if (align)
+                buff.roundToMultipleOf(getLargestTypeSizeContained(structNames[i]));
+            return pushStructToBuffer(buff,storage,value,i);
+        }
         std::cout << "other type : \"" << type << "\"\n";
         return false;
     }
 }
 void runHarness() {
-    int i;
-    for (i = 0; i < numFunctions; i++)
-        if (functionNames[i] == harnessParsedFunctionName)
-            break;
-    if (i == numFunctions) {
-        std::cout << "could not find function \"" << harnessParsedFunctionName << "\"\n";
+    std::vector<int> overloadIndices;
+    for (int i = 0; i < numFunctions; i++) {
+        if (functionNames[i] != harnessParsedFunctionName)
+            continue;
+        bool validParams = true;
+        for (int j = 0; j < functionParamCounts[i]; j++)
+            if (harnessParsedParamList.find(functionParamNames[i][j]) == harnessParsedParamList.end())
+                validParams = false;
+        if (validParams)
+            overloadIndices.push_back(i);
+    }
+    if (overloadIndices.size()==0) {
+        std::cout << "could not find valid overload for function \"" << harnessParsedFunctionName << "\"\n";
         return;
     }
-    for (int j = 0; j < functionParamCounts[i]; j++) {
-        if (harnessParsedParamList.find(functionParamNames[i][j]) == harnessParsedParamList.end()) {
-            std::cout << "Missing function argument \"" << functionParamNames[i][j] << "\"\n";
-            return;
+    bufferWriter parameters;
+    std::vector<bufferWriter*> storage;
+    int i = -1;
+    for (int j : overloadIndices) {
+        bool isReady = true;
+        for (int k = 0; k < functionParamCounts[j]; k++) {
+            std::string val = harnessParsedParamList[functionParamNames[j][k]];
+            if (val.size() == 0) {
+                isReady = false;
+                break;
+            }
+            #std::cout << "parsing \"" << val << "\" as paramater \"" << functionParamNames[j][k] << "\"\n";
+            if (!pushTypeToBuffer(parameters, storage, val, functionParamTypes[j][k])) {
+                isReady = false;
+                break;
+            }
         }
+        if (isReady) {
+            i=j;
+            break;
+        }
+        parameters.clear();
+        for (bufferWriter* s : storage)
+            delete s;
     }
+    if (i == -1)
+        return;
     std::cout << "running function \"" << harnessParsedFunctionName << '(';
     for (int j = 0; j < functionParamCounts[i]; j++)
         std::cout << harnessParsedParamList[functionParamNames[i][j]] << (((j+1)!=functionParamCounts[i])?", ":"");
     std::cout << ")\"\n";
-    bufferWriter parameters;
-    std::vector<bufferWriter*> storage;
-    for (int j = 0; j < functionParamCounts[i]; j++)
-        if (!pushTypeToBuffer(parameters, storage, harnessParsedParamList[functionParamNames[i][j]], functionParamTypes[i][j]))
-            return;
+
     std::string functionReturnType = functionReturnTypes[i];
     if (std::strcmp(functionReturnType.c_str(), "bool") == 0) {
         bool output = ((boolFT)functionPointers[i])(parameters.pointer);
@@ -492,6 +584,8 @@ void runHarness() {
         functionPointers[i](parameters.pointer);
         std::cout << "{\n    \"Return\":{\n        \"Type\":\"void\"\n    }\n}\n";
     }
+    for (bufferWriter* s : storage)
+        delete s;
 }
 bool setAutoHarness(std::string functionName) {
     harnessParsedFunctionName = functionName;
@@ -737,7 +831,6 @@ int main(int argc, char** argv) {
         } else {//  argc == 4
             if (std::strcmp(argv[2],"-i") == 0 || std::strcmp(argv[2],"-I") == 0) {
                 std::fstream f;
-                std::cout << "input file: \"" << argv[3] << "\"\n";
                 f.open(argv[3], std::ios::in);
                 if (!readJsonHarness(f)) {
                     f.close();

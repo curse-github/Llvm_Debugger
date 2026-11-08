@@ -31,10 +31,13 @@ bufferWriter& bufferWriter::operator=(bufferWriter&& move) {
     move.counter = nullptr;
     return *this;
 }
-bufferWriter::~bufferWriter() {
+void bufferWriter::clear() {
     if (pointer != nullptr) free(pointer);
     pointer = nullptr;
     counter = nullptr;
+}
+bufferWriter::~bufferWriter() {
+    clear();
 }
 void bufferWriter::roundToMultipleOf(int amount) {
     if ((amount == 0) || (amount == 1)) return;
@@ -181,7 +184,6 @@ bool isInputableType(std::string type, bool allowUnions) {
         return isValid;
     }
 }
-unsigned int getLargestTypeSizeContained(std::string type);
 void inputType(std::string type, bufferWriter& parameters, std::vector<bufferWriter*>& storage, std::string paramName, bool doRound) {
     if (type=="char*") {
         std::string tmp;
