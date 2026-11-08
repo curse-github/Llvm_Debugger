@@ -86,7 +86,7 @@ void printSpec(std::ostream& o) {
 const char* term="";
 int harnessIndent = 0;
 int indentMultiplier=0;
-void printDefaultValues(std::ostream& o, std::string type) {
+bool printDefaultValues(std::ostream& o, std::string type) {
     if (type == "bool") {
         o << "false";
     } else if (type == "char") {
@@ -124,10 +124,12 @@ void printDefaultValues(std::ostream& o, std::string type) {
             for (int k = 0; k < harnessIndent*indentMultiplier; k++)
                 o << "    ";
             o << "}";
-            return;
+            return true;
         }
         std::cout << "cannot print default value.";
+        return false;
     }
+    return true;
 }
 void printHarness(std::ostream& o, std::string functionName, int overloadNum=0) {
     int i;
@@ -352,7 +354,7 @@ bool pushStructToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage,
         if (!pushTypeToBuffer(buff,storage,structData[structFieldNames[structIndex][i]],structFieldTypes[structIndex][i],true))
             return false;
     }
-    std::cout << "parsed all values\n";
+    // std::cout << "parsed all values\n";
     return true;
 }
 bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, std::string value, std::string type, bool align) {
@@ -534,7 +536,7 @@ void runHarness() {
                 isReady = false;
                 break;
             }
-            #std::cout << "parsing \"" << val << "\" as paramater \"" << functionParamNames[j][k] << "\"\n";
+            //std::cout << "parsing \"" << val << "\" as paramater \"" << functionParamNames[j][k] << "\"\n";
             if (!pushTypeToBuffer(parameters, storage, val, functionParamTypes[j][k])) {
                 isReady = false;
                 break;
@@ -587,38 +589,30 @@ void runHarness() {
     for (bufferWriter* s : storage)
         delete s;
 }
-bool setAutoHarness(std::string functionName) {
+bool setAutoHarness(std::string functionName, int overloadNum=0) {
     harnessParsedFunctionName = functionName;
-    int i;
-    for (i = 0; i < numFunctions; i++)
-        if (functionNames[i] == functionName)
-            break;
+    int i,overloadFound=0;
+    for (i = 0; i < numFunctions; i++) {
+        if (functionNames[i] == functionName) {
+            if (overloadFound == overloadNum)
+                break;
+            else
+                overloadFound++;
+        }
+    }
     if (i == numFunctions) {
         std::cout << "Unable to find function \"" << functionName << "\"\n";
         return false;
     }
+    harnessParsedParamList.clear();
     for (int j = 0; j < functionParamCounts[i]; j++) {
         std::string type = functionParamTypes[i][j];
-        if (type == "bool") {
-            harnessParsedParamList[functionParamNames[i][j]] = "false";
-        } else if (type == "char") {
-            harnessParsedParamList[functionParamNames[i][j]] = "'a'";
-        } else if (type == "char*") {
-            harnessParsedParamList[functionParamNames[i][j]] = "\"string\"";
-        } else if (type == "short") {
-            harnessParsedParamList[functionParamNames[i][j]] = "256";
-        } else if (type == "int") {
-            harnessParsedParamList[functionParamNames[i][j]] = "65536";
-        } else if (type == "long") {
-            harnessParsedParamList[functionParamNames[i][j]] = "4294967296";
-        } else if (type == "float") {
-            harnessParsedParamList[functionParamNames[i][j]] = "0.0";
-        } else if (type == "double") {
-            harnessParsedParamList[functionParamNames[i][j]] = "0.000";
-        } else {
+        std::stringstream ss;
+        if (!printDefaultValues(ss,type)) {
             std::cout << "Unable to make harness for function \"" << functionName << "\"\n";
             return false;
         }
+        harnessParsedParamList[functionParamNames[i][j]] = ss.str();
     }
     return true;
 }
@@ -848,21 +842,27 @@ int main(int argc, char** argv) {
             }
         }
     } else if (std::strcmp(argv[1],"run_auto")==0) {
-        if (argc < 3) {
+        if (argc < 3 || argc > 4) {
             std::cout << "Malformed arguments.\n";
             return 1;
         }
-        if (setAutoHarness(argv[2]))
-            runHarness();
+        if (argc == 3) {
+            if (setAutoHarness(argv[2]))
+                runHarness();
+        } else if (argc == 4) {
+            int overloadNum = std::stoi(argv[3]);
+            if (setAutoHarness(argv[2], overloadNum))
+                runHarness();
+        }
         return 0;
     } else if (std::strcmp(argv[1],"run_auto_all")==0) {
-        std::set<std::string> completedFunctions;
+        std::map<std::string,int> overloadCounts;
+        for (int i = 0; i < numFunctions; i++)
+            overloadCounts[functionNames[i]]=0;
         for (int i = 0; i < numFunctions; i++) {
-            if (completedFunctions.count(functionNames[i]) != 0)
-                continue;
-            completedFunctions.insert(functionNames[i]);
-            if (setAutoHarness(functionNames[i]))
+            if (setAutoHarness(functionNames[i], overloadCounts[functionNames[i]]))
                 runHarness();
+            overloadCounts[functionNames[i]]++;
         }
         return 0;
     }

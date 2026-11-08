@@ -17,9 +17,9 @@ typedef struct {
     bool c;
     char d;
     float e;
-} fooArgs;
+} barArgs;
 // testing inputting structs
-int bar(fooArgs g) {
+int bar(barArgs g) {
     return bar(g.a, g.b, g.c, g.d, g.e);
 }
 // testing correct struct field offsets and initializers
@@ -27,7 +27,7 @@ struct testStruct {
     char buf;// at offset 0
     int buff;// at offset 4
     char bufff;// at offset 8
-    fooArgs g;// at offset 16
+    barArgs g;// at offset 16
     testStruct() {
         buf = '0';
         buff = 1;
