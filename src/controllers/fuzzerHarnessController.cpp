@@ -217,6 +217,20 @@ std::string parseNonString(std::istream& i) {
         }
         return out;
     }
+    if (p == '[') {
+        i >> c;
+        out += c;
+        int braceCount = 1;
+        while (braceCount > 0) {
+            i >> c;
+            if (c == '[')
+                braceCount++;
+            if (c == ']')
+                braceCount--;
+            out += c;
+        }
+        return out;
+    }
     while (p != ' ' && p != '\n' && p != ',' && p != '}' && p != ']')
         if (i >> c) {
             out += c;
@@ -351,6 +365,7 @@ bool pushStructToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage,
             std::cout << "could not find value " << structNames[structIndex] << "." << structFieldNames[structIndex][i] << " in struct data\n";
             return false;
         }
+        //std::cout << "parsing \"" << structData[structFieldNames[structIndex][i]] << "\" as " << structFieldTypes[structIndex][i] << "\n";
         if (!pushTypeToBuffer(buff,storage,structData[structFieldNames[structIndex][i]],structFieldTypes[structIndex][i],true))
             return false;
     }
@@ -487,14 +502,38 @@ bool pushTypeToBuffer(bufferWriter& buff, std::vector<bufferWriter*>& storage, s
                 buff.roundToMultipleOf(sizeof(void*));
             buff.push<void*>(nullptr);
             return true;
+        } else if (value[0] == '[') {
+            std::vector<std::string> vals;
+            std::stringstream ss(value);
+            if (!assertChar(ss,'[')) return false;
+            char next = ',';
+            while (next == ',') {
+                ss >> std::ws;
+                vals.push_back(parseNonString(ss));
+                ss >> std::ws;
+                ss >> next;
+            }
+            if (next != ']') {
+                std::cout << "Malformed json.6\n";
+                return false;
+            }
+            std::string elementType = type.substr(0,type.size()-1);
+            int i = storage.size();
+            storage.push_back(new bufferWriter());
+            for (int j = 0; j < vals.size(); j++)
+                if (!pushTypeToBuffer(*storage[i],storage,vals[j],elementType))
+                    return false;
+            buff.push<void*>(storage[i]->pointer);
+            return true;
+        } else {
+            int i = storage.size();
+            storage.push_back(new bufferWriter());
+            bool ret = pushTypeToBuffer(*storage[i],storage,value,type.substr(0,type.size()-1));
+            if (align)
+                buff.roundToMultipleOf(sizeof(void*));
+            buff.push<void*>(storage[i]->pointer);
+            return ret;
         }
-        int i = storage.size();
-        storage.push_back(new bufferWriter());
-        bool ret = pushTypeToBuffer(*storage[i],storage,value,type.substr(0,type.size()-1));
-        if (align)
-            buff.roundToMultipleOf(sizeof(void*));
-        buff.push<void*>(storage[i]->pointer);
-        return ret;
     } else {
         int i = 0;
         for (i = 0; i < numStructs; i++)
